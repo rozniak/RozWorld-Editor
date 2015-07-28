@@ -1,0 +1,7 @@
+/RozWorld Editor/RozWorld Editor/bin
+/RozWorld Editor/RozWorld Editor/obj
+*.suo
+*.pdb
+*.application
+*.manifest
+*.exe
