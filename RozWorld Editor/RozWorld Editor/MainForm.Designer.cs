@@ -32,6 +32,9 @@
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.worldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gUIOMETRYBINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,12 +50,15 @@
             this.LabelHONewTasks = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label33 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.numericUpDown14 = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.numericUpDown15 = new System.Windows.Forms.NumericUpDown();
@@ -113,10 +119,27 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label34 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.numericUpDown19 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown18 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown17 = new System.Windows.Forms.NumericUpDown();
+            this.button7 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.label26 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.MenuStrip.SuspendLayout();
             this.TabUI.SuspendLayout();
             this.TabHome.SuspendLayout();
@@ -146,6 +169,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,34 +197,57 @@
             this.ItemOpen,
             this.ItemExit});
             this.MenuFile.Name = "MenuFile";
-            this.MenuFile.Size = new System.Drawing.Size(37, 20);
+            this.MenuFile.Size = new System.Drawing.Size(35, 20);
             this.MenuFile.Text = "File";
             // 
             // ItemNew
             // 
+            this.ItemNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.worldToolStripMenuItem,
+            this.playerToolStripMenuItem,
+            this.gUIOMETRYBINToolStripMenuItem});
+            this.ItemNew.Image = global::RozWorld_Editor.Properties.Resources.NewFileIcon;
             this.ItemNew.Name = "ItemNew";
             this.ItemNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.ItemNew.Size = new System.Drawing.Size(146, 22);
-            this.ItemNew.Text = "New";
+            this.ItemNew.Size = new System.Drawing.Size(152, 22);
+            this.ItemNew.Text = "New...";
+            // 
+            // worldToolStripMenuItem
+            // 
+            this.worldToolStripMenuItem.Name = "worldToolStripMenuItem";
+            this.worldToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.worldToolStripMenuItem.Text = "World";
+            // 
+            // playerToolStripMenuItem
+            // 
+            this.playerToolStripMenuItem.Name = "playerToolStripMenuItem";
+            this.playerToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.playerToolStripMenuItem.Text = "Player";
+            // 
+            // gUIOMETRYBINToolStripMenuItem
+            // 
+            this.gUIOMETRYBINToolStripMenuItem.Name = "gUIOMETRYBINToolStripMenuItem";
+            this.gUIOMETRYBINToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.gUIOMETRYBINToolStripMenuItem.Text = "GUIOMETRY.BIN";
             // 
             // ItemOpen
             // 
             this.ItemOpen.Name = "ItemOpen";
             this.ItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.ItemOpen.Size = new System.Drawing.Size(146, 22);
+            this.ItemOpen.Size = new System.Drawing.Size(152, 22);
             this.ItemOpen.Text = "Open";
             // 
             // ItemExit
             // 
             this.ItemExit.Name = "ItemExit";
             this.ItemExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.ItemExit.Size = new System.Drawing.Size(146, 22);
+            this.ItemExit.Size = new System.Drawing.Size(152, 22);
             this.ItemExit.Text = "Exit";
             // 
             // MenuEdit
             // 
             this.MenuEdit.Name = "MenuEdit";
-            this.MenuEdit.Size = new System.Drawing.Size(39, 20);
+            this.MenuEdit.Size = new System.Drawing.Size(37, 20);
             this.MenuEdit.Text = "Edit";
             // 
             // TabUI
@@ -205,6 +258,7 @@
             this.TabUI.Controls.Add(this.TabHome);
             this.TabUI.Controls.Add(this.tabPage1);
             this.TabUI.Controls.Add(this.tabPage2);
+            this.TabUI.Controls.Add(this.tabPage3);
             this.TabUI.Location = new System.Drawing.Point(0, 52);
             this.TabUI.Name = "TabUI";
             this.TabUI.SelectedIndex = 0;
@@ -322,10 +376,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label33);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -334,11 +389,22 @@
             this.tabPage1.Text = "World - 001.seg";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label33.Location = new System.Drawing.Point(8, 3);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(137, 24);
+            this.label33.TabIndex = 4;
+            this.label33.Text = "World Editor";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(46, 25);
+            this.label2.Location = new System.Drawing.Point(50, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 3;
@@ -347,21 +413,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 6);
+            this.label1.Location = new System.Drawing.Point(50, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Unknown Entity";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::RozWorld_Editor.Properties.Resources.unknown;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // panel1
             // 
@@ -375,6 +431,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(646, 495);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::RozWorld_Editor.Properties.Resources.unknown;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 30);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // tabPage2
             // 
@@ -416,6 +482,30 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pet Details";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Centre",
+            "Up",
+            "Right",
+            "Down",
+            "Left"});
+            this.comboBox3.Location = new System.Drawing.Point(99, 189);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(95, 21);
+            this.comboBox3.TabIndex = 24;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(96, 173);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(89, 13);
+            this.label26.TabIndex = 23;
+            this.label26.Text = "Relative Position:";
             // 
             // numericUpDown14
             // 
@@ -1100,6 +1190,196 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Player Editor";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label34);
+            this.tabPage3.Controls.Add(this.groupBox5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(808, 504);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "GUIOMETRY - guiometry.bin";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label34.Location = new System.Drawing.Point(8, 3);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(243, 24);
+            this.label34.TabIndex = 1;
+            this.label34.Text = "GUIOMETRY.BIN Editor";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.Controls.Add(this.button6);
+            this.groupBox5.Controls.Add(this.button5);
+            this.groupBox5.Controls.Add(this.listBox1);
+            this.groupBox5.Controls.Add(this.label29);
+            this.groupBox5.Controls.Add(this.label27);
+            this.groupBox5.Controls.Add(this.comboBox4);
+            this.groupBox5.Location = new System.Drawing.Point(12, 30);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(356, 267);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Font Editor";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label32);
+            this.groupBox6.Controls.Add(this.numericUpDown19);
+            this.groupBox6.Controls.Add(this.numericUpDown18);
+            this.groupBox6.Controls.Add(this.numericUpDown17);
+            this.groupBox6.Controls.Add(this.button7);
+            this.groupBox6.Controls.Add(this.pictureBox5);
+            this.groupBox6.Controls.Add(this.label31);
+            this.groupBox6.Controls.Add(this.label28);
+            this.groupBox6.Controls.Add(this.label30);
+            this.groupBox6.Location = new System.Drawing.Point(9, 69);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(338, 189);
+            this.groupBox6.TabIndex = 12;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Character Details";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(148, 90);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(48, 13);
+            this.label32.TabIndex = 13;
+            this.label32.Text = "Y Offset:";
+            // 
+            // numericUpDown19
+            // 
+            this.numericUpDown19.Location = new System.Drawing.Point(151, 106);
+            this.numericUpDown19.Name = "numericUpDown19";
+            this.numericUpDown19.Size = new System.Drawing.Size(78, 20);
+            this.numericUpDown19.TabIndex = 7;
+            // 
+            // numericUpDown18
+            // 
+            this.numericUpDown18.Location = new System.Drawing.Point(232, 67);
+            this.numericUpDown18.Name = "numericUpDown18";
+            this.numericUpDown18.Size = new System.Drawing.Size(78, 20);
+            this.numericUpDown18.TabIndex = 7;
+            // 
+            // numericUpDown17
+            // 
+            this.numericUpDown17.Location = new System.Drawing.Point(148, 67);
+            this.numericUpDown17.Name = "numericUpDown17";
+            this.numericUpDown17.Size = new System.Drawing.Size(78, 20);
+            this.numericUpDown17.TabIndex = 7;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(219, 19);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(103, 23);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Blitting...";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox5.Location = new System.Drawing.Point(6, 50);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(136, 127);
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(229, 51);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(32, 13);
+            this.label31.TabIndex = 10;
+            this.label31.Text = "After:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 34);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(97, 13);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Character Preview:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(145, 51);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 13);
+            this.label30.TabIndex = 8;
+            this.label30.Text = "Before:";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(228, 40);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(21, 23);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "-";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(201, 40);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(21, 23);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "+";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(260, 19);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(90, 43);
+            this.listBox1.TabIndex = 5;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(198, 22);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(56, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Character:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 22);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(31, 13);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "Font:";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Chat Font",
+            "Small Font",
+            "Medium Font (Buttons etc.)",
+            "Huge Font"});
+            this.comboBox4.Location = new System.Drawing.Point(43, 19);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(149, 21);
+            this.comboBox4.TabIndex = 0;
+            // 
             // ToolStrip
             // 
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1113,35 +1393,11 @@
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Image = global::RozWorld_Editor.Properties.Resources.NewFileIcon;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(96, 173);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(89, 13);
-            this.label26.TabIndex = 23;
-            this.label26.Text = "Relative Position:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Centre",
-            "Up",
-            "Right",
-            "Down",
-            "Left"});
-            this.comboBox3.Location = new System.Drawing.Point(99, 189);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(95, 21);
-            this.comboBox3.TabIndex = 24;
+            this.toolStripButton1.Text = "New...";
             // 
             // MainForm
             // 
@@ -1195,6 +1451,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -1292,6 +1558,29 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.NumericUpDown numericUpDown17;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.NumericUpDown numericUpDown19;
+        private System.Windows.Forms.NumericUpDown numericUpDown18;
+        private System.Windows.Forms.ToolStripMenuItem worldToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gUIOMETRYBINToolStripMenuItem;
     }
 }
 

@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="editoricon.ico" />
+    <None Include="Resources\NewFileIcon.png" />
     <None Include="Resources\unknown.png" />
     <None Include="Resources\editorlogo.png" />
   </ItemGroup>
