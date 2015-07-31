@@ -82,6 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="editoricon.ico" />
+    <None Include="Resources\UpArrowIcon.png" />
+    <None Include="Resources\RightArrowIcon.png" />
+    <None Include="Resources\LeftArrowIcon.png" />
+    <None Include="Resources\DownArrowIcon.png" />
     <None Include="Resources\UndoIcon.png" />
     <None Include="Resources\SaveIcon.png" />
     <None Include="Resources\SaveAsIcon.png" />

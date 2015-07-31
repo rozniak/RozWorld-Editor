@@ -123,6 +123,16 @@ namespace RozWorld_Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DownArrowIcon {
+            get {
+                object obj = ResourceManager.GetObject("DownArrowIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editorlogo {
             get {
                 object obj = ResourceManager.GetObject("editorlogo", resourceCulture);
@@ -136,6 +146,16 @@ namespace RozWorld_Editor.Properties {
         internal static System.Drawing.Bitmap HomePageIcon {
             get {
                 object obj = ResourceManager.GetObject("HomePageIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LeftArrowIcon {
+            get {
+                object obj = ResourceManager.GetObject("LeftArrowIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +263,16 @@ namespace RozWorld_Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RightArrowIcon {
+            get {
+                object obj = ResourceManager.GetObject("RightArrowIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SaveAllIcon {
             get {
                 object obj = ResourceManager.GetObject("SaveAllIcon", resourceCulture);
@@ -286,6 +316,16 @@ namespace RozWorld_Editor.Properties {
         internal static System.Drawing.Bitmap unknown {
             get {
                 object obj = ResourceManager.GetObject("unknown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UpArrowIcon {
+            get {
+                object obj = ResourceManager.GetObject("UpArrowIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

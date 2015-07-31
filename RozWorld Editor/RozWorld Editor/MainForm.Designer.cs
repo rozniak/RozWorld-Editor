@@ -31,43 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.ItemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.recentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.closeFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.moveTabToNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cloneTabToNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolbarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.standardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rozWorldHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.rozWorldEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editorGitHubDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutRozWorldEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabUI = new System.Windows.Forms.TabControl();
@@ -219,8 +200,22 @@
             this.label27 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.worldToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gUIOMETRYBINToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button25 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -245,6 +240,34 @@
             this.worldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gUIOMETRYBINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ItemOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moveTabToNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cloneTabToNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rozWorldHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rozWorldEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editorGitHubDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
+            this.label53 = new System.Windows.Forms.Label();
+            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label59 = new System.Windows.Forms.Label();
             this.MenuStrip.SuspendLayout();
             this.TabUI.SuspendLayout();
             this.TabHome.SuspendLayout();
@@ -309,6 +332,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuStrip
@@ -344,44 +368,10 @@
             this.MenuFile.Size = new System.Drawing.Size(35, 20);
             this.MenuFile.Text = "File";
             // 
-            // ItemOpen
-            // 
-            this.ItemOpen.Image = global::RozWorld_Editor.Properties.Resources.OpenFileIcon;
-            this.ItemOpen.Name = "ItemOpen";
-            this.ItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.ItemOpen.Size = new System.Drawing.Size(193, 22);
-            this.ItemOpen.Text = "Open...";
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(190, 6);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.SaveIcon;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.SaveAsIcon;
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.saveAsToolStripMenuItem.Text = "Save As...";
-            // 
-            // saveAllToolStripMenuItem
-            // 
-            this.saveAllToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.SaveAllIcon;
-            this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
-            this.saveAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.S)));
-            this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.saveAllToolStripMenuItem.Text = "Save All...";
             // 
             // toolStripSeparator4
             // 
@@ -398,23 +388,6 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(190, 6);
-            // 
-            // closeFileToolStripMenuItem
-            // 
-            this.closeFileToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.CloseFileIcon;
-            this.closeFileToolStripMenuItem.Name = "closeFileToolStripMenuItem";
-            this.closeFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.closeFileToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.closeFileToolStripMenuItem.Text = "Close";
-            // 
-            // closeAllToolStripMenuItem
-            // 
-            this.closeAllToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.CloseAllIcon;
-            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.W)));
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.closeAllToolStripMenuItem.Text = "Close All";
             // 
             // toolStripSeparator2
             // 
@@ -444,58 +417,10 @@
             this.MenuEdit.Size = new System.Drawing.Size(37, 20);
             this.MenuEdit.Text = "Edit";
             // 
-            // undoToolStripMenuItem
-            // 
-            this.undoToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.UndoIcon;
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.undoToolStripMenuItem.Text = "Undo";
-            // 
-            // redoToolStripMenuItem
-            // 
-            this.redoToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.RedoIcon;
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.redoToolStripMenuItem.Text = "Redo";
-            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(153, 6);
-            // 
-            // cutToolStripMenuItem
-            // 
-            this.cutToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.CutIcon;
-            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.cutToolStripMenuItem.Text = "Cut";
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.CopyIcon;
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.copyToolStripMenuItem.Text = "Copy";
-            // 
-            // pasteToolStripMenuItem
-            // 
-            this.pasteToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.PasteIcon;
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.pasteToolStripMenuItem.Text = "Paste";
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.DeleteIcon;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // toolStripSeparator6
             // 
@@ -524,31 +449,10 @@
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.viewToolStripMenuItem.Text = "View";
             // 
-            // newWindowToolStripMenuItem
-            // 
-            this.newWindowToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.NewWindowIcon;
-            this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.newWindowToolStripMenuItem.Text = "New Window";
-            // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(197, 6);
-            // 
-            // moveTabToNewWindowToolStripMenuItem
-            // 
-            this.moveTabToNewWindowToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.MoveNewWindowIcon;
-            this.moveTabToNewWindowToolStripMenuItem.Name = "moveTabToNewWindowToolStripMenuItem";
-            this.moveTabToNewWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.moveTabToNewWindowToolStripMenuItem.Text = "Move Tab to New Window";
-            // 
-            // cloneTabToNewWindowToolStripMenuItem
-            // 
-            this.cloneTabToNewWindowToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.CloneNewWindowIcon;
-            this.cloneTabToNewWindowToolStripMenuItem.Name = "cloneTabToNewWindowToolStripMenuItem";
-            this.cloneTabToNewWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.cloneTabToNewWindowToolStripMenuItem.Text = "Clone Tab to New Window";
             // 
             // toolStripSeparator9
             // 
@@ -576,13 +480,6 @@
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(197, 6);
             // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.HomePageIcon;
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.homeToolStripMenuItem.Text = "Home Page";
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -596,31 +493,10 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // rozWorldHomeToolStripMenuItem
-            // 
-            this.rozWorldHomeToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.HomePageIcon;
-            this.rozWorldHomeToolStripMenuItem.Name = "rozWorldHomeToolStripMenuItem";
-            this.rozWorldHomeToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.rozWorldHomeToolStripMenuItem.Text = "RozWorld Home Page";
-            // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
             this.toolStripSeparator10.Size = new System.Drawing.Size(199, 6);
-            // 
-            // rozWorldEditorToolStripMenuItem
-            // 
-            this.rozWorldEditorToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.OpenWebsiteIcon;
-            this.rozWorldEditorToolStripMenuItem.Name = "rozWorldEditorToolStripMenuItem";
-            this.rozWorldEditorToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.rozWorldEditorToolStripMenuItem.Text = "Editor Documentation";
-            // 
-            // editorGitHubDirectoryToolStripMenuItem
-            // 
-            this.editorGitHubDirectoryToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.OpenWebsiteIcon;
-            this.editorGitHubDirectoryToolStripMenuItem.Name = "editorGitHubDirectoryToolStripMenuItem";
-            this.editorGitHubDirectoryToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.editorGitHubDirectoryToolStripMenuItem.Text = "Editor GitHub Directory";
             // 
             // toolStripSeparator11
             // 
@@ -748,11 +624,15 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label59);
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.label53);
+            this.tabPage1.Controls.Add(this.button28);
+            this.tabPage1.Controls.Add(this.button27);
+            this.tabPage1.Controls.Add(this.button26);
+            this.tabPage1.Controls.Add(this.button25);
             this.tabPage1.Controls.Add(this.label33);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -776,7 +656,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(50, 49);
+            this.label2.Location = new System.Drawing.Point(41, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 3;
@@ -785,7 +665,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 30);
+            this.label1.Location = new System.Drawing.Point(41, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 2;
@@ -2256,20 +2136,141 @@
             // ToolStrip
             // 
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.toolStripDropDownButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripSeparator12,
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripButton7,
+            this.toolStripSeparator13,
+            this.toolStripButton8,
+            this.toolStripButton9,
+            this.toolStripSeparator14,
+            this.toolStripLabel1,
+            this.toolStripComboBox1});
             this.ToolStrip.Location = new System.Drawing.Point(0, 24);
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.Size = new System.Drawing.Size(814, 25);
             this.ToolStrip.TabIndex = 2;
             this.ToolStrip.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolStripSeparator12
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "New...";
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.worldToolStripMenuItem1,
+            this.playerToolStripMenuItem1,
+            this.gUIOMETRYBINToolStripMenuItem1});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // worldToolStripMenuItem1
+            // 
+            this.worldToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("worldToolStripMenuItem1.Image")));
+            this.worldToolStripMenuItem1.Name = "worldToolStripMenuItem1";
+            this.worldToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
+            this.worldToolStripMenuItem1.Text = "World";
+            // 
+            // playerToolStripMenuItem1
+            // 
+            this.playerToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("playerToolStripMenuItem1.Image")));
+            this.playerToolStripMenuItem1.Name = "playerToolStripMenuItem1";
+            this.playerToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
+            this.playerToolStripMenuItem1.Text = "Player";
+            // 
+            // gUIOMETRYBINToolStripMenuItem1
+            // 
+            this.gUIOMETRYBINToolStripMenuItem1.Image = global::RozWorld_Editor.Properties.Resources.NewBINIcon;
+            this.gUIOMETRYBINToolStripMenuItem1.Name = "gUIOMETRYBINToolStripMenuItem1";
+            this.gUIOMETRYBINToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
+            this.gUIOMETRYBINToolStripMenuItem1.Text = "GUIOMETRY.BIN";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "toolStripButton3";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "toolStripButton4";
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton5.Text = "toolStripButton5";
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton6.Text = "toolStripButton6";
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton7.Text = "toolStripButton7";
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton8.Text = "toolStripButton8";
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton9.Text = "toolStripButton9";
             // 
             // pictureBox1
             // 
@@ -2283,10 +2284,19 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button25
+            // 
+            this.button25.Image = global::RozWorld_Editor.Properties.Resources.UpArrowIcon;
+            this.button25.Location = new System.Drawing.Point(65, 50);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(24, 24);
+            this.button25.TabIndex = 5;
+            this.button25.UseVisualStyleBackColor = true;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::RozWorld_Editor.Properties.Resources.unknown;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 30);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -2462,14 +2472,14 @@
             // 
             // worldToolStripMenuItem
             // 
-            this.worldToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.NewWorldIcon;
+            this.worldToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("worldToolStripMenuItem.Image")));
             this.worldToolStripMenuItem.Name = "worldToolStripMenuItem";
             this.worldToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.worldToolStripMenuItem.Text = "World";
             // 
             // playerToolStripMenuItem
             // 
-            this.playerToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.NewPlayerIcon;
+            this.playerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("playerToolStripMenuItem.Image")));
             this.playerToolStripMenuItem.Name = "playerToolStripMenuItem";
             this.playerToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.playerToolStripMenuItem.Text = "Player";
@@ -2480,6 +2490,232 @@
             this.gUIOMETRYBINToolStripMenuItem.Name = "gUIOMETRYBINToolStripMenuItem";
             this.gUIOMETRYBINToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.gUIOMETRYBINToolStripMenuItem.Text = "GUIOMETRY.BIN";
+            // 
+            // ItemOpen
+            // 
+            this.ItemOpen.Image = ((System.Drawing.Image)(resources.GetObject("ItemOpen.Image")));
+            this.ItemOpen.Name = "ItemOpen";
+            this.ItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.ItemOpen.Size = new System.Drawing.Size(193, 22);
+            this.ItemOpen.Text = "Open...";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.saveAsToolStripMenuItem.Text = "Save As...";
+            // 
+            // saveAllToolStripMenuItem
+            // 
+            this.saveAllToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAllToolStripMenuItem.Image")));
+            this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
+            this.saveAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.saveAllToolStripMenuItem.Text = "Save All...";
+            // 
+            // closeFileToolStripMenuItem
+            // 
+            this.closeFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("closeFileToolStripMenuItem.Image")));
+            this.closeFileToolStripMenuItem.Name = "closeFileToolStripMenuItem";
+            this.closeFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.closeFileToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.closeFileToolStripMenuItem.Text = "Close";
+            // 
+            // closeAllToolStripMenuItem
+            // 
+            this.closeAllToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("closeAllToolStripMenuItem.Image")));
+            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
+            this.closeAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.W)));
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.closeAllToolStripMenuItem.Text = "Close All";
+            // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.undoToolStripMenuItem.Text = "Undo";
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("redoToolStripMenuItem.Image")));
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.redoToolStripMenuItem.Text = "Redo";
+            // 
+            // cutToolStripMenuItem
+            // 
+            this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
+            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.cutToolStripMenuItem.Text = "Cut";
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem.Image")));
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // newWindowToolStripMenuItem
+            // 
+            this.newWindowToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newWindowToolStripMenuItem.Image")));
+            this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
+            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.newWindowToolStripMenuItem.Text = "New Window";
+            // 
+            // moveTabToNewWindowToolStripMenuItem
+            // 
+            this.moveTabToNewWindowToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("moveTabToNewWindowToolStripMenuItem.Image")));
+            this.moveTabToNewWindowToolStripMenuItem.Name = "moveTabToNewWindowToolStripMenuItem";
+            this.moveTabToNewWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.moveTabToNewWindowToolStripMenuItem.Text = "Move Tab to New Window";
+            // 
+            // cloneTabToNewWindowToolStripMenuItem
+            // 
+            this.cloneTabToNewWindowToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cloneTabToNewWindowToolStripMenuItem.Image")));
+            this.cloneTabToNewWindowToolStripMenuItem.Name = "cloneTabToNewWindowToolStripMenuItem";
+            this.cloneTabToNewWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.cloneTabToNewWindowToolStripMenuItem.Text = "Clone Tab to New Window";
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("homeToolStripMenuItem.Image")));
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.homeToolStripMenuItem.Text = "Home Page";
+            // 
+            // rozWorldHomeToolStripMenuItem
+            // 
+            this.rozWorldHomeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("rozWorldHomeToolStripMenuItem.Image")));
+            this.rozWorldHomeToolStripMenuItem.Name = "rozWorldHomeToolStripMenuItem";
+            this.rozWorldHomeToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.rozWorldHomeToolStripMenuItem.Text = "RozWorld Home Page";
+            // 
+            // rozWorldEditorToolStripMenuItem
+            // 
+            this.rozWorldEditorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("rozWorldEditorToolStripMenuItem.Image")));
+            this.rozWorldEditorToolStripMenuItem.Name = "rozWorldEditorToolStripMenuItem";
+            this.rozWorldEditorToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.rozWorldEditorToolStripMenuItem.Text = "Editor Documentation";
+            // 
+            // editorGitHubDirectoryToolStripMenuItem
+            // 
+            this.editorGitHubDirectoryToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editorGitHubDirectoryToolStripMenuItem.Image")));
+            this.editorGitHubDirectoryToolStripMenuItem.Name = "editorGitHubDirectoryToolStripMenuItem";
+            this.editorGitHubDirectoryToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.editorGitHubDirectoryToolStripMenuItem.Text = "Editor GitHub Directory";
+            // 
+            // button26
+            // 
+            this.button26.Image = global::RozWorld_Editor.Properties.Resources.DownArrowIcon;
+            this.button26.Location = new System.Drawing.Point(65, 80);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(24, 24);
+            this.button26.TabIndex = 6;
+            this.button26.UseVisualStyleBackColor = true;
+            // 
+            // button27
+            // 
+            this.button27.Image = global::RozWorld_Editor.Properties.Resources.LeftArrowIcon;
+            this.button27.Location = new System.Drawing.Point(35, 62);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(24, 24);
+            this.button27.TabIndex = 7;
+            this.button27.UseVisualStyleBackColor = true;
+            // 
+            // button28
+            // 
+            this.button28.Image = global::RozWorld_Editor.Properties.Resources.RightArrowIcon;
+            this.button28.Location = new System.Drawing.Point(95, 62);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(24, 24);
+            this.button28.TabIndex = 8;
+            this.button28.UseVisualStyleBackColor = true;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(9, 34);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(61, 13);
+            this.label53.TabIndex = 9;
+            this.label53.Text = "Navigation:";
+            // 
+            // toolStripSeparator14
+            // 
+            this.toolStripSeparator14.Name = "toolStripSeparator14";
+            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "Tiles",
+            "Walls",
+            "Entities",
+            "Projectiles"});
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(83, 22);
+            this.toolStripLabel1.Text = "Selection Mode:";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(1, 110);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(152, 388);
+            this.panel2.TabIndex = 10;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(76, 34);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(61, 13);
+            this.label59.TabIndex = 11;
+            this.label59.Text = "X0 , Y0, Z0";
             // 
             // MainForm
             // 
@@ -2577,6 +2813,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2642,7 +2880,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -2800,6 +3037,30 @@
         private System.Windows.Forms.ToolStripMenuItem aboutRozWorldEditorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAllToolStripMenuItem;
         private System.Windows.Forms.Button ButtonHONewWorld;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem worldToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem playerToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem gUIOMETRYBINToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.Label label59;
     }
 }
 
