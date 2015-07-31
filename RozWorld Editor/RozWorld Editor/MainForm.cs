@@ -11,9 +11,14 @@ namespace RozWorld_Editor
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public MainForm(bool homePage = false)
         {
             InitializeComponent();
+
+            if (homePage)
+            {
+                this.TabUI.TabPages.Add(new Tab.HomePageTab());
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)

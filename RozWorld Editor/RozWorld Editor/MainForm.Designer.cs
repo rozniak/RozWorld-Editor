@@ -76,16 +76,6 @@
             this.MenuHelpSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.TabUI = new System.Windows.Forms.TabControl();
-            this.TabHome = new System.Windows.Forms.TabPage();
-            this.LabelHOOpenTasks = new System.Windows.Forms.Label();
-            this.ButtonHOOpenGUIOMETRY = new System.Windows.Forms.Button();
-            this.ButtonHOOpenPlayer = new System.Windows.Forms.Button();
-            this.ButtonHOOpenWorld = new System.Windows.Forms.Button();
-            this.ButtonHONewGUIOMETRY = new System.Windows.Forms.Button();
-            this.ButtonHONewPlayer = new System.Windows.Forms.Button();
-            this.ButtonHONewWorld = new System.Windows.Forms.Button();
-            this.LabelHONewTasks = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label59 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -290,8 +280,6 @@
             this.deleteAndCloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.TabUI.SuspendLayout();
-            this.TabHome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -646,7 +634,7 @@
             this.MenuSubItemToolbarStandard.Checked = true;
             this.MenuSubItemToolbarStandard.CheckState = System.Windows.Forms.CheckState.Checked;
             this.MenuSubItemToolbarStandard.Name = "MenuSubItemToolbarStandard";
-            this.MenuSubItemToolbarStandard.Size = new System.Drawing.Size(152, 22);
+            this.MenuSubItemToolbarStandard.Size = new System.Drawing.Size(118, 22);
             this.MenuSubItemToolbarStandard.Text = "Standard";
             // 
             // MenuViewSeparator3
@@ -717,7 +705,6 @@
             this.TabUI.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TabUI.Controls.Add(this.TabHome);
             this.TabUI.Controls.Add(this.tabPage1);
             this.TabUI.Controls.Add(this.tabPage2);
             this.TabUI.Controls.Add(this.tabPage3);
@@ -727,115 +714,6 @@
             this.TabUI.Size = new System.Drawing.Size(816, 530);
             this.TabUI.TabIndex = 1;
             this.TabUI.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TabUI_MouseUp);
-            // 
-            // TabHome
-            // 
-            this.TabHome.Controls.Add(this.LabelHOOpenTasks);
-            this.TabHome.Controls.Add(this.ButtonHOOpenGUIOMETRY);
-            this.TabHome.Controls.Add(this.ButtonHOOpenPlayer);
-            this.TabHome.Controls.Add(this.ButtonHOOpenWorld);
-            this.TabHome.Controls.Add(this.ButtonHONewGUIOMETRY);
-            this.TabHome.Controls.Add(this.ButtonHONewPlayer);
-            this.TabHome.Controls.Add(this.ButtonHONewWorld);
-            this.TabHome.Controls.Add(this.LabelHONewTasks);
-            this.TabHome.Controls.Add(this.pictureBox1);
-            this.TabHome.Location = new System.Drawing.Point(4, 22);
-            this.TabHome.Name = "TabHome";
-            this.TabHome.Padding = new System.Windows.Forms.Padding(3);
-            this.TabHome.Size = new System.Drawing.Size(808, 504);
-            this.TabHome.TabIndex = 0;
-            this.TabHome.Text = "Home";
-            this.TabHome.UseVisualStyleBackColor = true;
-            // 
-            // LabelHOOpenTasks
-            // 
-            this.LabelHOOpenTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelHOOpenTasks.AutoSize = true;
-            this.LabelHOOpenTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHOOpenTasks.Location = new System.Drawing.Point(588, 196);
-            this.LabelHOOpenTasks.Name = "LabelHOOpenTasks";
-            this.LabelHOOpenTasks.Size = new System.Drawing.Size(106, 16);
-            this.LabelHOOpenTasks.TabIndex = 9;
-            this.LabelHOOpenTasks.Text = "Open Previous...";
-            // 
-            // ButtonHOOpenGUIOMETRY
-            // 
-            this.ButtonHOOpenGUIOMETRY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonHOOpenGUIOMETRY.Location = new System.Drawing.Point(591, 273);
-            this.ButtonHOOpenGUIOMETRY.Name = "ButtonHOOpenGUIOMETRY";
-            this.ButtonHOOpenGUIOMETRY.Size = new System.Drawing.Size(209, 23);
-            this.ButtonHOOpenGUIOMETRY.TabIndex = 8;
-            this.ButtonHOOpenGUIOMETRY.Text = "GUIOMETRY.BIN...";
-            this.ButtonHOOpenGUIOMETRY.UseVisualStyleBackColor = true;
-            // 
-            // ButtonHOOpenPlayer
-            // 
-            this.ButtonHOOpenPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonHOOpenPlayer.Location = new System.Drawing.Point(591, 244);
-            this.ButtonHOOpenPlayer.Name = "ButtonHOOpenPlayer";
-            this.ButtonHOOpenPlayer.Size = new System.Drawing.Size(209, 23);
-            this.ButtonHOOpenPlayer.TabIndex = 7;
-            this.ButtonHOOpenPlayer.Text = "Player...";
-            this.ButtonHOOpenPlayer.UseVisualStyleBackColor = true;
-            // 
-            // ButtonHOOpenWorld
-            // 
-            this.ButtonHOOpenWorld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonHOOpenWorld.Location = new System.Drawing.Point(591, 215);
-            this.ButtonHOOpenWorld.Name = "ButtonHOOpenWorld";
-            this.ButtonHOOpenWorld.Size = new System.Drawing.Size(209, 23);
-            this.ButtonHOOpenWorld.TabIndex = 6;
-            this.ButtonHOOpenWorld.Text = "World...";
-            this.ButtonHOOpenWorld.UseVisualStyleBackColor = true;
-            // 
-            // ButtonHONewGUIOMETRY
-            // 
-            this.ButtonHONewGUIOMETRY.Location = new System.Drawing.Point(8, 273);
-            this.ButtonHONewGUIOMETRY.Name = "ButtonHONewGUIOMETRY";
-            this.ButtonHONewGUIOMETRY.Size = new System.Drawing.Size(209, 23);
-            this.ButtonHONewGUIOMETRY.TabIndex = 4;
-            this.ButtonHONewGUIOMETRY.Text = "GUIOMETRY.BIN...";
-            this.ButtonHONewGUIOMETRY.UseVisualStyleBackColor = true;
-            // 
-            // ButtonHONewPlayer
-            // 
-            this.ButtonHONewPlayer.Location = new System.Drawing.Point(8, 244);
-            this.ButtonHONewPlayer.Name = "ButtonHONewPlayer";
-            this.ButtonHONewPlayer.Size = new System.Drawing.Size(209, 23);
-            this.ButtonHONewPlayer.TabIndex = 3;
-            this.ButtonHONewPlayer.Text = "Player...";
-            this.ButtonHONewPlayer.UseVisualStyleBackColor = true;
-            // 
-            // ButtonHONewWorld
-            // 
-            this.ButtonHONewWorld.Location = new System.Drawing.Point(8, 215);
-            this.ButtonHONewWorld.Name = "ButtonHONewWorld";
-            this.ButtonHONewWorld.Size = new System.Drawing.Size(209, 23);
-            this.ButtonHONewWorld.TabIndex = 2;
-            this.ButtonHONewWorld.Text = "World...";
-            this.ButtonHONewWorld.UseVisualStyleBackColor = true;
-            // 
-            // LabelHONewTasks
-            // 
-            this.LabelHONewTasks.AutoSize = true;
-            this.LabelHONewTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelHONewTasks.Location = new System.Drawing.Point(8, 196);
-            this.LabelHONewTasks.Name = "LabelHONewTasks";
-            this.LabelHONewTasks.Size = new System.Drawing.Size(87, 16);
-            this.LabelHONewTasks.TabIndex = 1;
-            this.LabelHONewTasks.Text = "Create New...";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::RozWorld_Editor.Properties.Resources.editorlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(792, 187);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // tabPage1
             // 
@@ -878,7 +756,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::RozWorld_Editor.Properties.Resources.unknown;
+            this.pictureBox2.Image = global::RozWorld_Editor.Properties.Resources.ThingUnknown;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
@@ -2898,9 +2776,6 @@
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
             this.TabUI.ResumeLayout(false);
-            this.TabHome.ResumeLayout(false);
-            this.TabHome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -2992,16 +2867,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemExit;
         private System.Windows.Forms.ToolStripMenuItem MenuEdit;
         private System.Windows.Forms.TabControl TabUI;
-        private System.Windows.Forms.TabPage TabHome;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label LabelHONewTasks;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button ButtonHONewGUIOMETRY;
-        private System.Windows.Forms.Button ButtonHONewPlayer;
-        private System.Windows.Forms.Label LabelHOOpenTasks;
-        private System.Windows.Forms.Button ButtonHOOpenGUIOMETRY;
-        private System.Windows.Forms.Button ButtonHOOpenPlayer;
-        private System.Windows.Forms.Button ButtonHOOpenWorld;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
@@ -3199,7 +3065,6 @@
         private System.Windows.Forms.ToolStripSeparator MenuHelpSeparator2;
         private System.Windows.Forms.ToolStripMenuItem MenuItemAbout;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSaveAll;
-        private System.Windows.Forms.Button ButtonHONewWorld;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem worldToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem playerToolStripMenuItem1;

@@ -133,9 +133,9 @@ namespace RozWorld_Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap editorlogo {
+        internal static System.Drawing.Bitmap EditorLogo {
             get {
-                object obj = ResourceManager.GetObject("editorlogo", resourceCulture);
+                object obj = ResourceManager.GetObject("EditorLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +303,9 @@ namespace RozWorld_Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap UndoIcon {
+        internal static System.Drawing.Bitmap ThingUnknown {
             get {
-                object obj = ResourceManager.GetObject("UndoIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("ThingUnknown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +313,9 @@ namespace RozWorld_Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap unknown {
+        internal static System.Drawing.Bitmap UndoIcon {
             get {
-                object obj = ResourceManager.GetObject("unknown", resourceCulture);
+                object obj = ResourceManager.GetObject("UndoIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -121,9 +121,6 @@
   <data name="CloneNewWindowIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CloneNewWindowIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editorlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editorlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CopyIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CopyIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,9 +135,6 @@
   </data>
   <data name="MoveNewWindowIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MoveNewWindowIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="unknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unknown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewPlayerIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NewPlayerIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -198,5 +192,11 @@
   </data>
   <data name="UpArrowIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UpArrowIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditorLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editorlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ThingUnknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ThingUnknown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
