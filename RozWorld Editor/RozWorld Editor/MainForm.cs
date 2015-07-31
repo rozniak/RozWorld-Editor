@@ -18,9 +18,44 @@ namespace RozWorld_Editor
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i <= 29; i++)
+            
+        }
+
+
+        /// <summary>
+        /// [Event] Main tab interface mouse up.
+        /// </summary>
+        private void TabUI_MouseUp(object sender, MouseEventArgs e)
+        {
+            bool foundTab = false;
+            int i = 0;
+
+            if (e.Button == MouseButtons.Right) // Show context-menu for the clicked tab.
             {
-                listView1.Items.Add(new ListViewItem(new string[] { "6", "Bacon", "The Bacon of Gods", "1:70,8:0", "2" }));
+                do
+                {
+                    Rectangle tabBounds = this.TabUI.GetTabRect(i);
+
+                    if (tabBounds.Contains(e.Location))
+                    {
+                        this.TabUI.SelectedIndex = i;
+                        this.contextMenuStrip1.Show(this.TabUI, e.Location);
+                        foundTab = true;
+                    }
+                } while (!foundTab && i++ < this.TabUI.TabCount);
+            }
+            else if (e.Button == MouseButtons.Middle) // Request to close the middle clicked tab.
+            {
+                do
+                {
+                    Rectangle tabBounds = this.TabUI.GetTabRect(i);
+
+                    if (tabBounds.Contains(e.Location))
+                    {
+                        this.TabUI.TabPages.RemoveAt(i);
+                        foundTab = true;
+                    }
+                } while (!foundTab && i++ < this.TabUI.TabCount);
             }
         }
     }
