@@ -62,18 +62,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -82,7 +82,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="editoricon.ico" />
-    <None Include="Resources\NewFileIcon.png" />
+    <None Include="Resources\UndoIcon.png" />
+    <None Include="Resources\SaveIcon.png" />
+    <None Include="Resources\SaveAsIcon.png" />
+    <None Include="Resources\SaveAllIcon.png" />
+    <None Include="Resources\RedoIcon.png" />
+    <None Include="Resources\PasteIcon.png" />
+    <None Include="Resources\OpenWebsiteIcon.png" />
+    <None Include="Resources\OpenFileIcon.png" />
+    <None Include="Resources\NewWorldIcon.png" />
+    <None Include="Resources\NewWindowIcon.png" />
+    <None Include="Resources\NewPlayerIcon.png" />
+    <None Include="Resources\NewIcon.png" />
+    <None Include="Resources\NewBINIcon.png" />
+    <None Include="Resources\MoveNewWindowIcon.png" />
+    <None Include="Resources\HomePageIcon.png" />
+    <None Include="Resources\DeleteIcon.png" />
+    <None Include="Resources\CutIcon.png" />
+    <None Include="Resources\CopyIcon.png" />
+    <None Include="Resources\CloseFileIcon.png" />
+    <None Include="Resources\CloseAllIcon.png" />
+    <None Include="Resources\CloneNewWindowIcon.png" />
     <None Include="Resources\unknown.png" />
     <None Include="Resources\editorlogo.png" />
   </ItemGroup>

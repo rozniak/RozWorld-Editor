@@ -31,13 +31,45 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.ItemNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.worldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.playerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gUIOMETRYBINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.recentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.closeFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.moveTabToNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cloneTabToNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolbarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.standardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rozWorldHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.rozWorldEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editorGitHubDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutRozWorldEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabUI = new System.Windows.Forms.TabControl();
             this.TabHome = new System.Windows.Forms.TabPage();
             this.LabelHOOpenTasks = new System.Windows.Forms.Label();
@@ -48,13 +80,11 @@
             this.ButtonHONewPlayer = new System.Windows.Forms.Button();
             this.ButtonHONewWorld = new System.Windows.Forms.Button();
             this.LabelHONewTasks = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label33 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -73,7 +103,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -110,7 +139,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -120,15 +148,67 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.button24 = new System.Windows.Forms.Button();
+            this.label52 = new System.Windows.Forms.Label();
+            this.button19 = new System.Windows.Forms.Button();
+            this.label54 = new System.Windows.Forms.Label();
+            this.button20 = new System.Windows.Forms.Button();
+            this.label55 = new System.Windows.Forms.Label();
+            this.button21 = new System.Windows.Forms.Button();
+            this.label56 = new System.Windows.Forms.Label();
+            this.button22 = new System.Windows.Forms.Button();
+            this.label57 = new System.Windows.Forms.Label();
+            this.button23 = new System.Windows.Forms.Button();
+            this.label58 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown24 = new System.Windows.Forms.NumericUpDown();
+            this.label45 = new System.Windows.Forms.Label();
+            this.numericUpDown25 = new System.Windows.Forms.NumericUpDown();
+            this.label46 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label47 = new System.Windows.Forms.Label();
+            this.button15 = new System.Windows.Forms.Button();
+            this.label48 = new System.Windows.Forms.Label();
+            this.button16 = new System.Windows.Forms.Button();
+            this.label49 = new System.Windows.Forms.Label();
+            this.button17 = new System.Windows.Forms.Button();
+            this.label50 = new System.Windows.Forms.Label();
+            this.button18 = new System.Windows.Forms.Button();
+            this.label51 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown21 = new System.Windows.Forms.NumericUpDown();
+            this.label42 = new System.Windows.Forms.Label();
+            this.numericUpDown20 = new System.Windows.Forms.NumericUpDown();
+            this.label41 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.label40 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label38 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown23 = new System.Windows.Forms.NumericUpDown();
+            this.label44 = new System.Windows.Forms.Label();
+            this.numericUpDown22 = new System.Windows.Forms.NumericUpDown();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label32 = new System.Windows.Forms.Label();
             this.numericUpDown19 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown18 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown17 = new System.Windows.Forms.NumericUpDown();
             this.button7 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -140,116 +220,35 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.label36 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.label37 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label38 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.label39 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.label40 = new System.Windows.Forms.Label();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.numericUpDown20 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown21 = new System.Windows.Forms.NumericUpDown();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.numericUpDown22 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown23 = new System.Windows.Forms.NumericUpDown();
-            this.label44 = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown24 = new System.Windows.Forms.NumericUpDown();
-            this.label45 = new System.Windows.Forms.Label();
-            this.numericUpDown25 = new System.Windows.Forms.NumericUpDown();
-            this.label46 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.label47 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.button15 = new System.Windows.Forms.Button();
-            this.label48 = new System.Windows.Forms.Label();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.button16 = new System.Windows.Forms.Button();
-            this.label49 = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.button17 = new System.Windows.Forms.Button();
-            this.label50 = new System.Windows.Forms.Label();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.button18 = new System.Windows.Forms.Button();
-            this.label51 = new System.Windows.Forms.Label();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.button19 = new System.Windows.Forms.Button();
-            this.label54 = new System.Windows.Forms.Label();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.button20 = new System.Windows.Forms.Button();
-            this.label55 = new System.Windows.Forms.Label();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.button21 = new System.Windows.Forms.Button();
-            this.label56 = new System.Windows.Forms.Label();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.button22 = new System.Windows.Forms.Button();
-            this.label57 = new System.Windows.Forms.Label();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.button23 = new System.Windows.Forms.Button();
-            this.label58 = new System.Windows.Forms.Label();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.button24 = new System.Windows.Forms.Button();
-            this.label52 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.closeFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.recentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.moveTabToNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cloneTabToNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolbarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.standardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rozWorldHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rozWorldEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.editorGitHubDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboutRozWorldEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.ItemNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.worldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gUIOMETRYBINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.TabUI.SuspendLayout();
             this.TabHome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).BeginInit();
@@ -257,7 +256,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
@@ -270,44 +268,47 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.ToolStrip.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).BeginInit();
+            this.groupBox11.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            this.groupBox11.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).BeginInit();
+            this.ToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuStrip
@@ -331,6 +332,7 @@
             this.toolStripSeparator1,
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
+            this.saveAllToolStripMenuItem,
             this.toolStripSeparator4,
             this.recentToolStripMenuItem,
             this.toolStripSeparator3,
@@ -342,42 +344,82 @@
             this.MenuFile.Size = new System.Drawing.Size(35, 20);
             this.MenuFile.Text = "File";
             // 
-            // ItemNew
-            // 
-            this.ItemNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.worldToolStripMenuItem,
-            this.playerToolStripMenuItem,
-            this.gUIOMETRYBINToolStripMenuItem});
-            this.ItemNew.Image = global::RozWorld_Editor.Properties.Resources.NewFileIcon;
-            this.ItemNew.Name = "ItemNew";
-            this.ItemNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.ItemNew.Size = new System.Drawing.Size(193, 22);
-            this.ItemNew.Text = "New...";
-            // 
-            // worldToolStripMenuItem
-            // 
-            this.worldToolStripMenuItem.Name = "worldToolStripMenuItem";
-            this.worldToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.worldToolStripMenuItem.Text = "World";
-            // 
-            // playerToolStripMenuItem
-            // 
-            this.playerToolStripMenuItem.Name = "playerToolStripMenuItem";
-            this.playerToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.playerToolStripMenuItem.Text = "Player";
-            // 
-            // gUIOMETRYBINToolStripMenuItem
-            // 
-            this.gUIOMETRYBINToolStripMenuItem.Name = "gUIOMETRYBINToolStripMenuItem";
-            this.gUIOMETRYBINToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.gUIOMETRYBINToolStripMenuItem.Text = "GUIOMETRY.BIN";
-            // 
             // ItemOpen
             // 
+            this.ItemOpen.Image = global::RozWorld_Editor.Properties.Resources.OpenFileIcon;
             this.ItemOpen.Name = "ItemOpen";
             this.ItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.ItemOpen.Size = new System.Drawing.Size(193, 22);
             this.ItemOpen.Text = "Open...";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(190, 6);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.SaveIcon;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.SaveAsIcon;
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.saveAsToolStripMenuItem.Text = "Save As...";
+            // 
+            // saveAllToolStripMenuItem
+            // 
+            this.saveAllToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.SaveAllIcon;
+            this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
+            this.saveAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveAllToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.saveAllToolStripMenuItem.Text = "Save All...";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(190, 6);
+            // 
+            // recentToolStripMenuItem
+            // 
+            this.recentToolStripMenuItem.Name = "recentToolStripMenuItem";
+            this.recentToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.recentToolStripMenuItem.Text = "Recent...";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(190, 6);
+            // 
+            // closeFileToolStripMenuItem
+            // 
+            this.closeFileToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.CloseFileIcon;
+            this.closeFileToolStripMenuItem.Name = "closeFileToolStripMenuItem";
+            this.closeFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.closeFileToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.closeFileToolStripMenuItem.Text = "Close";
+            // 
+            // closeAllToolStripMenuItem
+            // 
+            this.closeAllToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.CloseAllIcon;
+            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
+            this.closeAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.W)));
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.closeAllToolStripMenuItem.Text = "Close All";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(190, 6);
             // 
             // ItemExit
             // 
@@ -401,6 +443,196 @@
             this.MenuEdit.Name = "MenuEdit";
             this.MenuEdit.Size = new System.Drawing.Size(37, 20);
             this.MenuEdit.Text = "Edit";
+            // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.UndoIcon;
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.undoToolStripMenuItem.Text = "Undo";
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.RedoIcon;
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.redoToolStripMenuItem.Text = "Redo";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(153, 6);
+            // 
+            // cutToolStripMenuItem
+            // 
+            this.cutToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.CutIcon;
+            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.cutToolStripMenuItem.Text = "Cut";
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.CopyIcon;
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.PasteIcon;
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.DeleteIcon;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(153, 6);
+            // 
+            // selectAllToolStripMenuItem
+            // 
+            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
+            this.selectAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.selectAllToolStripMenuItem.Text = "Select All";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newWindowToolStripMenuItem,
+            this.toolStripSeparator7,
+            this.moveTabToNewWindowToolStripMenuItem,
+            this.cloneTabToNewWindowToolStripMenuItem,
+            this.toolStripSeparator9,
+            this.toolbarsToolStripMenuItem,
+            this.toolStripSeparator8,
+            this.homeToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // newWindowToolStripMenuItem
+            // 
+            this.newWindowToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.NewWindowIcon;
+            this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
+            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.newWindowToolStripMenuItem.Text = "New Window";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(197, 6);
+            // 
+            // moveTabToNewWindowToolStripMenuItem
+            // 
+            this.moveTabToNewWindowToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.MoveNewWindowIcon;
+            this.moveTabToNewWindowToolStripMenuItem.Name = "moveTabToNewWindowToolStripMenuItem";
+            this.moveTabToNewWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.moveTabToNewWindowToolStripMenuItem.Text = "Move Tab to New Window";
+            // 
+            // cloneTabToNewWindowToolStripMenuItem
+            // 
+            this.cloneTabToNewWindowToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.CloneNewWindowIcon;
+            this.cloneTabToNewWindowToolStripMenuItem.Name = "cloneTabToNewWindowToolStripMenuItem";
+            this.cloneTabToNewWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.cloneTabToNewWindowToolStripMenuItem.Text = "Clone Tab to New Window";
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(197, 6);
+            // 
+            // toolbarsToolStripMenuItem
+            // 
+            this.toolbarsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.standardToolStripMenuItem});
+            this.toolbarsToolStripMenuItem.Name = "toolbarsToolStripMenuItem";
+            this.toolbarsToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.toolbarsToolStripMenuItem.Text = "Toolbars...";
+            // 
+            // standardToolStripMenuItem
+            // 
+            this.standardToolStripMenuItem.Checked = true;
+            this.standardToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.standardToolStripMenuItem.Name = "standardToolStripMenuItem";
+            this.standardToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.standardToolStripMenuItem.Text = "Standard";
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(197, 6);
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.HomePageIcon;
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.homeToolStripMenuItem.Text = "Home Page";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rozWorldHomeToolStripMenuItem,
+            this.toolStripSeparator10,
+            this.rozWorldEditorToolStripMenuItem,
+            this.editorGitHubDirectoryToolStripMenuItem,
+            this.toolStripSeparator11,
+            this.aboutRozWorldEditorToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // rozWorldHomeToolStripMenuItem
+            // 
+            this.rozWorldHomeToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.HomePageIcon;
+            this.rozWorldHomeToolStripMenuItem.Name = "rozWorldHomeToolStripMenuItem";
+            this.rozWorldHomeToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.rozWorldHomeToolStripMenuItem.Text = "RozWorld Home Page";
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(199, 6);
+            // 
+            // rozWorldEditorToolStripMenuItem
+            // 
+            this.rozWorldEditorToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.OpenWebsiteIcon;
+            this.rozWorldEditorToolStripMenuItem.Name = "rozWorldEditorToolStripMenuItem";
+            this.rozWorldEditorToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.rozWorldEditorToolStripMenuItem.Text = "Editor Documentation";
+            // 
+            // editorGitHubDirectoryToolStripMenuItem
+            // 
+            this.editorGitHubDirectoryToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.OpenWebsiteIcon;
+            this.editorGitHubDirectoryToolStripMenuItem.Name = "editorGitHubDirectoryToolStripMenuItem";
+            this.editorGitHubDirectoryToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.editorGitHubDirectoryToolStripMenuItem.Text = "Editor GitHub Directory";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(199, 6);
+            // 
+            // aboutRozWorldEditorToolStripMenuItem
+            // 
+            this.aboutRozWorldEditorToolStripMenuItem.Name = "aboutRozWorldEditorToolStripMenuItem";
+            this.aboutRozWorldEditorToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.aboutRozWorldEditorToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.aboutRozWorldEditorToolStripMenuItem.Text = "About RozWorld Editor";
             // 
             // TabUI
             // 
@@ -514,18 +746,6 @@
             this.LabelHONewTasks.TabIndex = 1;
             this.LabelHONewTasks.Text = "Create New...";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::RozWorld_Editor.Properties.Resources.editorlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(792, 187);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.label33);
@@ -583,16 +803,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(646, 495);
             this.panel1.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::RozWorld_Editor.Properties.Resources.unknown;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 30);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // tabPage2
             // 
@@ -826,15 +1036,6 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(150, 21);
             this.comboBox2.TabIndex = 10;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(162, 19);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
             // 
             // groupBox3
             // 
@@ -1245,15 +1446,6 @@
             this.comboBox1.Size = new System.Drawing.Size(113, 21);
             this.comboBox1.TabIndex = 7;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(181, 20);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -1357,471 +1549,140 @@
             this.tabPage3.Text = "GUIOMETRY - guiometry.bin";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label34.Location = new System.Drawing.Point(8, 3);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(243, 24);
-            this.label34.TabIndex = 1;
-            this.label34.Text = "GUIOMETRY.BIN Editor";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.numericUpDown23);
-            this.groupBox5.Controls.Add(this.label44);
-            this.groupBox5.Controls.Add(this.numericUpDown22);
-            this.groupBox5.Controls.Add(this.label43);
-            this.groupBox5.Controls.Add(this.label36);
-            this.groupBox5.Controls.Add(this.button9);
-            this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.Controls.Add(this.button6);
-            this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Controls.Add(this.listBox1);
-            this.groupBox5.Controls.Add(this.label29);
-            this.groupBox5.Controls.Add(this.label27);
-            this.groupBox5.Controls.Add(this.comboBox4);
-            this.groupBox5.Location = new System.Drawing.Point(12, 30);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(356, 299);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Font Editor";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label32);
-            this.groupBox6.Controls.Add(this.numericUpDown19);
-            this.groupBox6.Controls.Add(this.numericUpDown18);
-            this.groupBox6.Controls.Add(this.numericUpDown17);
-            this.groupBox6.Controls.Add(this.button7);
-            this.groupBox6.Controls.Add(this.pictureBox5);
-            this.groupBox6.Controls.Add(this.label31);
-            this.groupBox6.Controls.Add(this.label28);
-            this.groupBox6.Controls.Add(this.label30);
-            this.groupBox6.Location = new System.Drawing.Point(9, 69);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(338, 189);
-            this.groupBox6.TabIndex = 12;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Character Details";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(145, 90);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(48, 13);
-            this.label32.TabIndex = 13;
-            this.label32.Text = "Y Offset:";
-            // 
-            // numericUpDown19
-            // 
-            this.numericUpDown19.Location = new System.Drawing.Point(148, 106);
-            this.numericUpDown19.Name = "numericUpDown19";
-            this.numericUpDown19.Size = new System.Drawing.Size(78, 20);
-            this.numericUpDown19.TabIndex = 7;
-            // 
-            // numericUpDown18
-            // 
-            this.numericUpDown18.Location = new System.Drawing.Point(232, 67);
-            this.numericUpDown18.Name = "numericUpDown18";
-            this.numericUpDown18.Size = new System.Drawing.Size(78, 20);
-            this.numericUpDown18.TabIndex = 7;
-            // 
-            // numericUpDown17
-            // 
-            this.numericUpDown17.Location = new System.Drawing.Point(148, 67);
-            this.numericUpDown17.Name = "numericUpDown17";
-            this.numericUpDown17.Size = new System.Drawing.Size(78, 20);
-            this.numericUpDown17.TabIndex = 7;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(219, 19);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(103, 23);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Blitting...";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox5.Location = new System.Drawing.Point(6, 50);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(136, 127);
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(229, 51);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(32, 13);
-            this.label31.TabIndex = 10;
-            this.label31.Text = "After:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(6, 34);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(97, 13);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "Character Preview:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(145, 51);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(41, 13);
-            this.label30.TabIndex = 8;
-            this.label30.Text = "Before:";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(228, 40);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(21, 23);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "-";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(201, 40);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(21, 23);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "+";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(260, 19);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(90, 43);
-            this.listBox1.TabIndex = 5;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(198, 22);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(56, 13);
-            this.label29.TabIndex = 4;
-            this.label29.Text = "Character:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(6, 22);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(31, 13);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "Font:";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Chat Font",
-            "Small Font",
-            "Medium Font (Buttons etc.)",
-            "Huge Font"});
-            this.comboBox4.Location = new System.Drawing.Point(43, 19);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(149, 21);
-            this.comboBox4.TabIndex = 0;
-            // 
-            // ToolStrip
-            // 
-            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.ToolStrip.Location = new System.Drawing.Point(0, 24);
-            this.ToolStrip.Name = "ToolStrip";
-            this.ToolStrip.Size = new System.Drawing.Size(814, 25);
-            this.ToolStrip.TabIndex = 2;
-            this.ToolStrip.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::RozWorld_Editor.Properties.Resources.NewFileIcon;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "New...";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Controls.Add(this.button13);
-            this.groupBox7.Controls.Add(this.label40);
-            this.groupBox7.Controls.Add(this.pictureBox10);
-            this.groupBox7.Controls.Add(this.button12);
-            this.groupBox7.Controls.Add(this.label39);
-            this.groupBox7.Controls.Add(this.pictureBox9);
-            this.groupBox7.Controls.Add(this.button11);
-            this.groupBox7.Controls.Add(this.label38);
-            this.groupBox7.Controls.Add(this.pictureBox8);
-            this.groupBox7.Controls.Add(this.button10);
-            this.groupBox7.Controls.Add(this.label37);
-            this.groupBox7.Controls.Add(this.pictureBox7);
-            this.groupBox7.Controls.Add(this.button8);
-            this.groupBox7.Controls.Add(this.label35);
-            this.groupBox7.Controls.Add(this.pictureBox6);
-            this.groupBox7.Location = new System.Drawing.Point(374, 6);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(424, 125);
-            this.groupBox7.TabIndex = 2;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Button Editor";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Location = new System.Drawing.Point(9, 32);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(6, 16);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(34, 13);
-            this.label35.TabIndex = 1;
-            this.label35.Text = "Body:";
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(9, 86);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(48, 23);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "Set...";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(117, 46);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "Set...";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(6, 49);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(46, 13);
-            this.label36.TabIndex = 14;
-            this.label36.Text = "Texture:";
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(63, 86);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(48, 23);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Set...";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(60, 16);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(29, 13);
-            this.label37.TabIndex = 4;
-            this.label37.Text = "Top:";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Location = new System.Drawing.Point(63, 32);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox7.TabIndex = 3;
-            this.pictureBox7.TabStop = false;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(117, 86);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(48, 23);
-            this.button11.TabIndex = 8;
-            this.button11.Text = "Set...";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(114, 16);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(31, 13);
-            this.label38.TabIndex = 7;
-            this.label38.Text = "Side:";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Location = new System.Drawing.Point(117, 32);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox8.TabIndex = 6;
-            this.pictureBox8.TabStop = false;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(171, 86);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(48, 23);
-            this.button12.TabIndex = 11;
-            this.button12.Text = "Set...";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(168, 16);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(56, 13);
-            this.label39.TabIndex = 10;
-            this.label39.Text = "Edge SW:";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Location = new System.Drawing.Point(171, 32);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox9.TabIndex = 9;
-            this.pictureBox9.TabStop = false;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(225, 86);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(48, 23);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "Set...";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(222, 16);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(53, 13);
-            this.label40.TabIndex = 13;
-            this.label40.Text = "Edge NE:";
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Location = new System.Drawing.Point(225, 32);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox10.TabIndex = 12;
-            this.pictureBox10.TabStop = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(6, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(81, 17);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Centre Text";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.numericUpDown21);
-            this.groupBox8.Controls.Add(this.label42);
-            this.groupBox8.Controls.Add(this.numericUpDown20);
-            this.groupBox8.Controls.Add(this.label41);
-            this.groupBox8.Controls.Add(this.checkBox1);
-            this.groupBox8.Location = new System.Drawing.Point(281, 16);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(135, 99);
-            this.groupBox8.TabIndex = 16;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Text Details";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(6, 44);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(60, 13);
-            this.label41.TabIndex = 16;
-            this.label41.Text = "Offset Top:";
-            // 
-            // numericUpDown20
-            // 
-            this.numericUpDown20.Location = new System.Drawing.Point(72, 42);
-            this.numericUpDown20.Name = "numericUpDown20";
-            this.numericUpDown20.Size = new System.Drawing.Size(57, 20);
-            this.numericUpDown20.TabIndex = 17;
-            // 
-            // numericUpDown21
-            // 
-            this.numericUpDown21.Location = new System.Drawing.Point(72, 68);
-            this.numericUpDown21.Name = "numericUpDown21";
-            this.numericUpDown21.Size = new System.Drawing.Size(57, 20);
-            this.numericUpDown21.TabIndex = 19;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(6, 70);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(59, 13);
-            this.label42.TabIndex = 18;
-            this.label42.Text = "Offset Left:";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(6, 273);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(80, 13);
-            this.label43.TabIndex = 15;
-            this.label43.Text = "Spacing Width:";
-            // 
-            // numericUpDown22
-            // 
-            this.numericUpDown22.Location = new System.Drawing.Point(92, 271);
-            this.numericUpDown22.Name = "numericUpDown22";
-            this.numericUpDown22.Size = new System.Drawing.Size(78, 20);
-            this.numericUpDown22.TabIndex = 14;
-            // 
-            // numericUpDown23
-            // 
-            this.numericUpDown23.Location = new System.Drawing.Point(269, 271);
-            this.numericUpDown23.Name = "numericUpDown23";
-            this.numericUpDown23.Size = new System.Drawing.Size(78, 20);
-            this.numericUpDown23.TabIndex = 16;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(199, 273);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(64, 13);
-            this.label44.TabIndex = 17;
-            this.label44.Text = "Line Height:";
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.button24);
+            this.groupBox11.Controls.Add(this.label52);
+            this.groupBox11.Controls.Add(this.pictureBox21);
+            this.groupBox11.Controls.Add(this.button19);
+            this.groupBox11.Controls.Add(this.label54);
+            this.groupBox11.Controls.Add(this.pictureBox16);
+            this.groupBox11.Controls.Add(this.button20);
+            this.groupBox11.Controls.Add(this.label55);
+            this.groupBox11.Controls.Add(this.pictureBox17);
+            this.groupBox11.Controls.Add(this.button21);
+            this.groupBox11.Controls.Add(this.label56);
+            this.groupBox11.Controls.Add(this.pictureBox18);
+            this.groupBox11.Controls.Add(this.button22);
+            this.groupBox11.Controls.Add(this.label57);
+            this.groupBox11.Controls.Add(this.pictureBox19);
+            this.groupBox11.Controls.Add(this.button23);
+            this.groupBox11.Controls.Add(this.label58);
+            this.groupBox11.Controls.Add(this.pictureBox20);
+            this.groupBox11.Location = new System.Drawing.Point(374, 268);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(424, 125);
+            this.groupBox11.TabIndex = 18;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "CheckBox Editor";
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(279, 86);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(48, 23);
+            this.button24.TabIndex = 17;
+            this.button24.Text = "Set...";
+            this.button24.UseVisualStyleBackColor = true;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(276, 16);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(31, 13);
+            this.label52.TabIndex = 16;
+            this.label52.Text = "Tick:";
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(225, 86);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(48, 23);
+            this.button19.TabIndex = 14;
+            this.button19.Text = "Set...";
+            this.button19.UseVisualStyleBackColor = true;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(222, 16);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(53, 13);
+            this.label54.TabIndex = 13;
+            this.label54.Text = "Edge NE:";
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(171, 86);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(48, 23);
+            this.button20.TabIndex = 11;
+            this.button20.Text = "Set...";
+            this.button20.UseVisualStyleBackColor = true;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(168, 16);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(56, 13);
+            this.label55.TabIndex = 10;
+            this.label55.Text = "Edge SW:";
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(117, 86);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(48, 23);
+            this.button21.TabIndex = 8;
+            this.button21.Text = "Set...";
+            this.button21.UseVisualStyleBackColor = true;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(114, 16);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(31, 13);
+            this.label56.TabIndex = 7;
+            this.label56.Text = "Side:";
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(63, 86);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(48, 23);
+            this.button22.TabIndex = 5;
+            this.button22.Text = "Set...";
+            this.button22.UseVisualStyleBackColor = true;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(60, 16);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(29, 13);
+            this.label57.TabIndex = 4;
+            this.label57.Text = "Top:";
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(9, 86);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(48, 23);
+            this.button23.TabIndex = 2;
+            this.button23.Text = "Set...";
+            this.button23.UseVisualStyleBackColor = true;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(6, 16);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(34, 13);
+            this.label58.TabIndex = 1;
+            this.label58.Text = "Body:";
             // 
             // groupBox9
             // 
@@ -1922,14 +1783,6 @@
             this.label47.TabIndex = 13;
             this.label47.Text = "Edge NE:";
             // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Location = new System.Drawing.Point(225, 32);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox11.TabIndex = 12;
-            this.pictureBox11.TabStop = false;
-            // 
             // button15
             // 
             this.button15.Location = new System.Drawing.Point(171, 86);
@@ -1947,14 +1800,6 @@
             this.label48.Size = new System.Drawing.Size(56, 13);
             this.label48.TabIndex = 10;
             this.label48.Text = "Edge SW:";
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Location = new System.Drawing.Point(171, 32);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox12.TabIndex = 9;
-            this.pictureBox12.TabStop = false;
             // 
             // button16
             // 
@@ -1974,14 +1819,6 @@
             this.label49.TabIndex = 7;
             this.label49.Text = "Side:";
             // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Location = new System.Drawing.Point(117, 32);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox13.TabIndex = 6;
-            this.pictureBox13.TabStop = false;
-            // 
             // button17
             // 
             this.button17.Location = new System.Drawing.Point(63, 86);
@@ -1999,14 +1836,6 @@
             this.label50.Size = new System.Drawing.Size(29, 13);
             this.label50.TabIndex = 4;
             this.label50.Text = "Top:";
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Location = new System.Drawing.Point(63, 32);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox14.TabIndex = 3;
-            this.pictureBox14.TabStop = false;
             // 
             // button18
             // 
@@ -2026,188 +1855,461 @@
             this.label51.TabIndex = 1;
             this.label51.Text = "Body:";
             // 
-            // pictureBox15
+            // groupBox7
             // 
-            this.pictureBox15.Location = new System.Drawing.Point(9, 32);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox15.TabIndex = 0;
-            this.pictureBox15.TabStop = false;
+            this.groupBox7.Controls.Add(this.groupBox8);
+            this.groupBox7.Controls.Add(this.button13);
+            this.groupBox7.Controls.Add(this.label40);
+            this.groupBox7.Controls.Add(this.pictureBox10);
+            this.groupBox7.Controls.Add(this.button12);
+            this.groupBox7.Controls.Add(this.label39);
+            this.groupBox7.Controls.Add(this.pictureBox9);
+            this.groupBox7.Controls.Add(this.button11);
+            this.groupBox7.Controls.Add(this.label38);
+            this.groupBox7.Controls.Add(this.pictureBox8);
+            this.groupBox7.Controls.Add(this.button10);
+            this.groupBox7.Controls.Add(this.label37);
+            this.groupBox7.Controls.Add(this.pictureBox7);
+            this.groupBox7.Controls.Add(this.button8);
+            this.groupBox7.Controls.Add(this.label35);
+            this.groupBox7.Controls.Add(this.pictureBox6);
+            this.groupBox7.Location = new System.Drawing.Point(374, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(424, 125);
+            this.groupBox7.TabIndex = 2;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Button Editor";
             // 
-            // groupBox11
+            // groupBox8
             // 
-            this.groupBox11.Controls.Add(this.button24);
-            this.groupBox11.Controls.Add(this.label52);
-            this.groupBox11.Controls.Add(this.pictureBox21);
-            this.groupBox11.Controls.Add(this.button19);
-            this.groupBox11.Controls.Add(this.label54);
-            this.groupBox11.Controls.Add(this.pictureBox16);
-            this.groupBox11.Controls.Add(this.button20);
-            this.groupBox11.Controls.Add(this.label55);
-            this.groupBox11.Controls.Add(this.pictureBox17);
-            this.groupBox11.Controls.Add(this.button21);
-            this.groupBox11.Controls.Add(this.label56);
-            this.groupBox11.Controls.Add(this.pictureBox18);
-            this.groupBox11.Controls.Add(this.button22);
-            this.groupBox11.Controls.Add(this.label57);
-            this.groupBox11.Controls.Add(this.pictureBox19);
-            this.groupBox11.Controls.Add(this.button23);
-            this.groupBox11.Controls.Add(this.label58);
-            this.groupBox11.Controls.Add(this.pictureBox20);
-            this.groupBox11.Location = new System.Drawing.Point(374, 268);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(424, 125);
-            this.groupBox11.TabIndex = 18;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "CheckBox Editor";
+            this.groupBox8.Controls.Add(this.numericUpDown21);
+            this.groupBox8.Controls.Add(this.label42);
+            this.groupBox8.Controls.Add(this.numericUpDown20);
+            this.groupBox8.Controls.Add(this.label41);
+            this.groupBox8.Controls.Add(this.checkBox1);
+            this.groupBox8.Location = new System.Drawing.Point(281, 16);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(135, 99);
+            this.groupBox8.TabIndex = 16;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Text Details";
             // 
-            // button19
+            // numericUpDown21
             // 
-            this.button19.Location = new System.Drawing.Point(225, 86);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(48, 23);
-            this.button19.TabIndex = 14;
-            this.button19.Text = "Set...";
-            this.button19.UseVisualStyleBackColor = true;
+            this.numericUpDown21.Location = new System.Drawing.Point(72, 68);
+            this.numericUpDown21.Name = "numericUpDown21";
+            this.numericUpDown21.Size = new System.Drawing.Size(57, 20);
+            this.numericUpDown21.TabIndex = 19;
             // 
-            // label54
+            // label42
             // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(222, 16);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(53, 13);
-            this.label54.TabIndex = 13;
-            this.label54.Text = "Edge NE:";
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(6, 70);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(59, 13);
+            this.label42.TabIndex = 18;
+            this.label42.Text = "Offset Left:";
             // 
-            // pictureBox16
+            // numericUpDown20
             // 
-            this.pictureBox16.Location = new System.Drawing.Point(225, 32);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox16.TabIndex = 12;
-            this.pictureBox16.TabStop = false;
+            this.numericUpDown20.Location = new System.Drawing.Point(72, 42);
+            this.numericUpDown20.Name = "numericUpDown20";
+            this.numericUpDown20.Size = new System.Drawing.Size(57, 20);
+            this.numericUpDown20.TabIndex = 17;
             // 
-            // button20
+            // label41
             // 
-            this.button20.Location = new System.Drawing.Point(171, 86);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(48, 23);
-            this.button20.TabIndex = 11;
-            this.button20.Text = "Set...";
-            this.button20.UseVisualStyleBackColor = true;
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(6, 44);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(60, 13);
+            this.label41.TabIndex = 16;
+            this.label41.Text = "Offset Top:";
             // 
-            // label55
+            // checkBox1
             // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(168, 16);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(56, 13);
-            this.label55.TabIndex = 10;
-            this.label55.Text = "Edge SW:";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(6, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(81, 17);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.Text = "Centre Text";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // pictureBox17
+            // button13
             // 
-            this.pictureBox17.Location = new System.Drawing.Point(171, 32);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox17.TabIndex = 9;
-            this.pictureBox17.TabStop = false;
+            this.button13.Location = new System.Drawing.Point(225, 86);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(48, 23);
+            this.button13.TabIndex = 14;
+            this.button13.Text = "Set...";
+            this.button13.UseVisualStyleBackColor = true;
             // 
-            // button21
+            // label40
             // 
-            this.button21.Location = new System.Drawing.Point(117, 86);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(48, 23);
-            this.button21.TabIndex = 8;
-            this.button21.Text = "Set...";
-            this.button21.UseVisualStyleBackColor = true;
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(222, 16);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(53, 13);
+            this.label40.TabIndex = 13;
+            this.label40.Text = "Edge NE:";
             // 
-            // label56
+            // button12
             // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(114, 16);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(31, 13);
-            this.label56.TabIndex = 7;
-            this.label56.Text = "Side:";
+            this.button12.Location = new System.Drawing.Point(171, 86);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(48, 23);
+            this.button12.TabIndex = 11;
+            this.button12.Text = "Set...";
+            this.button12.UseVisualStyleBackColor = true;
             // 
-            // pictureBox18
+            // label39
             // 
-            this.pictureBox18.Location = new System.Drawing.Point(117, 32);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox18.TabIndex = 6;
-            this.pictureBox18.TabStop = false;
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(168, 16);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(56, 13);
+            this.label39.TabIndex = 10;
+            this.label39.Text = "Edge SW:";
             // 
-            // button22
+            // button11
             // 
-            this.button22.Location = new System.Drawing.Point(63, 86);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(48, 23);
-            this.button22.TabIndex = 5;
-            this.button22.Text = "Set...";
-            this.button22.UseVisualStyleBackColor = true;
+            this.button11.Location = new System.Drawing.Point(117, 86);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(48, 23);
+            this.button11.TabIndex = 8;
+            this.button11.Text = "Set...";
+            this.button11.UseVisualStyleBackColor = true;
             // 
-            // label57
+            // label38
             // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(60, 16);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(29, 13);
-            this.label57.TabIndex = 4;
-            this.label57.Text = "Top:";
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(114, 16);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(31, 13);
+            this.label38.TabIndex = 7;
+            this.label38.Text = "Side:";
             // 
-            // pictureBox19
+            // button10
             // 
-            this.pictureBox19.Location = new System.Drawing.Point(63, 32);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox19.TabIndex = 3;
-            this.pictureBox19.TabStop = false;
+            this.button10.Location = new System.Drawing.Point(63, 86);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(48, 23);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "Set...";
+            this.button10.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // label37
             // 
-            this.button23.Location = new System.Drawing.Point(9, 86);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(48, 23);
-            this.button23.TabIndex = 2;
-            this.button23.Text = "Set...";
-            this.button23.UseVisualStyleBackColor = true;
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(60, 16);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(29, 13);
+            this.label37.TabIndex = 4;
+            this.label37.Text = "Top:";
             // 
-            // label58
+            // button8
             // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(6, 16);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(34, 13);
-            this.label58.TabIndex = 1;
-            this.label58.Text = "Body:";
+            this.button8.Location = new System.Drawing.Point(9, 86);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(48, 23);
+            this.button8.TabIndex = 2;
+            this.button8.Text = "Set...";
+            this.button8.UseVisualStyleBackColor = true;
             // 
-            // pictureBox20
+            // label35
             // 
-            this.pictureBox20.Location = new System.Drawing.Point(9, 32);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox20.TabIndex = 0;
-            this.pictureBox20.TabStop = false;
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(6, 16);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(34, 13);
+            this.label35.TabIndex = 1;
+            this.label35.Text = "Body:";
             // 
-            // button24
+            // label34
             // 
-            this.button24.Location = new System.Drawing.Point(279, 86);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(48, 23);
-            this.button24.TabIndex = 17;
-            this.button24.Text = "Set...";
-            this.button24.UseVisualStyleBackColor = true;
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label34.Location = new System.Drawing.Point(8, 3);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(243, 24);
+            this.label34.TabIndex = 1;
+            this.label34.Text = "GUIOMETRY.BIN Editor";
             // 
-            // label52
+            // groupBox5
             // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(276, 16);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(31, 13);
-            this.label52.TabIndex = 16;
-            this.label52.Text = "Tick:";
+            this.groupBox5.Controls.Add(this.numericUpDown23);
+            this.groupBox5.Controls.Add(this.label44);
+            this.groupBox5.Controls.Add(this.numericUpDown22);
+            this.groupBox5.Controls.Add(this.label43);
+            this.groupBox5.Controls.Add(this.label36);
+            this.groupBox5.Controls.Add(this.button9);
+            this.groupBox5.Controls.Add(this.groupBox6);
+            this.groupBox5.Controls.Add(this.button6);
+            this.groupBox5.Controls.Add(this.button5);
+            this.groupBox5.Controls.Add(this.listBox1);
+            this.groupBox5.Controls.Add(this.label29);
+            this.groupBox5.Controls.Add(this.label27);
+            this.groupBox5.Controls.Add(this.comboBox4);
+            this.groupBox5.Location = new System.Drawing.Point(12, 30);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(356, 299);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Font Editor";
+            // 
+            // numericUpDown23
+            // 
+            this.numericUpDown23.Location = new System.Drawing.Point(269, 271);
+            this.numericUpDown23.Name = "numericUpDown23";
+            this.numericUpDown23.Size = new System.Drawing.Size(78, 20);
+            this.numericUpDown23.TabIndex = 16;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(199, 273);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(64, 13);
+            this.label44.TabIndex = 17;
+            this.label44.Text = "Line Height:";
+            // 
+            // numericUpDown22
+            // 
+            this.numericUpDown22.Location = new System.Drawing.Point(92, 271);
+            this.numericUpDown22.Name = "numericUpDown22";
+            this.numericUpDown22.Size = new System.Drawing.Size(78, 20);
+            this.numericUpDown22.TabIndex = 14;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(6, 273);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(80, 13);
+            this.label43.TabIndex = 15;
+            this.label43.Text = "Spacing Width:";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(6, 49);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(46, 13);
+            this.label36.TabIndex = 14;
+            this.label36.Text = "Texture:";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(117, 46);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 13;
+            this.button9.Text = "Set...";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label32);
+            this.groupBox6.Controls.Add(this.numericUpDown19);
+            this.groupBox6.Controls.Add(this.numericUpDown18);
+            this.groupBox6.Controls.Add(this.numericUpDown17);
+            this.groupBox6.Controls.Add(this.button7);
+            this.groupBox6.Controls.Add(this.pictureBox5);
+            this.groupBox6.Controls.Add(this.label31);
+            this.groupBox6.Controls.Add(this.label28);
+            this.groupBox6.Controls.Add(this.label30);
+            this.groupBox6.Location = new System.Drawing.Point(9, 69);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(338, 189);
+            this.groupBox6.TabIndex = 12;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Character Details";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(145, 90);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(48, 13);
+            this.label32.TabIndex = 13;
+            this.label32.Text = "Y Offset:";
+            // 
+            // numericUpDown19
+            // 
+            this.numericUpDown19.Location = new System.Drawing.Point(148, 106);
+            this.numericUpDown19.Name = "numericUpDown19";
+            this.numericUpDown19.Size = new System.Drawing.Size(78, 20);
+            this.numericUpDown19.TabIndex = 7;
+            // 
+            // numericUpDown18
+            // 
+            this.numericUpDown18.Location = new System.Drawing.Point(232, 67);
+            this.numericUpDown18.Name = "numericUpDown18";
+            this.numericUpDown18.Size = new System.Drawing.Size(78, 20);
+            this.numericUpDown18.TabIndex = 7;
+            // 
+            // numericUpDown17
+            // 
+            this.numericUpDown17.Location = new System.Drawing.Point(148, 67);
+            this.numericUpDown17.Name = "numericUpDown17";
+            this.numericUpDown17.Size = new System.Drawing.Size(78, 20);
+            this.numericUpDown17.TabIndex = 7;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(219, 19);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(103, 23);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Blitting...";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(229, 51);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(32, 13);
+            this.label31.TabIndex = 10;
+            this.label31.Text = "After:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 34);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(97, 13);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Character Preview:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(145, 51);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 13);
+            this.label30.TabIndex = 8;
+            this.label30.Text = "Before:";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(228, 40);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(21, 23);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "-";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(201, 40);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(21, 23);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "+";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(260, 19);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(90, 43);
+            this.listBox1.TabIndex = 5;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(198, 22);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(56, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Character:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 22);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(31, 13);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "Font:";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Chat Font",
+            "Small Font",
+            "Medium Font (Buttons etc.)",
+            "Huge Font"});
+            this.comboBox4.Location = new System.Drawing.Point(43, 19);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(149, 21);
+            this.comboBox4.TabIndex = 0;
+            // 
+            // ToolStrip
+            // 
+            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.ToolStrip.Location = new System.Drawing.Point(0, 24);
+            this.ToolStrip.Name = "ToolStrip";
+            this.ToolStrip.Size = new System.Drawing.Size(814, 25);
+            this.ToolStrip.TabIndex = 2;
+            this.ToolStrip.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "New...";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::RozWorld_Editor.Properties.Resources.editorlogo;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(792, 187);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::RozWorld_Editor.Properties.Resources.unknown;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 30);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Location = new System.Drawing.Point(162, 19);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(181, 20);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox21
             // 
@@ -2217,238 +2319,167 @@
             this.pictureBox21.TabIndex = 15;
             this.pictureBox21.TabStop = false;
             // 
-            // saveToolStripMenuItem
+            // pictureBox16
+            // 
+            this.pictureBox16.Location = new System.Drawing.Point(225, 32);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox16.TabIndex = 12;
+            this.pictureBox16.TabStop = false;
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.saveToolStripMenuItem.Text = "Save";
+            // pictureBox17
+            // 
+            this.pictureBox17.Location = new System.Drawing.Point(171, 32);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox17.TabIndex = 9;
+            this.pictureBox17.TabStop = false;
             // 
-            // saveAsToolStripMenuItem
+            // pictureBox18
+            // 
+            this.pictureBox18.Location = new System.Drawing.Point(117, 32);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox18.TabIndex = 6;
+            this.pictureBox18.TabStop = false;
             // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.saveAsToolStripMenuItem.Text = "Save As...";
+            // pictureBox19
+            // 
+            this.pictureBox19.Location = new System.Drawing.Point(63, 32);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox19.TabIndex = 3;
+            this.pictureBox19.TabStop = false;
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(190, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(190, 6);
-            // 
-            // closeFileToolStripMenuItem
-            // 
-            this.closeFileToolStripMenuItem.Name = "closeFileToolStripMenuItem";
-            this.closeFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.closeFileToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.closeFileToolStripMenuItem.Text = "Close";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(190, 6);
-            // 
-            // recentToolStripMenuItem
-            // 
-            this.recentToolStripMenuItem.Name = "recentToolStripMenuItem";
-            this.recentToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.recentToolStripMenuItem.Text = "Recent...";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(190, 6);
-            // 
-            // undoToolStripMenuItem
-            // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.undoToolStripMenuItem.Text = "Undo";
-            // 
-            // redoToolStripMenuItem
-            // 
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.redoToolStripMenuItem.Text = "Redo";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(153, 6);
-            // 
-            // cutToolStripMenuItem
-            // 
-            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.cutToolStripMenuItem.Text = "Cut";
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.copyToolStripMenuItem.Text = "Copy";
-            // 
-            // pasteToolStripMenuItem
-            // 
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.pasteToolStripMenuItem.Text = "Paste";
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(153, 6);
-            // 
-            // selectAllToolStripMenuItem
-            // 
-            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.selectAllToolStripMenuItem.Text = "Select All";
-            // 
-            // closeAllToolStripMenuItem
-            // 
-            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.W)));
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.closeAllToolStripMenuItem.Text = "Close All";
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newWindowToolStripMenuItem,
-            this.toolStripSeparator7,
-            this.moveTabToNewWindowToolStripMenuItem,
-            this.cloneTabToNewWindowToolStripMenuItem,
-            this.toolStripSeparator9,
-            this.toolbarsToolStripMenuItem,
-            this.toolStripSeparator8,
-            this.homeToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // newWindowToolStripMenuItem
-            // 
-            this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.newWindowToolStripMenuItem.Text = "New Window";
-            // 
-            // moveTabToNewWindowToolStripMenuItem
-            // 
-            this.moveTabToNewWindowToolStripMenuItem.Name = "moveTabToNewWindowToolStripMenuItem";
-            this.moveTabToNewWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.moveTabToNewWindowToolStripMenuItem.Text = "Move Tab to New Window";
-            // 
-            // cloneTabToNewWindowToolStripMenuItem
-            // 
-            this.cloneTabToNewWindowToolStripMenuItem.Name = "cloneTabToNewWindowToolStripMenuItem";
-            this.cloneTabToNewWindowToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.cloneTabToNewWindowToolStripMenuItem.Text = "Clone Tab to New Window";
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(197, 6);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(197, 6);
-            // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.homeToolStripMenuItem.Text = "Home Page";
-            // 
-            // toolbarsToolStripMenuItem
-            // 
-            this.toolbarsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.standardToolStripMenuItem});
-            this.toolbarsToolStripMenuItem.Name = "toolbarsToolStripMenuItem";
-            this.toolbarsToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.toolbarsToolStripMenuItem.Text = "Toolbars...";
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(197, 6);
-            // 
-            // standardToolStripMenuItem
-            // 
-            this.standardToolStripMenuItem.Checked = true;
-            this.standardToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.standardToolStripMenuItem.Name = "standardToolStripMenuItem";
-            this.standardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.standardToolStripMenuItem.Text = "Standard";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rozWorldHomeToolStripMenuItem,
-            this.toolStripSeparator10,
-            this.rozWorldEditorToolStripMenuItem,
-            this.editorGitHubDirectoryToolStripMenuItem,
-            this.toolStripSeparator11,
-            this.aboutRozWorldEditorToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // rozWorldHomeToolStripMenuItem
-            // 
-            this.rozWorldHomeToolStripMenuItem.Name = "rozWorldHomeToolStripMenuItem";
-            this.rozWorldHomeToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.rozWorldHomeToolStripMenuItem.Text = "RozWorld Home Page";
-            // 
-            // rozWorldEditorToolStripMenuItem
-            // 
-            this.rozWorldEditorToolStripMenuItem.Name = "rozWorldEditorToolStripMenuItem";
-            this.rozWorldEditorToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.rozWorldEditorToolStripMenuItem.Text = "Editor Documentation";
-            // 
-            // toolStripSeparator10
-            // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(199, 6);
-            // 
-            // editorGitHubDirectoryToolStripMenuItem
-            // 
-            this.editorGitHubDirectoryToolStripMenuItem.Name = "editorGitHubDirectoryToolStripMenuItem";
-            this.editorGitHubDirectoryToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.editorGitHubDirectoryToolStripMenuItem.Text = "Editor GitHub Directory";
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(199, 6);
-            // 
-            // aboutRozWorldEditorToolStripMenuItem
-            // 
-            this.aboutRozWorldEditorToolStripMenuItem.Name = "aboutRozWorldEditorToolStripMenuItem";
-            this.aboutRozWorldEditorToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutRozWorldEditorToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.aboutRozWorldEditorToolStripMenuItem.Text = "About RozWorld Editor";
+            // pictureBox20
+            // 
+            this.pictureBox20.Location = new System.Drawing.Point(9, 32);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox20.TabIndex = 0;
+            this.pictureBox20.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Location = new System.Drawing.Point(225, 32);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox11.TabIndex = 12;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Location = new System.Drawing.Point(171, 32);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox12.TabIndex = 9;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Location = new System.Drawing.Point(117, 32);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox13.TabIndex = 6;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Location = new System.Drawing.Point(63, 32);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox14.TabIndex = 3;
+            this.pictureBox14.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Location = new System.Drawing.Point(9, 32);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox15.TabIndex = 0;
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Location = new System.Drawing.Point(225, 32);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox10.TabIndex = 12;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Location = new System.Drawing.Point(171, 32);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox9.TabIndex = 9;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Location = new System.Drawing.Point(117, 32);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox8.TabIndex = 6;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(63, 32);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox7.TabIndex = 3;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(9, 32);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox5.Location = new System.Drawing.Point(6, 50);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(136, 127);
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
+            // ItemNew
+            // 
+            this.ItemNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.worldToolStripMenuItem,
+            this.playerToolStripMenuItem,
+            this.gUIOMETRYBINToolStripMenuItem});
+            this.ItemNew.Image = ((System.Drawing.Image)(resources.GetObject("ItemNew.Image")));
+            this.ItemNew.Name = "ItemNew";
+            this.ItemNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.ItemNew.Size = new System.Drawing.Size(193, 22);
+            this.ItemNew.Text = "New...";
+            // 
+            // worldToolStripMenuItem
+            // 
+            this.worldToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.NewWorldIcon;
+            this.worldToolStripMenuItem.Name = "worldToolStripMenuItem";
+            this.worldToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.worldToolStripMenuItem.Text = "World";
+            // 
+            // playerToolStripMenuItem
+            // 
+            this.playerToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.NewPlayerIcon;
+            this.playerToolStripMenuItem.Name = "playerToolStripMenuItem";
+            this.playerToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.playerToolStripMenuItem.Text = "Player";
+            // 
+            // gUIOMETRYBINToolStripMenuItem
+            // 
+            this.gUIOMETRYBINToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.NewBINIcon;
+            this.gUIOMETRYBINToolStripMenuItem.Name = "gUIOMETRYBINToolStripMenuItem";
+            this.gUIOMETRYBINToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.gUIOMETRYBINToolStripMenuItem.Text = "GUIOMETRY.BIN";
             // 
             // MainForm
             // 
@@ -2471,10 +2502,8 @@
             this.TabUI.ResumeLayout(false);
             this.TabHome.ResumeLayout(false);
             this.TabHome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -2484,7 +2513,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -2499,53 +2527,56 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.ToolStrip.ResumeLayout(false);
-            this.ToolStrip.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).EndInit();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).EndInit();
+            this.ToolStrip.ResumeLayout(false);
+            this.ToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2566,7 +2597,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button ButtonHONewGUIOMETRY;
         private System.Windows.Forms.Button ButtonHONewPlayer;
-        private System.Windows.Forms.Button ButtonHONewWorld;
         private System.Windows.Forms.Label LabelHOOpenTasks;
         private System.Windows.Forms.Button ButtonHOOpenGUIOMETRY;
         private System.Windows.Forms.Button ButtonHOOpenPlayer;
@@ -2768,6 +2798,8 @@
         private System.Windows.Forms.ToolStripMenuItem editorGitHubDirectoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripMenuItem aboutRozWorldEditorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAllToolStripMenuItem;
+        private System.Windows.Forms.Button ButtonHONewWorld;
     }
 }
 
