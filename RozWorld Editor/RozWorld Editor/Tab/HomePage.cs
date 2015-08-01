@@ -1,8 +1,19 @@
-﻿using System.Windows.Forms;
+﻿/**
+ * RozWorld_Editor.Tab.HomePage -- Home Page Tab
+ * 
+ * This source-code is part of the RozWorld Editor project by rozza of Oddmatics:
+ * <<http://www.oddmatics.co.uk>>
+ * <<http://roz.world/#editor>>
+ * <<http://github.com/rozniak/RozWorld-Editor>>
+ *
+ * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
+ */
+
+using System.Windows.Forms;
 
 namespace RozWorld_Editor.Tab
 {
-    public class HomePageTab : TabPage
+    public class HomePage : TabPage
     {
         private PictureBox PictureEditorLogo = new PictureBox();
 
@@ -17,7 +28,7 @@ namespace RozWorld_Editor.Tab
         private Button ButtonOpenGUIOMETRY = new Button();
 
 
-        public HomePageTab()
+        public HomePage()
         {
             this.Controls.Add(PictureEditorLogo);
             this.Controls.Add(LabelNewTasks);
@@ -30,7 +41,7 @@ namespace RozWorld_Editor.Tab
             this.Controls.Add(ButtonOpenGUIOMETRY);
 
             /**
-             * HomePageTab
+             * HomePage
              */
             this.Location = new System.Drawing.Point(4, 22);
             this.Name = "HomePageTab";

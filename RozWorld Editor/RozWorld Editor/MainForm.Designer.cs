@@ -76,19 +76,6 @@
             this.MenuHelpSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.TabUI = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label59 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -280,9 +267,6 @@
             this.deleteAndCloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.TabUI.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).BeginInit();
@@ -705,7 +689,6 @@
             this.TabUI.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TabUI.Controls.Add(this.tabPage1);
             this.TabUI.Controls.Add(this.tabPage2);
             this.TabUI.Controls.Add(this.tabPage3);
             this.TabUI.Location = new System.Drawing.Point(0, 52);
@@ -714,143 +697,6 @@
             this.TabUI.Size = new System.Drawing.Size(816, 530);
             this.TabUI.TabIndex = 1;
             this.TabUI.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TabUI_MouseUp);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.label59);
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.label53);
-            this.tabPage1.Controls.Add(this.button28);
-            this.tabPage1.Controls.Add(this.button27);
-            this.tabPage1.Controls.Add(this.button26);
-            this.tabPage1.Controls.Add(this.button25);
-            this.tabPage1.Controls.Add(this.label33);
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(808, 504);
-            this.tabPage1.TabIndex = 1;
-            this.tabPage1.Text = "World - 001.seg";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(76, 34);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(61, 13);
-            this.label59.TabIndex = 11;
-            this.label59.Text = "X0 , Y0, Z0";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(1, 110);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(152, 388);
-            this.panel2.TabIndex = 10;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::RozWorld_Editor.Properties.Resources.ThingUnknown;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Unknown Entity";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(41, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "N/A";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(9, 34);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(61, 13);
-            this.label53.TabIndex = 9;
-            this.label53.Text = "Navigation:";
-            // 
-            // button28
-            // 
-            this.button28.Image = global::RozWorld_Editor.Properties.Resources.RightArrowIcon;
-            this.button28.Location = new System.Drawing.Point(95, 62);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(24, 24);
-            this.button28.TabIndex = 8;
-            this.button28.UseVisualStyleBackColor = true;
-            // 
-            // button27
-            // 
-            this.button27.Image = global::RozWorld_Editor.Properties.Resources.LeftArrowIcon;
-            this.button27.Location = new System.Drawing.Point(35, 62);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(24, 24);
-            this.button27.TabIndex = 7;
-            this.button27.UseVisualStyleBackColor = true;
-            // 
-            // button26
-            // 
-            this.button26.Image = global::RozWorld_Editor.Properties.Resources.DownArrowIcon;
-            this.button26.Location = new System.Drawing.Point(65, 80);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(24, 24);
-            this.button26.TabIndex = 6;
-            this.button26.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            this.button25.Image = global::RozWorld_Editor.Properties.Resources.UpArrowIcon;
-            this.button25.Location = new System.Drawing.Point(65, 50);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(24, 24);
-            this.button25.TabIndex = 5;
-            this.button25.UseVisualStyleBackColor = true;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label33.Location = new System.Drawing.Point(8, 3);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(137, 24);
-            this.label33.TabIndex = 4;
-            this.label33.Text = "World Editor";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoScroll = true;
-            this.panel1.AutoScrollMinSize = new System.Drawing.Size(640, 480);
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(156, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(646, 495);
-            this.panel1.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -2776,11 +2622,6 @@
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
             this.TabUI.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -2867,11 +2708,6 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemExit;
         private System.Windows.Forms.ToolStripMenuItem MenuEdit;
         private System.Windows.Forms.TabControl TabUI;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -2953,7 +2789,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.NumericUpDown numericUpDown19;
         private System.Windows.Forms.NumericUpDown numericUpDown18;
@@ -3079,16 +2914,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button26;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.Label label59;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem closeTabToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeAllButThisToolStripMenuItem;

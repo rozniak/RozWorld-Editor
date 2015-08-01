@@ -1,10 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿/**
+ * RozWorld_Editor.MainForm -- Editor Main Window
+ * 
+ * This source-code is part of the RozWorld Editor project by rozza of Oddmatics:
+ * <<http://www.oddmatics.co.uk>>
+ * <<http://roz.world/#editor>>
+ * <<http://github.com/rozniak/RozWorld-Editor>>
+ *
+ * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
+ */
+
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace RozWorld_Editor
@@ -17,14 +23,15 @@ namespace RozWorld_Editor
 
             if (homePage)
             {
-                this.TabUI.TabPages.Add(new Tab.HomePageTab());
+                this.TabUI.TabPages.Add(new Tab.HomePage());
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            
-        }
+
+        /// <summary>
+        /// [Event] Form loaded.
+        /// </summary>
+        private void MainForm_Load(object sender, EventArgs e) { }
 
 
         /// <summary>
