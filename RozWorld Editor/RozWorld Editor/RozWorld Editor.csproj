@@ -59,7 +59,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tab\GUIOMETRYEditor.cs" />
     <Compile Include="Tab\HomePage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tab\PlayerEditor.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Tab\WorldEditor.cs">
