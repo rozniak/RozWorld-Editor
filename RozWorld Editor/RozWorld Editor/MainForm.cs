@@ -21,10 +21,56 @@ namespace RozWorld_Editor
         {
             InitializeComponent();
 
+            ToggleToolbar("ToolbarStandard", false);
+
             if (homePage)
             {
                 this.TabUI.TabPages.Add(new Tab.HomePage());
             }
+        }
+
+
+        /// <summary>
+        /// Toggles a toolbar on or off.
+        /// </summary>
+        /// <param name="toolbar">The name of the toolbar to toggle.</param>
+        /// <param name="status">The current status of the toolbar.</param>
+        private void ToggleToolbar(string toolbar, bool status)
+        {
+            if (status)
+            {
+                switch (toolbar)
+                {
+                    case "ToolbarStandard":
+                        this.Controls.RemoveByKey(toolbar);
+                        break;
+                }
+            }
+            else
+            {
+                switch (toolbar)
+                {
+                    case "ToolbarStandard":
+                        this.Controls.Add(new Toolbar.Standard());
+                        break;
+                }
+            }
+
+            MenuStrip.SendToBack(); // Make sure the main menu strip stays at the top
+        }
+
+
+        /// <summary>
+        /// [Event] "View > Toolbars > * " clicked.
+        /// </summary>
+        private void ToolstripToggleItem_Click(object sender, EventArgs e)
+        {
+            var menuItemSender = ((ToolStripMenuItem)sender);
+            string toolbar = menuItemSender.Name.Substring(11);
+
+            ToggleToolbar(toolbar, menuItemSender.Checked);
+
+            menuItemSender.Checked = !menuItemSender.Checked;
         }
 
 
@@ -51,7 +97,7 @@ namespace RozWorld_Editor
                     if (tabBounds.Contains(e.Location))
                     {
                         this.TabUI.SelectedIndex = i;
-                        this.contextMenuStrip1.Show(this.TabUI, e.Location);
+                        this.ContextTabs.Show(this.TabUI, e.Location);
                         foundTab = true;
                     }
                 } while (!foundTab && i++ < this.TabUI.TabCount);

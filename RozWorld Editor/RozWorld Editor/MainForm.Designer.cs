@@ -164,25 +164,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.ToolbarStandard = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.worldToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.playerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.gUIOMETRYBINToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ContextTabs = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.closeTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAllButThisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAllOnTheLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -237,8 +219,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.ToolbarStandard.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.ContextTabs.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuStrip
@@ -252,7 +233,7 @@
             this.MenuStrip.Name = "MenuStrip";
             this.MenuStrip.Size = new System.Drawing.Size(814, 24);
             this.MenuStrip.TabIndex = 0;
-            this.MenuStrip.Text = "menuStrip1";
+            this.MenuStrip.Text = "Menu Strip";
             // 
             // MenuFile
             // 
@@ -531,8 +512,9 @@
             this.MenuSubItemToolbarStandard.Checked = true;
             this.MenuSubItemToolbarStandard.CheckState = System.Windows.Forms.CheckState.Checked;
             this.MenuSubItemToolbarStandard.Name = "MenuSubItemToolbarStandard";
-            this.MenuSubItemToolbarStandard.Size = new System.Drawing.Size(118, 22);
+            this.MenuSubItemToolbarStandard.Size = new System.Drawing.Size(152, 22);
             this.MenuSubItemToolbarStandard.Text = "Standard";
+            this.MenuSubItemToolbarStandard.Click += new System.EventHandler(this.ToolstripToggleItem_Click);
             // 
             // MenuViewSeparator3
             // 
@@ -599,14 +581,12 @@
             // 
             // TabUI
             // 
-            this.TabUI.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TabUI.Controls.Add(this.tabPage3);
-            this.TabUI.Location = new System.Drawing.Point(0, 52);
+            this.TabUI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabUI.Location = new System.Drawing.Point(0, 24);
             this.TabUI.Name = "TabUI";
             this.TabUI.SelectedIndex = 0;
-            this.TabUI.Size = new System.Drawing.Size(816, 530);
+            this.TabUI.Size = new System.Drawing.Size(814, 556);
             this.TabUI.TabIndex = 1;
             this.TabUI.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TabUI_MouseUp);
             // 
@@ -620,7 +600,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(808, 504);
+            this.tabPage3.Size = new System.Drawing.Size(806, 530);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "GUIOMETRY - guiometry.bin";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1466,170 +1446,9 @@
             this.comboBox4.Size = new System.Drawing.Size(149, 21);
             this.comboBox4.TabIndex = 0;
             // 
-            // ToolbarStandard
+            // ContextTabs
             // 
-            this.ToolbarStandard.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripSeparator12,
-            this.toolStripButton5,
-            this.toolStripButton6,
-            this.toolStripButton7,
-            this.toolStripSeparator13,
-            this.toolStripButton8,
-            this.toolStripButton9,
-            this.toolStripSeparator14,
-            this.toolStripLabel1,
-            this.toolStripComboBox1});
-            this.ToolbarStandard.Location = new System.Drawing.Point(0, 24);
-            this.ToolbarStandard.Name = "ToolbarStandard";
-            this.ToolbarStandard.Size = new System.Drawing.Size(814, 25);
-            this.ToolbarStandard.TabIndex = 2;
-            this.ToolbarStandard.Text = "toolStrip1";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.worldToolStripMenuItem1,
-            this.playerToolStripMenuItem1,
-            this.gUIOMETRYBINToolStripMenuItem1});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            // 
-            // worldToolStripMenuItem1
-            // 
-            this.worldToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("worldToolStripMenuItem1.Image")));
-            this.worldToolStripMenuItem1.Name = "worldToolStripMenuItem1";
-            this.worldToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
-            this.worldToolStripMenuItem1.Text = "World";
-            // 
-            // playerToolStripMenuItem1
-            // 
-            this.playerToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("playerToolStripMenuItem1.Image")));
-            this.playerToolStripMenuItem1.Name = "playerToolStripMenuItem1";
-            this.playerToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
-            this.playerToolStripMenuItem1.Text = "Player";
-            // 
-            // gUIOMETRYBINToolStripMenuItem1
-            // 
-            this.gUIOMETRYBINToolStripMenuItem1.Image = global::RozWorld_Editor.Properties.Resources.NewBINIcon;
-            this.gUIOMETRYBINToolStripMenuItem1.Name = "gUIOMETRYBINToolStripMenuItem1";
-            this.gUIOMETRYBINToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
-            this.gUIOMETRYBINToolStripMenuItem1.Text = "GUIOMETRY.BIN";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
-            // toolStripSeparator12
-            // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton5.Text = "toolStripButton5";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton6.Text = "toolStripButton6";
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton7.Text = "toolStripButton7";
-            // 
-            // toolStripSeparator13
-            // 
-            this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton8.Text = "toolStripButton8";
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton9.Text = "toolStripButton9";
-            // 
-            // toolStripSeparator14
-            // 
-            this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(83, 22);
-            this.toolStripLabel1.Text = "Selection Mode:";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox1.Items.AddRange(new object[] {
-            "Tiles",
-            "Walls",
-            "Entities",
-            "Projectiles"});
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 25);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextTabs.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.closeTabToolStripMenuItem,
             this.closeAllButThisToolStripMenuItem,
             this.closeAllOnTheLeftToolStripMenuItem,
@@ -1644,8 +1463,8 @@
             this.cloneToNewWindowToolStripMenuItem,
             this.toolStripSeparator15,
             this.deleteAndCloseToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(188, 248);
+            this.ContextTabs.Name = "contextMenuStrip1";
+            this.ContextTabs.Size = new System.Drawing.Size(188, 248);
             // 
             // closeTabToolStripMenuItem
             // 
@@ -1772,7 +1591,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 580);
-            this.Controls.Add(this.ToolbarStandard);
             this.Controls.Add(this.TabUI);
             this.Controls.Add(this.MenuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1828,9 +1646,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.ToolbarStandard.ResumeLayout(false);
-            this.ToolbarStandard.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.ContextTabs.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1845,7 +1661,6 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemExit;
         private System.Windows.Forms.ToolStripMenuItem MenuEdit;
         private System.Windows.Forms.TabControl TabUI;
-        private System.Windows.Forms.ToolStrip ToolbarStandard;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label27;
@@ -1973,24 +1788,7 @@
         private System.Windows.Forms.ToolStripSeparator MenuHelpSeparator2;
         private System.Windows.Forms.ToolStripMenuItem MenuItemAbout;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSaveAll;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem worldToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem playerToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem gUIOMETRYBINToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip ContextTabs;
         private System.Windows.Forms.ToolStripMenuItem closeTabToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeAllButThisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeAllOnTheLeftToolStripMenuItem;

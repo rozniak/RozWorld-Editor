@@ -213,11 +213,12 @@ namespace RozWorld_Editor.Tab
             this.ComboAvatar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboAvatar.FormattingEnabled = true;
             this.ComboAvatar.Items.AddRange(new object[] {
-            "Terry",
-            "[Female Default Variant]",
-            "Watson",
-            "King",
-            "Tom"});
+                "Terry",
+                "[Female Default Variant]",
+                "Watson",
+                "King",
+                "Tom"
+            });
             this.ComboAvatar.Location = new System.Drawing.Point(100, 71);
             this.ComboAvatar.Name = "ComboAvatar";
             this.ComboAvatar.Size = new System.Drawing.Size(113, 21);
@@ -496,11 +497,12 @@ namespace RozWorld_Editor.Tab
              * ListInventory
              */
             this.ListInventory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ColumnID,
-            this.ColumnItem,
-            this.ColumnGivenName,
-            this.ColumnUpgrades,
-            this.ColumnQuantity});
+                this.ColumnID,
+                this.ColumnItem,
+                this.ColumnGivenName,
+                this.ColumnUpgrades,
+                this.ColumnQuantity
+            });
             this.ListInventory.Location = new System.Drawing.Point(6, 19);
             this.ListInventory.Name = "ListInventory";
             this.ListInventory.Size = new System.Drawing.Size(343, 434);
@@ -621,19 +623,20 @@ namespace RozWorld_Editor.Tab
             this.ComboPetType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboPetType.FormattingEnabled = true;
             this.ComboPetType.Items.AddRange(new object[] {
-            "Dalmation",
-            "Generic Black Cat",
-            "Tiger (Generic Ginger Cat)",
-            "Actual Tiger",
-            "Tonka Truck",
-            "Chimp",
-            "Chimp with a Hat",
-            "A Massive Gorilla",
-            "Elephant",
-            "Computer with Wheels",
-            "Night Fury",
-            "Deadly Nadder",
-            "BT Van"});
+                "Dalmation",
+                "Generic Black Cat",
+                "Tiger (Generic Ginger Cat)",
+                "Actual Tiger",
+                "Tonka Truck",
+                "Chimp",
+                "Chimp with a Hat",
+                "A Massive Gorilla",
+                "Elephant",
+                "Computer with Wheels",
+                "Night Fury",
+                "Deadly Nadder",
+                "BT Van"
+            });
             this.ComboPetType.Location = new System.Drawing.Point(6, 32);
             this.ComboPetType.Name = "ComboPetType";
             this.ComboPetType.Size = new System.Drawing.Size(150, 21);
@@ -783,11 +786,12 @@ namespace RozWorld_Editor.Tab
             this.ComboPetPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboPetPosition.FormattingEnabled = true;
             this.ComboPetPosition.Items.AddRange(new object[] {
-            "Centre",
-            "Up",
-            "Right",
-            "Down",
-            "Left"});
+                "Centre",
+                "Up",
+                "Right",
+                "Down",
+                "Left"
+            });
             this.ComboPetPosition.Location = new System.Drawing.Point(99, 189);
             this.ComboPetPosition.Name = "ComboPetPosition";
             this.ComboPetPosition.Size = new System.Drawing.Size(95, 21);

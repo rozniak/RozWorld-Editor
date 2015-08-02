@@ -178,8 +178,8 @@ namespace RozWorld_Editor.Tab
              * PanelWorldView
              */
             this.PanelWorldView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+                | System.Windows.Forms.AnchorStyles.Left)
+                | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelWorldView.AutoScroll = true;
             this.PanelWorldView.AutoScrollMinSize = new System.Drawing.Size(640, 480);
             this.PanelWorldView.BackColor = System.Drawing.Color.Black;

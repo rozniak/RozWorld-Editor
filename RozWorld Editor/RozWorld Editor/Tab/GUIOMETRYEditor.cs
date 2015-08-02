@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace RozWorld_Editor.Tab
 {
-    public class GUIOMETRYEditor
+    public class GUIOMETRYEditor : TabPage
     {
         public GUIOMETRYEditor()
         {
