@@ -15,6 +15,8 @@ namespace RozWorld_Editor.Tab
 {
     public class PlayerEditor : TabPage
     {
+        #region Windows Forms Controls
+
         private Label LabelTabTitle = new Label();
 
         private GroupBox GroupGeneralDetails = new GroupBox();
@@ -83,9 +85,13 @@ namespace RozWorld_Editor.Tab
         private Label LabelPetPosition = new Label();
         private ComboBox ComboPetPosition = new ComboBox();
 
+        #endregion
+
 
         public PlayerEditor()
         {
+            #region Windows Forms Initialisation
+
             this.Controls.Add(this.LabelTabTitle);
 
             this.Controls.Add(this.GroupGeneralDetails);
@@ -796,6 +802,8 @@ namespace RozWorld_Editor.Tab
             this.ComboPetPosition.Name = "ComboPetPosition";
             this.ComboPetPosition.Size = new System.Drawing.Size(95, 21);
             this.ComboPetPosition.TabIndex = 24;
+
+            #endregion
         }
     }
 }

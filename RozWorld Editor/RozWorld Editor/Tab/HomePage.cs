@@ -15,6 +15,8 @@ namespace RozWorld_Editor.Tab
 {
     public class HomePage : TabPage
     {
+        #region Windows Forms Controls
+
         private PictureBox PictureEditorLogo = new PictureBox();
 
         private Label LabelNewTasks = new Label();
@@ -27,9 +29,13 @@ namespace RozWorld_Editor.Tab
         private Button ButtonOpenPlayer = new Button();
         private Button ButtonOpenGUIOMETRY = new Button();
 
+        #endregion
+
 
         public HomePage()
         {
+            #region Windows Forms Initialisation
+
             this.Controls.Add(PictureEditorLogo);
             this.Controls.Add(LabelNewTasks);
             this.Controls.Add(ButtonNewWorld);
@@ -149,6 +155,8 @@ namespace RozWorld_Editor.Tab
             this.ButtonOpenGUIOMETRY.TabIndex = 8;
             this.ButtonOpenGUIOMETRY.Text = "GUIOMETRY.BIN...";
             this.ButtonOpenGUIOMETRY.UseVisualStyleBackColor = true;
+
+            #endregion
         }
     }
 }

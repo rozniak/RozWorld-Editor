@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld_Editor.Tabor -- GUIOMETRY Editor Tab
+ * RozWorld_Editor.Tab.GUIOMETRYEditor -- GUIOMETRY Editor Tab
  * 
  * This source-code is part of the RozWorld Editor project by rozza of Oddmatics:
  * <<http://www.oddmatics.co.uk>>
@@ -15,6 +15,8 @@ namespace RozWorld_Editor.Tab
 {
     public class GUIOMETRYEditor : TabPage
     {
+        #region Windows Forms Controls
+
         private Label LabelTabTitle = new Label();
 
         private GroupBox GroupFontEditor = new GroupBox();
@@ -111,9 +113,13 @@ namespace RozWorld_Editor.Tab
         private PictureBox PictureCheckTick = new PictureBox();
         private Button ButtonCheckTick = new Button();
 
+        #endregion
+
 
         public GUIOMETRYEditor()
         {
+            #region Windows Forms Initialisation
+
             this.Controls.Add(this.LabelTabTitle);
 
             this.Controls.Add(this.GroupFontEditor);
@@ -1067,6 +1073,8 @@ namespace RozWorld_Editor.Tab
             this.ButtonCheckTick.TabIndex = 17;
             this.ButtonCheckTick.Text = "Set...";
             this.ButtonCheckTick.UseVisualStyleBackColor = true;
+
+            #endregion
         }
     }
 }

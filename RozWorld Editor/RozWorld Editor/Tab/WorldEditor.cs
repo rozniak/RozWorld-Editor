@@ -15,6 +15,8 @@ namespace RozWorld_Editor.Tab
 {
     public class WorldEditor : TabPage
     {
+        #region Windows Forms Controls
+
         private Label LabelTabTitle = new Label();
         private Label LabelNavigation = new Label();
         private Label LabelChunkCoordinates = new Label();
@@ -32,9 +34,13 @@ namespace RozWorld_Editor.Tab
         private Panel PanelWorldView = new Panel();
         private PictureBox PictureObjectOverlay = new PictureBox();
 
+        #endregion
+
 
         public WorldEditor()
         {
+            #region Windows Forms Initialisation
+
             this.Controls.Add(this.LabelTabTitle);
             this.Controls.Add(this.LabelNavigation);
             this.Controls.Add(this.LabelChunkCoordinates);
@@ -189,6 +195,8 @@ namespace RozWorld_Editor.Tab
             this.PanelWorldView.Name = "PanelWorldView";
             this.PanelWorldView.Size = new System.Drawing.Size(646, 495);
             this.PanelWorldView.TabIndex = 0;
+
+            #endregion
         }
     }
 }
