@@ -77,23 +77,23 @@
             this.MenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.TabUI = new System.Windows.Forms.TabControl();
             this.ContextTabs = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.closeTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAllButThisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAllOnTheLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAllOnTheRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-            this.openContainingFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
-            this.moveToNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newWindowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
-            this.cloneToNewWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newWindowToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.ContextCloseTab = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextCloseAllExclusive = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextCloseAllLeft = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextCloseAllRight = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextSeparatorCloseSave = new System.Windows.Forms.ToolStripSeparator();
+            this.ContextSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextSeparatorSaveOpen = new System.Windows.Forms.ToolStripSeparator();
+            this.ContextOpenContaining = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextSeparatorOpenWindows = new System.Windows.Forms.ToolStripSeparator();
+            this.ContextMenuMoveTo = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMoveNewWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextSeparatorMoveTo = new System.Windows.Forms.ToolStripSeparator();
+            this.ContextMenuCloneTo = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextCloneNewWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextSeparatorCloneTo = new System.Windows.Forms.ToolStripSeparator();
+            this.ContextSeparatorWindowsDelete = new System.Windows.Forms.ToolStripSeparator();
             this.deleteAndCloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.ContextTabs.SuspendLayout();
@@ -387,8 +387,6 @@
             // MenuSubItemToolbarStandard
             // 
             this.MenuSubItemToolbarStandard.AutoSize = false;
-            this.MenuSubItemToolbarStandard.Checked = true;
-            this.MenuSubItemToolbarStandard.CheckState = System.Windows.Forms.CheckState.Checked;
             this.MenuSubItemToolbarStandard.Name = "MenuSubItemToolbarStandard";
             this.MenuSubItemToolbarStandard.Size = new System.Drawing.Size(152, 22);
             this.MenuSubItemToolbarStandard.Text = "Standard";
@@ -470,135 +468,136 @@
             // ContextTabs
             // 
             this.ContextTabs.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.closeTabToolStripMenuItem,
-            this.closeAllButThisToolStripMenuItem,
-            this.closeAllOnTheLeftToolStripMenuItem,
-            this.closeAllOnTheRightToolStripMenuItem,
-            this.toolStripSeparator17,
-            this.saveToolStripMenuItem1,
-            this.saveAsToolStripMenuItem1,
-            this.toolStripSeparator16,
-            this.openContainingFolderToolStripMenuItem,
-            this.toolStripSeparator18,
-            this.moveToNewWindowToolStripMenuItem,
-            this.cloneToNewWindowToolStripMenuItem,
-            this.toolStripSeparator15,
+            this.ContextCloseTab,
+            this.ContextCloseAllExclusive,
+            this.ContextCloseAllLeft,
+            this.ContextCloseAllRight,
+            this.ContextSeparatorCloseSave,
+            this.ContextSave,
+            this.ContextSaveAs,
+            this.ContextSeparatorSaveOpen,
+            this.ContextOpenContaining,
+            this.ContextSeparatorOpenWindows,
+            this.ContextMenuMoveTo,
+            this.ContextMenuCloneTo,
+            this.ContextSeparatorWindowsDelete,
             this.deleteAndCloseToolStripMenuItem});
             this.ContextTabs.Name = "contextMenuStrip1";
             this.ContextTabs.Size = new System.Drawing.Size(188, 248);
             // 
-            // closeTabToolStripMenuItem
+            // ContextCloseTab
             // 
-            this.closeTabToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("closeTabToolStripMenuItem.Image")));
-            this.closeTabToolStripMenuItem.Name = "closeTabToolStripMenuItem";
-            this.closeTabToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.closeTabToolStripMenuItem.Text = "Close Tab";
+            this.ContextCloseTab.Image = ((System.Drawing.Image)(resources.GetObject("ContextCloseTab.Image")));
+            this.ContextCloseTab.Name = "ContextCloseTab";
+            this.ContextCloseTab.Size = new System.Drawing.Size(187, 22);
+            this.ContextCloseTab.Text = "Close Tab";
+            this.ContextCloseTab.Click += new System.EventHandler(this.ContextCloseTab_Click);
             // 
-            // closeAllButThisToolStripMenuItem
+            // ContextCloseAllExclusive
             // 
-            this.closeAllButThisToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("closeAllButThisToolStripMenuItem.Image")));
-            this.closeAllButThisToolStripMenuItem.Name = "closeAllButThisToolStripMenuItem";
-            this.closeAllButThisToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.closeAllButThisToolStripMenuItem.Text = "Close All Except This";
+            this.ContextCloseAllExclusive.Image = ((System.Drawing.Image)(resources.GetObject("ContextCloseAllExclusive.Image")));
+            this.ContextCloseAllExclusive.Name = "ContextCloseAllExclusive";
+            this.ContextCloseAllExclusive.Size = new System.Drawing.Size(187, 22);
+            this.ContextCloseAllExclusive.Text = "Close All Except This";
             // 
-            // closeAllOnTheLeftToolStripMenuItem
+            // ContextCloseAllLeft
             // 
-            this.closeAllOnTheLeftToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.LeftArrowIcon;
-            this.closeAllOnTheLeftToolStripMenuItem.Name = "closeAllOnTheLeftToolStripMenuItem";
-            this.closeAllOnTheLeftToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.closeAllOnTheLeftToolStripMenuItem.Text = "Close All on the Left";
+            this.ContextCloseAllLeft.Image = global::RozWorld_Editor.Properties.Resources.LeftArrowIcon;
+            this.ContextCloseAllLeft.Name = "ContextCloseAllLeft";
+            this.ContextCloseAllLeft.Size = new System.Drawing.Size(187, 22);
+            this.ContextCloseAllLeft.Text = "Close All on the Left";
             // 
-            // closeAllOnTheRightToolStripMenuItem
+            // ContextCloseAllRight
             // 
-            this.closeAllOnTheRightToolStripMenuItem.Image = global::RozWorld_Editor.Properties.Resources.RightArrowIcon;
-            this.closeAllOnTheRightToolStripMenuItem.Name = "closeAllOnTheRightToolStripMenuItem";
-            this.closeAllOnTheRightToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.closeAllOnTheRightToolStripMenuItem.Text = "Close All on the Right";
+            this.ContextCloseAllRight.Image = global::RozWorld_Editor.Properties.Resources.RightArrowIcon;
+            this.ContextCloseAllRight.Name = "ContextCloseAllRight";
+            this.ContextCloseAllRight.Size = new System.Drawing.Size(187, 22);
+            this.ContextCloseAllRight.Text = "Close All on the Right";
             // 
-            // toolStripSeparator17
+            // ContextSeparatorCloseSave
             // 
-            this.toolStripSeparator17.Name = "toolStripSeparator17";
-            this.toolStripSeparator17.Size = new System.Drawing.Size(184, 6);
+            this.ContextSeparatorCloseSave.Name = "ContextSeparatorCloseSave";
+            this.ContextSeparatorCloseSave.Size = new System.Drawing.Size(184, 6);
             // 
-            // saveToolStripMenuItem1
+            // ContextSave
             // 
-            this.saveToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem1.Image")));
-            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
-            this.saveToolStripMenuItem1.Text = "Save";
+            this.ContextSave.Image = ((System.Drawing.Image)(resources.GetObject("ContextSave.Image")));
+            this.ContextSave.Name = "ContextSave";
+            this.ContextSave.Size = new System.Drawing.Size(187, 22);
+            this.ContextSave.Text = "Save";
             // 
-            // saveAsToolStripMenuItem1
+            // ContextSaveAs
             // 
-            this.saveAsToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem1.Image")));
-            this.saveAsToolStripMenuItem1.Name = "saveAsToolStripMenuItem1";
-            this.saveAsToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
-            this.saveAsToolStripMenuItem1.Text = "Save As";
+            this.ContextSaveAs.Image = ((System.Drawing.Image)(resources.GetObject("ContextSaveAs.Image")));
+            this.ContextSaveAs.Name = "ContextSaveAs";
+            this.ContextSaveAs.Size = new System.Drawing.Size(187, 22);
+            this.ContextSaveAs.Text = "Save As";
             // 
-            // toolStripSeparator16
+            // ContextSeparatorSaveOpen
             // 
-            this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(184, 6);
+            this.ContextSeparatorSaveOpen.Name = "ContextSeparatorSaveOpen";
+            this.ContextSeparatorSaveOpen.Size = new System.Drawing.Size(184, 6);
             // 
-            // openContainingFolderToolStripMenuItem
+            // ContextOpenContaining
             // 
-            this.openContainingFolderToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openContainingFolderToolStripMenuItem.Image")));
-            this.openContainingFolderToolStripMenuItem.Name = "openContainingFolderToolStripMenuItem";
-            this.openContainingFolderToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.openContainingFolderToolStripMenuItem.Text = "Open Containing Folder";
+            this.ContextOpenContaining.Image = ((System.Drawing.Image)(resources.GetObject("ContextOpenContaining.Image")));
+            this.ContextOpenContaining.Name = "ContextOpenContaining";
+            this.ContextOpenContaining.Size = new System.Drawing.Size(187, 22);
+            this.ContextOpenContaining.Text = "Open Containing Folder";
             // 
-            // toolStripSeparator18
+            // ContextSeparatorOpenWindows
             // 
-            this.toolStripSeparator18.Name = "toolStripSeparator18";
-            this.toolStripSeparator18.Size = new System.Drawing.Size(184, 6);
+            this.ContextSeparatorOpenWindows.Name = "ContextSeparatorOpenWindows";
+            this.ContextSeparatorOpenWindows.Size = new System.Drawing.Size(184, 6);
             // 
-            // moveToNewWindowToolStripMenuItem
+            // ContextMenuMoveTo
             // 
-            this.moveToNewWindowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newWindowToolStripMenuItem1,
-            this.toolStripSeparator19});
-            this.moveToNewWindowToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("moveToNewWindowToolStripMenuItem.Image")));
-            this.moveToNewWindowToolStripMenuItem.Name = "moveToNewWindowToolStripMenuItem";
-            this.moveToNewWindowToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.moveToNewWindowToolStripMenuItem.Text = "Move to...";
+            this.ContextMenuMoveTo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextMoveNewWindow,
+            this.ContextSeparatorMoveTo});
+            this.ContextMenuMoveTo.Image = ((System.Drawing.Image)(resources.GetObject("ContextMenuMoveTo.Image")));
+            this.ContextMenuMoveTo.Name = "ContextMenuMoveTo";
+            this.ContextMenuMoveTo.Size = new System.Drawing.Size(187, 22);
+            this.ContextMenuMoveTo.Text = "Move to...";
             // 
-            // newWindowToolStripMenuItem1
+            // ContextMoveNewWindow
             // 
-            this.newWindowToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("newWindowToolStripMenuItem1.Image")));
-            this.newWindowToolStripMenuItem1.Name = "newWindowToolStripMenuItem1";
-            this.newWindowToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
-            this.newWindowToolStripMenuItem1.Text = "New Window";
+            this.ContextMoveNewWindow.Image = ((System.Drawing.Image)(resources.GetObject("ContextMoveNewWindow.Image")));
+            this.ContextMoveNewWindow.Name = "ContextMoveNewWindow";
+            this.ContextMoveNewWindow.Size = new System.Drawing.Size(152, 22);
+            this.ContextMoveNewWindow.Text = "New Window";
             // 
-            // toolStripSeparator19
+            // ContextSeparatorMoveTo
             // 
-            this.toolStripSeparator19.Name = "toolStripSeparator19";
-            this.toolStripSeparator19.Size = new System.Drawing.Size(133, 6);
+            this.ContextSeparatorMoveTo.Name = "ContextSeparatorMoveTo";
+            this.ContextSeparatorMoveTo.Size = new System.Drawing.Size(149, 6);
             // 
-            // cloneToNewWindowToolStripMenuItem
+            // ContextMenuCloneTo
             // 
-            this.cloneToNewWindowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newWindowToolStripMenuItem2,
-            this.toolStripSeparator20});
-            this.cloneToNewWindowToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cloneToNewWindowToolStripMenuItem.Image")));
-            this.cloneToNewWindowToolStripMenuItem.Name = "cloneToNewWindowToolStripMenuItem";
-            this.cloneToNewWindowToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.cloneToNewWindowToolStripMenuItem.Text = "Clone to...";
+            this.ContextMenuCloneTo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextCloneNewWindow,
+            this.ContextSeparatorCloneTo});
+            this.ContextMenuCloneTo.Image = ((System.Drawing.Image)(resources.GetObject("ContextMenuCloneTo.Image")));
+            this.ContextMenuCloneTo.Name = "ContextMenuCloneTo";
+            this.ContextMenuCloneTo.Size = new System.Drawing.Size(187, 22);
+            this.ContextMenuCloneTo.Text = "Clone to...";
             // 
-            // newWindowToolStripMenuItem2
+            // ContextCloneNewWindow
             // 
-            this.newWindowToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("newWindowToolStripMenuItem2.Image")));
-            this.newWindowToolStripMenuItem2.Name = "newWindowToolStripMenuItem2";
-            this.newWindowToolStripMenuItem2.Size = new System.Drawing.Size(136, 22);
-            this.newWindowToolStripMenuItem2.Text = "New Window";
+            this.ContextCloneNewWindow.Image = ((System.Drawing.Image)(resources.GetObject("ContextCloneNewWindow.Image")));
+            this.ContextCloneNewWindow.Name = "ContextCloneNewWindow";
+            this.ContextCloneNewWindow.Size = new System.Drawing.Size(152, 22);
+            this.ContextCloneNewWindow.Text = "New Window";
             // 
-            // toolStripSeparator20
+            // ContextSeparatorCloneTo
             // 
-            this.toolStripSeparator20.Name = "toolStripSeparator20";
-            this.toolStripSeparator20.Size = new System.Drawing.Size(133, 6);
+            this.ContextSeparatorCloneTo.Name = "ContextSeparatorCloneTo";
+            this.ContextSeparatorCloneTo.Size = new System.Drawing.Size(149, 6);
             // 
-            // toolStripSeparator15
+            // ContextSeparatorWindowsDelete
             // 
-            this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(184, 6);
+            this.ContextSeparatorWindowsDelete.Name = "ContextSeparatorWindowsDelete";
+            this.ContextSeparatorWindowsDelete.Size = new System.Drawing.Size(184, 6);
             // 
             // deleteAndCloseToolStripMenuItem
             // 
@@ -679,23 +678,23 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemAbout;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSaveAll;
         private System.Windows.Forms.ContextMenuStrip ContextTabs;
-        private System.Windows.Forms.ToolStripMenuItem closeTabToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeAllButThisToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeAllOnTheLeftToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeAllOnTheRightToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
-        private System.Windows.Forms.ToolStripMenuItem openContainingFolderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
-        private System.Windows.Forms.ToolStripMenuItem moveToNewWindowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newWindowToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator19;
-        private System.Windows.Forms.ToolStripMenuItem cloneToNewWindowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newWindowToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator20;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+        private System.Windows.Forms.ToolStripMenuItem ContextCloseTab;
+        private System.Windows.Forms.ToolStripMenuItem ContextCloseAllExclusive;
+        private System.Windows.Forms.ToolStripMenuItem ContextCloseAllLeft;
+        private System.Windows.Forms.ToolStripMenuItem ContextCloseAllRight;
+        private System.Windows.Forms.ToolStripSeparator ContextSeparatorCloseSave;
+        private System.Windows.Forms.ToolStripMenuItem ContextSave;
+        private System.Windows.Forms.ToolStripMenuItem ContextSaveAs;
+        private System.Windows.Forms.ToolStripSeparator ContextSeparatorSaveOpen;
+        private System.Windows.Forms.ToolStripMenuItem ContextOpenContaining;
+        private System.Windows.Forms.ToolStripSeparator ContextSeparatorOpenWindows;
+        private System.Windows.Forms.ToolStripMenuItem ContextMenuMoveTo;
+        private System.Windows.Forms.ToolStripMenuItem ContextMoveNewWindow;
+        private System.Windows.Forms.ToolStripSeparator ContextSeparatorMoveTo;
+        private System.Windows.Forms.ToolStripMenuItem ContextMenuCloneTo;
+        private System.Windows.Forms.ToolStripMenuItem ContextCloneNewWindow;
+        private System.Windows.Forms.ToolStripSeparator ContextSeparatorCloneTo;
+        private System.Windows.Forms.ToolStripSeparator ContextSeparatorWindowsDelete;
         private System.Windows.Forms.ToolStripMenuItem deleteAndCloseToolStripMenuItem;
     }
 }

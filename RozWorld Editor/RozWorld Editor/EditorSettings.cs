@@ -26,11 +26,7 @@ namespace RozWorld_Editor
         /**
          * Active toolbars
          */
-        public bool ToolbarStandardActive
-        {
-            get;
-            private set;
-        }
+        public bool ToolbarStandardActive;
 
 
         /// <summary>
@@ -89,6 +85,22 @@ namespace RozWorld_Editor
 
             // Now save
             Files.PutTextFile(Files.PreferencesFile, defaultINIFile);
+        }
+
+
+        /// <summary>
+        /// Saves the current user settings.
+        /// </summary>
+        public void SaveUserSettings()
+        {
+            string[] newINIFile = new string[] {
+                "# RozWorld Editor user settings",
+                "# -",
+                "# [Toolbars]",
+                "StandardToolbar: " + ToolbarStandardActive.ToString()
+            };
+
+            Files.PutTextFile(Files.PreferencesFile, newINIFile);
         }
     }
 }

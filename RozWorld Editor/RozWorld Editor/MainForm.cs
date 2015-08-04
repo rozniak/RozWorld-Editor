@@ -24,7 +24,7 @@ namespace RozWorld_Editor
             // Manage toolbars from user settings
             if (EditorEnvironment.UserSettings.ToolbarStandardActive)
             {
-                this.ToggleToolbar("ToolbarStandard", false);
+                this.SetToolbarStatus("ToolbarStandard", true);
             }
 
             if (homePage)
@@ -35,27 +35,29 @@ namespace RozWorld_Editor
 
 
         /// <summary>
-        /// Toggles a toolbar on or off.
+        /// Sets the status of a toolbar on or off.
         /// </summary>
-        /// <param name="toolbar">The name of the toolbar to toggle.</param>
-        /// <param name="status">The current status of the toolbar.</param>
-        public void ToggleToolbar(string toolbar, bool status)
+        /// <param name="toolbar">The name of the toolbar.</param>
+        /// <param name="status">The new status of the toolbar.</param>
+        public void SetToolbarStatus(string toolbarName, bool status)
         {
             if (status)
             {
-                switch (toolbar)
+                switch (toolbarName)
                 {
                     case "ToolbarStandard":
-                        this.Controls.RemoveByKey(toolbar);
+                        this.Controls.Add(new Toolbar.Standard());
+                        this.MenuSubItemToolbarStandard.Checked = true;
                         break;
                 }
             }
             else
             {
-                switch (toolbar)
+                switch (toolbarName)
                 {
                     case "ToolbarStandard":
-                        this.Controls.Add(new Toolbar.Standard());
+                        this.Controls.RemoveByKey(toolbarName);
+                        this.MenuSubItemToolbarStandard.Checked = false;
                         break;
                 }
             }
@@ -72,9 +74,7 @@ namespace RozWorld_Editor
             var menuItemSender = ((ToolStripMenuItem)sender);
             string toolbar = menuItemSender.Name.Substring(11);
 
-            ToggleToolbar(toolbar, menuItemSender.Checked);
-
-            menuItemSender.Checked = !menuItemSender.Checked;
+            EditorEnvironment.SetToolbarStatus(toolbar, !menuItemSender.Checked);
         }
 
 
@@ -119,6 +119,15 @@ namespace RozWorld_Editor
                     }
                 } while (!foundTab && i++ < this.TabUI.TabCount);
             }
+        }
+
+
+        /// <summary>
+        /// [Event] "Tab Context Menu > Close Tab" clicked.
+        /// </summary>
+        private void ContextCloseTab_Click(object sender, EventArgs e)
+        {
+            ((Tab.EditorTab)this.TabUI.SelectedTab).Close();
         }
     }
 }

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace RozWorld_Editor.Tab
 {
-    public class WorldEditor : TabPage
+    public class WorldEditor : EditorTab
     {
         #region Windows Forms Controls
 

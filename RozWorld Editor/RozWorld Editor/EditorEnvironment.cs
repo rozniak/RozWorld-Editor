@@ -108,5 +108,21 @@ namespace RozWorld_Editor
 
             return false;
         }
+
+
+        /// <summary>
+        /// Sets the status of a toolbar on or off.
+        /// </summary>
+        /// <param name="toolbar">The name of the toolbar.</param>
+        /// <param name="status">The new status of the toolbar.</param>
+        public static void SetToolbarStatus(string toolbarName, bool status)
+        {
+            foreach (var item in Windows)
+            {
+                item.Value.SetToolbarStatus(toolbarName, status);
+            }
+
+            UserSettings.ToolbarStandardActive = status;
+        }
     }
 }
