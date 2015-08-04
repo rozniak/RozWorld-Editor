@@ -35,7 +35,7 @@ namespace RozWorld_Editor
         /// </summary>
         /// <param name="toolbar">The name of the toolbar to toggle.</param>
         /// <param name="status">The current status of the toolbar.</param>
-        private void ToggleToolbar(string toolbar, bool status)
+        public void ToggleToolbar(string toolbar, bool status)
         {
             if (status)
             {

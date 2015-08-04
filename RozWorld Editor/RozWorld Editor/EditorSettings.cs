@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld_Editor.Enums -- RozWorld Editor Enumerations File
+ * RozWorld_Editor.EditorSettings -- RozWorld Editor User Settings
  * 
  * This source-code is part of the RozWorld Editor project by rozza of Oddmatics:
  * <<http://www.oddmatics.co.uk>>
@@ -9,12 +9,13 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-/**
- * Used for providing context on commands, only properly usable by the environment.
- */
-public enum CommandContext
+namespace RozWorld_Editor
 {
-    Default,
-    Undo,
-    Redo
+    public class EditorSettings
+    {
+        /**
+         * Active toolbars
+         */
+        public bool ToolbarStandardActive = false;
+    }
 }

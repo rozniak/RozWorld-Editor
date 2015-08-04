@@ -9,16 +9,14 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace RozWorld_Editor.Toolbar
 {
     public class Standard : ToolStrip
     {
+        #region Windows Forms Controls
+
         private ToolStripDropDownButton DropDownNew = new ToolStripDropDownButton();
         private ToolStripMenuItem DropItemNewWorld = new ToolStripMenuItem();
         private ToolStripMenuItem DropItemNewPlayer = new ToolStripMenuItem();
@@ -44,9 +42,13 @@ namespace RozWorld_Editor.Toolbar
         private ToolStripLabel LabelSelectionMode = new ToolStripLabel();
         private ToolStripComboBox ComboSelectionMode = new ToolStripComboBox();
 
+        #endregion
+
 
         public Standard()
         {
+            #region Windows Forms Initialisation
+
             this.Items.AddRange(new ToolStripItem[] {
                 this.DropDownNew,
                 this.ButtonOpen,
@@ -233,6 +235,8 @@ namespace RozWorld_Editor.Toolbar
             });
             this.ComboSelectionMode.Name = "ComboSelectionMode";
             this.ComboSelectionMode.Size = new System.Drawing.Size(121, 25);
+
+            #endregion
         }
     }
 }

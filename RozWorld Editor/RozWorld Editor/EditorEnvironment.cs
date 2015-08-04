@@ -11,59 +11,82 @@
 
 using System.Collections.Generic;
 using System.Windows.Forms;
+using RozWorld_Editor.IO;
 
 namespace RozWorld_Editor
 {
     public static class EditorEnvironment
     {
-        public const int MAX_COMMAND_HISTORY = 10;
+        /**
+         * The maximum operations kept track of and able to undo or redo.
+         */
+        public const int MAX_OPERATION_HISTORY = 10;
 
-        private static Dictionary<string, Form> Windows = new Dictionary<string, Form>();
+
+        /**
+         * The currently open editor windows.
+         */
+        private static Dictionary<string, MainForm> Windows = new Dictionary<string, MainForm>();
+
+        /**
+         * Checks whether the first window has opened or not, this is for showing the home page
+         * in the first window.
+         */
         private static bool StartedEnvironment = false;
+
+        /**
+         * The current user settings for this environment.
+         */
+        public static EditorSettings UserSettings;
+
+        /**
+         * Keep tabs on what the last operations were that can be undone.
+         */
+        private static string[] OperationHistoryUndo = new string[MAX_OPERATION_HISTORY];
+        private static string[] OperationHistoryRedo = new string[MAX_OPERATION_HISTORY];
+
+        /**
+         * Tells whether the command being done is an undo operation or not, if it isn't, it
+         * should add itself to the operation history.
+         */
+        private static bool OperationIsUndo = false;
 
 
         /// <summary>
-        /// Sends a command into the environment to be performed.
+        /// Loads the user settings from /prefs.ini, or makes a default one if the file was not found.
         /// </summary>
-        /// <param name="command">The entire command to be interpreted.</param>
-        /// <param name="sender">The instance of the command sender.</param>
-        /// <param name="context">The requested context of the command.</param>
-        /// <returns>Whether the command was successful or not.</returns>
-        public static bool SendCommand(string command, object sender, CommandContext context = CommandContext.Default)
+        /// <returns>Whether settings were successfully loaded or not.</returns>
+        public static bool LoadUserSettings()
         {
-            try
+            if (UserSettings == null)
             {
-                string commandName = command.Split()[0];
-                string[] args = command.Length > commandName.Length ?
-                    command.Substring(commandName.Length - 1).Split() :
-                    null;
-
-                switch (commandName)
+                if (!System.IO.File.Exists(Files.PreferencesFile))
                 {
-                    /**
-                     * Create window command.
-                     */
-                    case "createwindow":
-                        if (args.Length != 1 || Windows.ContainsKey(args[0]))
-                        {
-                            return false;
-                        }
-
-                        MainForm newWindow = new MainForm();
-                        newWindow.Name = args[0];
-
-                        Windows.Add(args[0], newWindow);
-
-                        return true;
-
+                    MakeDefaultUserSettings();
                 }
 
-                return false;
+                Dictionary<string, string> iniFile = Files.ReadINIToDictionary(Files.PreferencesFile);
+
+                // Loading here
             }
-            catch
-            {
-                return false;
-            }
+
+            return false;
+        }
+
+
+        /// <summary>
+        /// Makes a new default user settings file.
+        /// </summary>
+        private static void MakeDefaultUserSettings()
+        {
+            string[] defaultINIFile = new string[] {
+                "# RozWorld Editor user settings",
+                "# -",
+                "# [Toolbars]",
+                "StandardToolbar: true"
+            };
+
+            Files.PutTextFile(Files.PreferencesFile, defaultINIFile);
         }
 
 
@@ -73,10 +96,30 @@ namespace RozWorld_Editor
         /// <param name="windowName">The name of the window to register.</param>
         /// <param name="window">The window instance to register.</param>
         /// <returns>Whether the window was successfully registered or not.</returns>
-        public static bool RegisterWindow(string windowName, Form window)
+        public static bool RegisterWindow(string windowName, MainForm window)
         {
             if (!Windows.ContainsKey(windowName))
             {
+                window.Name = windowName;
+                Windows.Add(windowName, window);
+                return true;
+            }
+
+            return false;
+        }
+
+
+        /// <summary>
+        /// Creates a window in this environment.
+        /// </summary>
+        /// <param name="windowName">The name of the window to add.</param>
+        /// <returns>Whether the window was successfully added or not.</returns>
+        public static bool CreateWindow(string windowName)
+        {
+            if (!Windows.ContainsKey(windowName))
+            {
+                MainForm window = new MainForm(false);
+
                 window.Name = windowName;
                 Windows.Add(windowName, window);
                 return true;
