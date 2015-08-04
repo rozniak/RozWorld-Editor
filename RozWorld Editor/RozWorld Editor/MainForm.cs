@@ -21,7 +21,11 @@ namespace RozWorld_Editor
         {
             InitializeComponent();
 
-            ToggleToolbar("ToolbarStandard", false);
+            // Manage toolbars from user settings
+            if (EditorEnvironment.UserSettings.ToolbarStandardActive)
+            {
+                this.ToggleToolbar("ToolbarStandard", false);
+            }
 
             if (homePage)
             {

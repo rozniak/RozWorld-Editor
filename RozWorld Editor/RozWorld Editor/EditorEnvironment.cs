@@ -9,8 +9,10 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+
 using RozWorld_Editor.IO;
 
 namespace RozWorld_Editor
@@ -37,7 +39,11 @@ namespace RozWorld_Editor
         /**
          * The current user settings for this environment.
          */
-        public static EditorSettings UserSettings;
+        public static EditorSettings UserSettings
+        {
+            get;
+            private set;
+        }
 
         /**
          * Keep tabs on what the last operations were that can be undone.
@@ -53,42 +59,17 @@ namespace RozWorld_Editor
 
 
         /// <summary>
-        /// Loads the user settings from /prefs.ini, or makes a default one if the file was not found.
+        /// Initialises the environment.
         /// </summary>
-        /// <returns>Whether settings were successfully loaded or not.</returns>
-        public static bool LoadUserSettings()
+        public static void Initialise()
         {
-            if (UserSettings == null)
+            if (!StartedEnvironment)
             {
-                if (!System.IO.File.Exists(Files.PreferencesFile))
-                {
-                    MakeDefaultUserSettings();
-                }
-
-                Dictionary<string, string> iniFile = Files.ReadINIToDictionary(Files.PreferencesFile);
-
-                // Loading here
+                // Load the editor settings
+                UserSettings = new EditorSettings();
+                UserSettings.LoadUserSettings();
             }
-
-            return false;
         }
-
-
-        /// <summary>
-        /// Makes a new default user settings file.
-        /// </summary>
-        private static void MakeDefaultUserSettings()
-        {
-            string[] defaultINIFile = new string[] {
-                "# RozWorld Editor user settings",
-                "# -",
-                "# [Toolbars]",
-                "StandardToolbar: true"
-            };
-
-            Files.PutTextFile(Files.PreferencesFile, defaultINIFile);
-        }
-
 
         /// <summary>
         /// Registers a window into this environment.

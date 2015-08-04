@@ -27,6 +27,8 @@ namespace RozWorld_Editor
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            EditorEnvironment.Initialise();
+
             MainForm initalWindow = new MainForm(true);
             EditorEnvironment.RegisterWindow("Window001", initalWindow);
             Application.Run(initalWindow);

@@ -18,6 +18,7 @@ namespace RozWorld_Editor.IO
     public static class Files
     {
         public static readonly string PreferencesFile = Environment.CurrentDirectory + @"\prefs.ini";
+        public static readonly string BackupPreferencesFile = PreferencesFile + ".old";
 
 
         /// <summary>
