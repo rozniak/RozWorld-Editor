@@ -102,11 +102,22 @@ namespace RozWorld_Editor
                 MainForm window = new MainForm(false);
 
                 window.Name = windowName;
+                window.Show();
                 Windows.Add(windowName, window);
                 return true;
             }
 
             return false;
+        }
+
+
+        /// <summary>
+        /// Returns a unique window name for when creating or registering windows.
+        /// </summary>
+        /// <returns>A unique window name.</returns>
+        public static string GenerateWindowName()
+        {
+            return "Window" + (Windows.Count + 1).ToString().PadLeft(3, '0');
         }
 
 
@@ -125,6 +136,43 @@ namespace RozWorld_Editor
                 {
                     UserSettings.SaveUserSettings();
                 }
+            }
+
+            return false;
+        }
+
+
+        /// <summary>
+        /// Exits the editor and closes all windows.
+        /// </summary>
+        /// <returns>Whether all windows were successfully closed or not.</returns>
+        public static bool Exit()
+        {
+            bool stillClosing = true;
+            int i = 0;
+            var windowNames = new List<string>();
+
+            foreach (var key in Windows.Keys)
+            {
+                windowNames.Add(key);
+            }
+
+            do
+            {
+                stillClosing = Windows[windowNames[i]].CloseAllTabs();
+            } while (stillClosing && ++i < windowNames.Count);
+
+            if (stillClosing)
+            {
+                foreach (string key in windowNames)
+                {
+                    Windows[key].Close();
+                }
+            }
+
+            if (Windows.Count == 0)
+            {
+                return true;
             }
 
             return false;

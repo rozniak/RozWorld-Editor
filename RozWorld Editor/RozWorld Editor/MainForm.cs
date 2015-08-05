@@ -67,6 +67,28 @@ namespace RozWorld_Editor
 
 
         /// <summary>
+        /// Closes all the tabs in this window.
+        /// </summary>
+        /// <returns>Whether all the tabs were successfully closed or not.</returns>
+        public bool CloseAllTabs()
+        {
+            bool stillClosing = true;
+
+            if (this.TabUI.TabCount > 0)
+            {
+                int i = 0;
+
+                do
+                {
+                    stillClosing = ((Tab.EditorTab)this.TabUI.TabPages[i]).Close();
+                } while (stillClosing && ++i < this.TabUI.TabCount);
+            }
+
+            return stillClosing;
+        }
+
+
+        /// <summary>
         /// [Event] "View > Toolbars > * " clicked.
         /// </summary>
         private void ToolstripToggleItem_Click(object sender, EventArgs e)
@@ -89,15 +111,16 @@ namespace RozWorld_Editor
         /// </summary>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            bool stillClosing = true;
-            int i = 0;
+            bool closeSuccessful = this.CloseAllTabs();
 
-            do
+            if (closeSuccessful)
             {
-                stillClosing = ((Tab.EditorTab)this.TabUI.TabPages[i]).Close();
-            } while (stillClosing && i++ < this.TabUI.TabCount);
-
-            EditorEnvironment.CloseWindow(this.Name);
+                EditorEnvironment.CloseWindow(this.Name);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
 
@@ -153,7 +176,16 @@ namespace RozWorld_Editor
         /// </summary>
         private void MenuItemExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            EditorEnvironment.Exit();
+        }
+
+
+        /// <summary>
+        /// [Event] "View > New Window" clicked.
+        /// </summary>
+        private void MenuItemNewWindow_Click(object sender, EventArgs e)
+        {
+            EditorEnvironment.CreateWindow(EditorEnvironment.GenerateWindowName());
         }
     }
 }
