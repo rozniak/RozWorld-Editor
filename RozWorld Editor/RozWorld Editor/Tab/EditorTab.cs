@@ -15,18 +15,6 @@ namespace RozWorld_Editor.Tab
 {
     public abstract class EditorTab : TabPage
     {
-        /// <summary>
-        /// Base method for closing this tab.
-        /// </summary>
-        /// <returns>Whether the tab successfully closed or not.</returns>
-        public virtual bool Close()
-        {
-            ((TabControl)this.Parent).TabPages.RemoveByKey(this.Name);
-            this.Dispose();
-
-            return true;
-        }
-
         /**
          * The name/path of the file that this tab is working on.
          */
@@ -43,6 +31,35 @@ namespace RozWorld_Editor.Tab
         {
             get;
             private set;
+        }
+
+        /**
+         * The parent window of this tab
+         */
+        protected MainForm ParentForm;
+
+        /**
+         * The parent TabControl of this tab.
+         */
+        protected TabControl ParentTabUI;
+
+
+        /// <summary>
+        /// Base method for closing this tab.
+        /// </summary>
+        /// <returns>Whether the tab successfully closed or not.</returns>
+        public virtual bool Close()
+        {
+            try
+            {
+                this.ParentTabUI.SelectedIndex--;
+            }
+            catch { }
+            
+            this.ParentTabUI.TabPages.RemoveByKey(this.Name);
+            this.Dispose();
+
+            return true;
         }
     }
 }

@@ -9,6 +9,7 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using System.IO;
 using System.Windows.Forms;
 
 namespace RozWorld_Editor.Tab
@@ -37,9 +38,12 @@ namespace RozWorld_Editor.Tab
         #endregion
 
 
-        public WorldEditor()
+        public WorldEditor(TabControl parentTabUI, int uniqueID, string file = "")
         {
             #region Windows Forms Initialisation
+
+            this.ParentTabUI = parentTabUI;
+            this.ParentForm = (MainForm)parentTabUI.Parent;
 
             this.Controls.Add(this.LabelTabTitle);
             this.Controls.Add(this.LabelNavigation);
@@ -57,11 +61,11 @@ namespace RozWorld_Editor.Tab
              * WorldEditor
              */
             this.Location = new System.Drawing.Point(4, 22);
-            this.Name = "WorldEditor"; // This line is temporary
+            this.Name = "WorldEditor" + uniqueID.ToString();
             this.Padding = new System.Windows.Forms.Padding(3);
             this.Size = new System.Drawing.Size(808, 504);
             this.TabIndex = 1;
-            this.Text = "World - ";
+            this.Text = "";
             this.UseVisualStyleBackColor = true;
 
             /**
@@ -197,6 +201,15 @@ namespace RozWorld_Editor.Tab
             this.PanelWorldView.TabIndex = 0;
 
             #endregion
+
+            if (file == "")
+            {
+                this.Text = "World - *";
+            }
+            else
+            {
+                this.Text = "World - " + Path.GetFileName(file);
+            }
         }
     }
 }

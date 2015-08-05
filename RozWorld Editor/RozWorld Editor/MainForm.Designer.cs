@@ -150,6 +150,7 @@
             this.MenuSubItemWorld.Name = "MenuSubItemWorld";
             this.MenuSubItemWorld.Size = new System.Drawing.Size(154, 22);
             this.MenuSubItemWorld.Text = "World";
+            this.MenuSubItemWorld.Click += new System.EventHandler(this.NewWorld_Click);
             // 
             // MenuSubItemPlayer
             // 
@@ -157,6 +158,7 @@
             this.MenuSubItemPlayer.Name = "MenuSubItemPlayer";
             this.MenuSubItemPlayer.Size = new System.Drawing.Size(154, 22);
             this.MenuSubItemPlayer.Text = "Player";
+            this.MenuSubItemPlayer.Click += new System.EventHandler(this.NewPlayer_Click);
             // 
             // MenuSubItemGUIOMETRY
             // 
@@ -164,6 +166,7 @@
             this.MenuSubItemGUIOMETRY.Name = "MenuSubItemGUIOMETRY";
             this.MenuSubItemGUIOMETRY.Size = new System.Drawing.Size(154, 22);
             this.MenuSubItemGUIOMETRY.Text = "GUIOMETRY.BIN";
+            this.MenuSubItemGUIOMETRY.Click += new System.EventHandler(this.NewGUIOMETRY_Click);
             // 
             // MenuItemOpen
             // 
@@ -465,6 +468,7 @@
             this.TabUI.SelectedIndex = 0;
             this.TabUI.Size = new System.Drawing.Size(814, 556);
             this.TabUI.TabIndex = 1;
+            this.TabUI.SelectedIndexChanged += new System.EventHandler(this.TabUI_SelectedIndexChanged);
             this.TabUI.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TabUI_MouseUp);
             // 
             // ContextTabs
@@ -566,13 +570,13 @@
             // 
             this.ContextMoveNewWindow.Image = ((System.Drawing.Image)(resources.GetObject("ContextMoveNewWindow.Image")));
             this.ContextMoveNewWindow.Name = "ContextMoveNewWindow";
-            this.ContextMoveNewWindow.Size = new System.Drawing.Size(152, 22);
+            this.ContextMoveNewWindow.Size = new System.Drawing.Size(136, 22);
             this.ContextMoveNewWindow.Text = "New Window";
             // 
             // ContextSeparatorMoveTo
             // 
             this.ContextSeparatorMoveTo.Name = "ContextSeparatorMoveTo";
-            this.ContextSeparatorMoveTo.Size = new System.Drawing.Size(149, 6);
+            this.ContextSeparatorMoveTo.Size = new System.Drawing.Size(133, 6);
             // 
             // ContextMenuCloneTo
             // 
@@ -588,13 +592,13 @@
             // 
             this.ContextCloneNewWindow.Image = ((System.Drawing.Image)(resources.GetObject("ContextCloneNewWindow.Image")));
             this.ContextCloneNewWindow.Name = "ContextCloneNewWindow";
-            this.ContextCloneNewWindow.Size = new System.Drawing.Size(152, 22);
+            this.ContextCloneNewWindow.Size = new System.Drawing.Size(136, 22);
             this.ContextCloneNewWindow.Text = "New Window";
             // 
             // ContextSeparatorCloneTo
             // 
             this.ContextSeparatorCloneTo.Name = "ContextSeparatorCloneTo";
-            this.ContextSeparatorCloneTo.Size = new System.Drawing.Size(149, 6);
+            this.ContextSeparatorCloneTo.Size = new System.Drawing.Size(133, 6);
             // 
             // ContextSeparatorWindowsDelete
             // 
@@ -621,7 +625,7 @@
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(685, 590);
             this.Name = "MainForm";
-            this.Text = "RozWorld Editor - ";
+            this.Text = "RozWorld Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MenuStrip.ResumeLayout(false);

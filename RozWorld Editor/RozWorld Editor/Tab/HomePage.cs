@@ -32,9 +32,12 @@ namespace RozWorld_Editor.Tab
         #endregion
 
 
-        public HomePage()
+        public HomePage(TabControl parentTabUI)
         {
             #region Windows Forms Initialisation
+
+            this.ParentTabUI = parentTabUI;
+            this.ParentForm = (MainForm)parentTabUI.Parent;
 
             this.Controls.Add(PictureEditorLogo);
             this.Controls.Add(LabelNewTasks);
@@ -90,6 +93,7 @@ namespace RozWorld_Editor.Tab
             this.ButtonNewWorld.TabIndex = 2;
             this.ButtonNewWorld.Text = "World...";
             this.ButtonNewWorld.UseVisualStyleBackColor = true;
+            this.ButtonNewWorld.Click += new System.EventHandler(this.ParentForm.NewWorld_Click);
 
             /**
              * ButtonNewPlayer
@@ -100,6 +104,7 @@ namespace RozWorld_Editor.Tab
             this.ButtonNewPlayer.TabIndex = 3;
             this.ButtonNewPlayer.Text = "Player...";
             this.ButtonNewPlayer.UseVisualStyleBackColor = true;
+            this.ButtonNewPlayer.Click += new System.EventHandler(this.ParentForm.NewPlayer_Click);
 
             /**
              * ButtonNewGUIOMETRY
@@ -110,6 +115,7 @@ namespace RozWorld_Editor.Tab
             this.ButtonNewGUIOMETRY.TabIndex = 4;
             this.ButtonNewGUIOMETRY.Text = "GUIOMETRY.BIN...";
             this.ButtonNewGUIOMETRY.UseVisualStyleBackColor = true;
+            this.ButtonNewGUIOMETRY.Click += new System.EventHandler(this.ParentForm.NewGUIOMETRY_Click);
 
             /**
              * LabelOpenTasks

@@ -76,6 +76,9 @@
     <Compile Include="Tab\WorldEditor.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Toolbar\EditorToolbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Toolbar\Standard.cs">
       <SubType>Component</SubType>
     </Compile>

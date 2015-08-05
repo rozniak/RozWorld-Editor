@@ -17,6 +17,31 @@ namespace RozWorld_Editor
 {
     public partial class MainForm : Form
     {
+        /**
+         * Keep track of the tab ID's to make unique names.
+         */
+        private int _NextWorldTabID;
+        public int NextWorldTabID
+        {
+            get { return this._NextWorldTabID++; }
+            private set { this._NextWorldTabID = value; }
+        }
+
+        private int _NextPlayerTabID;
+        public int NextPlayerTabID
+        {
+            get { return this._NextPlayerTabID++; }
+            private set { this._NextPlayerTabID = value; }
+        }
+
+        private int _NextGUIOMETRYTabID;
+        public int NextGUIOMETRYTabID
+        {
+            get { return this._NextGUIOMETRYTabID++; }
+            private set { this._NextGUIOMETRYTabID = value; }
+        }
+
+
         public MainForm(bool homePage = false)
         {
             InitializeComponent();
@@ -29,7 +54,7 @@ namespace RozWorld_Editor
 
             if (homePage)
             {
-                this.TabUI.TabPages.Add(new Tab.HomePage());
+                this.TabUI.TabPages.Add(new Tab.HomePage(this.TabUI));
             }
         }
 
@@ -46,7 +71,7 @@ namespace RozWorld_Editor
                 switch (toolbarName)
                 {
                     case "ToolbarStandard":
-                        this.Controls.Add(new Toolbar.Standard());
+                        this.Controls.Add(new Toolbar.Standard(this));
                         this.MenuSubItemToolbarStandard.Checked = true;
                         break;
                 }
@@ -85,6 +110,36 @@ namespace RozWorld_Editor
             }
 
             return stillClosing;
+        }
+
+
+        /// <summary>
+        /// [Event] "* > New > World" menu item clicked.
+        /// </summary>
+        public void NewWorld_Click(object sender, EventArgs e)
+        {
+            this.TabUI.TabPages.Add(new Tab.WorldEditor(this.TabUI, this.NextWorldTabID));
+            this.TabUI.SelectedIndex = this.TabUI.TabCount - 1;
+        }
+
+
+        /// <summary>
+        /// [Event] "* > New > Player" menu item clicked.
+        /// </summary>
+        public void NewPlayer_Click(object sender, EventArgs e)
+        {
+            this.TabUI.TabPages.Add(new Tab.PlayerEditor(this.TabUI, this.NextPlayerTabID));
+            this.TabUI.SelectedIndex = this.TabUI.TabCount - 1;
+        }
+
+
+        /// <summary>
+        /// [Event] "* > New > GUIOMETRY.BIN" menu item clicked.
+        /// </summary>
+        public void NewGUIOMETRY_Click(object sender, EventArgs e)
+        {
+            this.TabUI.TabPages.Add(new Tab.GUIOMETRYEditor(this.TabUI, this.NextGUIOMETRYTabID));
+            this.TabUI.SelectedIndex = this.TabUI.TabCount - 1;
         }
 
 
@@ -158,6 +213,31 @@ namespace RozWorld_Editor
                         foundTab = true;
                     }
                 } while (!foundTab && i++ < this.TabUI.TabCount);
+            }
+        }
+
+
+        /// <summary>
+        /// Main tab interface changed tab.
+        /// </summary>
+        private void TabUI_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string tabTitle = this.TabUI.SelectedTab.Text;
+
+                if (tabTitle == "Home Page")
+                {
+                    this.Text = "RozWorld Editor";
+                }
+                else
+                {
+                    this.Text = tabTitle + " - RozWorld Editor";
+                }
+            }
+            catch
+            {
+                this.Text = "RozWorld Editor";
             }
         }
 

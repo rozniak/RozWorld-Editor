@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace RozWorld_Editor.Toolbar
 {
-    public class Standard : ToolStrip
+    public class Standard : EditorToolbar
     {
         #region Windows Forms Controls
 
@@ -45,9 +45,11 @@ namespace RozWorld_Editor.Toolbar
         #endregion
 
 
-        public Standard()
+        public Standard(MainForm parentForm)
         {
             #region Windows Forms Initialisation
+
+            this.ParentForm = parentForm;
 
             this.Items.AddRange(new ToolStripItem[] {
                 this.DropDownNew,
@@ -73,7 +75,7 @@ namespace RozWorld_Editor.Toolbar
             this.Name = "ToolbarStandard";
             this.Size = new System.Drawing.Size(814, 25);
             this.TabIndex = 2;
-            this.Text = "toolStrip1";
+            this.Text = "";
 
 
             /**
@@ -81,9 +83,10 @@ namespace RozWorld_Editor.Toolbar
              */
             this.DropDownNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.DropDownNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DropItemNewWorld,
-            this.DropItemNewPlayer,
-            this.DropItemNewGUIOMETRY});
+                this.DropItemNewWorld,
+                this.DropItemNewPlayer,
+                this.DropItemNewGUIOMETRY
+            });
             this.DropDownNew.Image = Properties.Resources.NewIcon;
             this.DropDownNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.DropDownNew.Name = "DropDownNew";
@@ -97,6 +100,7 @@ namespace RozWorld_Editor.Toolbar
             this.DropItemNewWorld.Name = "DropItemNewWorld";
             this.DropItemNewWorld.Size = new System.Drawing.Size(154, 22);
             this.DropItemNewWorld.Text = "World";
+            this.DropItemNewWorld.Click += new System.EventHandler(this.ParentForm.NewWorld_Click);
 
             /**
              * DropItemNewPlayer
@@ -105,6 +109,7 @@ namespace RozWorld_Editor.Toolbar
             this.DropItemNewPlayer.Name = "DropItemNewPlayer";
             this.DropItemNewPlayer.Size = new System.Drawing.Size(154, 22);
             this.DropItemNewPlayer.Text = "Player";
+            this.DropItemNewPlayer.Click += new System.EventHandler(this.ParentForm.NewPlayer_Click);
 
             /**
              * DropItemNewGUIOMETRY
@@ -113,6 +118,7 @@ namespace RozWorld_Editor.Toolbar
             this.DropItemNewGUIOMETRY.Name = "DropItemNewGUIOMETRY";
             this.DropItemNewGUIOMETRY.Size = new System.Drawing.Size(154, 22);
             this.DropItemNewGUIOMETRY.Text = "GUIOMETRY.BIN";
+            this.DropItemNewGUIOMETRY.Click += new System.EventHandler(this.ParentForm.NewGUIOMETRY_Click);
 
 
             /**

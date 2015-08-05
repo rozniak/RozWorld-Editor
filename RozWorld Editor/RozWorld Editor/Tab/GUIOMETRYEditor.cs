@@ -9,6 +9,7 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using System.IO;
 using System.Windows.Forms;
 
 namespace RozWorld_Editor.Tab
@@ -116,9 +117,12 @@ namespace RozWorld_Editor.Tab
         #endregion
 
 
-        public GUIOMETRYEditor()
+        public GUIOMETRYEditor(TabControl parentTabUI, int uniqueID, string file = "")
         {
             #region Windows Forms Initialisation
+
+            this.ParentTabUI = parentTabUI;
+            this.ParentForm = (MainForm)parentTabUI.Parent;
 
             this.Controls.Add(this.LabelTabTitle);
 
@@ -132,11 +136,11 @@ namespace RozWorld_Editor.Tab
              * GUIOMETRYEditor
              */
             this.Location = new System.Drawing.Point(4, 22);
-            this.Name = "GUIOMETRYEditor"; // This line is temporary
+            this.Name = "GUIOMETRYEditor" + uniqueID.ToString();
             this.Padding = new System.Windows.Forms.Padding(3);
             this.Size = new System.Drawing.Size(806, 530);
             this.TabIndex = 3;
-            this.Text = "GUIOMETRY -";
+            this.Text = "";
             this.UseVisualStyleBackColor = true;
 
             /**
@@ -1075,6 +1079,15 @@ namespace RozWorld_Editor.Tab
             this.ButtonCheckTick.UseVisualStyleBackColor = true;
 
             #endregion
+
+            if (file == "")
+            {
+                this.Text = "GUIOMETRY - *";
+            }
+            else
+            {
+                this.Text = "GUIOMETRY - " + Path.GetFileName(file);
+            }
         }
     }
 }
