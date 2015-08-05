@@ -18,10 +18,12 @@ namespace RozWorld_Editor.Tab
         /// <summary>
         /// Base method for closing this tab.
         /// </summary>
-        public virtual void Close()
+        public virtual bool Close()
         {
             ((TabControl)this.Parent).TabPages.RemoveByKey(this.Name);
             this.Dispose();
+
+            return true;
         }
 
         /**

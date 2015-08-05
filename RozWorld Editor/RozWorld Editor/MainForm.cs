@@ -85,6 +85,23 @@ namespace RozWorld_Editor
 
 
         /// <summary>
+        /// [Event] Form closing.
+        /// </summary>
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bool stillClosing = true;
+            int i = 0;
+
+            do
+            {
+                stillClosing = ((Tab.EditorTab)this.TabUI.TabPages[i]).Close();
+            } while (stillClosing && i++ < this.TabUI.TabCount);
+
+            EditorEnvironment.CloseWindow(this.Name);
+        }
+
+
+        /// <summary>
         /// [Event] Main tab interface mouse up.
         /// </summary>
         private void TabUI_MouseUp(object sender, MouseEventArgs e)
@@ -128,6 +145,15 @@ namespace RozWorld_Editor
         private void ContextCloseTab_Click(object sender, EventArgs e)
         {
             ((Tab.EditorTab)this.TabUI.SelectedTab).Close();
+        }
+
+
+        /// <summary>
+        /// [Event] "File > Exit" clicked or ALT+F4 pressed.
+        /// </summary>
+        private void MenuItemExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

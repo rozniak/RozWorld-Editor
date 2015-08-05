@@ -111,6 +111,27 @@ namespace RozWorld_Editor
 
 
         /// <summary>
+        /// Closes a window in this environment.
+        /// </summary>
+        /// <param name="windowName">The name of the window to close.</param>
+        /// <returns>Whether the window was successfully closed or not.</returns>
+        public static bool CloseWindow(string windowName)
+        {
+            if (Windows.ContainsKey(windowName))
+            {
+                Windows.Remove(windowName);
+
+                if (Windows.Count == 0)
+                {
+                    UserSettings.SaveUserSettings();
+                }
+            }
+
+            return false;
+        }
+
+
+        /// <summary>
         /// Sets the status of a toolbar on or off.
         /// </summary>
         /// <param name="toolbar">The name of the toolbar.</param>

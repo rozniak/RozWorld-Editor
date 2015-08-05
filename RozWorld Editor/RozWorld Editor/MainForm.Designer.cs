@@ -248,6 +248,7 @@
             this.MenuItemExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.MenuItemExit.Size = new System.Drawing.Size(193, 22);
             this.MenuItemExit.Text = "Exit";
+            this.MenuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
             // MenuEdit
             // 
@@ -620,6 +621,7 @@
             this.MinimumSize = new System.Drawing.Size(685, 590);
             this.Name = "MainForm";
             this.Text = "RozWorld Editor - ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
