@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataClasses\Texture.cs" />
     <Compile Include="Dialog\SetTexture.cs">
       <SubType>Form</SubType>
     </Compile>

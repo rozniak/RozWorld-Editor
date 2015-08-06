@@ -83,6 +83,7 @@
             this.ButtonBrowse.TabIndex = 4;
             this.ButtonBrowse.Text = "Browse...";
             this.ButtonBrowse.UseVisualStyleBackColor = true;
+            this.ButtonBrowse.Click += new System.EventHandler(this.ButtonBrowse_Click);
             // 
             // LabelTagPreview
             // 
@@ -95,6 +96,7 @@
             // 
             // PanelPreview
             // 
+            this.PanelPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PanelPreview.Location = new System.Drawing.Point(12, 141);
             this.PanelPreview.Name = "PanelPreview";
             this.PanelPreview.Size = new System.Drawing.Size(379, 178);

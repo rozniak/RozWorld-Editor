@@ -14,6 +14,8 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
+using RozWorld_Editor.DataClasses;
+
 namespace RozWorld_Editor.Tab
 {
     public class GUIOMETRYEditor : EditorTab
@@ -123,10 +125,10 @@ namespace RozWorld_Editor.Tab
         /**
          * Font textures, strings contain the source of the texture, Image is the texture itself.
          */
-        private Tuple<string, Image> TextureChatFont;
-        private Tuple<string, Image> TextureSmallFont;
-        private Tuple<string, Image> TextureMediumFont;
-        private Tuple<string, Image> TextureHugeFont;
+        private Texture TextureChatFont = new Texture(null, null);
+        private Texture TextureSmallFont = new Texture(null, null);
+        private Texture TextureMediumFont = new Texture(null, null);
+        private Texture TextureHugeFont = new Texture(null, null);
 
         #endregion
 
@@ -1148,7 +1150,7 @@ namespace RozWorld_Editor.Tab
                  * Unknown button clicked.
                  */
                 default:
-                    setTextureDialog = new Dialog.SetTexture("No Target", new Tuple<string, Image>(null, null));
+                    setTextureDialog = new Dialog.SetTexture("No Target", new Texture(null, null));
 
                     break;
             }
