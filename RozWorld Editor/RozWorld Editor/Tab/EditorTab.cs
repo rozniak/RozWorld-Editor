@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld_Editor.Tab.EditorTab -- RozWorld Generic Tab
+ * RozWorld_Editor.Tab.EditorTab -- RozWorld Editor Generic Tab
  * 
  * This source-code is part of the RozWorld Editor project by rozza of Oddmatics:
  * <<http://www.oddmatics.co.uk>>
@@ -30,7 +30,7 @@ namespace RozWorld_Editor.Tab
         public bool IsUnsaved
         {
             get;
-            private set;
+            protected set;
         }
 
         /**

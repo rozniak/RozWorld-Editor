@@ -303,6 +303,16 @@ namespace RozWorld_Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SearchBigIcon {
+            get {
+                object obj = ResourceManager.GetObject("SearchBigIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ThingUnknown {
             get {
                 object obj = ResourceManager.GetObject("ThingUnknown", resourceCulture);

@@ -201,6 +201,7 @@ namespace RozWorld_Editor.Tab
             "Huge Font"});
             this.ComboFont.Location = new System.Drawing.Point(43, 19);
             this.ComboFont.Name = "ComboFont";
+            this.ComboFont.SelectedIndex = 0;
             this.ComboFont.Size = new System.Drawing.Size(149, 21);
             this.ComboFont.TabIndex = 0;
 
@@ -1083,6 +1084,7 @@ namespace RozWorld_Editor.Tab
             if (file == "")
             {
                 this.Text = "GUIOMETRY - *";
+                this.IsUnsaved = true;
             }
             else
             {

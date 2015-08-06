@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld_Editor.Toolbar.EditorToolbar -- RozWorld Editor Generic Toolbar
+ * RozWorld_Editor.Dialog.SetTextureDialog -- Set Texture Browser Dialog
  * 
  * This source-code is part of the RozWorld Editor project by rozza of Oddmatics:
  * <<http://www.oddmatics.co.uk>>
@@ -9,15 +9,23 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
-namespace RozWorld_Editor.Toolbar
+namespace RozWorld_Editor.Dialog
 {
-    public class EditorToolbar : ToolStrip
+    public partial class SetTextureDialog : Form
     {
-        /**
-         * The parent window of this toolbar.
-         */
-        protected MainForm ParentForm;
+        public SetTextureDialog()
+        {
+            InitializeComponent();
+        }
+
+        private void SetTextureDialog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

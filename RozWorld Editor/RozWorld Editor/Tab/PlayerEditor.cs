@@ -231,6 +231,7 @@ namespace RozWorld_Editor.Tab
             });
             this.ComboAvatar.Location = new System.Drawing.Point(100, 71);
             this.ComboAvatar.Name = "ComboAvatar";
+            this.ComboAvatar.SelectedIndex = 0;
             this.ComboAvatar.Size = new System.Drawing.Size(113, 21);
             this.ComboAvatar.TabIndex = 7;
 
@@ -649,6 +650,7 @@ namespace RozWorld_Editor.Tab
             });
             this.ComboPetType.Location = new System.Drawing.Point(6, 32);
             this.ComboPetType.Name = "ComboPetType";
+            this.ComboPetType.SelectedIndex = 0;
             this.ComboPetType.Size = new System.Drawing.Size(150, 21);
             this.ComboPetType.TabIndex = 10;
 
@@ -804,6 +806,7 @@ namespace RozWorld_Editor.Tab
             });
             this.ComboPetPosition.Location = new System.Drawing.Point(99, 189);
             this.ComboPetPosition.Name = "ComboPetPosition";
+            this.ComboPetPosition.SelectedIndex = 0;
             this.ComboPetPosition.Size = new System.Drawing.Size(95, 21);
             this.ComboPetPosition.TabIndex = 24;
 
@@ -812,6 +815,7 @@ namespace RozWorld_Editor.Tab
             if (file == "")
             {
                 this.Text = "Player - *";
+                this.IsUnsaved = true;
             }
             else
             {

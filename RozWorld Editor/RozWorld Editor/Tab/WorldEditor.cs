@@ -205,6 +205,7 @@ namespace RozWorld_Editor.Tab
             if (file == "")
             {
                 this.Text = "World - *";
+                this.IsUnsaved = true;
             }
             else
             {
