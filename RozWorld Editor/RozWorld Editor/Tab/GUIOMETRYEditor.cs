@@ -9,6 +9,8 @@
  * Sharing, editing and general licence term information can be found inside of the "LICENCE.MD" file that should be located in the root of this project's directory structure.
  */
 
+using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -113,6 +115,18 @@ namespace RozWorld_Editor.Tab
         private Label LabelCheckTick = new Label();
         private PictureBox PictureCheckTick = new PictureBox();
         private Button ButtonCheckTick = new Button();
+
+        #endregion
+
+        #region Texture References
+
+        /**
+         * Font textures, strings contain the source of the texture, Image is the texture itself.
+         */
+        private Tuple<string, Image> TextureChatFont;
+        private Tuple<string, Image> TextureSmallFont;
+        private Tuple<string, Image> TextureMediumFont;
+        private Tuple<string, Image> TextureHugeFont;
 
         #endregion
 
@@ -263,6 +277,7 @@ namespace RozWorld_Editor.Tab
             this.ButtonFontTexture.TabIndex = 13;
             this.ButtonFontTexture.Text = "Set...";
             this.ButtonFontTexture.UseVisualStyleBackColor = true;
+            this.ButtonFontTexture.Click +=new EventHandler(this.SetTextureButton_Click);
 
             /**
              * LabelSpaceWidth
@@ -1090,6 +1105,55 @@ namespace RozWorld_Editor.Tab
             {
                 this.Text = "GUIOMETRY - " + Path.GetFileName(file);
             }
+        }
+
+
+        /// <summary>
+        /// "Set..." button clicked.
+        /// </summary>
+        private void SetTextureButton_Click(object sender, EventArgs e)
+        {
+            Dialog.SetTexture setTextureDialog;
+
+            switch (((Button)sender).Name)
+            {
+                /**
+                 * Font texture "Set..." button.
+                 */
+                case "ButtonFontTexture":
+                    switch ((string)this.ComboFont.SelectedItem)
+                    {
+                        default:
+                        case "Chat Font":
+                            setTextureDialog = new Dialog.SetTexture("Chat Font", this.TextureChatFont);
+                            break;
+
+                        case "Small Font":
+                            setTextureDialog = new Dialog.SetTexture("Small Font", this.TextureSmallFont);
+                            break;
+
+                        case "Medium Font":
+                            setTextureDialog = new Dialog.SetTexture("Medium Font", this.TextureMediumFont);
+                            break;
+
+                        case "Huge Font":
+                            setTextureDialog = new Dialog.SetTexture("Huge Font", this.TextureHugeFont);
+                            break;
+                    }
+
+                    break;
+
+
+                /**
+                 * Unknown button clicked.
+                 */
+                default:
+                    setTextureDialog = new Dialog.SetTexture("No Target", new Tuple<string, Image>(null, null));
+
+                    break;
+            }
+
+            setTextureDialog.ShowDialog();
         }
     }
 }

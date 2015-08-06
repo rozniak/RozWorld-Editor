@@ -1,6 +1,6 @@
 ﻿namespace RozWorld_Editor.Dialog
 {
-    partial class SetTextureDialog
+    partial class SetTexture
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.LabelSelectedFile = new System.Windows.Forms.Label();
             this.ButtonBrowse = new System.Windows.Forms.Button();
             this.LabelTagPreview = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelPreview = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.PictureDialogIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,19 +93,19 @@
             this.LabelTagPreview.TabIndex = 5;
             this.LabelTagPreview.Text = "Preview:";
             // 
-            // panel1
+            // PanelPreview
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 141);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 178);
-            this.panel1.TabIndex = 6;
+            this.PanelPreview.Location = new System.Drawing.Point(12, 141);
+            this.PanelPreview.Name = "PanelPreview";
+            this.PanelPreview.Size = new System.Drawing.Size(379, 178);
+            this.PanelPreview.TabIndex = 6;
             // 
-            // SetTextureDialog
+            // SetTexture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 331);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PanelPreview);
             this.Controls.Add(this.LabelTagPreview);
             this.Controls.Add(this.ButtonBrowse);
             this.Controls.Add(this.LabelSelectedFile);
@@ -114,7 +114,7 @@
             this.Controls.Add(this.LabelTagDialogDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "SetTextureDialog";
+            this.Name = "SetTexture";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -135,6 +135,6 @@
         private System.Windows.Forms.Label LabelSelectedFile;
         private System.Windows.Forms.Button ButtonBrowse;
         private System.Windows.Forms.Label LabelTagPreview;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelPreview;
     }
 }

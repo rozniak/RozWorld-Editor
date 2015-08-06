@@ -634,6 +634,7 @@ namespace RozWorld_Editor.Tab
             this.ComboPetType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboPetType.FormattingEnabled = true;
             this.ComboPetType.Items.AddRange(new object[] {
+                "None",
                 "Dalmation",
                 "Generic Black Cat",
                 "Tiger (Generic Ginger Cat)",
