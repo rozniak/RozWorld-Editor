@@ -34,8 +34,13 @@
             this.LabelSelectedFile = new System.Windows.Forms.Label();
             this.ButtonBrowse = new System.Windows.Forms.Button();
             this.LabelTagPreview = new System.Windows.Forms.Label();
-            this.PanelPreview = new System.Windows.Forms.Panel();
+            this.PanelPreviewContainer = new System.Windows.Forms.Panel();
+            this.PicturePreview = new System.Windows.Forms.PictureBox();
+            this.ButtonOK = new System.Windows.Forms.Button();
+            this.ButtonCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureDialogIcon)).BeginInit();
+            this.PanelPreviewContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicturePreview)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelTagDialogDescription
@@ -68,10 +73,10 @@
             // 
             // LabelSelectedFile
             // 
-            this.LabelSelectedFile.AutoSize = true;
-            this.LabelSelectedFile.Location = new System.Drawing.Point(9, 73);
+            this.LabelSelectedFile.AutoEllipsis = true;
+            this.LabelSelectedFile.Location = new System.Drawing.Point(9, 72);
             this.LabelSelectedFile.Name = "LabelSelectedFile";
-            this.LabelSelectedFile.Size = new System.Drawing.Size(35, 13);
+            this.LabelSelectedFile.Size = new System.Drawing.Size(382, 16);
             this.LabelSelectedFile.TabIndex = 3;
             this.LabelSelectedFile.Text = "$FILE";
             // 
@@ -94,20 +99,52 @@
             this.LabelTagPreview.TabIndex = 5;
             this.LabelTagPreview.Text = "Preview:";
             // 
-            // PanelPreview
+            // PanelPreviewContainer
             // 
-            this.PanelPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PanelPreview.Location = new System.Drawing.Point(12, 141);
-            this.PanelPreview.Name = "PanelPreview";
-            this.PanelPreview.Size = new System.Drawing.Size(379, 178);
-            this.PanelPreview.TabIndex = 6;
+            this.PanelPreviewContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PanelPreviewContainer.Controls.Add(this.PicturePreview);
+            this.PanelPreviewContainer.Location = new System.Drawing.Point(12, 141);
+            this.PanelPreviewContainer.Name = "PanelPreviewContainer";
+            this.PanelPreviewContainer.Size = new System.Drawing.Size(379, 178);
+            this.PanelPreviewContainer.TabIndex = 6;
+            // 
+            // PicturePreview
+            // 
+            this.PicturePreview.BackColor = System.Drawing.Color.White;
+            this.PicturePreview.Location = new System.Drawing.Point(0, 0);
+            this.PicturePreview.Name = "PicturePreview";
+            this.PicturePreview.Size = new System.Drawing.Size(379, 178);
+            this.PicturePreview.TabIndex = 0;
+            this.PicturePreview.TabStop = false;
+            // 
+            // ButtonOK
+            // 
+            this.ButtonOK.Location = new System.Drawing.Point(316, 89);
+            this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.Size = new System.Drawing.Size(75, 23);
+            this.ButtonOK.TabIndex = 7;
+            this.ButtonOK.Text = "OK";
+            this.ButtonOK.UseVisualStyleBackColor = true;
+            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
+            // 
+            // ButtonCancel
+            // 
+            this.ButtonCancel.Location = new System.Drawing.Point(235, 89);
+            this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.Size = new System.Drawing.Size(75, 23);
+            this.ButtonCancel.TabIndex = 8;
+            this.ButtonCancel.Text = "Cancel";
+            this.ButtonCancel.UseVisualStyleBackColor = true;
+            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // SetTexture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 331);
-            this.Controls.Add(this.PanelPreview);
+            this.Controls.Add(this.ButtonCancel);
+            this.Controls.Add(this.ButtonOK);
+            this.Controls.Add(this.PanelPreviewContainer);
             this.Controls.Add(this.LabelTagPreview);
             this.Controls.Add(this.ButtonBrowse);
             this.Controls.Add(this.LabelSelectedFile);
@@ -122,8 +159,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Set Texture...";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.SetTextureDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureDialogIcon)).EndInit();
+            this.PanelPreviewContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PicturePreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,6 +175,9 @@
         private System.Windows.Forms.Label LabelSelectedFile;
         private System.Windows.Forms.Button ButtonBrowse;
         private System.Windows.Forms.Label LabelTagPreview;
-        private System.Windows.Forms.Panel PanelPreview;
+        private System.Windows.Forms.Panel PanelPreviewContainer;
+        private System.Windows.Forms.PictureBox PicturePreview;
+        private System.Windows.Forms.Button ButtonOK;
+        private System.Windows.Forms.Button ButtonCancel;
     }
 }

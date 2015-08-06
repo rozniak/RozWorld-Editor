@@ -20,6 +20,7 @@ namespace RozWorld_Editor.Dialog
 {
     public partial class SetTexture : Form
     {
+        private Texture SelectedTexture;
         private Texture TextureReference;
 
 
@@ -30,41 +31,37 @@ namespace RozWorld_Editor.Dialog
             this.TextureReference = textureReference;
 
             this.LabelTagDialogDescription.Text = this.LabelTagDialogDescription.Text.Replace("$NAME", textureTarget);
-            this.LabelSelectedFile.Text = "No File Selected";
 
-            if (textureReference != null)
-            {
-                if (textureReference.Source != null)
-                {
-                    this.LabelSelectedFile.Text = textureReference.Source;
-                }
+            this.SelectedTexture = textureReference != null ?
+                new Texture(textureReference.Source, textureReference.Data) :
+                new Texture(null, null);
 
-                if (textureReference.Data != null)
-                {
-                    SetPreviewPanelImage();
-                }
-            }
+            this.LabelSelectedFile.Text = this.SelectedTexture.Source != null ?
+                this.SelectedTexture.Source :
+                "No File Selected";
+
+            SetPreviewImage();
         }
 
 
         /// <summary>
         /// Updates the image seen in the panel with the current selected image.
         /// </summary>
-        private void SetPreviewPanelImage()
+        private void SetPreviewImage()
         {
-            if (this.TextureReference.Data != null)
+            if (this.SelectedTexture.Data != null)
             {
-                this.PanelPreview.AutoScrollMinSize = this.TextureReference.Data.Size;
-                this.PanelPreview.BackgroundImage = this.TextureReference.Data;
+                this.PicturePreview.Image = this.SelectedTexture.Data;
+                this.PicturePreview.Size = this.SelectedTexture.Data.Size;
+                this.PanelPreviewContainer.AutoScrollMinSize = this.PicturePreview.Size;
+                this.LabelSelectedFile.Text = this.SelectedTexture.Source;
             }
         }
 
 
-        private void SetTextureDialog_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// [Event] "Browse..." button clicked.
+        /// </summary>
         private void ButtonBrowse_Click(object sender, EventArgs e)
         {
             OpenFileDialog openDialog = new OpenFileDialog();
@@ -74,11 +71,36 @@ namespace RozWorld_Editor.Dialog
 
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
-                this.TextureReference.Source = openDialog.FileName;
-                this.TextureReference.Data = Image.FromFile(openDialog.FileName);
+                this.SelectedTexture.Source = openDialog.FileName;
+                this.SelectedTexture.Data = Image.FromFile(openDialog.FileName);
 
-                SetPreviewPanelImage();
+                SetPreviewImage();
             }
+        }
+        
+        
+        /// <summary>
+        /// [Event] "OK" button clicked.
+        /// </summary>
+        private void ButtonOK_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+
+            this.TextureReference.Source = this.SelectedTexture.Source;
+            this.TextureReference.Data = this.SelectedTexture.Data;
+
+            this.Close();
+        }
+
+
+        /// <summary>
+        /// "Cancel" button clicked.
+        /// </summary>
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+
+            this.Close();
         }
     }
 }

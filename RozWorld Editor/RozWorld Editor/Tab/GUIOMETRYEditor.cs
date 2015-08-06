@@ -1155,7 +1155,10 @@ namespace RozWorld_Editor.Tab
                     break;
             }
 
-            setTextureDialog.ShowDialog();
+            if (setTextureDialog.ShowDialog() == DialogResult.OK)
+            {
+                // TODO: Finish this
+            }
         }
     }
 }
