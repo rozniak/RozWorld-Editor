@@ -153,6 +153,7 @@
             this.Controls.Add(this.LabelTagDialogDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SetTexture";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

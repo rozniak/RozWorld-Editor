@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld_Editor.Dialog.SetTextureDialog -- Set Texture Browser Dialog
+ * RozWorld_Editor.Dialog.SetTexture -- Set Texture Browser Dialog
  * 
  * This source-code is part of the RozWorld Editor project by rozza of Oddmatics:
  * <<http://www.oddmatics.co.uk>>

@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataClasses\Texture.cs" />
+    <Compile Include="Dialog\AddCharacter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\AddCharacter.Designer.cs">
+      <DependentUpon>AddCharacter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog\SetTexture.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="Toolbar\Standard.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Dialog\AddCharacter.resx">
+      <DependentUpon>AddCharacter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\SetTexture.resx">
       <DependentUpon>SetTexture.cs</DependentUpon>
     </EmbeddedResource>

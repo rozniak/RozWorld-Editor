@@ -118,6 +118,8 @@ namespace RozWorld_Editor.Tab
         private PictureBox PictureCheckTick = new PictureBox();
         private Button ButtonCheckTick = new Button();
 
+        private ToolTip TooltipGlobal = new ToolTip();
+
         #endregion
 
         #region Texture References
@@ -220,6 +222,7 @@ namespace RozWorld_Editor.Tab
             this.ComboFont.SelectedIndex = 0;
             this.ComboFont.Size = new System.Drawing.Size(149, 21);
             this.ComboFont.TabIndex = 0;
+            this.ComboFont.SelectedIndexChanged += new EventHandler(ComboFont_SelectedIndexChanged);
 
             /**
              * LabelCharacter
@@ -249,6 +252,7 @@ namespace RozWorld_Editor.Tab
             this.ButtonAddCharacter.TabIndex = 6;
             this.ButtonAddCharacter.Text = "+";
             this.ButtonAddCharacter.UseVisualStyleBackColor = true;
+            this.ButtonAddCharacter.Click += new EventHandler(ButtonAddCharacter_Click);
 
             /**
              * ButtonRemoveCharacter
@@ -340,6 +344,7 @@ namespace RozWorld_Editor.Tab
             /**
              * ButtonCharacterBlit
              */
+            this.ButtonCharacterBlit.Enabled = false;
             this.ButtonCharacterBlit.Location = new System.Drawing.Point(219, 19);
             this.ButtonCharacterBlit.Name = "ButtonCharacterBlit";
             this.ButtonCharacterBlit.Size = new System.Drawing.Size(103, 23);
@@ -380,6 +385,7 @@ namespace RozWorld_Editor.Tab
             /**
              * NumericCharBefore
              */
+            this.NumericCharBefore.Enabled = false;
             this.NumericCharBefore.Location = new System.Drawing.Point(148, 67);
             this.NumericCharBefore.Name = "NumericCharBefore";
             this.NumericCharBefore.Size = new System.Drawing.Size(78, 20);
@@ -398,6 +404,7 @@ namespace RozWorld_Editor.Tab
             /**
              * NumericCharAfter
              */
+            this.NumericCharAfter.Enabled = false;
             this.NumericCharAfter.Location = new System.Drawing.Point(232, 67);
             this.NumericCharAfter.Name = "NumericCharAfter";
             this.NumericCharAfter.Size = new System.Drawing.Size(78, 20);
@@ -416,6 +423,7 @@ namespace RozWorld_Editor.Tab
             /**
              * NumericCharYOffset
              */
+            this.NumericCharYOffset.Enabled = false;
             this.NumericCharYOffset.Location = new System.Drawing.Point(148, 106);
             this.NumericCharYOffset.Name = "NumericCharYOffset";
             this.NumericCharYOffset.Size = new System.Drawing.Size(78, 20);
@@ -1110,6 +1118,49 @@ namespace RozWorld_Editor.Tab
         }
 
 
+        private void UpdateFontTexturePreviews()
+        {
+            Texture selectedFontTexture;
+
+            switch ((string)this.ComboFont.SelectedItem)
+            {
+                default:
+                case "Chat Font":
+                    selectedFontTexture = this.TextureChatFont;
+                    break;
+
+                case "Small Font":
+                    selectedFontTexture = this.TextureSmallFont;
+                    break;
+
+                case "Medium Font":
+                    selectedFontTexture = this.TextureMediumFont;
+                    break;
+
+                case "Huge Font":
+                    selectedFontTexture = this.TextureHugeFont;
+                    break;
+            }
+
+            if (selectedFontTexture.Source != null && selectedFontTexture.Data != null)
+            {
+                this.LabelFontTexture.Text = selectedFontTexture.Source.Length > 11 ?
+                    "Texture:..." + selectedFontTexture.Source.Substring(selectedFontTexture.Source.Length - 11) :
+                    "Texture:" + selectedFontTexture.Source;
+
+                this.TooltipGlobal.SetToolTip(LabelFontTexture, selectedFontTexture.Source);
+
+                // Update character preview here
+            }
+            else
+            {
+                this.LabelFontTexture.Text = "Texture:";
+                this.TooltipGlobal.SetToolTip(LabelFontTexture, "");
+                this.PictureCharPreview.Image = null;
+            }
+        }
+
+
         /// <summary>
         /// "Set..." button clicked.
         /// </summary>
@@ -1157,8 +1208,44 @@ namespace RozWorld_Editor.Tab
 
             if (setTextureDialog.ShowDialog() == DialogResult.OK)
             {
-                // TODO: Finish this
+                switch (((Button)sender).Name)
+                {
+                    case "ButtonFontTexture":
+                        UpdateFontTexturePreviews();
+                        break;
+                }
             }
+        }
+
+
+        /// <summary>
+        /// [Event] "+" Add character button clicked.
+        /// </summary>
+        void ButtonAddCharacter_Click(object sender, EventArgs e)
+        {
+            string[] currentCharacters = new string[this.ListCharacter.Items.Count];
+            char charToAdd = ' ';
+
+            for (int i = 0; i < this.ListCharacter.Items.Count; i++)
+            {
+                currentCharacters[i] = this.ListCharacter.Items[i].ToString();
+            }
+
+            Dialog.AddCharacter addCharacterDialog = new Dialog.AddCharacter(currentCharacters, charToAdd);
+
+            if (addCharacterDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.ListCharacter.Items.Add(charToAdd);
+            }
+        }
+
+
+        /// <summary>
+        /// [Event] Font drop down selected item changed.
+        /// </summary>
+        void ComboFont_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateFontTexturePreviews();
         }
     }
 }
