@@ -1224,18 +1224,17 @@ namespace RozWorld_Editor.Tab
         void ButtonAddCharacter_Click(object sender, EventArgs e)
         {
             string[] currentCharacters = new string[this.ListCharacter.Items.Count];
-            char charToAdd = ' ';
 
             for (int i = 0; i < this.ListCharacter.Items.Count; i++)
             {
                 currentCharacters[i] = this.ListCharacter.Items[i].ToString();
             }
 
-            Dialog.AddCharacter addCharacterDialog = new Dialog.AddCharacter(currentCharacters, charToAdd);
+            Dialog.AddCharacter addCharacterDialog = new Dialog.AddCharacter(currentCharacters);
 
             if (addCharacterDialog.ShowDialog() == DialogResult.OK)
             {
-                this.ListCharacter.Items.Add(charToAdd);
+                this.ListCharacter.Items.Add(addCharacterDialog.Character);
             }
         }
 

@@ -17,6 +17,7 @@ namespace RozWorld_Editor
     {
         public const short UNKNOWN_ERROR = 0;
         public const short MISSING_INI_DICTIONARY_KEY = 11;
+        public const short INVALID_OR_DUPLICATE_CHARACTER = 20;
 
 
         /// <summary>
@@ -35,7 +36,13 @@ namespace RozWorld_Editor
                 {
                     case MISSING_INI_DICTIONARY_KEY:
                         MessageBox.Show("A reference was made to a missing INI variable. The default settings will be used instead.", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        break;
+
+                    case INVALID_OR_DUPLICATE_CHARACTER:
+                        MessageBox.Show("The character inputted is either invalid, missing, or a duplicate of a character already present in this font.", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         break;
 

@@ -24,23 +24,26 @@ namespace RozWorld_Editor.Dialog
     {
         private readonly string[] CurrentCharacters;
         private bool LegalCharacterInput;
-        private char CharacterToReturn;
+
+        public char Character;
 
 
-        public AddCharacter(string[] currentCharacters, char charReference)
+        public AddCharacter(string[] currentCharacters)
         {
             InitializeComponent();
 
-            this.CharacterToReturn = charReference;
+            this.CurrentCharacters = currentCharacters;
+
+            this.VerifyValidInput();
         }
 
 
         /// <summary>
-        /// [Event] Character input textbox text changed.
+        /// Updates form information relevant to the validity of character input.
         /// </summary>
-        private void TextCharacter_TextChanged(object sender, EventArgs e)
+        private void VerifyValidInput()
         {
-            TextBox textBox = (TextBox)sender;
+            TextBox textBox = this.TextCharacter;
 
             if (!CurrentCharacters.Contains(textBox.Text) && textBox.Text != "")
             {
@@ -54,6 +57,43 @@ namespace RozWorld_Editor.Dialog
                 textBox.ForeColor = Color.White;
                 this.LegalCharacterInput = false;
             }
+        }
+
+
+        /// <summary>
+        /// [Event] Character input textbox text changed.
+        /// </summary>
+        private void TextCharacter_TextChanged(object sender, EventArgs e)
+        {
+            this.VerifyValidInput();
+        }
+
+
+        /// <summary>
+        /// [Event] "OK" button clicked.
+        /// </summary>
+        private void ButtonOK_Click(object sender, EventArgs e)
+        {
+            if (this.LegalCharacterInput)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Character = this.TextCharacter.Text[0];
+                this.Close();
+            }
+            else
+            {
+                Error.Show(Error.INVALID_OR_DUPLICATE_CHARACTER);
+            }
+        }
+
+
+        /// <summary>
+        /// [Event] "Cancel" button clicked.
+        /// </summary>
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
