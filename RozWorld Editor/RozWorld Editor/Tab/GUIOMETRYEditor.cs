@@ -278,6 +278,7 @@ namespace RozWorld_Editor.Tab
             this.ButtonRemoveCharacter.TabIndex = 6;
             this.ButtonRemoveCharacter.Text = "-";
             this.ButtonRemoveCharacter.UseVisualStyleBackColor = true;
+            this.ButtonRemoveCharacter.Click += new EventHandler(ButtonRemoveCharacter_Click);
 
             /**
              * LabelFontTexture
@@ -1257,12 +1258,29 @@ namespace RozWorld_Editor.Tab
 
 
         /// <summary>
+        /// [Event] "-" Remove character button clicked.
+        /// </summary>
+        void ButtonRemoveCharacter_Click(object sender, EventArgs e)
+        {
+            if (this.ListCharacter.SelectedItem != null)
+            {
+                if(MessageBox.Show("Are you sure you want to remove this character from this font?", "RozWorld Editor",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.ListCharacter.Items.RemoveAt(this.ListCharacter.SelectedIndex);
+                }
+            }
+        }
+
+
+        /// <summary>
         /// [Event] Font drop down selected item changed.
         /// </summary>
         void ComboFont_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateFontTexturePreviews();
 
+            // Update the characters listbox
             List<char> characterList;
 
             if (this.LastSelectedFont != null) // Make sure there is a last picked font

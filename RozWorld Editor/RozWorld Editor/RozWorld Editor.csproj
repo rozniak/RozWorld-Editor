@@ -56,6 +56,12 @@
     <Compile Include="Dialog\AddCharacter.Designer.cs">
       <DependentUpon>AddCharacter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\BlitCharacter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\BlitCharacter.Designer.cs">
+      <DependentUpon>BlitCharacter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog\SetTexture.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="Dialog\AddCharacter.resx">
       <DependentUpon>AddCharacter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\BlitCharacter.resx">
+      <DependentUpon>BlitCharacter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\SetTexture.resx">
       <DependentUpon>SetTexture.cs</DependentUpon>
