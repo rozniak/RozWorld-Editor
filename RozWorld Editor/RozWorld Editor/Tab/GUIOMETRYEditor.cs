@@ -10,6 +10,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -133,6 +134,20 @@ namespace RozWorld_Editor.Tab
         private Texture TextureHugeFont = new Texture(null, null);
 
         #endregion
+
+        #region Font Character Lists
+
+        private List<char> CharactersChatFont = new List<char>();
+        private List<char> CharactersSmallFont = new List<char>();
+        private List<char> CharactersMediumFont = new List<char>();
+        private List<char> CharactersHugeFont = new List<char>();
+
+        #endregion
+
+        /**
+         * Keep track of the last picked font, so that the character list saving can work.
+         */
+        private string LastSelectedFont;
 
 
         public GUIOMETRYEditor(TabControl parentTabUI, int uniqueID, string file = "")
@@ -1106,6 +1121,8 @@ namespace RozWorld_Editor.Tab
 
             #endregion
 
+            this.LastSelectedFont = "Chat Font";
+
             if (file == "")
             {
                 this.Text = "GUIOMETRY - *";
@@ -1245,6 +1262,67 @@ namespace RozWorld_Editor.Tab
         void ComboFont_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateFontTexturePreviews();
+
+            List<char> characterList;
+
+            if (this.LastSelectedFont != null) // Make sure there is a last picked font
+            {
+                switch (this.LastSelectedFont)
+                {
+                    default:
+                    case "Chat Font":
+                        characterList = this.CharactersChatFont;
+                        break;
+
+                    case "Small Font":
+                        characterList = this.CharactersSmallFont;
+                        break;
+
+                    case "Medium Font":
+                        characterList = this.CharactersMediumFont;
+                        break;
+
+                    case "Huge Font":
+                        characterList = this.CharactersHugeFont;
+                        break;
+                }
+
+                characterList.Clear();
+
+                foreach (char item in this.ListCharacter.Items)
+                {
+                    characterList.Add(item);
+                }
+            }
+
+            switch ((string)this.ComboFont.SelectedItem)
+            {
+                default:
+                case "Chat Font":
+                    characterList = this.CharactersChatFont;
+                    break;
+
+                case "Small Font":
+                    characterList = this.CharactersSmallFont;
+                    break;
+
+                case "Medium Font":
+                    characterList = this.CharactersMediumFont;
+                    break;
+
+                case "Huge Font":
+                    characterList = this.CharactersHugeFont;
+                    break;
+            }
+
+            this.ListCharacter.Items.Clear();
+
+            foreach (char item in characterList)
+            {
+                this.ListCharacter.Items.Add(item);
+            }
+
+            this.LastSelectedFont = (string)this.ComboFont.SelectedItem;
         }
     }
 }
