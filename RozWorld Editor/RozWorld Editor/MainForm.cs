@@ -90,6 +90,7 @@ namespace RozWorld_Editor
             }
 
             MenuStrip.SendToBack(); // Make sure the main menu strip stays at the top
+            UpdateToolbarsTabDetails(); // Update the toolbar on the current tab's details
         }
 
 
@@ -140,7 +141,9 @@ namespace RozWorld_Editor
 
                 if (this.Controls.ContainsKey("ToolbarStandard"))
                 {
-                    // Update the standard toolbar
+                    var standardToolbar = (Toolbar.Standard)this.Controls["ToolbarStandard"];
+                    standardToolbar.Items["ButtonUndo"].Enabled = canUndo;
+                    standardToolbar.Items["ButtonRedo"].Enabled = canRedo;
                 }
             }
         }
@@ -173,6 +176,30 @@ namespace RozWorld_Editor
         {
             this.TabUI.TabPages.Add(new Tab.GUIOMETRYEditor(this.TabUI, this.NextGUIOMETRYTabID));
             this.TabUI.SelectedIndex = this.TabUI.TabCount - 1;
+        }
+
+
+        /// <summary>
+        /// [Event] "* > Redo" menu item clicked.
+        /// </summary>
+        public void RedoItem_Click(object sender, EventArgs e)
+        {
+            if (this.TabUI.TabCount > 0)
+            {
+                ((Tab.EditorTab)this.TabUI.SelectedTab).Redo();
+            }
+        }
+
+
+        /// <summary>
+        /// [Event] "* > Undo" menu item clicked.
+        /// </summary>
+        public void UndoItem_Click(object sender, EventArgs e)
+        {
+            if (this.TabUI.TabCount > 0)
+            {
+                ((Tab.EditorTab)this.TabUI.SelectedTab).Undo();
+            }
         }
 
 
