@@ -45,18 +45,6 @@ namespace RozWorld_Editor
             private set;
         }
 
-        /**
-         * Keep tabs on what the last operations were that can be undone.
-         */
-        private static string[] OperationHistoryUndo = new string[MAX_OPERATION_HISTORY];
-        private static string[] OperationHistoryRedo = new string[MAX_OPERATION_HISTORY];
-
-        /**
-         * Tells whether the command being done is an undo operation or not, if it isn't, it
-         * should add itself to the operation history.
-         */
-        private static bool OperationIsUndo = false;
-
 
         /// <summary>
         /// Initialises the environment.

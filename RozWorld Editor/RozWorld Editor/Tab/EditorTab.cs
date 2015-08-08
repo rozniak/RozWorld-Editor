@@ -43,6 +43,39 @@ namespace RozWorld_Editor.Tab
          */
         protected TabControl ParentTabUI;
 
+        /**
+         * Undo and redo history for this tab.
+         */
+        protected string[] UndoHistory = new string[EditorEnvironment.MAX_OPERATION_HISTORY];
+        protected string[] RedoHistory = new string[EditorEnvironment.MAX_OPERATION_HISTORY];
+
+
+        /// <summary>
+        /// Gets whether this tab has undo history.
+        /// </summary>
+        /// <returns>Whether this tab has undo history or not.</returns>
+        public bool CanUndo()
+        {
+            return UndoHistory[0] != null;
+        }
+
+
+        /// <summary>
+        /// Gets whether this tab has redo history.
+        /// </summary>
+        /// <returns>Whether this tab has redo history or not.</returns>
+        public bool CanRedo()
+        {
+            return RedoHistory[0] != null;
+        }
+
+
+        /**
+         * Undo and redo functions to be implemented by the tabs that use them.
+         */
+        public virtual void Undo() { }
+        public virtual void Redo() { }
+
 
         /// <summary>
         /// Base method for closing this tab.

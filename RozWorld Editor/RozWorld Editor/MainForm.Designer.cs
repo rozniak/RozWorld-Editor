@@ -268,6 +268,7 @@
             this.MenuEdit.Name = "MenuEdit";
             this.MenuEdit.Size = new System.Drawing.Size(37, 20);
             this.MenuEdit.Text = "Edit";
+            this.MenuEdit.Click += new System.EventHandler(this.MenuEdit_Click);
             // 
             // MenuItemUndo
             // 

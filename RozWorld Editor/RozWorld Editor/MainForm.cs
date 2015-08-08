@@ -56,6 +56,8 @@ namespace RozWorld_Editor
             {
                 this.TabUI.TabPages.Add(new Tab.HomePage(this.TabUI));
             }
+
+            UpdateToolbarsTabDetails();
         }
 
 
@@ -110,6 +112,37 @@ namespace RozWorld_Editor
             }
 
             return stillClosing;
+        }
+
+
+        /// <summary>
+        /// [Event] Event overload for UpdateToolbarsTabDetails().
+        /// </summary>
+        private void UpdateToolbarsTabDetails(object sender, EventArgs e) { UpdateToolbarsTabDetails(); }
+        
+        /// <summary>
+        /// Updates toolbars relevant to details of the currently open tab.
+        /// </summary>
+        private void UpdateToolbarsTabDetails()
+        {
+            if (this.TabUI.TabCount > 0)
+            {
+                var currentTab = (Tab.EditorTab)this.TabUI.SelectedTab;
+
+                /**
+                 * Check undo/redo.
+                 */
+                bool canUndo = currentTab.CanUndo();
+                bool canRedo = currentTab.CanRedo();
+
+                this.MenuItemUndo.Enabled = canUndo;
+                this.MenuItemRedo.Enabled = canRedo;
+
+                if (this.Controls.ContainsKey("ToolbarStandard"))
+                {
+                    // Update the standard toolbar
+                }
+            }
         }
 
 
@@ -222,7 +255,7 @@ namespace RozWorld_Editor
         /// </summary>
         private void TabUI_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            if (this.TabUI.TabCount > 0)
             {
                 string tabTitle = this.TabUI.SelectedTab.Text;
 
@@ -235,10 +268,13 @@ namespace RozWorld_Editor
                     this.Text = tabTitle + " - RozWorld Editor";
                 }
             }
-            catch
+            else
             {
                 this.Text = "RozWorld Editor";
             }
+
+            // Update toolbars relevant to this tab
+            UpdateToolbarsTabDetails(sender, e);
         }
 
 
@@ -248,6 +284,15 @@ namespace RozWorld_Editor
         private void ContextCloseTab_Click(object sender, EventArgs e)
         {
             ((Tab.EditorTab)this.TabUI.SelectedTab).Close();
+        }
+
+
+        /// <summary>
+        /// [Event] "Edit" clicked.
+        /// </summary>
+        private void MenuEdit_Click(object sender, EventArgs e)
+        {
+            UpdateToolbarsTabDetails(sender, e);
         }
 
 
