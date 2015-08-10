@@ -17,6 +17,7 @@ namespace RozWorld_Editor
     {
         public const short UNKNOWN_ERROR = 0;
         public const short MISSING_INI_DICTIONARY_KEY = 11;
+        public const short MISSING_FONT_TEXTURE = 12;
         public const short INVALID_OR_DUPLICATE_CHARACTER = 20;
 
 
@@ -36,6 +37,12 @@ namespace RozWorld_Editor
                 {
                     case MISSING_INI_DICTIONARY_KEY:
                         MessageBox.Show("A reference was made to a missing INI variable. The default settings will be used instead.", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        break;
+
+                    case MISSING_FONT_TEXTURE:
+                        MessageBox.Show("No texture has been assigned to this font yet, so blitting correctly cannot be done. Assign a texture first then try again.", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         break;

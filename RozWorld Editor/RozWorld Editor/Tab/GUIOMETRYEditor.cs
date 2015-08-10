@@ -1322,13 +1322,21 @@ namespace RozWorld_Editor.Tab
         {
             string fontSelected = (string)ComboFont.SelectedItem;
             char charSelected = (char)ListCharacter.SelectedItem;
-            CharacterInfo charInfo = GetFontInfo(fontSelected).GetCharacter(charSelected);
+            FontInfo fontInfo = GetFontInfo(fontSelected);
+            CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
 
-            Dialog.BlitCharacter blitCharacterDialog = new Dialog.BlitCharacter(charSelected, charInfo);
-
-            if (blitCharacterDialog.ShowDialog() == DialogResult.OK)
+            if (fontInfo.Texture.Data != null)
             {
+                Dialog.BlitCharacter blitCharacterDialog = new Dialog.BlitCharacter(charSelected, charInfo, fontInfo.Texture.Data);
 
+                if (blitCharacterDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // TODO: Stuff here
+                }
+            }
+            else
+            {
+                Error.Show(Error.MISSING_FONT_TEXTURE);
             }
         }
 

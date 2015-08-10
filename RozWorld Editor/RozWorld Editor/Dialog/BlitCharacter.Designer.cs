@@ -67,11 +67,15 @@
             // PicturePreview
             // 
             this.PicturePreview.BackColor = System.Drawing.Color.White;
+            this.PicturePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PicturePreview.Location = new System.Drawing.Point(0, 0);
             this.PicturePreview.Name = "PicturePreview";
             this.PicturePreview.Size = new System.Drawing.Size(268, 322);
             this.PicturePreview.TabIndex = 0;
             this.PicturePreview.TabStop = false;
+            this.PicturePreview.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PicturePreview_MouseDown);
+            this.PicturePreview.MouseLeave += new System.EventHandler(this.PicturePreview_MouseLeave);
+            this.PicturePreview.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PicturePreview_MouseUp);
             // 
             // ButtonOK
             // 
@@ -203,6 +207,11 @@
             this.LabelBittingDestination.Size = new System.Drawing.Size(97, 13);
             this.LabelBittingDestination.TabIndex = 11;
             this.LabelBittingDestination.Text = "Blitting Destination:";
+            // 
+            // TimerPreviewSelection
+            // 
+            this.TimerPreviewSelection.Interval = 5;
+            this.TimerPreviewSelection.Tick += new System.EventHandler(this.TimerPreviewSelection_Tick);
             // 
             // BlitCharacter
             // 
