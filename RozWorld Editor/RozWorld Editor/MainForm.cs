@@ -251,12 +251,27 @@ namespace RozWorld_Editor
             {
                 do
                 {
-                    Rectangle tabBounds = TabUI.GetTabRect(i);
-
-                    if (tabBounds.Contains(e.Location))
+                    try
                     {
-                        TabUI.SelectedIndex = i;
-                        ContextTabs.Show(TabUI, e.Location);
+                        Rectangle tabBounds = TabUI.GetTabRect(i);
+
+                        if (tabBounds.Contains(e.Location))
+                        {
+                            TabUI.SelectedIndex = i;
+                            ContextTabs.Show(TabUI, e.Location);
+                            foundTab = true;
+                        }
+                    }
+                    /**
+                     * This catch block is here due to some strange voodoo that can cause
+                     * this loop to continue even though i isn't less than TabUI.TabCount.
+                     * 
+                     * Will attempt to see the cause later, it seems to happen randomly
+                     * during rapid right-clicking of tabs (aka, should never happen in
+                     * normal use).
+                     */
+                    catch (ArgumentOutOfRangeException argRangeEx)
+                    {
                         foundTab = true;
                     }
                 } while (!foundTab && i++ < TabUI.TabCount);

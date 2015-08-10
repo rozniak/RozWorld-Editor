@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlitCharacter));
             this.PanelPreviewContainer = new System.Windows.Forms.Panel();
             this.PicturePreview = new System.Windows.Forms.PictureBox();
@@ -46,6 +47,7 @@
             this.NumericBlittingDestinationX = new System.Windows.Forms.NumericUpDown();
             this.LabelBlittingDestinationX = new System.Windows.Forms.Label();
             this.LabelBittingDestination = new System.Windows.Forms.Label();
+            this.TimerPreviewSelection = new System.Windows.Forms.Timer(this.components);
             this.PanelPreviewContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicturePreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericBlitOriginX)).BeginInit();
@@ -79,6 +81,7 @@
             this.ButtonOK.TabIndex = 1;
             this.ButtonOK.Text = "OK";
             this.ButtonOK.UseVisualStyleBackColor = true;
+            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // ButtonCancel
             // 
@@ -88,6 +91,7 @@
             this.ButtonCancel.TabIndex = 2;
             this.ButtonCancel.Text = "Cancel";
             this.ButtonCancel.UseVisualStyleBackColor = true;
+            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // LabelTagDialogDescription
             // 
@@ -221,11 +225,13 @@
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonOK);
             this.Controls.Add(this.PanelPreviewContainer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BlitCharacter";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Blit Character...";
             this.TopMost = true;
             this.PanelPreviewContainer.ResumeLayout(false);
@@ -258,5 +264,6 @@
         private System.Windows.Forms.NumericUpDown NumericBlittingDestinationX;
         private System.Windows.Forms.Label LabelBlittingDestinationX;
         private System.Windows.Forms.Label LabelBittingDestination;
+        private System.Windows.Forms.Timer TimerPreviewSelection;
     }
 }

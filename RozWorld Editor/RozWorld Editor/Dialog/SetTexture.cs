@@ -84,23 +84,23 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
 
             TextureReference.Source = SelectedTexture.Source;
             TextureReference.Data = SelectedTexture.Data;
 
-            Close();
+            this.Close();
         }
 
 
         /// <summary>
-        /// "Cancel" button clicked.
+        /// [Event] "Cancel" button clicked.
         /// </summary>
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+            this.DialogResult = DialogResult.Cancel;
 
-            Close();
+            this.Close();
         }
     }
 }

@@ -358,6 +358,7 @@ namespace RozWorld_Editor.Tab
             ButtonCharacterBlit.TabIndex = 11;
             ButtonCharacterBlit.Text = "Blitting...";
             ButtonCharacterBlit.UseVisualStyleBackColor = true;
+            ButtonCharacterBlit.Click += new EventHandler(ButtonCharacterBlit_Click);
 
             /**
              * LabelCharPreview
@@ -1310,6 +1311,24 @@ namespace RozWorld_Editor.Tab
                         UpdateFontTexturePreviews();
                         break;
                 }
+            }
+        }
+
+
+        /// <summary>
+        /// "Blitting..." button clicked.
+        /// </summary>
+        void ButtonCharacterBlit_Click(object sender, EventArgs e)
+        {
+            string fontSelected = (string)ComboFont.SelectedItem;
+            char charSelected = (char)ListCharacter.SelectedItem;
+            CharacterInfo charInfo = GetFontInfo(fontSelected).GetCharacter(charSelected);
+
+            Dialog.BlitCharacter blitCharacterDialog = new Dialog.BlitCharacter(charSelected, charInfo);
+
+            if (blitCharacterDialog.ShowDialog() == DialogResult.OK)
+            {
+
             }
         }
 
