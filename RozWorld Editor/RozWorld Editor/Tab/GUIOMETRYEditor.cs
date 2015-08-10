@@ -123,31 +123,20 @@ namespace RozWorld_Editor.Tab
 
         #endregion
 
-        #region Texture References
+        #region Font Information Classes
 
-        /**
-         * Font textures, strings contain the source of the texture, Image is the texture itself.
-         */
-        private Texture TextureChatFont = new Texture(null, null);
-        private Texture TextureSmallFont = new Texture(null, null);
-        private Texture TextureMediumFont = new Texture(null, null);
-        private Texture TextureHugeFont = new Texture(null, null);
-
-        #endregion
-
-        #region Font Character Lists
-
-        private List<char> CharactersChatFont = new List<char>();
-        private List<char> CharactersSmallFont = new List<char>();
-        private List<char> CharactersMediumFont = new List<char>();
-        private List<char> CharactersHugeFont = new List<char>();
+        private FontInfo InfoChatFont = new FontInfo();
+        private FontInfo InfoSmallFont = new FontInfo();
+        private FontInfo InfoMediumFont = new FontInfo();
+        private FontInfo InfoHugeFont = new FontInfo();
 
         #endregion
 
         /**
-         * Keep track of the last picked font, so that the character list saving can work.
+         * Keep track of the last picked font and character, so saving the lists can work
          */
         private string LastSelectedFont;
+        private char LastSelectedCharacter;
 
 
         public GUIOMETRYEditor(TabControl parentTabUI, int uniqueID, string file = "")
@@ -157,12 +146,12 @@ namespace RozWorld_Editor.Tab
             this.ParentTabUI = parentTabUI;
             this.ParentForm = (MainForm)parentTabUI.Parent;
 
-            this.Controls.Add(this.LabelTabTitle);
+            this.Controls.Add(LabelTabTitle);
 
-            this.Controls.Add(this.GroupFontEditor);
-            this.Controls.Add(this.GroupButtonEditor);
-            this.Controls.Add(this.GroupTextEditor);
-            this.Controls.Add(this.GroupCheckEditor);
+            this.Controls.Add(GroupFontEditor);
+            this.Controls.Add(GroupButtonEditor);
+            this.Controls.Add(GroupTextEditor);
+            this.Controls.Add(GroupCheckEditor);
 
 
             /**
@@ -179,1002 +168,1108 @@ namespace RozWorld_Editor.Tab
             /**
              * LabelTabTitle
              */
-            this.LabelTabTitle.AutoSize = true;
-            this.LabelTabTitle.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTabTitle.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.LabelTabTitle.Location = new System.Drawing.Point(8, 3);
-            this.LabelTabTitle.Name = "LabelTabTitle";
-            this.LabelTabTitle.Size = new System.Drawing.Size(243, 24);
-            this.LabelTabTitle.TabIndex = 1;
-            this.LabelTabTitle.Text = "GUIOMETRY.BIN Editor";
+            LabelTabTitle.AutoSize = true;
+            LabelTabTitle.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            LabelTabTitle.ForeColor = System.Drawing.SystemColors.ControlDark;
+            LabelTabTitle.Location = new System.Drawing.Point(8, 3);
+            LabelTabTitle.Name = "LabelTabTitle";
+            LabelTabTitle.Size = new System.Drawing.Size(243, 24);
+            LabelTabTitle.TabIndex = 1;
+            LabelTabTitle.Text = "GUIOMETRY.BIN Editor";
 
 
             /**
              * GroupFontEditor
              */
-            this.GroupFontEditor.Controls.Add(this.NumericLineHeight);
-            this.GroupFontEditor.Controls.Add(this.LabelLineHeight);
-            this.GroupFontEditor.Controls.Add(this.NumericSpaceWidth);
-            this.GroupFontEditor.Controls.Add(this.LabelSpaceWidth);
-            this.GroupFontEditor.Controls.Add(this.LabelFontTexture);
-            this.GroupFontEditor.Controls.Add(this.ButtonFontTexture);
-            this.GroupFontEditor.Controls.Add(this.GroupCharacterDetails);
-            this.GroupFontEditor.Controls.Add(this.ButtonRemoveCharacter);
-            this.GroupFontEditor.Controls.Add(this.ButtonAddCharacter);
-            this.GroupFontEditor.Controls.Add(this.ListCharacter);
-            this.GroupFontEditor.Controls.Add(this.LabelCharacter);
-            this.GroupFontEditor.Controls.Add(this.LabelFont);
-            this.GroupFontEditor.Controls.Add(this.ComboFont);
-            this.GroupFontEditor.Location = new System.Drawing.Point(12, 30);
-            this.GroupFontEditor.Name = "GroupFontEditor";
-            this.GroupFontEditor.Size = new System.Drawing.Size(356, 299);
-            this.GroupFontEditor.TabIndex = 0;
-            this.GroupFontEditor.TabStop = false;
-            this.GroupFontEditor.Text = "Font Editor";
+            GroupFontEditor.Controls.Add(NumericLineHeight);
+            GroupFontEditor.Controls.Add(LabelLineHeight);
+            GroupFontEditor.Controls.Add(NumericSpaceWidth);
+            GroupFontEditor.Controls.Add(LabelSpaceWidth);
+            GroupFontEditor.Controls.Add(LabelFontTexture);
+            GroupFontEditor.Controls.Add(ButtonFontTexture);
+            GroupFontEditor.Controls.Add(GroupCharacterDetails);
+            GroupFontEditor.Controls.Add(ButtonRemoveCharacter);
+            GroupFontEditor.Controls.Add(ButtonAddCharacter);
+            GroupFontEditor.Controls.Add(ListCharacter);
+            GroupFontEditor.Controls.Add(LabelCharacter);
+            GroupFontEditor.Controls.Add(LabelFont);
+            GroupFontEditor.Controls.Add(ComboFont);
+            GroupFontEditor.Location = new System.Drawing.Point(12, 30);
+            GroupFontEditor.Name = "GroupFontEditor";
+            GroupFontEditor.Size = new System.Drawing.Size(356, 299);
+            GroupFontEditor.TabIndex = 0;
+            GroupFontEditor.TabStop = false;
+            GroupFontEditor.Text = "Font Editor";
 
             /**
              * LabelFont
              */
-            this.LabelFont.AutoSize = true;
-            this.LabelFont.Location = new System.Drawing.Point(6, 22);
-            this.LabelFont.Name = "LabelFont";
-            this.LabelFont.Size = new System.Drawing.Size(31, 13);
-            this.LabelFont.TabIndex = 1;
-            this.LabelFont.Text = "Font:";
+            LabelFont.AutoSize = true;
+            LabelFont.Location = new System.Drawing.Point(6, 22);
+            LabelFont.Name = "LabelFont";
+            LabelFont.Size = new System.Drawing.Size(31, 13);
+            LabelFont.TabIndex = 1;
+            LabelFont.Text = "Font:";
 
             /**
              * ComboFont
              */
-            this.ComboFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboFont.FormattingEnabled = true;
-            this.ComboFont.Items.AddRange(new object[] {
+            ComboFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            ComboFont.FormattingEnabled = true;
+            ComboFont.Items.AddRange(new object[] {
             "Chat Font",
             "Small Font",
             "Medium Font",
             "Huge Font"});
-            this.ComboFont.Location = new System.Drawing.Point(43, 19);
-            this.ComboFont.Name = "ComboFont";
-            this.ComboFont.SelectedIndex = 0;
-            this.ComboFont.Size = new System.Drawing.Size(149, 21);
-            this.ComboFont.TabIndex = 0;
-            this.ComboFont.SelectedIndexChanged += new EventHandler(ComboFont_SelectedIndexChanged);
+            ComboFont.Location = new System.Drawing.Point(43, 19);
+            ComboFont.Name = "ComboFont";
+            ComboFont.SelectedIndex = 0;
+            ComboFont.Size = new System.Drawing.Size(149, 21);
+            ComboFont.TabIndex = 0;
+            ComboFont.SelectedIndexChanged += new EventHandler(ComboFont_SelectedIndexChanged);
 
             /**
              * LabelCharacter
              */
-            this.LabelCharacter.AutoSize = true;
-            this.LabelCharacter.Location = new System.Drawing.Point(198, 22);
-            this.LabelCharacter.Name = "LabelCharacter";
-            this.LabelCharacter.Size = new System.Drawing.Size(56, 13);
-            this.LabelCharacter.TabIndex = 4;
-            this.LabelCharacter.Text = "Character:";
+            LabelCharacter.AutoSize = true;
+            LabelCharacter.Location = new System.Drawing.Point(198, 22);
+            LabelCharacter.Name = "LabelCharacter";
+            LabelCharacter.Size = new System.Drawing.Size(56, 13);
+            LabelCharacter.TabIndex = 4;
+            LabelCharacter.Text = "Character:";
 
             /**
              * ListCharacter
              */
-            this.ListCharacter.FormattingEnabled = true;
-            this.ListCharacter.Location = new System.Drawing.Point(260, 19);
-            this.ListCharacter.Name = "ListCharacter";
-            this.ListCharacter.Size = new System.Drawing.Size(90, 43);
-            this.ListCharacter.TabIndex = 5;
+            ListCharacter.FormattingEnabled = true;
+            ListCharacter.Location = new System.Drawing.Point(260, 19);
+            ListCharacter.Name = "ListCharacter";
+            ListCharacter.Size = new System.Drawing.Size(90, 43);
+            ListCharacter.TabIndex = 5;
+            ListCharacter.SelectedIndexChanged += new EventHandler(ListCharacter_SelectedIndexChanged);
 
             /**
              * ButtonAddCharacter
              */
-            this.ButtonAddCharacter.Location = new System.Drawing.Point(201, 40);
-            this.ButtonAddCharacter.Name = "ButtonAddCharacter";
-            this.ButtonAddCharacter.Size = new System.Drawing.Size(21, 23);
-            this.ButtonAddCharacter.TabIndex = 6;
-            this.ButtonAddCharacter.Text = "+";
-            this.ButtonAddCharacter.UseVisualStyleBackColor = true;
-            this.ButtonAddCharacter.Click += new EventHandler(ButtonAddCharacter_Click);
+            ButtonAddCharacter.Location = new System.Drawing.Point(201, 40);
+            ButtonAddCharacter.Name = "ButtonAddCharacter";
+            ButtonAddCharacter.Size = new System.Drawing.Size(21, 23);
+            ButtonAddCharacter.TabIndex = 6;
+            ButtonAddCharacter.Text = "+";
+            ButtonAddCharacter.UseVisualStyleBackColor = true;
+            ButtonAddCharacter.Click += new EventHandler(ButtonAddCharacter_Click);
 
             /**
              * ButtonRemoveCharacter
              */
-            this.ButtonRemoveCharacter.Location = new System.Drawing.Point(228, 40);
-            this.ButtonRemoveCharacter.Name = "ButtonRemoveCharacter";
-            this.ButtonRemoveCharacter.Size = new System.Drawing.Size(21, 23);
-            this.ButtonRemoveCharacter.TabIndex = 6;
-            this.ButtonRemoveCharacter.Text = "-";
-            this.ButtonRemoveCharacter.UseVisualStyleBackColor = true;
-            this.ButtonRemoveCharacter.Click += new EventHandler(ButtonRemoveCharacter_Click);
+            ButtonRemoveCharacter.Enabled = false;
+            ButtonRemoveCharacter.Location = new System.Drawing.Point(228, 40);
+            ButtonRemoveCharacter.Name = "ButtonRemoveCharacter";
+            ButtonRemoveCharacter.Size = new System.Drawing.Size(21, 23);
+            ButtonRemoveCharacter.TabIndex = 6;
+            ButtonRemoveCharacter.Text = "-";
+            ButtonRemoveCharacter.UseVisualStyleBackColor = true;
+            ButtonRemoveCharacter.Click += new EventHandler(ButtonRemoveCharacter_Click);
 
             /**
              * LabelFontTexture
              */
-            this.LabelFontTexture.AutoSize = true;
-            this.LabelFontTexture.Location = new System.Drawing.Point(6, 49);
-            this.LabelFontTexture.Name = "LabelFontTexture";
-            this.LabelFontTexture.Size = new System.Drawing.Size(46, 13);
-            this.LabelFontTexture.TabIndex = 14;
-            this.LabelFontTexture.Text = "Texture:";
+            LabelFontTexture.AutoSize = true;
+            LabelFontTexture.Location = new System.Drawing.Point(6, 49);
+            LabelFontTexture.Name = "LabelFontTexture";
+            LabelFontTexture.Size = new System.Drawing.Size(46, 13);
+            LabelFontTexture.TabIndex = 14;
+            LabelFontTexture.Text = "Texture:";
 
             /**
              * ButtonFontTexture
              */
-            this.ButtonFontTexture.Location = new System.Drawing.Point(117, 46);
-            this.ButtonFontTexture.Name = "ButtonFontTexture";
-            this.ButtonFontTexture.Size = new System.Drawing.Size(75, 23);
-            this.ButtonFontTexture.TabIndex = 13;
-            this.ButtonFontTexture.Text = "Set...";
-            this.ButtonFontTexture.UseVisualStyleBackColor = true;
-            this.ButtonFontTexture.Click +=new EventHandler(this.SetTextureButton_Click);
+            ButtonFontTexture.Location = new System.Drawing.Point(117, 46);
+            ButtonFontTexture.Name = "ButtonFontTexture";
+            ButtonFontTexture.Size = new System.Drawing.Size(75, 23);
+            ButtonFontTexture.TabIndex = 13;
+            ButtonFontTexture.Text = "Set...";
+            ButtonFontTexture.UseVisualStyleBackColor = true;
+            ButtonFontTexture.Click +=new EventHandler(SetTextureButton_Click);
 
             /**
              * LabelSpaceWidth
              */
-            this.LabelSpaceWidth.AutoSize = true;
-            this.LabelSpaceWidth.Location = new System.Drawing.Point(6, 273);
-            this.LabelSpaceWidth.Name = "LabelSpaceWidth";
-            this.LabelSpaceWidth.Size = new System.Drawing.Size(80, 13);
-            this.LabelSpaceWidth.TabIndex = 15;
-            this.LabelSpaceWidth.Text = "Spacing Width:";
+            LabelSpaceWidth.AutoSize = true;
+            LabelSpaceWidth.Location = new System.Drawing.Point(6, 273);
+            LabelSpaceWidth.Name = "LabelSpaceWidth";
+            LabelSpaceWidth.Size = new System.Drawing.Size(80, 13);
+            LabelSpaceWidth.TabIndex = 15;
+            LabelSpaceWidth.Text = "Spacing Width:";
 
             /**
              * NumericSpaceWidth
              */
-            this.NumericSpaceWidth.Location = new System.Drawing.Point(92, 271);
-            this.NumericSpaceWidth.Name = "NumericSpaceWidth";
-            this.NumericSpaceWidth.Size = new System.Drawing.Size(78, 20);
-            this.NumericSpaceWidth.TabIndex = 14;
+            NumericSpaceWidth.Location = new System.Drawing.Point(92, 271);
+            NumericSpaceWidth.Name = "NumericSpaceWidth";
+            NumericSpaceWidth.Size = new System.Drawing.Size(78, 20);
+            NumericSpaceWidth.TabIndex = 14;
 
             /**
              * LabelLineHeight
              */
-            this.LabelLineHeight.AutoSize = true;
-            this.LabelLineHeight.Location = new System.Drawing.Point(199, 273);
-            this.LabelLineHeight.Name = "LabelLineHeight";
-            this.LabelLineHeight.Size = new System.Drawing.Size(64, 13);
-            this.LabelLineHeight.TabIndex = 17;
-            this.LabelLineHeight.Text = "Line Height:";
+            LabelLineHeight.AutoSize = true;
+            LabelLineHeight.Location = new System.Drawing.Point(199, 273);
+            LabelLineHeight.Name = "LabelLineHeight";
+            LabelLineHeight.Size = new System.Drawing.Size(64, 13);
+            LabelLineHeight.TabIndex = 17;
+            LabelLineHeight.Text = "Line Height:";
 
             /**
              * NumericLineHeight
              */
-            this.NumericLineHeight.Location = new System.Drawing.Point(269, 271);
-            this.NumericLineHeight.Name = "NumericLineHeight";
-            this.NumericLineHeight.Size = new System.Drawing.Size(78, 20);
-            this.NumericLineHeight.TabIndex = 16;
+            NumericLineHeight.Location = new System.Drawing.Point(269, 271);
+            NumericLineHeight.Name = "NumericLineHeight";
+            NumericLineHeight.Size = new System.Drawing.Size(78, 20);
+            NumericLineHeight.TabIndex = 16;
 
 
             /**
              * GroupCharacterDetails
              */
-            this.GroupCharacterDetails.Controls.Add(this.LabelCharYOffset);
-            this.GroupCharacterDetails.Controls.Add(this.NumericCharYOffset);
-            this.GroupCharacterDetails.Controls.Add(this.NumericCharAfter);
-            this.GroupCharacterDetails.Controls.Add(this.NumericCharBefore);
-            this.GroupCharacterDetails.Controls.Add(this.ButtonCharacterBlit);
-            this.GroupCharacterDetails.Controls.Add(this.PictureCharPreview);
-            this.GroupCharacterDetails.Controls.Add(this.LabelCharAfter);
-            this.GroupCharacterDetails.Controls.Add(this.LabelCharPreview);
-            this.GroupCharacterDetails.Controls.Add(this.LabelCharBefore);
-            this.GroupCharacterDetails.Location = new System.Drawing.Point(9, 69);
-            this.GroupCharacterDetails.Name = "GroupCharacterDetails";
-            this.GroupCharacterDetails.Size = new System.Drawing.Size(338, 189);
-            this.GroupCharacterDetails.TabIndex = 12;
-            this.GroupCharacterDetails.TabStop = false;
-            this.GroupCharacterDetails.Text = "Character Details";
+            GroupCharacterDetails.Controls.Add(LabelCharYOffset);
+            GroupCharacterDetails.Controls.Add(NumericCharYOffset);
+            GroupCharacterDetails.Controls.Add(NumericCharAfter);
+            GroupCharacterDetails.Controls.Add(NumericCharBefore);
+            GroupCharacterDetails.Controls.Add(ButtonCharacterBlit);
+            GroupCharacterDetails.Controls.Add(PictureCharPreview);
+            GroupCharacterDetails.Controls.Add(LabelCharAfter);
+            GroupCharacterDetails.Controls.Add(LabelCharPreview);
+            GroupCharacterDetails.Controls.Add(LabelCharBefore);
+            GroupCharacterDetails.Location = new System.Drawing.Point(9, 69);
+            GroupCharacterDetails.Name = "GroupCharacterDetails";
+            GroupCharacterDetails.Size = new System.Drawing.Size(338, 189);
+            GroupCharacterDetails.TabIndex = 12;
+            GroupCharacterDetails.TabStop = false;
+            GroupCharacterDetails.Text = "Character Details";
 
             /**
              * ButtonCharacterBlit
              */
-            this.ButtonCharacterBlit.Enabled = false;
-            this.ButtonCharacterBlit.Location = new System.Drawing.Point(219, 19);
-            this.ButtonCharacterBlit.Name = "ButtonCharacterBlit";
-            this.ButtonCharacterBlit.Size = new System.Drawing.Size(103, 23);
-            this.ButtonCharacterBlit.TabIndex = 11;
-            this.ButtonCharacterBlit.Text = "Blitting...";
-            this.ButtonCharacterBlit.UseVisualStyleBackColor = true;
+            ButtonCharacterBlit.Enabled = false;
+            ButtonCharacterBlit.Location = new System.Drawing.Point(219, 19);
+            ButtonCharacterBlit.Name = "ButtonCharacterBlit";
+            ButtonCharacterBlit.Size = new System.Drawing.Size(103, 23);
+            ButtonCharacterBlit.TabIndex = 11;
+            ButtonCharacterBlit.Text = "Blitting...";
+            ButtonCharacterBlit.UseVisualStyleBackColor = true;
 
             /**
              * LabelCharPreview
              */
-            this.LabelCharPreview.AutoSize = true;
-            this.LabelCharPreview.Location = new System.Drawing.Point(6, 34);
-            this.LabelCharPreview.Name = "LabelCharPreview";
-            this.LabelCharPreview.Size = new System.Drawing.Size(97, 13);
-            this.LabelCharPreview.TabIndex = 3;
-            this.LabelCharPreview.Text = "Character Preview:";
+            LabelCharPreview.AutoSize = true;
+            LabelCharPreview.Location = new System.Drawing.Point(6, 34);
+            LabelCharPreview.Name = "LabelCharPreview";
+            LabelCharPreview.Size = new System.Drawing.Size(97, 13);
+            LabelCharPreview.TabIndex = 3;
+            LabelCharPreview.Text = "Character Preview:";
 
             /**
              * PictureCharPreview
              */
-            this.PictureCharPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PictureCharPreview.Location = new System.Drawing.Point(6, 50);
-            this.PictureCharPreview.Name = "PictureCharPreview";
-            this.PictureCharPreview.Size = new System.Drawing.Size(136, 127);
-            this.PictureCharPreview.TabIndex = 2;
-            this.PictureCharPreview.TabStop = false;
+            PictureCharPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            PictureCharPreview.Location = new System.Drawing.Point(6, 50);
+            PictureCharPreview.Name = "PictureCharPreview";
+            PictureCharPreview.Size = new System.Drawing.Size(136, 127);
+            PictureCharPreview.TabIndex = 2;
+            PictureCharPreview.TabStop = false;
 
             /**
              * LabelCharBefore
              */
-            this.LabelCharBefore.AutoSize = true;
-            this.LabelCharBefore.Location = new System.Drawing.Point(145, 51);
-            this.LabelCharBefore.Name = "LabelCharBefore";
-            this.LabelCharBefore.Size = new System.Drawing.Size(41, 13);
-            this.LabelCharBefore.TabIndex = 8;
-            this.LabelCharBefore.Text = "Before:";
+            LabelCharBefore.AutoSize = true;
+            LabelCharBefore.Location = new System.Drawing.Point(145, 51);
+            LabelCharBefore.Name = "LabelCharBefore";
+            LabelCharBefore.Size = new System.Drawing.Size(41, 13);
+            LabelCharBefore.TabIndex = 8;
+            LabelCharBefore.Text = "Before:";
 
             /**
              * NumericCharBefore
              */
-            this.NumericCharBefore.Enabled = false;
-            this.NumericCharBefore.Location = new System.Drawing.Point(148, 67);
-            this.NumericCharBefore.Name = "NumericCharBefore";
-            this.NumericCharBefore.Size = new System.Drawing.Size(78, 20);
-            this.NumericCharBefore.TabIndex = 7;
+            NumericCharBefore.Enabled = false;
+            NumericCharBefore.Location = new System.Drawing.Point(148, 67);
+            NumericCharBefore.Name = "NumericCharBefore";
+            NumericCharBefore.Size = new System.Drawing.Size(78, 20);
+            NumericCharBefore.TabIndex = 7;
 
             /**
              * LabelCharAfter
              */
-            this.LabelCharAfter.AutoSize = true;
-            this.LabelCharAfter.Location = new System.Drawing.Point(229, 51);
-            this.LabelCharAfter.Name = "LabelCharAfter";
-            this.LabelCharAfter.Size = new System.Drawing.Size(32, 13);
-            this.LabelCharAfter.TabIndex = 10;
-            this.LabelCharAfter.Text = "After:";
+            LabelCharAfter.AutoSize = true;
+            LabelCharAfter.Location = new System.Drawing.Point(229, 51);
+            LabelCharAfter.Name = "LabelCharAfter";
+            LabelCharAfter.Size = new System.Drawing.Size(32, 13);
+            LabelCharAfter.TabIndex = 10;
+            LabelCharAfter.Text = "After:";
 
             /**
              * NumericCharAfter
              */
-            this.NumericCharAfter.Enabled = false;
-            this.NumericCharAfter.Location = new System.Drawing.Point(232, 67);
-            this.NumericCharAfter.Name = "NumericCharAfter";
-            this.NumericCharAfter.Size = new System.Drawing.Size(78, 20);
-            this.NumericCharAfter.TabIndex = 7;
+            NumericCharAfter.Enabled = false;
+            NumericCharAfter.Location = new System.Drawing.Point(232, 67);
+            NumericCharAfter.Name = "NumericCharAfter";
+            NumericCharAfter.Size = new System.Drawing.Size(78, 20);
+            NumericCharAfter.TabIndex = 7;
 
             /**
              * LabelCharYOffset
              */
-            this.LabelCharYOffset.AutoSize = true;
-            this.LabelCharYOffset.Location = new System.Drawing.Point(145, 90);
-            this.LabelCharYOffset.Name = "LabelCharYOffset";
-            this.LabelCharYOffset.Size = new System.Drawing.Size(48, 13);
-            this.LabelCharYOffset.TabIndex = 13;
-            this.LabelCharYOffset.Text = "Y Offset:";
+            LabelCharYOffset.AutoSize = true;
+            LabelCharYOffset.Location = new System.Drawing.Point(145, 90);
+            LabelCharYOffset.Name = "LabelCharYOffset";
+            LabelCharYOffset.Size = new System.Drawing.Size(48, 13);
+            LabelCharYOffset.TabIndex = 13;
+            LabelCharYOffset.Text = "Y Offset:";
 
             /**
              * NumericCharYOffset
              */
-            this.NumericCharYOffset.Enabled = false;
-            this.NumericCharYOffset.Location = new System.Drawing.Point(148, 106);
-            this.NumericCharYOffset.Name = "NumericCharYOffset";
-            this.NumericCharYOffset.Size = new System.Drawing.Size(78, 20);
-            this.NumericCharYOffset.TabIndex = 7;
+            NumericCharYOffset.Enabled = false;
+            NumericCharYOffset.Location = new System.Drawing.Point(148, 106);
+            NumericCharYOffset.Name = "NumericCharYOffset";
+            NumericCharYOffset.Size = new System.Drawing.Size(78, 20);
+            NumericCharYOffset.TabIndex = 7;
 
 
             /**
              * GroupButtonEditor
              */
-            this.GroupButtonEditor.Controls.Add(this.GroupButtonText);
-            this.GroupButtonEditor.Controls.Add(this.ButtonButtonEdgeNE);
-            this.GroupButtonEditor.Controls.Add(this.LabelButtonEdgeNE);
-            this.GroupButtonEditor.Controls.Add(this.PictureButtonEdgeNE);
-            this.GroupButtonEditor.Controls.Add(this.ButtonButtonEdgeSW);
-            this.GroupButtonEditor.Controls.Add(this.LabelButtonEdgeSW);
-            this.GroupButtonEditor.Controls.Add(this.PictureButtonEdgeSW);
-            this.GroupButtonEditor.Controls.Add(this.ButtonButtonSide);
-            this.GroupButtonEditor.Controls.Add(this.LabelButtonSide);
-            this.GroupButtonEditor.Controls.Add(this.PictureButtonSide);
-            this.GroupButtonEditor.Controls.Add(this.ButtonButtonTop);
-            this.GroupButtonEditor.Controls.Add(this.LabelButtonTop);
-            this.GroupButtonEditor.Controls.Add(this.PictureButtonTop);
-            this.GroupButtonEditor.Controls.Add(this.ButtonButtonBody);
-            this.GroupButtonEditor.Controls.Add(this.LabelButtonBody);
-            this.GroupButtonEditor.Controls.Add(this.PictureButtonBody);
-            this.GroupButtonEditor.Location = new System.Drawing.Point(374, 6);
-            this.GroupButtonEditor.Name = "GroupButtonEditor";
-            this.GroupButtonEditor.Size = new System.Drawing.Size(424, 125);
-            this.GroupButtonEditor.TabIndex = 2;
-            this.GroupButtonEditor.TabStop = false;
-            this.GroupButtonEditor.Text = "Button Editor";
+            GroupButtonEditor.Controls.Add(GroupButtonText);
+            GroupButtonEditor.Controls.Add(ButtonButtonEdgeNE);
+            GroupButtonEditor.Controls.Add(LabelButtonEdgeNE);
+            GroupButtonEditor.Controls.Add(PictureButtonEdgeNE);
+            GroupButtonEditor.Controls.Add(ButtonButtonEdgeSW);
+            GroupButtonEditor.Controls.Add(LabelButtonEdgeSW);
+            GroupButtonEditor.Controls.Add(PictureButtonEdgeSW);
+            GroupButtonEditor.Controls.Add(ButtonButtonSide);
+            GroupButtonEditor.Controls.Add(LabelButtonSide);
+            GroupButtonEditor.Controls.Add(PictureButtonSide);
+            GroupButtonEditor.Controls.Add(ButtonButtonTop);
+            GroupButtonEditor.Controls.Add(LabelButtonTop);
+            GroupButtonEditor.Controls.Add(PictureButtonTop);
+            GroupButtonEditor.Controls.Add(ButtonButtonBody);
+            GroupButtonEditor.Controls.Add(LabelButtonBody);
+            GroupButtonEditor.Controls.Add(PictureButtonBody);
+            GroupButtonEditor.Location = new System.Drawing.Point(374, 6);
+            GroupButtonEditor.Name = "GroupButtonEditor";
+            GroupButtonEditor.Size = new System.Drawing.Size(424, 125);
+            GroupButtonEditor.TabIndex = 2;
+            GroupButtonEditor.TabStop = false;
+            GroupButtonEditor.Text = "Button Editor";
 
             /**
              * LabelButtonBody
              */
-            this.LabelButtonBody.AutoSize = true;
-            this.LabelButtonBody.Location = new System.Drawing.Point(6, 16);
-            this.LabelButtonBody.Name = "LabelButtonBody";
-            this.LabelButtonBody.Size = new System.Drawing.Size(34, 13);
-            this.LabelButtonBody.TabIndex = 1;
-            this.LabelButtonBody.Text = "Body:";
+            LabelButtonBody.AutoSize = true;
+            LabelButtonBody.Location = new System.Drawing.Point(6, 16);
+            LabelButtonBody.Name = "LabelButtonBody";
+            LabelButtonBody.Size = new System.Drawing.Size(34, 13);
+            LabelButtonBody.TabIndex = 1;
+            LabelButtonBody.Text = "Body:";
 
             /**
              * PictureButtonBody
              */
-            this.PictureButtonBody.Location = new System.Drawing.Point(9, 32);
-            this.PictureButtonBody.Name = "PictureButtonBody";
-            this.PictureButtonBody.Size = new System.Drawing.Size(48, 48);
-            this.PictureButtonBody.TabIndex = 0;
-            this.PictureButtonBody.TabStop = false;
+            PictureButtonBody.Location = new System.Drawing.Point(9, 32);
+            PictureButtonBody.Name = "PictureButtonBody";
+            PictureButtonBody.Size = new System.Drawing.Size(48, 48);
+            PictureButtonBody.TabIndex = 0;
+            PictureButtonBody.TabStop = false;
 
             /**
              * ButtonButtonBody
              */
-            this.ButtonButtonBody.Location = new System.Drawing.Point(9, 86);
-            this.ButtonButtonBody.Name = "ButtonButtonBody";
-            this.ButtonButtonBody.Size = new System.Drawing.Size(48, 23);
-            this.ButtonButtonBody.TabIndex = 2;
-            this.ButtonButtonBody.Text = "Set...";
-            this.ButtonButtonBody.UseVisualStyleBackColor = true;
+            ButtonButtonBody.Location = new System.Drawing.Point(9, 86);
+            ButtonButtonBody.Name = "ButtonButtonBody";
+            ButtonButtonBody.Size = new System.Drawing.Size(48, 23);
+            ButtonButtonBody.TabIndex = 2;
+            ButtonButtonBody.Text = "Set...";
+            ButtonButtonBody.UseVisualStyleBackColor = true;
 
             /**
              * LabelButtonTop
              */
-            this.LabelButtonTop.AutoSize = true;
-            this.LabelButtonTop.Location = new System.Drawing.Point(60, 16);
-            this.LabelButtonTop.Name = "LabelButtonTop";
-            this.LabelButtonTop.Size = new System.Drawing.Size(29, 13);
-            this.LabelButtonTop.TabIndex = 4;
-            this.LabelButtonTop.Text = "Top:";
+            LabelButtonTop.AutoSize = true;
+            LabelButtonTop.Location = new System.Drawing.Point(60, 16);
+            LabelButtonTop.Name = "LabelButtonTop";
+            LabelButtonTop.Size = new System.Drawing.Size(29, 13);
+            LabelButtonTop.TabIndex = 4;
+            LabelButtonTop.Text = "Top:";
 
             /**
              * PictureButtonTop
              */
-            this.PictureButtonTop.Location = new System.Drawing.Point(63, 32);
-            this.PictureButtonTop.Name = "PictureButtonTop";
-            this.PictureButtonTop.Size = new System.Drawing.Size(48, 48);
-            this.PictureButtonTop.TabIndex = 3;
-            this.PictureButtonTop.TabStop = false;
+            PictureButtonTop.Location = new System.Drawing.Point(63, 32);
+            PictureButtonTop.Name = "PictureButtonTop";
+            PictureButtonTop.Size = new System.Drawing.Size(48, 48);
+            PictureButtonTop.TabIndex = 3;
+            PictureButtonTop.TabStop = false;
 
             /**
              * ButtonButtonTop
              */
-            this.ButtonButtonTop.Location = new System.Drawing.Point(63, 86);
-            this.ButtonButtonTop.Name = "ButtonButtonTop";
-            this.ButtonButtonTop.Size = new System.Drawing.Size(48, 23);
-            this.ButtonButtonTop.TabIndex = 5;
-            this.ButtonButtonTop.Text = "Set...";
-            this.ButtonButtonTop.UseVisualStyleBackColor = true;
+            ButtonButtonTop.Location = new System.Drawing.Point(63, 86);
+            ButtonButtonTop.Name = "ButtonButtonTop";
+            ButtonButtonTop.Size = new System.Drawing.Size(48, 23);
+            ButtonButtonTop.TabIndex = 5;
+            ButtonButtonTop.Text = "Set...";
+            ButtonButtonTop.UseVisualStyleBackColor = true;
 
             /**
              * LabelButtonSide
              */
-            this.LabelButtonSide.AutoSize = true;
-            this.LabelButtonSide.Location = new System.Drawing.Point(114, 16);
-            this.LabelButtonSide.Name = "LabelButtonSide";
-            this.LabelButtonSide.Size = new System.Drawing.Size(31, 13);
-            this.LabelButtonSide.TabIndex = 7;
-            this.LabelButtonSide.Text = "Side:";
+            LabelButtonSide.AutoSize = true;
+            LabelButtonSide.Location = new System.Drawing.Point(114, 16);
+            LabelButtonSide.Name = "LabelButtonSide";
+            LabelButtonSide.Size = new System.Drawing.Size(31, 13);
+            LabelButtonSide.TabIndex = 7;
+            LabelButtonSide.Text = "Side:";
 
             /**
              * PictureButtonSide
              */
-            this.PictureButtonSide.Location = new System.Drawing.Point(117, 32);
-            this.PictureButtonSide.Name = "PictureButtonSide";
-            this.PictureButtonSide.Size = new System.Drawing.Size(48, 48);
-            this.PictureButtonSide.TabIndex = 6;
-            this.PictureButtonSide.TabStop = false;
+            PictureButtonSide.Location = new System.Drawing.Point(117, 32);
+            PictureButtonSide.Name = "PictureButtonSide";
+            PictureButtonSide.Size = new System.Drawing.Size(48, 48);
+            PictureButtonSide.TabIndex = 6;
+            PictureButtonSide.TabStop = false;
 
             /**
              * ButtonButtonSide
              */
-            this.ButtonButtonSide.Location = new System.Drawing.Point(117, 86);
-            this.ButtonButtonSide.Name = "ButtonButtonSide";
-            this.ButtonButtonSide.Size = new System.Drawing.Size(48, 23);
-            this.ButtonButtonSide.TabIndex = 8;
-            this.ButtonButtonSide.Text = "Set...";
-            this.ButtonButtonSide.UseVisualStyleBackColor = true;
+            ButtonButtonSide.Location = new System.Drawing.Point(117, 86);
+            ButtonButtonSide.Name = "ButtonButtonSide";
+            ButtonButtonSide.Size = new System.Drawing.Size(48, 23);
+            ButtonButtonSide.TabIndex = 8;
+            ButtonButtonSide.Text = "Set...";
+            ButtonButtonSide.UseVisualStyleBackColor = true;
 
             /**
              * LabelButtonEdgeSW
              */
-            this.LabelButtonEdgeSW.AutoSize = true;
-            this.LabelButtonEdgeSW.Location = new System.Drawing.Point(168, 16);
-            this.LabelButtonEdgeSW.Name = "LabelButtonEdgeSW";
-            this.LabelButtonEdgeSW.Size = new System.Drawing.Size(56, 13);
-            this.LabelButtonEdgeSW.TabIndex = 10;
-            this.LabelButtonEdgeSW.Text = "Edge SW:";
+            LabelButtonEdgeSW.AutoSize = true;
+            LabelButtonEdgeSW.Location = new System.Drawing.Point(168, 16);
+            LabelButtonEdgeSW.Name = "LabelButtonEdgeSW";
+            LabelButtonEdgeSW.Size = new System.Drawing.Size(56, 13);
+            LabelButtonEdgeSW.TabIndex = 10;
+            LabelButtonEdgeSW.Text = "Edge SW:";
 
             /**
              * PictureButtonEdgeSW
              */
-            this.PictureButtonEdgeSW.Location = new System.Drawing.Point(171, 32);
-            this.PictureButtonEdgeSW.Name = "PictureButtonEdgeSW";
-            this.PictureButtonEdgeSW.Size = new System.Drawing.Size(48, 48);
-            this.PictureButtonEdgeSW.TabIndex = 9;
-            this.PictureButtonEdgeSW.TabStop = false;
+            PictureButtonEdgeSW.Location = new System.Drawing.Point(171, 32);
+            PictureButtonEdgeSW.Name = "PictureButtonEdgeSW";
+            PictureButtonEdgeSW.Size = new System.Drawing.Size(48, 48);
+            PictureButtonEdgeSW.TabIndex = 9;
+            PictureButtonEdgeSW.TabStop = false;
 
             /**
              * ButtonButtonEdgeSW
              */
-            this.ButtonButtonEdgeSW.Location = new System.Drawing.Point(171, 86);
-            this.ButtonButtonEdgeSW.Name = "ButtonButtonEdgeSW";
-            this.ButtonButtonEdgeSW.Size = new System.Drawing.Size(48, 23);
-            this.ButtonButtonEdgeSW.TabIndex = 11;
-            this.ButtonButtonEdgeSW.Text = "Set...";
-            this.ButtonButtonEdgeSW.UseVisualStyleBackColor = true;
+            ButtonButtonEdgeSW.Location = new System.Drawing.Point(171, 86);
+            ButtonButtonEdgeSW.Name = "ButtonButtonEdgeSW";
+            ButtonButtonEdgeSW.Size = new System.Drawing.Size(48, 23);
+            ButtonButtonEdgeSW.TabIndex = 11;
+            ButtonButtonEdgeSW.Text = "Set...";
+            ButtonButtonEdgeSW.UseVisualStyleBackColor = true;
 
             /**
              * LabelButtonEdgeNE
              */
-            this.LabelButtonEdgeNE.AutoSize = true;
-            this.LabelButtonEdgeNE.Location = new System.Drawing.Point(222, 16);
-            this.LabelButtonEdgeNE.Name = "LabelButtonEdgeNE";
-            this.LabelButtonEdgeNE.Size = new System.Drawing.Size(53, 13);
-            this.LabelButtonEdgeNE.TabIndex = 13;
-            this.LabelButtonEdgeNE.Text = "Edge NE:";
+            LabelButtonEdgeNE.AutoSize = true;
+            LabelButtonEdgeNE.Location = new System.Drawing.Point(222, 16);
+            LabelButtonEdgeNE.Name = "LabelButtonEdgeNE";
+            LabelButtonEdgeNE.Size = new System.Drawing.Size(53, 13);
+            LabelButtonEdgeNE.TabIndex = 13;
+            LabelButtonEdgeNE.Text = "Edge NE:";
 
             /**
              * PictureButtonEdgeNE
              */
-            this.PictureButtonEdgeNE.Location = new System.Drawing.Point(225, 32);
-            this.PictureButtonEdgeNE.Name = "PictureButtonEdgeNE";
-            this.PictureButtonEdgeNE.Size = new System.Drawing.Size(48, 48);
-            this.PictureButtonEdgeNE.TabIndex = 12;
-            this.PictureButtonEdgeNE.TabStop = false;
+            PictureButtonEdgeNE.Location = new System.Drawing.Point(225, 32);
+            PictureButtonEdgeNE.Name = "PictureButtonEdgeNE";
+            PictureButtonEdgeNE.Size = new System.Drawing.Size(48, 48);
+            PictureButtonEdgeNE.TabIndex = 12;
+            PictureButtonEdgeNE.TabStop = false;
 
             /**
              * ButtonButtonEdgeNE
              */
-            this.ButtonButtonEdgeNE.Location = new System.Drawing.Point(225, 86);
-            this.ButtonButtonEdgeNE.Name = "ButtonButtonEdgeNE";
-            this.ButtonButtonEdgeNE.Size = new System.Drawing.Size(48, 23);
-            this.ButtonButtonEdgeNE.TabIndex = 14;
-            this.ButtonButtonEdgeNE.Text = "Set...";
-            this.ButtonButtonEdgeNE.UseVisualStyleBackColor = true;
+            ButtonButtonEdgeNE.Location = new System.Drawing.Point(225, 86);
+            ButtonButtonEdgeNE.Name = "ButtonButtonEdgeNE";
+            ButtonButtonEdgeNE.Size = new System.Drawing.Size(48, 23);
+            ButtonButtonEdgeNE.TabIndex = 14;
+            ButtonButtonEdgeNE.Text = "Set...";
+            ButtonButtonEdgeNE.UseVisualStyleBackColor = true;
 
 
             /**
              * GroupButtonText
              */
-            this.GroupButtonText.Controls.Add(this.NumericButtonTextXOffset);
-            this.GroupButtonText.Controls.Add(this.LabelButtonTextXOffset);
-            this.GroupButtonText.Controls.Add(this.NumericButtonTextYOffset);
-            this.GroupButtonText.Controls.Add(this.LabelButtonTextYOffset);
-            this.GroupButtonText.Controls.Add(this.CheckButtonCentreText);
-            this.GroupButtonText.Location = new System.Drawing.Point(281, 16);
-            this.GroupButtonText.Name = "GroupButtonText";
-            this.GroupButtonText.Size = new System.Drawing.Size(135, 99);
-            this.GroupButtonText.TabIndex = 16;
-            this.GroupButtonText.TabStop = false;
-            this.GroupButtonText.Text = "Text Details";
+            GroupButtonText.Controls.Add(NumericButtonTextXOffset);
+            GroupButtonText.Controls.Add(LabelButtonTextXOffset);
+            GroupButtonText.Controls.Add(NumericButtonTextYOffset);
+            GroupButtonText.Controls.Add(LabelButtonTextYOffset);
+            GroupButtonText.Controls.Add(CheckButtonCentreText);
+            GroupButtonText.Location = new System.Drawing.Point(281, 16);
+            GroupButtonText.Name = "GroupButtonText";
+            GroupButtonText.Size = new System.Drawing.Size(135, 99);
+            GroupButtonText.TabIndex = 16;
+            GroupButtonText.TabStop = false;
+            GroupButtonText.Text = "Text Details";
 
             /**
              * CheckButtonCentreText
              */
-            this.CheckButtonCentreText.AutoSize = true;
-            this.CheckButtonCentreText.Checked = true;
-            this.CheckButtonCentreText.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckButtonCentreText.Location = new System.Drawing.Point(6, 19);
-            this.CheckButtonCentreText.Name = "CheckButtonCentreText";
-            this.CheckButtonCentreText.Size = new System.Drawing.Size(81, 17);
-            this.CheckButtonCentreText.TabIndex = 15;
-            this.CheckButtonCentreText.Text = "Centre Text";
-            this.CheckButtonCentreText.UseVisualStyleBackColor = true;
+            CheckButtonCentreText.AutoSize = true;
+            CheckButtonCentreText.Checked = true;
+            CheckButtonCentreText.CheckState = System.Windows.Forms.CheckState.Checked;
+            CheckButtonCentreText.Location = new System.Drawing.Point(6, 19);
+            CheckButtonCentreText.Name = "CheckButtonCentreText";
+            CheckButtonCentreText.Size = new System.Drawing.Size(81, 17);
+            CheckButtonCentreText.TabIndex = 15;
+            CheckButtonCentreText.Text = "Centre Text";
+            CheckButtonCentreText.UseVisualStyleBackColor = true;
 
             /**
              * LabelButtonTextYOffset
              */
-            this.LabelButtonTextYOffset.AutoSize = true;
-            this.LabelButtonTextYOffset.Location = new System.Drawing.Point(6, 44);
-            this.LabelButtonTextYOffset.Name = "LabelButtonTextYOffset";
-            this.LabelButtonTextYOffset.Size = new System.Drawing.Size(60, 13);
-            this.LabelButtonTextYOffset.TabIndex = 16;
-            this.LabelButtonTextYOffset.Text = "Offset Top:";
+            LabelButtonTextYOffset.AutoSize = true;
+            LabelButtonTextYOffset.Location = new System.Drawing.Point(6, 44);
+            LabelButtonTextYOffset.Name = "LabelButtonTextYOffset";
+            LabelButtonTextYOffset.Size = new System.Drawing.Size(60, 13);
+            LabelButtonTextYOffset.TabIndex = 16;
+            LabelButtonTextYOffset.Text = "Offset Top:";
 
             /**
              * NumericButtonTextYOffset
              */
-            this.NumericButtonTextYOffset.Location = new System.Drawing.Point(72, 42);
-            this.NumericButtonTextYOffset.Name = "NumericButtonTextYOffset";
-            this.NumericButtonTextYOffset.Size = new System.Drawing.Size(57, 20);
-            this.NumericButtonTextYOffset.TabIndex = 17;
+            NumericButtonTextYOffset.Location = new System.Drawing.Point(72, 42);
+            NumericButtonTextYOffset.Name = "NumericButtonTextYOffset";
+            NumericButtonTextYOffset.Size = new System.Drawing.Size(57, 20);
+            NumericButtonTextYOffset.TabIndex = 17;
 
             /**
              * LabelButtonTextXOffset
              */
-            this.LabelButtonTextXOffset.AutoSize = true;
-            this.LabelButtonTextXOffset.Location = new System.Drawing.Point(6, 70);
-            this.LabelButtonTextXOffset.Name = "LabelButtonTextXOffset";
-            this.LabelButtonTextXOffset.Size = new System.Drawing.Size(59, 13);
-            this.LabelButtonTextXOffset.TabIndex = 18;
-            this.LabelButtonTextXOffset.Text = "Offset Left:";
+            LabelButtonTextXOffset.AutoSize = true;
+            LabelButtonTextXOffset.Location = new System.Drawing.Point(6, 70);
+            LabelButtonTextXOffset.Name = "LabelButtonTextXOffset";
+            LabelButtonTextXOffset.Size = new System.Drawing.Size(59, 13);
+            LabelButtonTextXOffset.TabIndex = 18;
+            LabelButtonTextXOffset.Text = "Offset Left:";
 
             /**
              * NumericButtonTextXOffset
              */
-            this.NumericButtonTextXOffset.Location = new System.Drawing.Point(72, 68);
-            this.NumericButtonTextXOffset.Name = "NumericButtonTextXOffset";
-            this.NumericButtonTextXOffset.Size = new System.Drawing.Size(57, 20);
-            this.NumericButtonTextXOffset.TabIndex = 19;
+            NumericButtonTextXOffset.Location = new System.Drawing.Point(72, 68);
+            NumericButtonTextXOffset.Name = "NumericButtonTextXOffset";
+            NumericButtonTextXOffset.Size = new System.Drawing.Size(57, 20);
+            NumericButtonTextXOffset.TabIndex = 19;
 
 
             /**
              * GroupTextEditor
              */
-            this.GroupTextEditor.Controls.Add(this.GroupTextText);
-            this.GroupTextEditor.Controls.Add(this.ButtonTextEdgeNE);
-            this.GroupTextEditor.Controls.Add(this.LabelTextEdgeNE);
-            this.GroupTextEditor.Controls.Add(this.PictureTextEdgeNE);
-            this.GroupTextEditor.Controls.Add(this.ButtonTextEdgeSW);
-            this.GroupTextEditor.Controls.Add(this.LabelTextEdgeSW);
-            this.GroupTextEditor.Controls.Add(this.PictureTextEdgeSW);
-            this.GroupTextEditor.Controls.Add(this.ButtonTextSide);
-            this.GroupTextEditor.Controls.Add(this.LabelTextSide);
-            this.GroupTextEditor.Controls.Add(this.PictureTextSide);
-            this.GroupTextEditor.Controls.Add(this.ButtonTextTop);
-            this.GroupTextEditor.Controls.Add(this.LabelTextTop);
-            this.GroupTextEditor.Controls.Add(this.PictureTextTop);
-            this.GroupTextEditor.Controls.Add(this.ButtonTextBody);
-            this.GroupTextEditor.Controls.Add(this.LabelTextBody);
-            this.GroupTextEditor.Controls.Add(this.PictureTextBody);
-            this.GroupTextEditor.Location = new System.Drawing.Point(374, 137);
-            this.GroupTextEditor.Name = "GroupTextEditor";
-            this.GroupTextEditor.Size = new System.Drawing.Size(424, 125);
-            this.GroupTextEditor.TabIndex = 17;
-            this.GroupTextEditor.TabStop = false;
-            this.GroupTextEditor.Text = "TextBox Editor";
+            GroupTextEditor.Controls.Add(GroupTextText);
+            GroupTextEditor.Controls.Add(ButtonTextEdgeNE);
+            GroupTextEditor.Controls.Add(LabelTextEdgeNE);
+            GroupTextEditor.Controls.Add(PictureTextEdgeNE);
+            GroupTextEditor.Controls.Add(ButtonTextEdgeSW);
+            GroupTextEditor.Controls.Add(LabelTextEdgeSW);
+            GroupTextEditor.Controls.Add(PictureTextEdgeSW);
+            GroupTextEditor.Controls.Add(ButtonTextSide);
+            GroupTextEditor.Controls.Add(LabelTextSide);
+            GroupTextEditor.Controls.Add(PictureTextSide);
+            GroupTextEditor.Controls.Add(ButtonTextTop);
+            GroupTextEditor.Controls.Add(LabelTextTop);
+            GroupTextEditor.Controls.Add(PictureTextTop);
+            GroupTextEditor.Controls.Add(ButtonTextBody);
+            GroupTextEditor.Controls.Add(LabelTextBody);
+            GroupTextEditor.Controls.Add(PictureTextBody);
+            GroupTextEditor.Location = new System.Drawing.Point(374, 137);
+            GroupTextEditor.Name = "GroupTextEditor";
+            GroupTextEditor.Size = new System.Drawing.Size(424, 125);
+            GroupTextEditor.TabIndex = 17;
+            GroupTextEditor.TabStop = false;
+            GroupTextEditor.Text = "TextBox Editor";
 
             /**
              * LabelTextBody
              */
-            this.LabelTextBody.AutoSize = true;
-            this.LabelTextBody.Location = new System.Drawing.Point(6, 16);
-            this.LabelTextBody.Name = "LabelTextBody";
-            this.LabelTextBody.Size = new System.Drawing.Size(34, 13);
-            this.LabelTextBody.TabIndex = 1;
-            this.LabelTextBody.Text = "Body:";
+            LabelTextBody.AutoSize = true;
+            LabelTextBody.Location = new System.Drawing.Point(6, 16);
+            LabelTextBody.Name = "LabelTextBody";
+            LabelTextBody.Size = new System.Drawing.Size(34, 13);
+            LabelTextBody.TabIndex = 1;
+            LabelTextBody.Text = "Body:";
 
             /**
              * PictureTextBody
              */
-            this.PictureTextBody.Location = new System.Drawing.Point(9, 32);
-            this.PictureTextBody.Name = "PictureTextBody";
-            this.PictureTextBody.Size = new System.Drawing.Size(48, 48);
-            this.PictureTextBody.TabIndex = 0;
-            this.PictureTextBody.TabStop = false;
+            PictureTextBody.Location = new System.Drawing.Point(9, 32);
+            PictureTextBody.Name = "PictureTextBody";
+            PictureTextBody.Size = new System.Drawing.Size(48, 48);
+            PictureTextBody.TabIndex = 0;
+            PictureTextBody.TabStop = false;
 
             /**
              * ButtonTextBody
              */
-            this.ButtonTextBody.Location = new System.Drawing.Point(9, 86);
-            this.ButtonTextBody.Name = "ButtonTextBody";
-            this.ButtonTextBody.Size = new System.Drawing.Size(48, 23);
-            this.ButtonTextBody.TabIndex = 2;
-            this.ButtonTextBody.Text = "Set...";
-            this.ButtonTextBody.UseVisualStyleBackColor = true;
+            ButtonTextBody.Location = new System.Drawing.Point(9, 86);
+            ButtonTextBody.Name = "ButtonTextBody";
+            ButtonTextBody.Size = new System.Drawing.Size(48, 23);
+            ButtonTextBody.TabIndex = 2;
+            ButtonTextBody.Text = "Set...";
+            ButtonTextBody.UseVisualStyleBackColor = true;
 
             /**
              * LabelTextTop
              */
-            this.LabelTextTop.AutoSize = true;
-            this.LabelTextTop.Location = new System.Drawing.Point(60, 16);
-            this.LabelTextTop.Name = "LabelTextTop";
-            this.LabelTextTop.Size = new System.Drawing.Size(29, 13);
-            this.LabelTextTop.TabIndex = 4;
-            this.LabelTextTop.Text = "Top:";
+            LabelTextTop.AutoSize = true;
+            LabelTextTop.Location = new System.Drawing.Point(60, 16);
+            LabelTextTop.Name = "LabelTextTop";
+            LabelTextTop.Size = new System.Drawing.Size(29, 13);
+            LabelTextTop.TabIndex = 4;
+            LabelTextTop.Text = "Top:";
 
             /**
              * PictureTextTop
              */
-            this.PictureTextTop.Location = new System.Drawing.Point(63, 32);
-            this.PictureTextTop.Name = "PictureTextTop";
-            this.PictureTextTop.Size = new System.Drawing.Size(48, 48);
-            this.PictureTextTop.TabIndex = 3;
-            this.PictureTextTop.TabStop = false;
+            PictureTextTop.Location = new System.Drawing.Point(63, 32);
+            PictureTextTop.Name = "PictureTextTop";
+            PictureTextTop.Size = new System.Drawing.Size(48, 48);
+            PictureTextTop.TabIndex = 3;
+            PictureTextTop.TabStop = false;
 
             /**
              * ButtonTextTop
              */
-            this.ButtonTextTop.Location = new System.Drawing.Point(63, 86);
-            this.ButtonTextTop.Name = "ButtonTextTop";
-            this.ButtonTextTop.Size = new System.Drawing.Size(48, 23);
-            this.ButtonTextTop.TabIndex = 5;
-            this.ButtonTextTop.Text = "Set...";
-            this.ButtonTextTop.UseVisualStyleBackColor = true;
+            ButtonTextTop.Location = new System.Drawing.Point(63, 86);
+            ButtonTextTop.Name = "ButtonTextTop";
+            ButtonTextTop.Size = new System.Drawing.Size(48, 23);
+            ButtonTextTop.TabIndex = 5;
+            ButtonTextTop.Text = "Set...";
+            ButtonTextTop.UseVisualStyleBackColor = true;
 
             /**
              * LabelTextSide
              */
-            this.LabelTextSide.AutoSize = true;
-            this.LabelTextSide.Location = new System.Drawing.Point(114, 16);
-            this.LabelTextSide.Name = "LabelTextSide";
-            this.LabelTextSide.Size = new System.Drawing.Size(31, 13);
-            this.LabelTextSide.TabIndex = 7;
-            this.LabelTextSide.Text = "Side:";
+            LabelTextSide.AutoSize = true;
+            LabelTextSide.Location = new System.Drawing.Point(114, 16);
+            LabelTextSide.Name = "LabelTextSide";
+            LabelTextSide.Size = new System.Drawing.Size(31, 13);
+            LabelTextSide.TabIndex = 7;
+            LabelTextSide.Text = "Side:";
 
             /**
              * PictureTextSide
              */
-            this.PictureTextSide.Location = new System.Drawing.Point(117, 32);
-            this.PictureTextSide.Name = "PictureTextSide";
-            this.PictureTextSide.Size = new System.Drawing.Size(48, 48);
-            this.PictureTextSide.TabIndex = 6;
-            this.PictureTextSide.TabStop = false;
+            PictureTextSide.Location = new System.Drawing.Point(117, 32);
+            PictureTextSide.Name = "PictureTextSide";
+            PictureTextSide.Size = new System.Drawing.Size(48, 48);
+            PictureTextSide.TabIndex = 6;
+            PictureTextSide.TabStop = false;
 
             /**
              * ButtonTextSide
              */
-            this.ButtonTextSide.Location = new System.Drawing.Point(117, 86);
-            this.ButtonTextSide.Name = "ButtonTextSide";
-            this.ButtonTextSide.Size = new System.Drawing.Size(48, 23);
-            this.ButtonTextSide.TabIndex = 8;
-            this.ButtonTextSide.Text = "Set...";
-            this.ButtonTextSide.UseVisualStyleBackColor = true;
+            ButtonTextSide.Location = new System.Drawing.Point(117, 86);
+            ButtonTextSide.Name = "ButtonTextSide";
+            ButtonTextSide.Size = new System.Drawing.Size(48, 23);
+            ButtonTextSide.TabIndex = 8;
+            ButtonTextSide.Text = "Set...";
+            ButtonTextSide.UseVisualStyleBackColor = true;
 
             /**
              * LabelTextEdgeSW
              */
-            this.LabelTextEdgeSW.AutoSize = true;
-            this.LabelTextEdgeSW.Location = new System.Drawing.Point(168, 16);
-            this.LabelTextEdgeSW.Name = "LabelTextEdgeSW";
-            this.LabelTextEdgeSW.Size = new System.Drawing.Size(56, 13);
-            this.LabelTextEdgeSW.TabIndex = 10;
-            this.LabelTextEdgeSW.Text = "Edge SW:";
+            LabelTextEdgeSW.AutoSize = true;
+            LabelTextEdgeSW.Location = new System.Drawing.Point(168, 16);
+            LabelTextEdgeSW.Name = "LabelTextEdgeSW";
+            LabelTextEdgeSW.Size = new System.Drawing.Size(56, 13);
+            LabelTextEdgeSW.TabIndex = 10;
+            LabelTextEdgeSW.Text = "Edge SW:";
 
             /**
              * PictureTextEdgeSW
              */
-            this.PictureTextEdgeSW.Location = new System.Drawing.Point(171, 32);
-            this.PictureTextEdgeSW.Name = "PictureTextEdgeSW";
-            this.PictureTextEdgeSW.Size = new System.Drawing.Size(48, 48);
-            this.PictureTextEdgeSW.TabIndex = 9;
-            this.PictureTextEdgeSW.TabStop = false;
+            PictureTextEdgeSW.Location = new System.Drawing.Point(171, 32);
+            PictureTextEdgeSW.Name = "PictureTextEdgeSW";
+            PictureTextEdgeSW.Size = new System.Drawing.Size(48, 48);
+            PictureTextEdgeSW.TabIndex = 9;
+            PictureTextEdgeSW.TabStop = false;
 
             /**
              * ButtonTextEdgeSW
              */
-            this.ButtonTextEdgeSW.Location = new System.Drawing.Point(171, 86);
-            this.ButtonTextEdgeSW.Name = "ButtonTextEdgeSW";
-            this.ButtonTextEdgeSW.Size = new System.Drawing.Size(48, 23);
-            this.ButtonTextEdgeSW.TabIndex = 11;
-            this.ButtonTextEdgeSW.Text = "Set...";
-            this.ButtonTextEdgeSW.UseVisualStyleBackColor = true;
+            ButtonTextEdgeSW.Location = new System.Drawing.Point(171, 86);
+            ButtonTextEdgeSW.Name = "ButtonTextEdgeSW";
+            ButtonTextEdgeSW.Size = new System.Drawing.Size(48, 23);
+            ButtonTextEdgeSW.TabIndex = 11;
+            ButtonTextEdgeSW.Text = "Set...";
+            ButtonTextEdgeSW.UseVisualStyleBackColor = true;
 
             /**
              * LabelTextEdgeNE
              */
-            this.LabelTextEdgeNE.AutoSize = true;
-            this.LabelTextEdgeNE.Location = new System.Drawing.Point(222, 16);
-            this.LabelTextEdgeNE.Name = "LabelTextEdgeNE";
-            this.LabelTextEdgeNE.Size = new System.Drawing.Size(53, 13);
-            this.LabelTextEdgeNE.TabIndex = 13;
-            this.LabelTextEdgeNE.Text = "Edge NE:";
+            LabelTextEdgeNE.AutoSize = true;
+            LabelTextEdgeNE.Location = new System.Drawing.Point(222, 16);
+            LabelTextEdgeNE.Name = "LabelTextEdgeNE";
+            LabelTextEdgeNE.Size = new System.Drawing.Size(53, 13);
+            LabelTextEdgeNE.TabIndex = 13;
+            LabelTextEdgeNE.Text = "Edge NE:";
 
             /**
              * PictureTextEdgeNE
              */
-            this.PictureTextEdgeNE.Location = new System.Drawing.Point(225, 32);
-            this.PictureTextEdgeNE.Name = "PictureTextEdgeNE";
-            this.PictureTextEdgeNE.Size = new System.Drawing.Size(48, 48);
-            this.PictureTextEdgeNE.TabIndex = 12;
-            this.PictureTextEdgeNE.TabStop = false;
+            PictureTextEdgeNE.Location = new System.Drawing.Point(225, 32);
+            PictureTextEdgeNE.Name = "PictureTextEdgeNE";
+            PictureTextEdgeNE.Size = new System.Drawing.Size(48, 48);
+            PictureTextEdgeNE.TabIndex = 12;
+            PictureTextEdgeNE.TabStop = false;
 
             /**
              * ButtonTextEdgeNE
              */
-            this.ButtonTextEdgeNE.Location = new System.Drawing.Point(225, 86);
-            this.ButtonTextEdgeNE.Name = "ButtonTextEdgeNE";
-            this.ButtonTextEdgeNE.Size = new System.Drawing.Size(48, 23);
-            this.ButtonTextEdgeNE.TabIndex = 14;
-            this.ButtonTextEdgeNE.Text = "Set...";
-            this.ButtonTextEdgeNE.UseVisualStyleBackColor = true;
+            ButtonTextEdgeNE.Location = new System.Drawing.Point(225, 86);
+            ButtonTextEdgeNE.Name = "ButtonTextEdgeNE";
+            ButtonTextEdgeNE.Size = new System.Drawing.Size(48, 23);
+            ButtonTextEdgeNE.TabIndex = 14;
+            ButtonTextEdgeNE.Text = "Set...";
+            ButtonTextEdgeNE.UseVisualStyleBackColor = true;
 
             
             /**
              * GroupTextText
              */
-            this.GroupTextText.Controls.Add(this.NumericTextTextXOffset);
-            this.GroupTextText.Controls.Add(this.LabelTextTextXOffset);
-            this.GroupTextText.Controls.Add(this.NumericTextTextYOffset);
-            this.GroupTextText.Controls.Add(this.LabelTextTextYOffset);
-            this.GroupTextText.Controls.Add(this.CheckTextCentreText);
-            this.GroupTextText.Location = new System.Drawing.Point(281, 16);
-            this.GroupTextText.Name = "GroupTextText";
-            this.GroupTextText.Size = new System.Drawing.Size(135, 99);
-            this.GroupTextText.TabIndex = 16;
-            this.GroupTextText.TabStop = false;
-            this.GroupTextText.Text = "Text Details";
+            GroupTextText.Controls.Add(NumericTextTextXOffset);
+            GroupTextText.Controls.Add(LabelTextTextXOffset);
+            GroupTextText.Controls.Add(NumericTextTextYOffset);
+            GroupTextText.Controls.Add(LabelTextTextYOffset);
+            GroupTextText.Controls.Add(CheckTextCentreText);
+            GroupTextText.Location = new System.Drawing.Point(281, 16);
+            GroupTextText.Name = "GroupTextText";
+            GroupTextText.Size = new System.Drawing.Size(135, 99);
+            GroupTextText.TabIndex = 16;
+            GroupTextText.TabStop = false;
+            GroupTextText.Text = "Text Details";
 
             /**
              * CheckTextCentreText
              */
-            this.CheckTextCentreText.AutoSize = true;
-            this.CheckTextCentreText.Location = new System.Drawing.Point(6, 19);
-            this.CheckTextCentreText.Name = "CheckTextCentreText";
-            this.CheckTextCentreText.Size = new System.Drawing.Size(81, 17);
-            this.CheckTextCentreText.TabIndex = 15;
-            this.CheckTextCentreText.Text = "Centre Text";
-            this.CheckTextCentreText.UseVisualStyleBackColor = true;
+            CheckTextCentreText.AutoSize = true;
+            CheckTextCentreText.Location = new System.Drawing.Point(6, 19);
+            CheckTextCentreText.Name = "CheckTextCentreText";
+            CheckTextCentreText.Size = new System.Drawing.Size(81, 17);
+            CheckTextCentreText.TabIndex = 15;
+            CheckTextCentreText.Text = "Centre Text";
+            CheckTextCentreText.UseVisualStyleBackColor = true;
 
             /**
              * LabelTextTextYOffset
              */
-            this.LabelTextTextYOffset.AutoSize = true;
-            this.LabelTextTextYOffset.Location = new System.Drawing.Point(6, 44);
-            this.LabelTextTextYOffset.Name = "LabelTextTextYOffset";
-            this.LabelTextTextYOffset.Size = new System.Drawing.Size(60, 13);
-            this.LabelTextTextYOffset.TabIndex = 16;
-            this.LabelTextTextYOffset.Text = "Offset Top:";
+            LabelTextTextYOffset.AutoSize = true;
+            LabelTextTextYOffset.Location = new System.Drawing.Point(6, 44);
+            LabelTextTextYOffset.Name = "LabelTextTextYOffset";
+            LabelTextTextYOffset.Size = new System.Drawing.Size(60, 13);
+            LabelTextTextYOffset.TabIndex = 16;
+            LabelTextTextYOffset.Text = "Offset Top:";
 
             /**
              * NumericTextTextYOffset
              */
-            this.NumericTextTextYOffset.Location = new System.Drawing.Point(72, 42);
-            this.NumericTextTextYOffset.Name = "NumericTextTextYOffset";
-            this.NumericTextTextYOffset.Size = new System.Drawing.Size(57, 20);
-            this.NumericTextTextYOffset.TabIndex = 17;
+            NumericTextTextYOffset.Location = new System.Drawing.Point(72, 42);
+            NumericTextTextYOffset.Name = "NumericTextTextYOffset";
+            NumericTextTextYOffset.Size = new System.Drawing.Size(57, 20);
+            NumericTextTextYOffset.TabIndex = 17;
 
             /**
              * LabelTextTextXOffset
              */
-            this.LabelTextTextXOffset.AutoSize = true;
-            this.LabelTextTextXOffset.Location = new System.Drawing.Point(6, 70);
-            this.LabelTextTextXOffset.Name = "LabelTextTextXOffset";
-            this.LabelTextTextXOffset.Size = new System.Drawing.Size(59, 13);
-            this.LabelTextTextXOffset.TabIndex = 18;
-            this.LabelTextTextXOffset.Text = "Offset Left:";
+            LabelTextTextXOffset.AutoSize = true;
+            LabelTextTextXOffset.Location = new System.Drawing.Point(6, 70);
+            LabelTextTextXOffset.Name = "LabelTextTextXOffset";
+            LabelTextTextXOffset.Size = new System.Drawing.Size(59, 13);
+            LabelTextTextXOffset.TabIndex = 18;
+            LabelTextTextXOffset.Text = "Offset Left:";
 
             /**
              * NumericTextTextXOffset
              */
-            this.NumericTextTextXOffset.Location = new System.Drawing.Point(72, 68);
-            this.NumericTextTextXOffset.Name = "NumericTextTextXOffset";
-            this.NumericTextTextXOffset.Size = new System.Drawing.Size(57, 20);
-            this.NumericTextTextXOffset.TabIndex = 19;
+            NumericTextTextXOffset.Location = new System.Drawing.Point(72, 68);
+            NumericTextTextXOffset.Name = "NumericTextTextXOffset";
+            NumericTextTextXOffset.Size = new System.Drawing.Size(57, 20);
+            NumericTextTextXOffset.TabIndex = 19;
 
 
             /**
              * GroupCheckEditor
              */
-            this.GroupCheckEditor.Controls.Add(this.ButtonCheckTick);
-            this.GroupCheckEditor.Controls.Add(this.LabelCheckTick);
-            this.GroupCheckEditor.Controls.Add(this.PictureCheckTick);
-            this.GroupCheckEditor.Controls.Add(this.ButtonCheckEdgeNE);
-            this.GroupCheckEditor.Controls.Add(this.LabelCheckEdgeNE);
-            this.GroupCheckEditor.Controls.Add(this.PictureCheckEdgeNE);
-            this.GroupCheckEditor.Controls.Add(this.ButtonCheckEdgeSW);
-            this.GroupCheckEditor.Controls.Add(this.LabelCheckEdgeSW);
-            this.GroupCheckEditor.Controls.Add(this.PictureCheckEdgeSW);
-            this.GroupCheckEditor.Controls.Add(this.ButtonCheckSide);
-            this.GroupCheckEditor.Controls.Add(this.LabelCheckSide);
-            this.GroupCheckEditor.Controls.Add(this.PictureCheckSide);
-            this.GroupCheckEditor.Controls.Add(this.ButtonCheckTop);
-            this.GroupCheckEditor.Controls.Add(this.LabelCheckTop);
-            this.GroupCheckEditor.Controls.Add(this.PictureCheckTop);
-            this.GroupCheckEditor.Controls.Add(this.ButtonCheckBody);
-            this.GroupCheckEditor.Controls.Add(this.LabelCheckBody);
-            this.GroupCheckEditor.Controls.Add(this.PictureCheckBody);
-            this.GroupCheckEditor.Location = new System.Drawing.Point(374, 268);
-            this.GroupCheckEditor.Name = "GroupCheckEditor";
-            this.GroupCheckEditor.Size = new System.Drawing.Size(424, 125);
-            this.GroupCheckEditor.TabIndex = 18;
-            this.GroupCheckEditor.TabStop = false;
-            this.GroupCheckEditor.Text = "CheckBox Editor";
+            GroupCheckEditor.Controls.Add(ButtonCheckTick);
+            GroupCheckEditor.Controls.Add(LabelCheckTick);
+            GroupCheckEditor.Controls.Add(PictureCheckTick);
+            GroupCheckEditor.Controls.Add(ButtonCheckEdgeNE);
+            GroupCheckEditor.Controls.Add(LabelCheckEdgeNE);
+            GroupCheckEditor.Controls.Add(PictureCheckEdgeNE);
+            GroupCheckEditor.Controls.Add(ButtonCheckEdgeSW);
+            GroupCheckEditor.Controls.Add(LabelCheckEdgeSW);
+            GroupCheckEditor.Controls.Add(PictureCheckEdgeSW);
+            GroupCheckEditor.Controls.Add(ButtonCheckSide);
+            GroupCheckEditor.Controls.Add(LabelCheckSide);
+            GroupCheckEditor.Controls.Add(PictureCheckSide);
+            GroupCheckEditor.Controls.Add(ButtonCheckTop);
+            GroupCheckEditor.Controls.Add(LabelCheckTop);
+            GroupCheckEditor.Controls.Add(PictureCheckTop);
+            GroupCheckEditor.Controls.Add(ButtonCheckBody);
+            GroupCheckEditor.Controls.Add(LabelCheckBody);
+            GroupCheckEditor.Controls.Add(PictureCheckBody);
+            GroupCheckEditor.Location = new System.Drawing.Point(374, 268);
+            GroupCheckEditor.Name = "GroupCheckEditor";
+            GroupCheckEditor.Size = new System.Drawing.Size(424, 125);
+            GroupCheckEditor.TabIndex = 18;
+            GroupCheckEditor.TabStop = false;
+            GroupCheckEditor.Text = "CheckBox Editor";
 
             /**
              * LabelCheckBody
              */
-            this.LabelCheckBody.AutoSize = true;
-            this.LabelCheckBody.Location = new System.Drawing.Point(6, 16);
-            this.LabelCheckBody.Name = "LabelCheckBody";
-            this.LabelCheckBody.Size = new System.Drawing.Size(34, 13);
-            this.LabelCheckBody.TabIndex = 1;
-            this.LabelCheckBody.Text = "Body:";
+            LabelCheckBody.AutoSize = true;
+            LabelCheckBody.Location = new System.Drawing.Point(6, 16);
+            LabelCheckBody.Name = "LabelCheckBody";
+            LabelCheckBody.Size = new System.Drawing.Size(34, 13);
+            LabelCheckBody.TabIndex = 1;
+            LabelCheckBody.Text = "Body:";
 
             /**
              * PictureCheckBody
              */
-            this.PictureCheckBody.Location = new System.Drawing.Point(9, 32);
-            this.PictureCheckBody.Name = "PictureCheckBody";
-            this.PictureCheckBody.Size = new System.Drawing.Size(48, 48);
-            this.PictureCheckBody.TabIndex = 0;
-            this.PictureCheckBody.TabStop = false;
+            PictureCheckBody.Location = new System.Drawing.Point(9, 32);
+            PictureCheckBody.Name = "PictureCheckBody";
+            PictureCheckBody.Size = new System.Drawing.Size(48, 48);
+            PictureCheckBody.TabIndex = 0;
+            PictureCheckBody.TabStop = false;
 
             /**
              * ButtonCheckBody
              */
-            this.ButtonCheckBody.Location = new System.Drawing.Point(9, 86);
-            this.ButtonCheckBody.Name = "ButtonCheckBody";
-            this.ButtonCheckBody.Size = new System.Drawing.Size(48, 23);
-            this.ButtonCheckBody.TabIndex = 2;
-            this.ButtonCheckBody.Text = "Set...";
-            this.ButtonCheckBody.UseVisualStyleBackColor = true;
+            ButtonCheckBody.Location = new System.Drawing.Point(9, 86);
+            ButtonCheckBody.Name = "ButtonCheckBody";
+            ButtonCheckBody.Size = new System.Drawing.Size(48, 23);
+            ButtonCheckBody.TabIndex = 2;
+            ButtonCheckBody.Text = "Set...";
+            ButtonCheckBody.UseVisualStyleBackColor = true;
 
             /**
              * LabelCheckTop
              */
-            this.LabelCheckTop.AutoSize = true;
-            this.LabelCheckTop.Location = new System.Drawing.Point(60, 16);
-            this.LabelCheckTop.Name = "LabelCheckTop";
-            this.LabelCheckTop.Size = new System.Drawing.Size(29, 13);
-            this.LabelCheckTop.TabIndex = 4;
-            this.LabelCheckTop.Text = "Top:";
+            LabelCheckTop.AutoSize = true;
+            LabelCheckTop.Location = new System.Drawing.Point(60, 16);
+            LabelCheckTop.Name = "LabelCheckTop";
+            LabelCheckTop.Size = new System.Drawing.Size(29, 13);
+            LabelCheckTop.TabIndex = 4;
+            LabelCheckTop.Text = "Top:";
 
             /**
              * PictureCheckTop
              */
-            this.PictureCheckTop.Location = new System.Drawing.Point(63, 32);
-            this.PictureCheckTop.Name = "PictureCheckTop";
-            this.PictureCheckTop.Size = new System.Drawing.Size(48, 48);
-            this.PictureCheckTop.TabIndex = 3;
-            this.PictureCheckTop.TabStop = false;
+            PictureCheckTop.Location = new System.Drawing.Point(63, 32);
+            PictureCheckTop.Name = "PictureCheckTop";
+            PictureCheckTop.Size = new System.Drawing.Size(48, 48);
+            PictureCheckTop.TabIndex = 3;
+            PictureCheckTop.TabStop = false;
 
             /**
              * ButtonCheckTop
              */
-            this.ButtonCheckTop.Location = new System.Drawing.Point(63, 86);
-            this.ButtonCheckTop.Name = "ButtonCheckTop";
-            this.ButtonCheckTop.Size = new System.Drawing.Size(48, 23);
-            this.ButtonCheckTop.TabIndex = 5;
-            this.ButtonCheckTop.Text = "Set...";
-            this.ButtonCheckTop.UseVisualStyleBackColor = true;
+            ButtonCheckTop.Location = new System.Drawing.Point(63, 86);
+            ButtonCheckTop.Name = "ButtonCheckTop";
+            ButtonCheckTop.Size = new System.Drawing.Size(48, 23);
+            ButtonCheckTop.TabIndex = 5;
+            ButtonCheckTop.Text = "Set...";
+            ButtonCheckTop.UseVisualStyleBackColor = true;
 
             /**
              * LabelCheckSide
              */
-            this.LabelCheckSide.AutoSize = true;
-            this.LabelCheckSide.Location = new System.Drawing.Point(114, 16);
-            this.LabelCheckSide.Name = "LabelCheckSide";
-            this.LabelCheckSide.Size = new System.Drawing.Size(31, 13);
-            this.LabelCheckSide.TabIndex = 7;
-            this.LabelCheckSide.Text = "Side:";
+            LabelCheckSide.AutoSize = true;
+            LabelCheckSide.Location = new System.Drawing.Point(114, 16);
+            LabelCheckSide.Name = "LabelCheckSide";
+            LabelCheckSide.Size = new System.Drawing.Size(31, 13);
+            LabelCheckSide.TabIndex = 7;
+            LabelCheckSide.Text = "Side:";
 
             /**
              * PictureCheckSide
              */
-            this.PictureCheckSide.Location = new System.Drawing.Point(117, 32);
-            this.PictureCheckSide.Name = "PictureCheckSide";
-            this.PictureCheckSide.Size = new System.Drawing.Size(48, 48);
-            this.PictureCheckSide.TabIndex = 6;
-            this.PictureCheckSide.TabStop = false;
+            PictureCheckSide.Location = new System.Drawing.Point(117, 32);
+            PictureCheckSide.Name = "PictureCheckSide";
+            PictureCheckSide.Size = new System.Drawing.Size(48, 48);
+            PictureCheckSide.TabIndex = 6;
+            PictureCheckSide.TabStop = false;
 
             /**
              * ButtonCheckSide
              */
-            this.ButtonCheckSide.Location = new System.Drawing.Point(117, 86);
-            this.ButtonCheckSide.Name = "ButtonCheckSide";
-            this.ButtonCheckSide.Size = new System.Drawing.Size(48, 23);
-            this.ButtonCheckSide.TabIndex = 8;
-            this.ButtonCheckSide.Text = "Set...";
-            this.ButtonCheckSide.UseVisualStyleBackColor = true;
+            ButtonCheckSide.Location = new System.Drawing.Point(117, 86);
+            ButtonCheckSide.Name = "ButtonCheckSide";
+            ButtonCheckSide.Size = new System.Drawing.Size(48, 23);
+            ButtonCheckSide.TabIndex = 8;
+            ButtonCheckSide.Text = "Set...";
+            ButtonCheckSide.UseVisualStyleBackColor = true;
 
             /**
              * LabelCheckEdgeSW
              */
-            this.LabelCheckEdgeSW.AutoSize = true;
-            this.LabelCheckEdgeSW.Location = new System.Drawing.Point(168, 16);
-            this.LabelCheckEdgeSW.Name = "LabelCheckEdgeSW";
-            this.LabelCheckEdgeSW.Size = new System.Drawing.Size(56, 13);
-            this.LabelCheckEdgeSW.TabIndex = 10;
-            this.LabelCheckEdgeSW.Text = "Edge SW:";
+            LabelCheckEdgeSW.AutoSize = true;
+            LabelCheckEdgeSW.Location = new System.Drawing.Point(168, 16);
+            LabelCheckEdgeSW.Name = "LabelCheckEdgeSW";
+            LabelCheckEdgeSW.Size = new System.Drawing.Size(56, 13);
+            LabelCheckEdgeSW.TabIndex = 10;
+            LabelCheckEdgeSW.Text = "Edge SW:";
 
             /**
              * PictureCheckEdgeSW
              */
-            this.PictureCheckEdgeSW.Location = new System.Drawing.Point(171, 32);
-            this.PictureCheckEdgeSW.Name = "PictureCheckEdgeSW";
-            this.PictureCheckEdgeSW.Size = new System.Drawing.Size(48, 48);
-            this.PictureCheckEdgeSW.TabIndex = 9;
-            this.PictureCheckEdgeSW.TabStop = false;
+            PictureCheckEdgeSW.Location = new System.Drawing.Point(171, 32);
+            PictureCheckEdgeSW.Name = "PictureCheckEdgeSW";
+            PictureCheckEdgeSW.Size = new System.Drawing.Size(48, 48);
+            PictureCheckEdgeSW.TabIndex = 9;
+            PictureCheckEdgeSW.TabStop = false;
 
             /**
              * ButtonCheckEdgeSW
              */
-            this.ButtonCheckEdgeSW.Location = new System.Drawing.Point(171, 86);
-            this.ButtonCheckEdgeSW.Name = "ButtonCheckEdgeSW";
-            this.ButtonCheckEdgeSW.Size = new System.Drawing.Size(48, 23);
-            this.ButtonCheckEdgeSW.TabIndex = 11;
-            this.ButtonCheckEdgeSW.Text = "Set...";
-            this.ButtonCheckEdgeSW.UseVisualStyleBackColor = true;
+            ButtonCheckEdgeSW.Location = new System.Drawing.Point(171, 86);
+            ButtonCheckEdgeSW.Name = "ButtonCheckEdgeSW";
+            ButtonCheckEdgeSW.Size = new System.Drawing.Size(48, 23);
+            ButtonCheckEdgeSW.TabIndex = 11;
+            ButtonCheckEdgeSW.Text = "Set...";
+            ButtonCheckEdgeSW.UseVisualStyleBackColor = true;
 
             /**
              * LabelCheckEdgeNE
              */
-            this.LabelCheckEdgeNE.AutoSize = true;
-            this.LabelCheckEdgeNE.Location = new System.Drawing.Point(222, 16);
-            this.LabelCheckEdgeNE.Name = "LabelCheckEdgeNE";
-            this.LabelCheckEdgeNE.Size = new System.Drawing.Size(53, 13);
-            this.LabelCheckEdgeNE.TabIndex = 13;
-            this.LabelCheckEdgeNE.Text = "Edge NE:";
+            LabelCheckEdgeNE.AutoSize = true;
+            LabelCheckEdgeNE.Location = new System.Drawing.Point(222, 16);
+            LabelCheckEdgeNE.Name = "LabelCheckEdgeNE";
+            LabelCheckEdgeNE.Size = new System.Drawing.Size(53, 13);
+            LabelCheckEdgeNE.TabIndex = 13;
+            LabelCheckEdgeNE.Text = "Edge NE:";
 
             /**
              * PictureCheckEdgeNE
              */
-            this.PictureCheckEdgeNE.Location = new System.Drawing.Point(225, 32);
-            this.PictureCheckEdgeNE.Name = "PictureCheckEdgeNE";
-            this.PictureCheckEdgeNE.Size = new System.Drawing.Size(48, 48);
-            this.PictureCheckEdgeNE.TabIndex = 12;
-            this.PictureCheckEdgeNE.TabStop = false;
+            PictureCheckEdgeNE.Location = new System.Drawing.Point(225, 32);
+            PictureCheckEdgeNE.Name = "PictureCheckEdgeNE";
+            PictureCheckEdgeNE.Size = new System.Drawing.Size(48, 48);
+            PictureCheckEdgeNE.TabIndex = 12;
+            PictureCheckEdgeNE.TabStop = false;
 
             /**
              * ButtonCheckEdgeNE
              */
-            this.ButtonCheckEdgeNE.Location = new System.Drawing.Point(225, 86);
-            this.ButtonCheckEdgeNE.Name = "ButtonCheckEdgeNE";
-            this.ButtonCheckEdgeNE.Size = new System.Drawing.Size(48, 23);
-            this.ButtonCheckEdgeNE.TabIndex = 14;
-            this.ButtonCheckEdgeNE.Text = "Set...";
-            this.ButtonCheckEdgeNE.UseVisualStyleBackColor = true;
+            ButtonCheckEdgeNE.Location = new System.Drawing.Point(225, 86);
+            ButtonCheckEdgeNE.Name = "ButtonCheckEdgeNE";
+            ButtonCheckEdgeNE.Size = new System.Drawing.Size(48, 23);
+            ButtonCheckEdgeNE.TabIndex = 14;
+            ButtonCheckEdgeNE.Text = "Set...";
+            ButtonCheckEdgeNE.UseVisualStyleBackColor = true;
 
             /**
              * LabelCheckTick
              */
-            this.LabelCheckTick.AutoSize = true;
-            this.LabelCheckTick.Location = new System.Drawing.Point(276, 16);
-            this.LabelCheckTick.Name = "LabelCheckTick";
-            this.LabelCheckTick.Size = new System.Drawing.Size(31, 13);
-            this.LabelCheckTick.TabIndex = 16;
-            this.LabelCheckTick.Text = "Tick:";
+            LabelCheckTick.AutoSize = true;
+            LabelCheckTick.Location = new System.Drawing.Point(276, 16);
+            LabelCheckTick.Name = "LabelCheckTick";
+            LabelCheckTick.Size = new System.Drawing.Size(31, 13);
+            LabelCheckTick.TabIndex = 16;
+            LabelCheckTick.Text = "Tick:";
 
             /**
              * PictureCheckTick
              */
-            this.PictureCheckTick.Location = new System.Drawing.Point(279, 32);
-            this.PictureCheckTick.Name = "PictureCheckTick";
-            this.PictureCheckTick.Size = new System.Drawing.Size(48, 48);
-            this.PictureCheckTick.TabIndex = 15;
-            this.PictureCheckTick.TabStop = false;
+            PictureCheckTick.Location = new System.Drawing.Point(279, 32);
+            PictureCheckTick.Name = "PictureCheckTick";
+            PictureCheckTick.Size = new System.Drawing.Size(48, 48);
+            PictureCheckTick.TabIndex = 15;
+            PictureCheckTick.TabStop = false;
 
             /**
              * ButtonCheckTick
              */
-            this.ButtonCheckTick.Location = new System.Drawing.Point(279, 86);
-            this.ButtonCheckTick.Name = "ButtonCheckTick";
-            this.ButtonCheckTick.Size = new System.Drawing.Size(48, 23);
-            this.ButtonCheckTick.TabIndex = 17;
-            this.ButtonCheckTick.Text = "Set...";
-            this.ButtonCheckTick.UseVisualStyleBackColor = true;
+            ButtonCheckTick.Location = new System.Drawing.Point(279, 86);
+            ButtonCheckTick.Name = "ButtonCheckTick";
+            ButtonCheckTick.Size = new System.Drawing.Size(48, 23);
+            ButtonCheckTick.TabIndex = 17;
+            ButtonCheckTick.Text = "Set...";
+            ButtonCheckTick.UseVisualStyleBackColor = true;
 
             #endregion
 
-            this.LastSelectedFont = "Chat Font";
+            LastSelectedFont = "Chat Font";
 
             if (file == "")
             {
-                this.Text = "GUIOMETRY - *";
-                this.IsUnsaved = true;
+                Text = "GUIOMETRY - *";
+                IsUnsaved = true;
             }
             else
             {
-                this.Text = "GUIOMETRY - " + Path.GetFileName(file);
+                Text = "GUIOMETRY - " + Path.GetFileName(file);
             }
         }
 
 
-        private void UpdateFontTexturePreviews()
+        /// <summary>
+        /// Gets the font information of the specified font name key.
+        /// </summary>
+        /// <param name="key">The font's name to get the info of.</param>
+        /// <returns>The character's info if it is present, null otherwise.</returns>
+        private FontInfo GetFontInfo(string key)
         {
-            Texture selectedFontTexture;
-
-            switch ((string)this.ComboFont.SelectedItem)
+            switch (key)
             {
                 default:
-                case "Chat Font":
-                    selectedFontTexture = this.TextureChatFont;
-                    break;
-
-                case "Small Font":
-                    selectedFontTexture = this.TextureSmallFont;
-                    break;
-
-                case "Medium Font":
-                    selectedFontTexture = this.TextureMediumFont;
-                    break;
-
-                case "Huge Font":
-                    selectedFontTexture = this.TextureHugeFont;
-                    break;
+                case "Chat Font": return InfoChatFont;
+                case "Small Font": return InfoSmallFont;
+                case "Medium Font": return InfoMediumFont;
+                case "Huge Font": return InfoHugeFont;
             }
+        }
+
+
+        /// <summary>
+        /// Try to select the first character from the characters listbox, on failure, disable character controls.
+        /// </summary>
+        private void TrySelectFirstCharacter()
+        {
+            if (ListCharacter.Items.Count > 0)
+            {
+                ListCharacter.SelectedIndex = 0;
+            }
+            else
+            {
+                // Disable remove character button
+                ButtonRemoveCharacter.Enabled = false;
+
+                // Disable character form controls
+                ButtonCharacterBlit.Enabled = false;
+                NumericCharBefore.Enabled = false;
+                NumericCharBefore.Value = 0;
+                NumericCharAfter.Enabled = false;
+                NumericCharAfter.Value = 0;
+                NumericCharYOffset.Enabled = false;
+                NumericCharYOffset.Value = 0;
+            }
+        }
+
+
+        /// <summary>
+        /// Update the character details into the relevant font information.
+        /// </summary>
+        /// <param name="lastCharacter">Whether the character to update was the last or the current selected.</param>
+        /// <param name="lastFont">Whether the font to update the character in was the last or the current selected.</param>
+        private void UpdateCharacterDetails(bool lastCharacter, bool lastFont)
+        {
+            bool charHasValue = false;
+            char charToUpdate = ' ';
+
+            if (lastCharacter)
+            {
+                charToUpdate = LastSelectedCharacter;
+                charHasValue = true;
+            }
+            else
+            {
+                if (ListCharacter.SelectedItem != null)
+                {
+                    charToUpdate = (char)ListCharacter.SelectedItem;
+                    charHasValue = true;
+                }
+            }
+
+            string fontString = lastFont ?
+                LastSelectedFont :
+                (string)ComboFont.SelectedItem;
+
+            if (charHasValue)
+            {
+                CharacterInfo charInfo = GetFontInfo(fontString).GetCharacter(charToUpdate);
+
+                if (charInfo != null)
+                {
+                    charInfo.Before = (byte)NumericCharBefore.Value;
+                    charInfo.After = (byte)NumericCharAfter.Value;
+                    charInfo.YOffset = (byte)NumericCharYOffset.Value;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Updates the character form fields with the selected character's information.
+        /// </summary>
+        private void UpdateCharacterForms()
+        {
+            string fontSelected = (string)ComboFont.SelectedItem;
+            char charSelected = (char)ListCharacter.SelectedItem;
+            CharacterInfo charInfo = GetFontInfo(fontSelected).GetCharacter(charSelected);
+
+            ButtonCharacterBlit.Enabled = true;
+            NumericCharBefore.Enabled = true;
+            NumericCharBefore.Value = charInfo.Before;
+            NumericCharAfter.Enabled = true;
+            NumericCharAfter.Value = charInfo.After;
+            NumericCharYOffset.Enabled = true;
+            NumericCharYOffset.Value = charInfo.YOffset;
+        }
+
+
+        /// <summary>
+        /// Update the font details into the relevant font information.
+        /// </summary>
+        /// <param name="lastFont">Whether the font to update the details in was the last or the currently selected.</param>
+        private void UpdateFontDetails(bool lastFont)
+        {
+            string fontSelected = lastFont ?
+                LastSelectedFont :
+                (string)ComboFont.SelectedItem;
+            FontInfo fontInfo = GetFontInfo(fontSelected);
+
+            fontInfo.LineHeight = (byte)NumericLineHeight.Value;
+            fontInfo.SpacingWidth = (byte)NumericSpaceWidth.Value;
+        }
+
+
+        /// <summary>
+        /// Updates elements in this tab related to font information.
+        /// </summary>
+        private void UpdateFontTexturePreviews()
+        {
+            Texture selectedFontTexture = GetFontInfo((string)ComboFont.SelectedItem).Texture;
 
             if (selectedFontTexture.Source != null && selectedFontTexture.Data != null)
             {
-                this.LabelFontTexture.Text = selectedFontTexture.Source.Length > 11 ?
+                LabelFontTexture.Text = selectedFontTexture.Source.Length > 11 ?
                     "Texture:..." + selectedFontTexture.Source.Substring(selectedFontTexture.Source.Length - 11) :
                     "Texture:" + selectedFontTexture.Source;
 
-                this.TooltipGlobal.SetToolTip(LabelFontTexture, selectedFontTexture.Source);
+                TooltipGlobal.SetToolTip(LabelFontTexture, selectedFontTexture.Source);
 
                 // Update character preview here
             }
             else
             {
-                this.LabelFontTexture.Text = "Texture:";
-                this.TooltipGlobal.SetToolTip(LabelFontTexture, "");
-                this.PictureCharPreview.Image = null;
+                LabelFontTexture.Text = "Texture:";
+                TooltipGlobal.SetToolTip(LabelFontTexture, "");
+                PictureCharPreview.Image = null;
             }
         }
 
@@ -1192,25 +1287,8 @@ namespace RozWorld_Editor.Tab
                  * Font texture "Set..." button.
                  */
                 case "ButtonFontTexture":
-                    switch ((string)this.ComboFont.SelectedItem)
-                    {
-                        default:
-                        case "Chat Font":
-                            setTextureDialog = new Dialog.SetTexture("Chat Font", this.TextureChatFont);
-                            break;
-
-                        case "Small Font":
-                            setTextureDialog = new Dialog.SetTexture("Small Font", this.TextureSmallFont);
-                            break;
-
-                        case "Medium Font":
-                            setTextureDialog = new Dialog.SetTexture("Medium Font", this.TextureMediumFont);
-                            break;
-
-                        case "Huge Font":
-                            setTextureDialog = new Dialog.SetTexture("Huge Font", this.TextureHugeFont);
-                            break;
-                    }
+                    string fontSelected = (string)ComboFont.SelectedItem;
+                    setTextureDialog = new Dialog.SetTexture(fontSelected, GetFontInfo(fontSelected).Texture);
 
                     break;
 
@@ -1241,18 +1319,21 @@ namespace RozWorld_Editor.Tab
         /// </summary>
         void ButtonAddCharacter_Click(object sender, EventArgs e)
         {
-            string[] currentCharacters = new string[this.ListCharacter.Items.Count];
+            // Save the character info before we change the selected character.
+            UpdateCharacterDetails(false, false);
 
-            for (int i = 0; i < this.ListCharacter.Items.Count; i++)
-            {
-                currentCharacters[i] = this.ListCharacter.Items[i].ToString();
-            }
+            string fontSelected = (string)ComboFont.SelectedItem;
+            FontInfo fontInfo = GetFontInfo(fontSelected);
 
-            Dialog.AddCharacter addCharacterDialog = new Dialog.AddCharacter(currentCharacters);
+            Dialog.AddCharacter addCharacterDialog = new Dialog.AddCharacter(fontInfo.GetListCharacters());
 
             if (addCharacterDialog.ShowDialog() == DialogResult.OK)
             {
-                this.ListCharacter.Items.Add(addCharacterDialog.Character);
+                fontInfo.AddNewCharacter(addCharacterDialog.Character);
+
+                // Add the new character to the listbox and select it
+                ListCharacter.Items.Add(addCharacterDialog.Character);
+                ListCharacter.SelectedIndex = ListCharacter.Items.Count - 1;
             }
         }
 
@@ -1262,13 +1343,19 @@ namespace RozWorld_Editor.Tab
         /// </summary>
         void ButtonRemoveCharacter_Click(object sender, EventArgs e)
         {
-            if (this.ListCharacter.SelectedItem != null)
-            {
-                if(MessageBox.Show("Are you sure you want to remove this character from this font?", "RozWorld Editor",
+            if (MessageBox.Show("Are you sure you want to remove this character from this font?", "RozWorld Editor",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    this.ListCharacter.Items.RemoveAt(this.ListCharacter.SelectedIndex);
-                }
+            {
+                char charSelected = (char)ListCharacter.SelectedItem;
+                string fontSelected = (string)ComboFont.SelectedItem;
+                FontInfo fontInfo = GetFontInfo(fontSelected);
+
+                // Remove character from the font information and from the listbox
+                fontInfo.RemoveCharacter(charSelected);
+                ListCharacter.Items.RemoveAt(ListCharacter.SelectedIndex);
+
+                // Try to select the first character...
+                TrySelectFirstCharacter();
             }
         }
 
@@ -1280,67 +1367,57 @@ namespace RozWorld_Editor.Tab
         {
             UpdateFontTexturePreviews();
 
-            // Update the characters listbox
-            List<char> characterList;
+            // Save the current character and font info to the last font picked.
+            UpdateCharacterDetails(false, true);
+            UpdateFontDetails(true);
 
-            if (this.LastSelectedFont != null) // Make sure there is a last picked font
+            // Update the character listbox
+            ListCharacter.Items.Clear();
+
+            string fontSelected = (string)ComboFont.SelectedItem;
+            FontInfo fontInfo = GetFontInfo(fontSelected);
+
+            foreach (char character in fontInfo.GetListCharacters())
             {
-                switch (this.LastSelectedFont)
+                ListCharacter.Items.Add(character);
+            }
+
+            LastSelectedCharacter = (char)0; // Prevent character details from being overwritten
+
+            // Try to select the first character...
+            TrySelectFirstCharacter();
+
+            // Update the font specific fields
+            NumericSpaceWidth.Value = fontInfo.SpacingWidth;
+            NumericLineHeight.Value = fontInfo.LineHeight;
+
+            // Set the last selected font to what was just picked.
+            LastSelectedFont = fontSelected;
+        }
+
+
+        /// <summary>
+        /// Font character listbox selection changed.
+        /// </summary>
+        void ListCharacter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListCharacter.SelectedItem != null)
+            {
+                if (LastSelectedCharacter != 0)
                 {
-                    default:
-                    case "Chat Font":
-                        characterList = this.CharactersChatFont;
-                        break;
-
-                    case "Small Font":
-                        characterList = this.CharactersSmallFont;
-                        break;
-
-                    case "Medium Font":
-                        characterList = this.CharactersMediumFont;
-                        break;
-
-                    case "Huge Font":
-                        characterList = this.CharactersHugeFont;
-                        break;
+                    // Save the character info to the last character picked.
+                    UpdateCharacterDetails(true, false);
                 }
 
-                characterList.Clear();
+                // Load the selected character's info into the form
+                UpdateCharacterForms();
 
-                foreach (char item in this.ListCharacter.Items)
-                {
-                    characterList.Add(item);
-                }
+                // Enable remove character button
+                ButtonRemoveCharacter.Enabled = true;
+
+                // Set the last selected character to what was just picked.
+                LastSelectedCharacter = (char)ListCharacter.SelectedItem;
             }
-
-            switch ((string)this.ComboFont.SelectedItem)
-            {
-                default:
-                case "Chat Font":
-                    characterList = this.CharactersChatFont;
-                    break;
-
-                case "Small Font":
-                    characterList = this.CharactersSmallFont;
-                    break;
-
-                case "Medium Font":
-                    characterList = this.CharactersMediumFont;
-                    break;
-
-                case "Huge Font":
-                    characterList = this.CharactersHugeFont;
-                    break;
-            }
-
-            this.ListCharacter.Items.Clear();
-
-            foreach (char item in characterList)
-            {
-                this.ListCharacter.Items.Add(item);
-            }
-
-            this.LastSelectedFont = (string)this.ComboFont.SelectedItem;
         }
     }
 }

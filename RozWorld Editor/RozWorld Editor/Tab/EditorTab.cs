@@ -85,12 +85,12 @@ namespace RozWorld_Editor.Tab
         {
             try
             {
-                this.ParentTabUI.SelectedIndex--;
+                ParentTabUI.SelectedIndex--;
             }
             catch { }
             
-            this.ParentTabUI.TabPages.RemoveByKey(this.Name);
-            this.Dispose();
+            ParentTabUI.TabPages.RemoveByKey(Name);
+            Dispose();
 
             return true;
         }

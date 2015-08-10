@@ -52,20 +52,20 @@ namespace RozWorld_Editor.Toolbar
             this.ParentForm = parentForm;
 
             this.Items.AddRange(new ToolStripItem[] {
-                this.DropDownNew,
-                this.ButtonOpen,
-                this.ButtonSave,
-                this.ButtonSaveAll,
-                this.SeparatorFileClipboardOps,
-                this.ButtonCut,
-                this.ButtonCopy,
-                this.ButtonPaste,
-                this.SeparatorClipboardHistoryOps,
-                this.ButtonUndo,
-                this.ButtonRedo,
-                this.SeparatorHistorySelectModeOps,
-                this.LabelSelectionMode,
-                this.ComboSelectionMode
+                DropDownNew,
+                ButtonOpen,
+                ButtonSave,
+                ButtonSaveAll,
+                SeparatorFileClipboardOps,
+                ButtonCut,
+                ButtonCopy,
+                ButtonPaste,
+                SeparatorClipboardHistoryOps,
+                ButtonUndo,
+                ButtonRedo,
+                SeparatorHistorySelectModeOps,
+                LabelSelectionMode,
+                ComboSelectionMode
             });
 
             /**
@@ -81,166 +81,166 @@ namespace RozWorld_Editor.Toolbar
             /**
              * DropDownNew
              */
-            this.DropDownNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.DropDownNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                this.DropItemNewWorld,
-                this.DropItemNewPlayer,
-                this.DropItemNewGUIOMETRY
+            DropDownNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            DropDownNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                DropItemNewWorld,
+                DropItemNewPlayer,
+                DropItemNewGUIOMETRY
             });
-            this.DropDownNew.Image = Properties.Resources.NewIcon;
-            this.DropDownNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DropDownNew.Name = "DropDownNew";
-            this.DropDownNew.Size = new System.Drawing.Size(29, 22);
-            this.DropDownNew.Text = "New... (CTRL+N)";
+            DropDownNew.Image = Properties.Resources.NewIcon;
+            DropDownNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            DropDownNew.Name = "DropDownNew";
+            DropDownNew.Size = new System.Drawing.Size(29, 22);
+            DropDownNew.Text = "New... (CTRL+N)";
 
             /**
              * DropItemNewWorld
              */
-            this.DropItemNewWorld.Image = Properties.Resources.NewWorldIcon;
-            this.DropItemNewWorld.Name = "DropItemNewWorld";
-            this.DropItemNewWorld.Size = new System.Drawing.Size(154, 22);
-            this.DropItemNewWorld.Text = "World";
-            this.DropItemNewWorld.Click += new System.EventHandler(this.ParentForm.NewWorld_Click);
+            DropItemNewWorld.Image = Properties.Resources.NewWorldIcon;
+            DropItemNewWorld.Name = "DropItemNewWorld";
+            DropItemNewWorld.Size = new System.Drawing.Size(154, 22);
+            DropItemNewWorld.Text = "World";
+            DropItemNewWorld.Click += new System.EventHandler(ParentForm.NewWorld_Click);
 
             /**
              * DropItemNewPlayer
              */
-            this.DropItemNewPlayer.Image = Properties.Resources.NewPlayerIcon;
-            this.DropItemNewPlayer.Name = "DropItemNewPlayer";
-            this.DropItemNewPlayer.Size = new System.Drawing.Size(154, 22);
-            this.DropItemNewPlayer.Text = "Player";
-            this.DropItemNewPlayer.Click += new System.EventHandler(this.ParentForm.NewPlayer_Click);
+            DropItemNewPlayer.Image = Properties.Resources.NewPlayerIcon;
+            DropItemNewPlayer.Name = "DropItemNewPlayer";
+            DropItemNewPlayer.Size = new System.Drawing.Size(154, 22);
+            DropItemNewPlayer.Text = "Player";
+            DropItemNewPlayer.Click += new System.EventHandler(ParentForm.NewPlayer_Click);
 
             /**
              * DropItemNewGUIOMETRY
              */
-            this.DropItemNewGUIOMETRY.Image = Properties.Resources.NewBINIcon;
-            this.DropItemNewGUIOMETRY.Name = "DropItemNewGUIOMETRY";
-            this.DropItemNewGUIOMETRY.Size = new System.Drawing.Size(154, 22);
-            this.DropItemNewGUIOMETRY.Text = "GUIOMETRY.BIN";
-            this.DropItemNewGUIOMETRY.Click += new System.EventHandler(this.ParentForm.NewGUIOMETRY_Click);
+            DropItemNewGUIOMETRY.Image = Properties.Resources.NewBINIcon;
+            DropItemNewGUIOMETRY.Name = "DropItemNewGUIOMETRY";
+            DropItemNewGUIOMETRY.Size = new System.Drawing.Size(154, 22);
+            DropItemNewGUIOMETRY.Text = "GUIOMETRY.BIN";
+            DropItemNewGUIOMETRY.Click += new System.EventHandler(ParentForm.NewGUIOMETRY_Click);
 
 
             /**
              * ButtonOpen
              */
-            this.ButtonOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ButtonOpen.Image = Properties.Resources.OpenFileIcon;
-            this.ButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ButtonOpen.Name = "ButtonOpen";
-            this.ButtonOpen.Size = new System.Drawing.Size(23, 22);
-            this.ButtonOpen.Text = "Open File (CTRL+O)";
+            ButtonOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            ButtonOpen.Image = Properties.Resources.OpenFileIcon;
+            ButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ButtonOpen.Name = "ButtonOpen";
+            ButtonOpen.Size = new System.Drawing.Size(23, 22);
+            ButtonOpen.Text = "Open File (CTRL+O)";
 
             /**
              * ButtonSave
              */
-            this.ButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ButtonSave.Image = Properties.Resources.SaveIcon;
-            this.ButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ButtonSave.Name = "ButtonSave";
-            this.ButtonSave.Size = new System.Drawing.Size(23, 22);
-            this.ButtonSave.Text = "Save (CTRL+S)";
+            ButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            ButtonSave.Image = Properties.Resources.SaveIcon;
+            ButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ButtonSave.Name = "ButtonSave";
+            ButtonSave.Size = new System.Drawing.Size(23, 22);
+            ButtonSave.Text = "Save (CTRL+S)";
 
             /**
              * ButtonSaveAll
              */
-            this.ButtonSaveAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ButtonSaveAll.Image = Properties.Resources.SaveAllIcon;
-            this.ButtonSaveAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ButtonSaveAll.Name = "ButtonSaveAll";
-            this.ButtonSaveAll.Size = new System.Drawing.Size(23, 22);
-            this.ButtonSaveAll.Text = "Save All (CTRL+ALT+S)";
+            ButtonSaveAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            ButtonSaveAll.Image = Properties.Resources.SaveAllIcon;
+            ButtonSaveAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ButtonSaveAll.Name = "ButtonSaveAll";
+            ButtonSaveAll.Size = new System.Drawing.Size(23, 22);
+            ButtonSaveAll.Text = "Save All (CTRL+ALT+S)";
 
 
             /**
              * SeparatorFileClipboardOps
              */
-            this.SeparatorFileClipboardOps.Name = "SeparatorFileClipboardOps";
-            this.SeparatorFileClipboardOps.Size = new System.Drawing.Size(6, 25);
+            SeparatorFileClipboardOps.Name = "SeparatorFileClipboardOps";
+            SeparatorFileClipboardOps.Size = new System.Drawing.Size(6, 25);
 
             /**
              * ButtonCut
              */
-            this.ButtonCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ButtonCut.Image = Properties.Resources.CutIcon;
-            this.ButtonCut.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ButtonCut.Name = "ButtonCut";
-            this.ButtonCut.Size = new System.Drawing.Size(23, 22);
-            this.ButtonCut.Text = "Cut (CTRL+X)";
+            ButtonCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            ButtonCut.Image = Properties.Resources.CutIcon;
+            ButtonCut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ButtonCut.Name = "ButtonCut";
+            ButtonCut.Size = new System.Drawing.Size(23, 22);
+            ButtonCut.Text = "Cut (CTRL+X)";
 
             /**
              * ButtonCopy
              */
-            this.ButtonCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ButtonCopy.Image = Properties.Resources.CopyIcon;
-            this.ButtonCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ButtonCopy.Name = "ButtonCopy";
-            this.ButtonCopy.Size = new System.Drawing.Size(23, 22);
-            this.ButtonCopy.Text = "Copy (CTRL+C)";
+            ButtonCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            ButtonCopy.Image = Properties.Resources.CopyIcon;
+            ButtonCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ButtonCopy.Name = "ButtonCopy";
+            ButtonCopy.Size = new System.Drawing.Size(23, 22);
+            ButtonCopy.Text = "Copy (CTRL+C)";
 
             /**
              * ButtonPaste
              */
-            this.ButtonPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ButtonPaste.Image = Properties.Resources.PasteIcon;
-            this.ButtonPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ButtonPaste.Name = "ButtonPaste";
-            this.ButtonPaste.Size = new System.Drawing.Size(23, 22);
-            this.ButtonPaste.Text = "Paste (CTRL+V)";
+            ButtonPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            ButtonPaste.Image = Properties.Resources.PasteIcon;
+            ButtonPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ButtonPaste.Name = "ButtonPaste";
+            ButtonPaste.Size = new System.Drawing.Size(23, 22);
+            ButtonPaste.Text = "Paste (CTRL+V)";
 
 
             /**
              * SeparatorClipboardHistoryOps
              */
-            this.SeparatorClipboardHistoryOps.Name = "SeparatorClipboardHistoryOps";
-            this.SeparatorClipboardHistoryOps.Size = new System.Drawing.Size(6, 25);
+            SeparatorClipboardHistoryOps.Name = "SeparatorClipboardHistoryOps";
+            SeparatorClipboardHistoryOps.Size = new System.Drawing.Size(6, 25);
 
             /**
              * ButtonUndo
              */
-            this.ButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ButtonUndo.Image = Properties.Resources.UndoIcon;
-            this.ButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ButtonUndo.Name = "ButtonUndo";
-            this.ButtonUndo.Size = new System.Drawing.Size(23, 22);
-            this.ButtonUndo.Text = "Undo (CTRL+Z)";
+            ButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            ButtonUndo.Image = Properties.Resources.UndoIcon;
+            ButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ButtonUndo.Name = "ButtonUndo";
+            ButtonUndo.Size = new System.Drawing.Size(23, 22);
+            ButtonUndo.Text = "Undo (CTRL+Z)";
 
             /**
              * ButtonRedo
              */
-            this.ButtonRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ButtonRedo.Image = Properties.Resources.RedoIcon;
-            this.ButtonRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ButtonRedo.Name = "ButtonRedo";
-            this.ButtonRedo.Size = new System.Drawing.Size(23, 22);
-            this.ButtonRedo.Text = "Redo (CTRL+Y)";
+            ButtonRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            ButtonRedo.Image = Properties.Resources.RedoIcon;
+            ButtonRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ButtonRedo.Name = "ButtonRedo";
+            ButtonRedo.Size = new System.Drawing.Size(23, 22);
+            ButtonRedo.Text = "Redo (CTRL+Y)";
 
 
             /**
              * SeparatorHistorySelectModeOps
              */
-            this.SeparatorHistorySelectModeOps.Name = "SeparatorHistorySelectModeOps";
-            this.SeparatorHistorySelectModeOps.Size = new System.Drawing.Size(6, 25);
+            SeparatorHistorySelectModeOps.Name = "SeparatorHistorySelectModeOps";
+            SeparatorHistorySelectModeOps.Size = new System.Drawing.Size(6, 25);
 
             /**
              * LabelSelectionMode
              */
-            this.LabelSelectionMode.Name = "LabelSelectionMode";
-            this.LabelSelectionMode.Size = new System.Drawing.Size(83, 22);
-            this.LabelSelectionMode.Text = "Selection Mode:";
+            LabelSelectionMode.Name = "LabelSelectionMode";
+            LabelSelectionMode.Size = new System.Drawing.Size(83, 22);
+            LabelSelectionMode.Text = "Selection Mode:";
 
             /**
              * ComboSelectionMode
              */
-            this.ComboSelectionMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboSelectionMode.Items.AddRange(new object[] {
+            ComboSelectionMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            ComboSelectionMode.Items.AddRange(new object[] {
             "Tiles",
             "Walls",
             "Entities",
             "Projectiles"
             });
-            this.ComboSelectionMode.Name = "ComboSelectionMode";
-            this.ComboSelectionMode.Size = new System.Drawing.Size(121, 25);
+            ComboSelectionMode.Name = "ComboSelectionMode";
+            ComboSelectionMode.Size = new System.Drawing.Size(121, 25);
 
             #endregion
         }

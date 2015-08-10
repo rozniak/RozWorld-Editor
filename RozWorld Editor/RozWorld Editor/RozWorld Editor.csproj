@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataClasses\CharacterInfo.cs" />
+    <Compile Include="DataClasses\FontInfo.cs" />
     <Compile Include="DataClasses\Texture.cs" />
     <Compile Include="Dialog\AddCharacter.cs">
       <SubType>Form</SubType>
@@ -112,6 +114,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

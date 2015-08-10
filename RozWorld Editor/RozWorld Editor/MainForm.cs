@@ -23,22 +23,22 @@ namespace RozWorld_Editor
         private int _NextWorldTabID;
         public int NextWorldTabID
         {
-            get { return this._NextWorldTabID++; }
-            private set { this._NextWorldTabID = value; }
+            get { return _NextWorldTabID++; }
+            private set { _NextWorldTabID = value; }
         }
 
         private int _NextPlayerTabID;
         public int NextPlayerTabID
         {
-            get { return this._NextPlayerTabID++; }
-            private set { this._NextPlayerTabID = value; }
+            get { return _NextPlayerTabID++; }
+            private set { _NextPlayerTabID = value; }
         }
 
         private int _NextGUIOMETRYTabID;
         public int NextGUIOMETRYTabID
         {
-            get { return this._NextGUIOMETRYTabID++; }
-            private set { this._NextGUIOMETRYTabID = value; }
+            get { return _NextGUIOMETRYTabID++; }
+            private set { _NextGUIOMETRYTabID = value; }
         }
 
 
@@ -49,12 +49,12 @@ namespace RozWorld_Editor
             // Manage toolbars from user settings
             if (EditorEnvironment.UserSettings.ToolbarStandardActive)
             {
-                this.SetToolbarStatus("ToolbarStandard", true);
+                SetToolbarStatus("ToolbarStandard", true);
             }
 
             if (homePage)
             {
-                this.TabUI.TabPages.Add(new Tab.HomePage(this.TabUI));
+                TabUI.TabPages.Add(new Tab.HomePage(TabUI));
             }
 
             UpdateToolbarsTabDetails();
@@ -73,8 +73,8 @@ namespace RozWorld_Editor
                 switch (toolbarName)
                 {
                     case "ToolbarStandard":
-                        this.Controls.Add(new Toolbar.Standard(this));
-                        this.MenuSubItemToolbarStandard.Checked = true;
+                        Controls.Add(new Toolbar.Standard(this));
+                        MenuSubItemToolbarStandard.Checked = true;
                         break;
                 }
             }
@@ -83,8 +83,8 @@ namespace RozWorld_Editor
                 switch (toolbarName)
                 {
                     case "ToolbarStandard":
-                        this.Controls.RemoveByKey(toolbarName);
-                        this.MenuSubItemToolbarStandard.Checked = false;
+                        Controls.RemoveByKey(toolbarName);
+                        MenuSubItemToolbarStandard.Checked = false;
                         break;
                 }
             }
@@ -102,14 +102,14 @@ namespace RozWorld_Editor
         {
             bool stillClosing = true;
 
-            if (this.TabUI.TabCount > 0)
+            if (TabUI.TabCount > 0)
             {
                 int i = 0;
 
                 do
                 {
-                    stillClosing = ((Tab.EditorTab)this.TabUI.TabPages[i]).Close();
-                } while (stillClosing && ++i < this.TabUI.TabCount);
+                    stillClosing = ((Tab.EditorTab)TabUI.TabPages[i]).Close();
+                } while (stillClosing && ++i < TabUI.TabCount);
             }
 
             return stillClosing;
@@ -126,9 +126,9 @@ namespace RozWorld_Editor
         /// </summary>
         private void UpdateToolbarsTabDetails()
         {
-            if (this.TabUI.TabCount > 0)
+            if (TabUI.TabCount > 0)
             {
-                var currentTab = (Tab.EditorTab)this.TabUI.SelectedTab;
+                var currentTab = (Tab.EditorTab)TabUI.SelectedTab;
 
                 /**
                  * Check undo/redo.
@@ -136,12 +136,12 @@ namespace RozWorld_Editor
                 bool canUndo = currentTab.CanUndo();
                 bool canRedo = currentTab.CanRedo();
 
-                this.MenuItemUndo.Enabled = canUndo;
-                this.MenuItemRedo.Enabled = canRedo;
+                MenuItemUndo.Enabled = canUndo;
+                MenuItemRedo.Enabled = canRedo;
 
-                if (this.Controls.ContainsKey("ToolbarStandard"))
+                if (Controls.ContainsKey("ToolbarStandard"))
                 {
-                    var standardToolbar = (Toolbar.Standard)this.Controls["ToolbarStandard"];
+                    var standardToolbar = (Toolbar.Standard)Controls["ToolbarStandard"];
                     standardToolbar.Items["ButtonUndo"].Enabled = canUndo;
                     standardToolbar.Items["ButtonRedo"].Enabled = canRedo;
                 }
@@ -154,8 +154,8 @@ namespace RozWorld_Editor
         /// </summary>
         public void NewWorld_Click(object sender, EventArgs e)
         {
-            this.TabUI.TabPages.Add(new Tab.WorldEditor(this.TabUI, this.NextWorldTabID));
-            this.TabUI.SelectedIndex = this.TabUI.TabCount - 1;
+            TabUI.TabPages.Add(new Tab.WorldEditor(TabUI, NextWorldTabID));
+            TabUI.SelectedIndex = TabUI.TabCount - 1;
         }
 
 
@@ -164,8 +164,8 @@ namespace RozWorld_Editor
         /// </summary>
         public void NewPlayer_Click(object sender, EventArgs e)
         {
-            this.TabUI.TabPages.Add(new Tab.PlayerEditor(this.TabUI, this.NextPlayerTabID));
-            this.TabUI.SelectedIndex = this.TabUI.TabCount - 1;
+            TabUI.TabPages.Add(new Tab.PlayerEditor(TabUI, NextPlayerTabID));
+            TabUI.SelectedIndex = TabUI.TabCount - 1;
         }
 
 
@@ -174,8 +174,8 @@ namespace RozWorld_Editor
         /// </summary>
         public void NewGUIOMETRY_Click(object sender, EventArgs e)
         {
-            this.TabUI.TabPages.Add(new Tab.GUIOMETRYEditor(this.TabUI, this.NextGUIOMETRYTabID));
-            this.TabUI.SelectedIndex = this.TabUI.TabCount - 1;
+            TabUI.TabPages.Add(new Tab.GUIOMETRYEditor(TabUI, NextGUIOMETRYTabID));
+            TabUI.SelectedIndex = TabUI.TabCount - 1;
         }
 
 
@@ -184,9 +184,9 @@ namespace RozWorld_Editor
         /// </summary>
         public void RedoItem_Click(object sender, EventArgs e)
         {
-            if (this.TabUI.TabCount > 0)
+            if (TabUI.TabCount > 0)
             {
-                ((Tab.EditorTab)this.TabUI.SelectedTab).Redo();
+                ((Tab.EditorTab)TabUI.SelectedTab).Redo();
             }
         }
 
@@ -196,9 +196,9 @@ namespace RozWorld_Editor
         /// </summary>
         public void UndoItem_Click(object sender, EventArgs e)
         {
-            if (this.TabUI.TabCount > 0)
+            if (TabUI.TabCount > 0)
             {
-                ((Tab.EditorTab)this.TabUI.SelectedTab).Undo();
+                ((Tab.EditorTab)TabUI.SelectedTab).Undo();
             }
         }
 
@@ -226,11 +226,11 @@ namespace RozWorld_Editor
         /// </summary>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            bool closeSuccessful = this.CloseAllTabs();
+            bool closeSuccessful = CloseAllTabs();
 
             if (closeSuccessful)
             {
-                EditorEnvironment.CloseWindow(this.Name);
+                EditorEnvironment.CloseWindow(Name);
             }
             else
             {
@@ -251,28 +251,28 @@ namespace RozWorld_Editor
             {
                 do
                 {
-                    Rectangle tabBounds = this.TabUI.GetTabRect(i);
+                    Rectangle tabBounds = TabUI.GetTabRect(i);
 
                     if (tabBounds.Contains(e.Location))
                     {
-                        this.TabUI.SelectedIndex = i;
-                        this.ContextTabs.Show(this.TabUI, e.Location);
+                        TabUI.SelectedIndex = i;
+                        ContextTabs.Show(TabUI, e.Location);
                         foundTab = true;
                     }
-                } while (!foundTab && i++ < this.TabUI.TabCount);
+                } while (!foundTab && i++ < TabUI.TabCount);
             }
             else if (e.Button == MouseButtons.Middle) // Request to close the middle clicked tab.
             {
                 do
                 {
-                    Rectangle tabBounds = this.TabUI.GetTabRect(i);
+                    Rectangle tabBounds = TabUI.GetTabRect(i);
 
                     if (tabBounds.Contains(e.Location))
                     {
-                        this.TabUI.TabPages.RemoveAt(i);
+                        TabUI.TabPages.RemoveAt(i);
                         foundTab = true;
                     }
-                } while (!foundTab && i++ < this.TabUI.TabCount);
+                } while (!foundTab && i++ < TabUI.TabCount);
             }
         }
 
@@ -282,22 +282,22 @@ namespace RozWorld_Editor
         /// </summary>
         private void TabUI_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.TabUI.TabCount > 0)
+            if (TabUI.TabCount > 0)
             {
-                string tabTitle = this.TabUI.SelectedTab.Text;
+                string tabTitle = TabUI.SelectedTab.Text;
 
                 if (tabTitle == "Home Page")
                 {
-                    this.Text = "RozWorld Editor";
+                    Text = "RozWorld Editor";
                 }
                 else
                 {
-                    this.Text = tabTitle + " - RozWorld Editor";
+                    Text = tabTitle + " - RozWorld Editor";
                 }
             }
             else
             {
-                this.Text = "RozWorld Editor";
+                Text = "RozWorld Editor";
             }
 
             // Update toolbars relevant to this tab
@@ -310,7 +310,7 @@ namespace RozWorld_Editor
         /// </summary>
         private void ContextCloseTab_Click(object sender, EventArgs e)
         {
-            ((Tab.EditorTab)this.TabUI.SelectedTab).Close();
+            ((Tab.EditorTab)TabUI.SelectedTab).Close();
         }
 
 

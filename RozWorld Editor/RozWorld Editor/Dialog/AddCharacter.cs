@@ -10,6 +10,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -18,19 +19,19 @@ namespace RozWorld_Editor.Dialog
 {
     public partial class AddCharacter : Form
     {
-        private readonly string[] CurrentCharacters;
+        private IList<char> CurrentCharacters;
         private bool LegalCharacterInput;
 
         public char Character;
 
 
-        public AddCharacter(string[] currentCharacters)
+        public AddCharacter(IList<char> currentCharacters)
         {
             InitializeComponent();
 
-            this.CurrentCharacters = currentCharacters;
+            CurrentCharacters = currentCharacters;
 
-            this.VerifyValidInput();
+            VerifyValidInput();
         }
 
 
@@ -39,19 +40,19 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void VerifyValidInput()
         {
-            TextBox textBox = this.TextCharacter;
+            TextBox textBox = TextCharacter;
 
-            if (!CurrentCharacters.Contains(textBox.Text) && textBox.Text != "")
+            if (textBox.Text != "" && !CurrentCharacters.Contains(textBox.Text[0]))
             {
                 textBox.BackColor = Color.White;
                 textBox.ForeColor = Color.Black;
-                this.LegalCharacterInput = true;
+                LegalCharacterInput = true;
             }
             else
             {
                 textBox.BackColor = Color.Red;
                 textBox.ForeColor = Color.White;
-                this.LegalCharacterInput = false;
+                LegalCharacterInput = false;
             }
         }
 
@@ -61,7 +62,7 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void TextCharacter_TextChanged(object sender, EventArgs e)
         {
-            this.VerifyValidInput();
+            VerifyValidInput();
         }
 
 
@@ -70,10 +71,10 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            if (this.LegalCharacterInput)
+            if (LegalCharacterInput)
             {
                 this.DialogResult = DialogResult.OK;
-                this.Character = this.TextCharacter.Text[0];
+                Character = TextCharacter.Text[0];
                 this.Close();
             }
             else

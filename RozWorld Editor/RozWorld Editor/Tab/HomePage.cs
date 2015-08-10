@@ -63,104 +63,104 @@ namespace RozWorld_Editor.Tab
             /**
              * PictureEditorLogo
              */
-            this.PictureEditorLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            PictureEditorLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureEditorLogo.Image = global::RozWorld_Editor.Properties.Resources.EditorLogo;
-            this.PictureEditorLogo.Location = new System.Drawing.Point(8, 6);
-            this.PictureEditorLogo.Name = "PictureEditorLogo";
-            this.PictureEditorLogo.Size = new System.Drawing.Size(792, 187);
-            this.PictureEditorLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PictureEditorLogo.TabIndex = 0;
-            this.PictureEditorLogo.TabStop = false;
+            PictureEditorLogo.Image = global::RozWorld_Editor.Properties.Resources.EditorLogo;
+            PictureEditorLogo.Location = new System.Drawing.Point(8, 6);
+            PictureEditorLogo.Name = "PictureEditorLogo";
+            PictureEditorLogo.Size = new System.Drawing.Size(792, 187);
+            PictureEditorLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            PictureEditorLogo.TabIndex = 0;
+            PictureEditorLogo.TabStop = false;
 
             /**
              * LabelNewTasks
              */
-            this.LabelNewTasks.AutoSize = true;
-            this.LabelNewTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNewTasks.Location = new System.Drawing.Point(8, 196);
-            this.LabelNewTasks.Name = "LabelNewTasks";
-            this.LabelNewTasks.Size = new System.Drawing.Size(87, 16);
-            this.LabelNewTasks.TabIndex = 1;
-            this.LabelNewTasks.Text = "Create New...";
+            LabelNewTasks.AutoSize = true;
+            LabelNewTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            LabelNewTasks.Location = new System.Drawing.Point(8, 196);
+            LabelNewTasks.Name = "LabelNewTasks";
+            LabelNewTasks.Size = new System.Drawing.Size(87, 16);
+            LabelNewTasks.TabIndex = 1;
+            LabelNewTasks.Text = "Create New...";
 
             /**
              * ButtonNewWorld
              */
-            this.ButtonNewWorld.Location = new System.Drawing.Point(8, 215);
-            this.ButtonNewWorld.Name = "ButtonNewWorld";
-            this.ButtonNewWorld.Size = new System.Drawing.Size(209, 23);
-            this.ButtonNewWorld.TabIndex = 2;
-            this.ButtonNewWorld.Text = "World...";
-            this.ButtonNewWorld.UseVisualStyleBackColor = true;
-            this.ButtonNewWorld.Click += new System.EventHandler(this.ParentForm.NewWorld_Click);
+            ButtonNewWorld.Location = new System.Drawing.Point(8, 215);
+            ButtonNewWorld.Name = "ButtonNewWorld";
+            ButtonNewWorld.Size = new System.Drawing.Size(209, 23);
+            ButtonNewWorld.TabIndex = 2;
+            ButtonNewWorld.Text = "World...";
+            ButtonNewWorld.UseVisualStyleBackColor = true;
+            ButtonNewWorld.Click += new System.EventHandler(ParentForm.NewWorld_Click);
 
             /**
              * ButtonNewPlayer
              */
-            this.ButtonNewPlayer.Location = new System.Drawing.Point(8, 244);
-            this.ButtonNewPlayer.Name = "ButtonNewPlayer";
-            this.ButtonNewPlayer.Size = new System.Drawing.Size(209, 23);
-            this.ButtonNewPlayer.TabIndex = 3;
-            this.ButtonNewPlayer.Text = "Player...";
-            this.ButtonNewPlayer.UseVisualStyleBackColor = true;
-            this.ButtonNewPlayer.Click += new System.EventHandler(this.ParentForm.NewPlayer_Click);
+            ButtonNewPlayer.Location = new System.Drawing.Point(8, 244);
+            ButtonNewPlayer.Name = "ButtonNewPlayer";
+            ButtonNewPlayer.Size = new System.Drawing.Size(209, 23);
+            ButtonNewPlayer.TabIndex = 3;
+            ButtonNewPlayer.Text = "Player...";
+            ButtonNewPlayer.UseVisualStyleBackColor = true;
+            ButtonNewPlayer.Click += new System.EventHandler(ParentForm.NewPlayer_Click);
 
             /**
              * ButtonNewGUIOMETRY
              */
-            this.ButtonNewGUIOMETRY.Location = new System.Drawing.Point(8, 273);
-            this.ButtonNewGUIOMETRY.Name = "ButtonNewGUIOMETRY";
-            this.ButtonNewGUIOMETRY.Size = new System.Drawing.Size(209, 23);
-            this.ButtonNewGUIOMETRY.TabIndex = 4;
-            this.ButtonNewGUIOMETRY.Text = "GUIOMETRY.BIN...";
-            this.ButtonNewGUIOMETRY.UseVisualStyleBackColor = true;
-            this.ButtonNewGUIOMETRY.Click += new System.EventHandler(this.ParentForm.NewGUIOMETRY_Click);
+            ButtonNewGUIOMETRY.Location = new System.Drawing.Point(8, 273);
+            ButtonNewGUIOMETRY.Name = "ButtonNewGUIOMETRY";
+            ButtonNewGUIOMETRY.Size = new System.Drawing.Size(209, 23);
+            ButtonNewGUIOMETRY.TabIndex = 4;
+            ButtonNewGUIOMETRY.Text = "GUIOMETRY.BIN...";
+            ButtonNewGUIOMETRY.UseVisualStyleBackColor = true;
+            ButtonNewGUIOMETRY.Click += new System.EventHandler(ParentForm.NewGUIOMETRY_Click);
 
             /**
              * LabelOpenTasks
              */
-            this.LabelOpenTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelOpenTasks.AutoSize = true;
-            this.LabelOpenTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelOpenTasks.Location = new System.Drawing.Point(588, 196);
-            this.LabelOpenTasks.Name = "LabelOpenTasks";
-            this.LabelOpenTasks.Size = new System.Drawing.Size(106, 16);
-            this.LabelOpenTasks.TabIndex = 9;
-            this.LabelOpenTasks.Text = "Open Previous...";
+            LabelOpenTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            LabelOpenTasks.AutoSize = true;
+            LabelOpenTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            LabelOpenTasks.Location = new System.Drawing.Point(588, 196);
+            LabelOpenTasks.Name = "LabelOpenTasks";
+            LabelOpenTasks.Size = new System.Drawing.Size(106, 16);
+            LabelOpenTasks.TabIndex = 9;
+            LabelOpenTasks.Text = "Open Previous...";
 
             /**
              * ButtonOpenWorld
              */
-            this.ButtonOpenWorld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOpenWorld.Location = new System.Drawing.Point(591, 215);
-            this.ButtonOpenWorld.Name = "ButtonOpenWorld";
-            this.ButtonOpenWorld.Size = new System.Drawing.Size(209, 23);
-            this.ButtonOpenWorld.TabIndex = 6;
-            this.ButtonOpenWorld.Text = "World...";
-            this.ButtonOpenWorld.UseVisualStyleBackColor = true;
+            ButtonOpenWorld.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            ButtonOpenWorld.Location = new System.Drawing.Point(591, 215);
+            ButtonOpenWorld.Name = "ButtonOpenWorld";
+            ButtonOpenWorld.Size = new System.Drawing.Size(209, 23);
+            ButtonOpenWorld.TabIndex = 6;
+            ButtonOpenWorld.Text = "World...";
+            ButtonOpenWorld.UseVisualStyleBackColor = true;
 
             /**
              * ButtonOpenPlayer
              */
-            this.ButtonOpenPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOpenPlayer.Location = new System.Drawing.Point(591, 244);
-            this.ButtonOpenPlayer.Name = "ButtonOpenPlayer";
-            this.ButtonOpenPlayer.Size = new System.Drawing.Size(209, 23);
-            this.ButtonOpenPlayer.TabIndex = 7;
-            this.ButtonOpenPlayer.Text = "Player...";
-            this.ButtonOpenPlayer.UseVisualStyleBackColor = true;
+            ButtonOpenPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            ButtonOpenPlayer.Location = new System.Drawing.Point(591, 244);
+            ButtonOpenPlayer.Name = "ButtonOpenPlayer";
+            ButtonOpenPlayer.Size = new System.Drawing.Size(209, 23);
+            ButtonOpenPlayer.TabIndex = 7;
+            ButtonOpenPlayer.Text = "Player...";
+            ButtonOpenPlayer.UseVisualStyleBackColor = true;
 
             /**
              * ButtonOpenGUIOMETRY
              */
-            this.ButtonOpenGUIOMETRY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonOpenGUIOMETRY.Location = new System.Drawing.Point(591, 273);
-            this.ButtonOpenGUIOMETRY.Name = "ButtonOpenGUIOMETRY";
-            this.ButtonOpenGUIOMETRY.Size = new System.Drawing.Size(209, 23);
-            this.ButtonOpenGUIOMETRY.TabIndex = 8;
-            this.ButtonOpenGUIOMETRY.Text = "GUIOMETRY.BIN...";
-            this.ButtonOpenGUIOMETRY.UseVisualStyleBackColor = true;
+            ButtonOpenGUIOMETRY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            ButtonOpenGUIOMETRY.Location = new System.Drawing.Point(591, 273);
+            ButtonOpenGUIOMETRY.Name = "ButtonOpenGUIOMETRY";
+            ButtonOpenGUIOMETRY.Size = new System.Drawing.Size(209, 23);
+            ButtonOpenGUIOMETRY.TabIndex = 8;
+            ButtonOpenGUIOMETRY.Text = "GUIOMETRY.BIN...";
+            ButtonOpenGUIOMETRY.UseVisualStyleBackColor = true;
 
             #endregion
         }

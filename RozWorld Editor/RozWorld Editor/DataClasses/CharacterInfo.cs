@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld_Editor.DataClasses.Texture -- Texture Reference
+ * RozWorld_Editor.DataClasses.CharacterInfo -- Character Information
  * 
  * This source-code is part of the RozWorld Editor project by rozza of Oddmatics:
  * <<http://www.oddmatics.co.uk>>
@@ -13,16 +13,12 @@ using System.Drawing;
 
 namespace RozWorld_Editor.DataClasses
 {
-    public class Texture
+    public class CharacterInfo
     {
-        public string Source;
-        public Image Data;
-
-
-        public Texture(string source, Image texture)
-        {
-            Source = source;
-            Data = texture;
-        }
+        public Point BlitOrigin = new Point(0, 0);
+        public Point BlitDestination = new Point(0, 0);
+        public byte Before = 0;
+        public byte After = 0;
+        public byte YOffset = 0;
     }
 }
