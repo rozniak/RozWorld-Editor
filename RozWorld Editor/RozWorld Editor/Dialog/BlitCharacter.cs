@@ -24,7 +24,10 @@ namespace RozWorld_Editor.Dialog
 
         private Pen PenBlitOrigin;
         private Pen PenBlitDestination;
+        private Brush BrushBlitFill;
         private Graphics GFX;
+
+        private bool LegalValueInput;
 
 
         public BlitCharacter(char charTarget, CharacterInfo charInfoReference, Image texture)
@@ -45,21 +48,48 @@ namespace RozWorld_Editor.Dialog
             PanelPreviewContainer.AutoScrollMinSize = texture.Size;
 
             PicturePreview.Image = new Bitmap(texture.Size.Width, texture.Size.Height);
-            GFX = Graphics.FromImage(PicturePreview.Image);
+
+            PenBlitOrigin = new Pen(Color.Red);
+            PenBlitDestination = new Pen(Color.Blue);
+            BrushBlitFill = new SolidBrush(Color.FromArgb(100, Color.Magenta));
+
+            LegalValueInput = true;
+
+            UpdatePreview();
         }
 
 
+        /// <summary>
+        /// Updates the texture blitting preview box.
+        /// </summary>
         private void UpdatePreview()
         {
             Point blitOrigin = CharInfoEditing.BlitOrigin;
             Point blitDestination = CharInfoEditing.BlitDestination;
             Size textureSize = PicturePreview.BackgroundImage.Size;
+            Bitmap croppingPreview = new Bitmap(textureSize.Width, textureSize.Height);
 
-            GFX.Clear(Color.Transparent);
+            GFX = Graphics.FromImage(croppingPreview);
+
+            if (blitDestination.X - blitOrigin.X > 0 &&
+                blitOrigin.Y - blitDestination.Y > 0)
+            {
+                GFX.FillRectangle(BrushBlitFill,
+                    blitOrigin.X,
+                    blitDestination.Y,
+                    blitDestination.X - blitOrigin.X,
+                    blitOrigin.Y - blitDestination.Y);
+
+                SetLegalStatus(true);
+            }
+            else
+            {
+                SetLegalStatus(false);
+            }
 
             GFX.DrawLine(PenBlitOrigin,
-                new Point(blitOrigin.X, 0),
-                new Point(blitOrigin.X, textureSize.Height));
+                    new Point(blitOrigin.X, 0),
+                    new Point(blitOrigin.X, textureSize.Height));
             GFX.DrawLine(PenBlitOrigin,
                 new Point(0, blitOrigin.Y),
                 new Point(textureSize.Width, blitOrigin.Y));
@@ -70,6 +100,44 @@ namespace RozWorld_Editor.Dialog
             GFX.DrawLine(PenBlitDestination,
                 new Point(0, blitDestination.Y),
                 new Point(textureSize.Width, blitDestination.Y));
+
+            PicturePreview.Image = croppingPreview;
+        }
+
+
+        /// <summary>
+        /// Set the legal status of input in this form and update fields as appropriate.
+        /// </summary>
+        /// <param name="status">The new status.</param>
+        private void SetLegalStatus(bool status)
+        {
+            if (LegalValueInput != status)
+            {
+                if (status)
+                {
+                    NumericBlitOriginX.BackColor = Color.White;
+                    NumericBlitOriginX.ForeColor = Color.Black;
+                    NumericBlitOriginY.BackColor = Color.White;
+                    NumericBlitOriginY.ForeColor = Color.Black;
+                    NumericBlitDestinationX.BackColor = Color.White;
+                    NumericBlitDestinationX.ForeColor = Color.Black;
+                    NumericBlitDestinationY.BackColor = Color.White;
+                    NumericBlitDestinationY.ForeColor = Color.Black;
+                }
+                else
+                {
+                    NumericBlitOriginX.BackColor = Color.Red;
+                    NumericBlitOriginX.ForeColor = Color.White;
+                    NumericBlitOriginY.BackColor = Color.Red;
+                    NumericBlitOriginY.ForeColor = Color.White;
+                    NumericBlitDestinationX.BackColor = Color.Red;
+                    NumericBlitDestinationX.ForeColor = Color.White;
+                    NumericBlitDestinationY.BackColor = Color.Red;
+                    NumericBlitDestinationY.ForeColor = Color.White;
+                }
+            }
+
+            LegalValueInput = status;
         }
 
 
@@ -128,9 +196,18 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void TimerPreviewSelection_Tick(object sender, EventArgs e)
         {
-            UpdatePreview();
+            Point mousePoint = PicturePreview.PointToClient(Cursor.Position);
 
-            
+            if (ComboSelectionMode.SelectedIndex == 0) // Blit origin mode
+            {
+                CharInfoEditing.BlitOrigin = mousePoint;
+            }
+            else // Blit destination mode
+            {
+                CharInfoEditing.BlitDestination = mousePoint;
+            }
+
+            UpdatePreview();
         }
     }
 }

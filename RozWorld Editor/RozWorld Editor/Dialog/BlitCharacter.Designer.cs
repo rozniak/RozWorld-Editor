@@ -42,18 +42,18 @@
             this.NumericBlitOriginX = new System.Windows.Forms.NumericUpDown();
             this.NumericBlitOriginY = new System.Windows.Forms.NumericUpDown();
             this.LabelBlitOriginY = new System.Windows.Forms.Label();
-            this.NumericBlittingDestinationY = new System.Windows.Forms.NumericUpDown();
-            this.LabelBlittingDestinationY = new System.Windows.Forms.Label();
-            this.NumericBlittingDestinationX = new System.Windows.Forms.NumericUpDown();
-            this.LabelBlittingDestinationX = new System.Windows.Forms.Label();
-            this.LabelBittingDestination = new System.Windows.Forms.Label();
+            this.NumericBlitDestinationY = new System.Windows.Forms.NumericUpDown();
+            this.LabelBlitDestinationY = new System.Windows.Forms.Label();
+            this.NumericBlitDestinationX = new System.Windows.Forms.NumericUpDown();
+            this.LabelBlitDestinationX = new System.Windows.Forms.Label();
+            this.LabelBlitDestination = new System.Windows.Forms.Label();
             this.TimerPreviewSelection = new System.Windows.Forms.Timer(this.components);
             this.PanelPreviewContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicturePreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericBlitOriginX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericBlitOriginY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericBlittingDestinationY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericBlittingDestinationX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericBlitDestinationY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericBlitDestinationX)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelPreviewContainer
@@ -167,46 +167,46 @@
             this.LabelBlitOriginY.TabIndex = 9;
             this.LabelBlitOriginY.Text = "Y:";
             // 
-            // NumericBlittingDestinationY
+            // NumericBlitDestinationY
             // 
-            this.NumericBlittingDestinationY.Location = new System.Drawing.Point(395, 267);
-            this.NumericBlittingDestinationY.Name = "NumericBlittingDestinationY";
-            this.NumericBlittingDestinationY.Size = new System.Drawing.Size(55, 20);
-            this.NumericBlittingDestinationY.TabIndex = 15;
+            this.NumericBlitDestinationY.Location = new System.Drawing.Point(395, 267);
+            this.NumericBlitDestinationY.Name = "NumericBlitDestinationY";
+            this.NumericBlitDestinationY.Size = new System.Drawing.Size(55, 20);
+            this.NumericBlitDestinationY.TabIndex = 15;
             // 
-            // LabelBlittingDestinationY
+            // LabelBlitDestinationY
             // 
-            this.LabelBlittingDestinationY.AutoSize = true;
-            this.LabelBlittingDestinationY.Location = new System.Drawing.Point(372, 269);
-            this.LabelBlittingDestinationY.Name = "LabelBlittingDestinationY";
-            this.LabelBlittingDestinationY.Size = new System.Drawing.Size(17, 13);
-            this.LabelBlittingDestinationY.TabIndex = 14;
-            this.LabelBlittingDestinationY.Text = "Y:";
+            this.LabelBlitDestinationY.AutoSize = true;
+            this.LabelBlitDestinationY.Location = new System.Drawing.Point(372, 269);
+            this.LabelBlitDestinationY.Name = "LabelBlitDestinationY";
+            this.LabelBlitDestinationY.Size = new System.Drawing.Size(17, 13);
+            this.LabelBlitDestinationY.TabIndex = 14;
+            this.LabelBlitDestinationY.Text = "Y:";
             // 
-            // NumericBlittingDestinationX
+            // NumericBlitDestinationX
             // 
-            this.NumericBlittingDestinationX.Location = new System.Drawing.Point(314, 267);
-            this.NumericBlittingDestinationX.Name = "NumericBlittingDestinationX";
-            this.NumericBlittingDestinationX.Size = new System.Drawing.Size(55, 20);
-            this.NumericBlittingDestinationX.TabIndex = 13;
+            this.NumericBlitDestinationX.Location = new System.Drawing.Point(314, 267);
+            this.NumericBlitDestinationX.Name = "NumericBlitDestinationX";
+            this.NumericBlitDestinationX.Size = new System.Drawing.Size(55, 20);
+            this.NumericBlitDestinationX.TabIndex = 13;
             // 
-            // LabelBlittingDestinationX
+            // LabelBlitDestinationX
             // 
-            this.LabelBlittingDestinationX.AutoSize = true;
-            this.LabelBlittingDestinationX.Location = new System.Drawing.Point(291, 269);
-            this.LabelBlittingDestinationX.Name = "LabelBlittingDestinationX";
-            this.LabelBlittingDestinationX.Size = new System.Drawing.Size(17, 13);
-            this.LabelBlittingDestinationX.TabIndex = 12;
-            this.LabelBlittingDestinationX.Text = "X:";
+            this.LabelBlitDestinationX.AutoSize = true;
+            this.LabelBlitDestinationX.Location = new System.Drawing.Point(291, 269);
+            this.LabelBlitDestinationX.Name = "LabelBlitDestinationX";
+            this.LabelBlitDestinationX.Size = new System.Drawing.Size(17, 13);
+            this.LabelBlitDestinationX.TabIndex = 12;
+            this.LabelBlitDestinationX.Text = "X:";
             // 
-            // LabelBittingDestination
+            // LabelBlitDestination
             // 
-            this.LabelBittingDestination.AutoSize = true;
-            this.LabelBittingDestination.Location = new System.Drawing.Point(291, 251);
-            this.LabelBittingDestination.Name = "LabelBittingDestination";
-            this.LabelBittingDestination.Size = new System.Drawing.Size(97, 13);
-            this.LabelBittingDestination.TabIndex = 11;
-            this.LabelBittingDestination.Text = "Blitting Destination:";
+            this.LabelBlitDestination.AutoSize = true;
+            this.LabelBlitDestination.Location = new System.Drawing.Point(291, 251);
+            this.LabelBlitDestination.Name = "LabelBlitDestination";
+            this.LabelBlitDestination.Size = new System.Drawing.Size(97, 13);
+            this.LabelBlitDestination.TabIndex = 11;
+            this.LabelBlitDestination.Text = "Blitting Destination:";
             // 
             // TimerPreviewSelection
             // 
@@ -218,11 +218,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 346);
-            this.Controls.Add(this.NumericBlittingDestinationY);
-            this.Controls.Add(this.LabelBlittingDestinationY);
-            this.Controls.Add(this.NumericBlittingDestinationX);
-            this.Controls.Add(this.LabelBlittingDestinationX);
-            this.Controls.Add(this.LabelBittingDestination);
+            this.Controls.Add(this.NumericBlitDestinationY);
+            this.Controls.Add(this.LabelBlitDestinationY);
+            this.Controls.Add(this.NumericBlitDestinationX);
+            this.Controls.Add(this.LabelBlitDestinationX);
+            this.Controls.Add(this.LabelBlitDestination);
             this.Controls.Add(this.NumericBlitOriginY);
             this.Controls.Add(this.LabelBlitOriginY);
             this.Controls.Add(this.NumericBlitOriginX);
@@ -247,8 +247,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PicturePreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericBlitOriginX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericBlitOriginY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericBlittingDestinationY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericBlittingDestinationX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericBlitDestinationY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericBlitDestinationX)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,11 +268,11 @@
         private System.Windows.Forms.NumericUpDown NumericBlitOriginX;
         private System.Windows.Forms.NumericUpDown NumericBlitOriginY;
         private System.Windows.Forms.Label LabelBlitOriginY;
-        private System.Windows.Forms.NumericUpDown NumericBlittingDestinationY;
-        private System.Windows.Forms.Label LabelBlittingDestinationY;
-        private System.Windows.Forms.NumericUpDown NumericBlittingDestinationX;
-        private System.Windows.Forms.Label LabelBlittingDestinationX;
-        private System.Windows.Forms.Label LabelBittingDestination;
+        private System.Windows.Forms.NumericUpDown NumericBlitDestinationY;
+        private System.Windows.Forms.Label LabelBlitDestinationY;
+        private System.Windows.Forms.NumericUpDown NumericBlitDestinationX;
+        private System.Windows.Forms.Label LabelBlitDestinationX;
+        private System.Windows.Forms.Label LabelBlitDestination;
         private System.Windows.Forms.Timer TimerPreviewSelection;
     }
 }
