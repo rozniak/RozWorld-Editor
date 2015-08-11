@@ -10,6 +10,7 @@
  */
 
 using System.Drawing;
+using System;
 
 namespace RozWorld_Editor.DataClasses
 {
@@ -63,6 +64,19 @@ namespace RozWorld_Editor.DataClasses
             cloneCharInfo.YOffset = this.YOffset;
 
             return cloneCharInfo;
+        }
+
+
+        /// <summary>
+        /// Returns the bounding rectangle of the blitting coordinates in this character's info.
+        /// </summary>
+        /// <returns>A Rectangle that represents the bounds of the blitting coordinates in this character's info.</returns>
+        public Rectangle GetBlitRectangle()
+        {
+            return new Rectangle(BlitOrigin.X,
+                BlitDestination.Y,
+                Math.Abs(BlitDestination.X - BlitOrigin.X),
+                Math.Abs(BlitOrigin.Y - BlitDestination.Y));
         }
     }
 }

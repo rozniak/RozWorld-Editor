@@ -373,7 +373,7 @@ namespace RozWorld_Editor.Tab
             /**
              * PictureCharPreview
              */
-            PictureCharPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            PictureCharPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             PictureCharPreview.Location = new System.Drawing.Point(6, 50);
             PictureCharPreview.Name = "PictureCharPreview";
             PictureCharPreview.Size = new System.Drawing.Size(136, 127);
@@ -1172,6 +1172,59 @@ namespace RozWorld_Editor.Tab
                 NumericCharYOffset.Enabled = false;
                 NumericCharYOffset.Value = 0;
             }
+        }
+
+
+        /// <summary>
+        /// Updates the character preview box from blitting information.
+        /// </summary>
+        /// <param name="refreshTexture">Whether the texture should be redrawn.</param>
+        private void UpdateCharacterBlitPreview(bool refreshTexture = false)
+        {
+            char charSelected = (char)ListCharacter.SelectedItem;
+            string fontSelected = (string)ComboFont.SelectedItem;
+            FontInfo fontInfo = GetFontInfo(fontSelected);
+            CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
+            Rectangle blitRect = charInfo.GetBlitRectangle();
+            Graphics GFX;
+
+            using (Bitmap detailBitmap = new Bitmap(blitRect.Width, blitRect.Height))
+            {
+                Pen penBefore = new Pen(Color.Red);
+                Pen penAfter = new Pen(Color.Blue);
+                Pen penYOffset = new Pen(Color.Purple);
+
+                // Dispose current image if there is one
+                if(PictureCharPreview.Image != null) PictureCharPreview.Image.Dispose();
+
+                // Draw all the graphics we need
+                GFX = Graphics.FromImage(detailBitmap);
+
+                GFX.DrawLine(penBefore,
+                    new Point(charInfo.Before, 0),
+                    new Point(charInfo.Before, PictureCharPreview.Height));
+
+                GFX.DrawLine(penAfter,
+                    new Point(charInfo.After, 0),
+                    new Point(charInfo.After, PictureCharPreview.Height));
+
+                GFX.DrawLine(penYOffset,
+                    new Point(0, charInfo.YOffset),
+                    new Point(PictureCharPreview.Width, charInfo.YOffset));
+
+                PictureCharPreview.Image = (Bitmap)detailBitmap.Clone();
+
+                // Dispose the pens
+                penBefore.Dispose();
+                penAfter.Dispose();
+                penYOffset.Dispose();
+            }
+
+
+            // Dispose the graphics instance
+            GFX.Dispose();
+
+            
         }
 
 

@@ -85,10 +85,7 @@ namespace RozWorld_Editor.Dialog
                 blitOrigin.Y - blitDestination.Y > 0)
             {
                 GFX.FillRectangle(BrushBlitFill,
-                    blitOrigin.X,
-                    blitDestination.Y,
-                    blitDestination.X - blitOrigin.X,
-                    blitOrigin.Y - blitDestination.Y);
+                    CharInfoEditing.GetBlitRectangle());
 
                 SetLegalStatus(true);
             }
@@ -111,7 +108,17 @@ namespace RozWorld_Editor.Dialog
                 new Point(0, blitDestination.Y),
                 new Point(textureSize.Width, blitDestination.Y));
 
-            PicturePreview.Image = croppingPreview;
+            // Dispose the last bitmap before we set it to a new one
+            PicturePreview.Image.Dispose();
+
+            PicturePreview.Image = (Bitmap)croppingPreview.Clone();
+
+            // Dump the bitmap, we're finished with it
+            croppingPreview.Dispose();
+
+            // Garbage collect the bitmaps, otherwise memory will fill quickly
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
 
 
