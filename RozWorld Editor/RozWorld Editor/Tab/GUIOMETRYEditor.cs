@@ -395,6 +395,7 @@ namespace RozWorld_Editor.Tab
              */
             NumericCharBefore.Enabled = false;
             NumericCharBefore.Location = new System.Drawing.Point(148, 67);
+            NumericCharBefore.Maximum = 255;
             NumericCharBefore.Name = "NumericCharBefore";
             NumericCharBefore.Size = new System.Drawing.Size(78, 20);
             NumericCharBefore.TabIndex = 7;
@@ -414,6 +415,7 @@ namespace RozWorld_Editor.Tab
              */
             NumericCharAfter.Enabled = false;
             NumericCharAfter.Location = new System.Drawing.Point(232, 67);
+            NumericCharAfter.Maximum = 255;
             NumericCharAfter.Name = "NumericCharAfter";
             NumericCharAfter.Size = new System.Drawing.Size(78, 20);
             NumericCharAfter.TabIndex = 7;
@@ -433,6 +435,7 @@ namespace RozWorld_Editor.Tab
              */
             NumericCharYOffset.Enabled = false;
             NumericCharYOffset.Location = new System.Drawing.Point(148, 106);
+            NumericCharYOffset.Maximum = 255;
             NumericCharYOffset.Name = "NumericCharYOffset";
             NumericCharYOffset.Size = new System.Drawing.Size(78, 20);
             NumericCharYOffset.TabIndex = 7;
@@ -1316,32 +1319,6 @@ namespace RozWorld_Editor.Tab
 
 
         /// <summary>
-        /// "Blitting..." button clicked.
-        /// </summary>
-        void ButtonCharacterBlit_Click(object sender, EventArgs e)
-        {
-            string fontSelected = (string)ComboFont.SelectedItem;
-            char charSelected = (char)ListCharacter.SelectedItem;
-            FontInfo fontInfo = GetFontInfo(fontSelected);
-            CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
-
-            if (fontInfo.Texture.Data != null)
-            {
-                Dialog.BlitCharacter blitCharacterDialog = new Dialog.BlitCharacter(charSelected, charInfo, fontInfo.Texture.Data);
-
-                if (blitCharacterDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // TODO: Stuff here
-                }
-            }
-            else
-            {
-                Error.Show(Error.MISSING_FONT_TEXTURE);
-            }
-        }
-
-
-        /// <summary>
         /// [Event] "+" Add character button clicked.
         /// </summary>
         void ButtonAddCharacter_Click(object sender, EventArgs e)
@@ -1361,6 +1338,32 @@ namespace RozWorld_Editor.Tab
                 // Add the new character to the listbox and select it
                 ListCharacter.Items.Add(addCharacterDialog.Character);
                 ListCharacter.SelectedIndex = ListCharacter.Items.Count - 1;
+            }
+        }
+
+
+        /// <summary>
+        /// "Blitting..." button clicked.
+        /// </summary>
+        void ButtonCharacterBlit_Click(object sender, EventArgs e)
+        {
+            string fontSelected = (string)ComboFont.SelectedItem;
+            char charSelected = (char)ListCharacter.SelectedItem;
+            FontInfo fontInfo = GetFontInfo(fontSelected);
+            CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
+
+            if (fontInfo.Texture.Data != null)
+            {
+                Dialog.BlitCharacter blitCharacterDialog = new Dialog.BlitCharacter(charSelected, charInfo, fontInfo.Texture.Data);
+
+                if (blitCharacterDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // TODO: Update character preview here
+                }
+            }
+            else
+            {
+                Error.Show(Error.MISSING_FONT_TEXTURE);
             }
         }
 

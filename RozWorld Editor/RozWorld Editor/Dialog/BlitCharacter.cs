@@ -47,11 +47,21 @@ namespace RozWorld_Editor.Dialog
             PicturePreview.Size = texture.Size;
             PanelPreviewContainer.AutoScrollMinSize = texture.Size;
 
-            PicturePreview.Image = new Bitmap(texture.Size.Width, texture.Size.Height);
-
             PenBlitOrigin = new Pen(Color.Red);
             PenBlitDestination = new Pen(Color.Blue);
             BrushBlitFill = new SolidBrush(Color.FromArgb(100, Color.Magenta));
+
+            NumericBlitOriginX.Maximum = texture.Size.Width;
+            NumericBlitOriginY.Maximum = texture.Size.Height;
+            NumericBlitDestinationX.Maximum = texture.Size.Width;
+            NumericBlitDestinationY.Maximum = texture.Size.Height;
+
+            NumericBlitOriginX.Value = charInfoReference.BlitOrigin.X;
+            NumericBlitOriginY.Value = charInfoReference.BlitOrigin.Y;
+            NumericBlitDestinationX.Value = charInfoReference.BlitDestination.X;
+            NumericBlitDestinationY.Value = charInfoReference.BlitDestination.Y;
+
+            PicturePreview.Image = new Bitmap(texture.Size.Width, texture.Size.Height);
 
             LegalValueInput = true;
 
@@ -156,10 +166,17 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            CharInfoReference.AssignBlitting(CharInfoEditing.BlitOrigin,
+            if (LegalValueInput)
+            {
+                CharInfoReference.AssignBlitting(CharInfoEditing.BlitOrigin,
                 CharInfoEditing.BlitDestination);
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                Error.Show(Error.INVALID_BLITTING_COORDINATES);
+            }
         }
 
 
@@ -200,13 +217,49 @@ namespace RozWorld_Editor.Dialog
 
             if (ComboSelectionMode.SelectedIndex == 0) // Blit origin mode
             {
-                CharInfoEditing.BlitOrigin = mousePoint;
+                if (mousePoint.X >= 0 && mousePoint.Y >= 0 &&
+                    mousePoint.X <= PicturePreview.Width && mousePoint.Y <= PicturePreview.Height)
+                {
+                    CharInfoEditing.BlitOrigin = mousePoint;
+                    NumericBlitOriginX.Value = mousePoint.X;
+                    NumericBlitOriginY.Value = mousePoint.Y;
+                }
             }
             else // Blit destination mode
             {
-                CharInfoEditing.BlitDestination = mousePoint;
+                if (mousePoint.X >= 0 && mousePoint.Y >= 0 &&
+                    mousePoint.X <= PicturePreview.Width && mousePoint.Y <= PicturePreview.Height)
+                {
+                    CharInfoEditing.BlitDestination = mousePoint;
+                    NumericBlitDestinationX.Value = mousePoint.X;
+                    NumericBlitDestinationY.Value = mousePoint.Y;
+                }
             }
 
+            UpdatePreview();
+        }
+
+        private void NumericBlitOriginX_ValueChanged(object sender, EventArgs e)
+        {
+            CharInfoEditing.BlitOrigin.X = (int)NumericBlitOriginX.Value;
+            UpdatePreview();
+        }
+
+        private void NumericBlitOriginY_ValueChanged(object sender, EventArgs e)
+        {
+            CharInfoEditing.BlitOrigin.Y = (int)NumericBlitOriginY.Value;
+            UpdatePreview();
+        }
+
+        private void NumericBlitDestinationX_ValueChanged(object sender, EventArgs e)
+        {
+            CharInfoEditing.BlitDestination.X = (int)NumericBlitDestinationX.Value;
+            UpdatePreview();
+        }
+
+        private void NumericBlitDestinationY_ValueChanged(object sender, EventArgs e)
+        {
+            CharInfoEditing.BlitDestination.Y = (int)NumericBlitDestinationY.Value;
             UpdatePreview();
         }
     }

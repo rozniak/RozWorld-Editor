@@ -19,6 +19,7 @@ namespace RozWorld_Editor
         public const short MISSING_INI_DICTIONARY_KEY = 11;
         public const short MISSING_FONT_TEXTURE = 12;
         public const short INVALID_OR_DUPLICATE_CHARACTER = 20;
+        public const short INVALID_BLITTING_COORDINATES = 21;
 
 
         /// <summary>
@@ -49,6 +50,12 @@ namespace RozWorld_Editor
 
                     case INVALID_OR_DUPLICATE_CHARACTER:
                         MessageBox.Show("The character inputted is either invalid, missing, or a duplicate of a character already present in this font.", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        break;
+
+                    case INVALID_BLITTING_COORDINATES:
+                        MessageBox.Show("There are invalid blitting coordinates, the blitting origin point should be the bottom left of a character, the blitting destination should be the top right.", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         break;

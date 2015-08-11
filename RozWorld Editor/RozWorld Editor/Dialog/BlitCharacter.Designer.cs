@@ -129,6 +129,7 @@
             // LabelBlitOrigin
             // 
             this.LabelBlitOrigin.AutoSize = true;
+            this.LabelBlitOrigin.ForeColor = System.Drawing.Color.Red;
             this.LabelBlitOrigin.Location = new System.Drawing.Point(291, 204);
             this.LabelBlitOrigin.Name = "LabelBlitOrigin";
             this.LabelBlitOrigin.Size = new System.Drawing.Size(71, 13);
@@ -150,6 +151,7 @@
             this.NumericBlitOriginX.Name = "NumericBlitOriginX";
             this.NumericBlitOriginX.Size = new System.Drawing.Size(55, 20);
             this.NumericBlitOriginX.TabIndex = 8;
+            this.NumericBlitOriginX.ValueChanged += new System.EventHandler(this.NumericBlitOriginX_ValueChanged);
             // 
             // NumericBlitOriginY
             // 
@@ -157,6 +159,7 @@
             this.NumericBlitOriginY.Name = "NumericBlitOriginY";
             this.NumericBlitOriginY.Size = new System.Drawing.Size(55, 20);
             this.NumericBlitOriginY.TabIndex = 10;
+            this.NumericBlitOriginY.ValueChanged += new System.EventHandler(this.NumericBlitOriginY_ValueChanged);
             // 
             // LabelBlitOriginY
             // 
@@ -173,6 +176,7 @@
             this.NumericBlitDestinationY.Name = "NumericBlitDestinationY";
             this.NumericBlitDestinationY.Size = new System.Drawing.Size(55, 20);
             this.NumericBlitDestinationY.TabIndex = 15;
+            this.NumericBlitDestinationY.ValueChanged += new System.EventHandler(this.NumericBlitDestinationY_ValueChanged);
             // 
             // LabelBlitDestinationY
             // 
@@ -189,6 +193,7 @@
             this.NumericBlitDestinationX.Name = "NumericBlitDestinationX";
             this.NumericBlitDestinationX.Size = new System.Drawing.Size(55, 20);
             this.NumericBlitDestinationX.TabIndex = 13;
+            this.NumericBlitDestinationX.ValueChanged += new System.EventHandler(this.NumericBlitDestinationX_ValueChanged);
             // 
             // LabelBlitDestinationX
             // 
@@ -202,6 +207,7 @@
             // LabelBlitDestination
             // 
             this.LabelBlitDestination.AutoSize = true;
+            this.LabelBlitDestination.ForeColor = System.Drawing.Color.Blue;
             this.LabelBlitDestination.Location = new System.Drawing.Point(291, 251);
             this.LabelBlitDestination.Name = "LabelBlitDestination";
             this.LabelBlitDestination.Size = new System.Drawing.Size(97, 13);
