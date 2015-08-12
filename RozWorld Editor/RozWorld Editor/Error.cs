@@ -20,6 +20,7 @@ namespace RozWorld_Editor
         public const short MISSING_FONT_TEXTURE = 12;
         public const short INVALID_OR_DUPLICATE_CHARACTER = 20;
         public const short INVALID_BLITTING_COORDINATES = 21;
+        public const short WARNING_BLITTING_VALIDITY_EXPIRED = 200;
 
 
         /// <summary>
@@ -36,6 +37,10 @@ namespace RozWorld_Editor
             {
                 switch (errorCode)
                 {
+                    /**
+                     * Errors
+                     */
+
                     case MISSING_INI_DICTIONARY_KEY:
                         MessageBox.Show("A reference was made to a missing INI variable. The default settings will be used instead.", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -59,6 +64,20 @@ namespace RozWorld_Editor
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         break;
+
+                    /**
+                     * Warnings
+                     */
+
+                    case WARNING_BLITTING_VALIDITY_EXPIRED:
+                        MessageBox.Show("The texture selected is incompatible with the blitting coordinates of this character, a character preview cannot be shown. It's suggested you either pick a texture that is compatible or adjust the blitting coordinates for it.", "Warning",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        break;
+
+                    /**
+                     * Unknown Error
+                     */
 
                     default:
                     case UNKNOWN_ERROR:

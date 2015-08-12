@@ -24,5 +24,15 @@ namespace RozWorld_Editor.DataClasses
             Source = source;
             Data = texture;
         }
+
+
+        /// <summary>
+        /// Returns the bounding rectangle of this texture.
+        /// </summary>
+        /// <returns>A Rectangle that represents the bounds of this texture.</returns>
+        public Rectangle GetTextureRect()
+        {
+            return new Rectangle(0, 0, Data.Width, Data.Height);
+        }
     }
 }

@@ -109,7 +109,7 @@ namespace RozWorld_Editor.Dialog
                 new Point(textureSize.Width, blitDestination.Y));
 
             // Dispose the last bitmap before we set it to a new one
-            PicturePreview.Image.Dispose();
+            if(PicturePreview.Image != null) PicturePreview.Image.Dispose();
 
             PicturePreview.Image = (Bitmap)croppingPreview.Clone();
 

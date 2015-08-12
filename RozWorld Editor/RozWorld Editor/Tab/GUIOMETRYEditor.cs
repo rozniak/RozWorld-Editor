@@ -138,6 +138,11 @@ namespace RozWorld_Editor.Tab
         private string LastSelectedFont;
         private char LastSelectedCharacter;
 
+        /**
+         * Track whether certain warnings have been issued.
+         */
+        private bool WarnIssuedBlitValidity; // In the case of a texture change, blitting coordinates may become invalid
+
 
         public GUIOMETRYEditor(TabControl parentTabUI, int uniqueID, string file = "")
         {
@@ -374,6 +379,7 @@ namespace RozWorld_Editor.Tab
              * PictureCharPreview
              */
             PictureCharPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            PictureCharPreview.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureCharPreview.Location = new System.Drawing.Point(6, 50);
             PictureCharPreview.Name = "PictureCharPreview";
             PictureCharPreview.Size = new System.Drawing.Size(136, 127);
@@ -1176,55 +1182,108 @@ namespace RozWorld_Editor.Tab
 
 
         /// <summary>
-        /// Updates the character preview box from blitting information.
+        /// Updates the character preview box's detail preview.
         /// </summary>
-        /// <param name="refreshTexture">Whether the texture should be redrawn.</param>
-        private void UpdateCharacterBlitPreview(bool refreshTexture = false)
+        private void UpdateCharacterPreviewDetails()
         {
-            char charSelected = (char)ListCharacter.SelectedItem;
-            string fontSelected = (string)ComboFont.SelectedItem;
-            FontInfo fontInfo = GetFontInfo(fontSelected);
-            CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
-            Rectangle blitRect = charInfo.GetBlitRectangle();
-            Graphics GFX;
-
-            using (Bitmap detailBitmap = new Bitmap(blitRect.Width, blitRect.Height))
+            // Check that a character has been selected
+            if (ListCharacter.SelectedItem != null)
             {
-                Pen penBefore = new Pen(Color.Red);
-                Pen penAfter = new Pen(Color.Blue);
-                Pen penYOffset = new Pen(Color.Purple);
+                char charSelected = (char)ListCharacter.SelectedItem;
+                string fontSelected = (string)ComboFont.SelectedItem;
+                FontInfo fontInfo = GetFontInfo(fontSelected);
+                CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
 
-                // Dispose current image if there is one
-                if(PictureCharPreview.Image != null) PictureCharPreview.Image.Dispose();
+                // Check that there is a blitted character present
+                if (PictureCharPreview.BackgroundImage != null)
+                {
+                    using (Bitmap detailImage = new Bitmap(PictureCharPreview.Width, PictureCharPreview.Height))
+                    {
+                        // Dispose the old character detail image if there was one
+                        if (PictureCharPreview.Image != null) PictureCharPreview.Image.Dispose();
 
-                // Draw all the graphics we need
-                GFX = Graphics.FromImage(detailBitmap);
+                        // Base points for the before, after and y-offset variables in a moment
+                        Rectangle blitRect = charInfo.GetBlitRectangle();
+                        int beforeOriginX = (PictureCharPreview.Width / 2) - (blitRect.Width / 2);
+                        int afterOriginX = (PictureCharPreview.Width / 2) + (blitRect.Width / 2);
+                        int yOffsetOriginY = (PictureCharPreview.Height / 2) + (blitRect.Height / 2);
 
-                GFX.DrawLine(penBefore,
-                    new Point(charInfo.Before, 0),
-                    new Point(charInfo.Before, PictureCharPreview.Height));
+                        // Set up Graphics and pens and draw the new details
+                        Pen penBefore = new Pen(Color.Red);
+                        Pen penAfter = new Pen(Color.Blue);
+                        Pen penYOffset = new Pen(Color.Purple);
+                        Graphics GFX = Graphics.FromImage(detailImage);
 
-                GFX.DrawLine(penAfter,
-                    new Point(charInfo.After, 0),
-                    new Point(charInfo.After, PictureCharPreview.Height));
+                        GFX.DrawLine(penBefore,
+                            new Point(beforeOriginX + (int)NumericCharBefore.Value, 0),
+                            new Point(beforeOriginX + (int)NumericCharBefore.Value, PictureCharPreview.Height));
 
-                GFX.DrawLine(penYOffset,
-                    new Point(0, charInfo.YOffset),
-                    new Point(PictureCharPreview.Width, charInfo.YOffset));
+                        GFX.DrawLine(penAfter,
+                            new Point(afterOriginX + (int)NumericCharAfter.Value, 0),
+                            new Point(afterOriginX + (int)NumericCharAfter.Value, PictureCharPreview.Height));
 
-                PictureCharPreview.Image = (Bitmap)detailBitmap.Clone();
+                        GFX.DrawLine(penYOffset,
+                            new Point(0, yOffsetOriginY + (int)NumericCharYOffset.Value),
+                            new Point(PictureCharPreview.Width, yOffsetOriginY + (int)NumericCharYOffset.Value));
 
-                // Dispose the pens
-                penBefore.Dispose();
-                penAfter.Dispose();
-                penYOffset.Dispose();
+                        // Set the new image
+                        PictureCharPreview.Image = (Bitmap)detailImage.Clone();
+
+                        // Dispose other objects in this scope
+                        GFX.Dispose();
+                        penBefore.Dispose();
+                        penAfter.Dispose();
+                        penYOffset.Dispose();
+                    }
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Updates the character preview box's texture.
+        /// </summary>
+        private void UpdateCharacterPreviewTexture()
+        {
+            bool updatedBackground = false;
+
+            // Check that a character has been selected
+            if (ListCharacter.SelectedItem != null)
+            {
+                char charSelected = (char)ListCharacter.SelectedItem;
+                string fontSelected = (string)ComboFont.SelectedItem;
+                FontInfo fontInfo = GetFontInfo(fontSelected);
+                CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
+
+                // Check that a texture is present in this font
+                if (fontInfo.Texture.Data != null)
+                {
+                    Rectangle blitRect = charInfo.GetBlitRectangle();
+                    Rectangle originRect = fontInfo.Texture.GetTextureRect();
+
+                    // Check that the blitting rectangle exists and is contained by the font texture
+                    if (!blitRect.IsEmpty && originRect.Contains(blitRect))
+                    {
+                        using (Bitmap newTexture = new Bitmap(fontInfo.Texture.Data))
+                        {
+                            // Dispose the old character texture if there was one
+                            if (PictureCharPreview.BackgroundImage != null) PictureCharPreview.BackgroundImage.Dispose();
+
+                            // Clone a cropped version of the font texture into the background image
+                            PictureCharPreview.BackgroundImage = newTexture.Clone(blitRect, newTexture.PixelFormat);
+
+                            // Confirm that the background image was successfully updated
+                            updatedBackground = true;
+                        }
+                    }
+                }
             }
 
-
-            // Dispose the graphics instance
-            GFX.Dispose();
-
-            
+            // If the background wasn't updated, then it should be cleared of any old data
+            if (!updatedBackground)
+            {
+                if (PictureCharPreview.BackgroundImage != null) PictureCharPreview.BackgroundImage.Dispose();
+            }
         }
 
 
@@ -1364,6 +1423,9 @@ namespace RozWorld_Editor.Tab
                 switch (((Button)sender).Name)
                 {
                     case "ButtonFontTexture":
+                        // Allow texture warnings to be issued
+                        WarnIssuedBlitValidity = false;
+
                         UpdateFontTexturePreviews();
                         break;
                 }
@@ -1411,7 +1473,7 @@ namespace RozWorld_Editor.Tab
 
                 if (blitCharacterDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // TODO: Update character preview here
+                    // Update character preview texture here
                 }
             }
             else
@@ -1448,6 +1510,9 @@ namespace RozWorld_Editor.Tab
         /// </summary>
         void ComboFont_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Allow texture warnings to be issued
+            WarnIssuedBlitValidity = false;
+
             UpdateFontTexturePreviews();
 
             // Save the current character and font info to the last font picked.
@@ -1492,8 +1557,11 @@ namespace RozWorld_Editor.Tab
                     UpdateCharacterDetails(true, false);
                 }
 
-                // Load the selected character's info into the form
+                // Load the selected character's info and preview into the form
                 UpdateCharacterForms();
+
+                // Update the character blit preview and make sure the texture is refreshed
+                // TODO: this
 
                 // Enable remove character button
                 ButtonRemoveCharacter.Enabled = true;
