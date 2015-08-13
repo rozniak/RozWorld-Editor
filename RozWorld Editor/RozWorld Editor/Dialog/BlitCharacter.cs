@@ -109,7 +109,7 @@ namespace RozWorld_Editor.Dialog
                 new Point(textureSize.Width, blitDestination.Y));
 
             // Dispose the last bitmap before we set it to a new one
-            if(PicturePreview.Image != null) PicturePreview.Image.Dispose();
+            if (PicturePreview.Image != null) PicturePreview.Image.Dispose();
 
             PicturePreview.Image = (Bitmap)croppingPreview.Clone();
 
@@ -169,6 +169,25 @@ namespace RozWorld_Editor.Dialog
 
 
         /// <summary>
+        /// [Event] "Blit Destination > X" Numeric slider value changed.
+        /// </summary>
+        private void NumericBlitDestinationX_ValueChanged(object sender, EventArgs e)
+        {
+            CharInfoEditing.BlitDestination.X = (int)NumericBlitDestinationX.Value;
+            UpdatePreview();
+        }
+
+        /// <summary>
+        /// [Event] "Blit Destination > Y" Numeric slider value changed.
+        /// </summary>
+        private void NumericBlitDestinationY_ValueChanged(object sender, EventArgs e)
+        {
+            CharInfoEditing.BlitDestination.Y = (int)NumericBlitDestinationY.Value;
+            UpdatePreview();
+        }
+
+
+        /// <summary>
         /// [Event] "OK" button clicked.
         /// </summary>
         private void ButtonOK_Click(object sender, EventArgs e)
@@ -184,6 +203,16 @@ namespace RozWorld_Editor.Dialog
             {
                 Error.Show(Error.INVALID_BLITTING_COORDINATES);
             }
+        }
+
+
+        /// <summary>
+        /// [Event] "Blit Origin > Y" Numeric slider value changed.
+        /// </summary>
+        private void NumericBlitOriginY_ValueChanged(object sender, EventArgs e)
+        {
+            CharInfoEditing.BlitOrigin.Y = (int)NumericBlitOriginY.Value;
+            UpdatePreview();
         }
 
 
@@ -246,27 +275,12 @@ namespace RozWorld_Editor.Dialog
             UpdatePreview();
         }
 
+        /// <summary>
+        /// [Event] "Blit Origin > X" Numeric slider value changed.
+        /// </summary>
         private void NumericBlitOriginX_ValueChanged(object sender, EventArgs e)
         {
             CharInfoEditing.BlitOrigin.X = (int)NumericBlitOriginX.Value;
-            UpdatePreview();
-        }
-
-        private void NumericBlitOriginY_ValueChanged(object sender, EventArgs e)
-        {
-            CharInfoEditing.BlitOrigin.Y = (int)NumericBlitOriginY.Value;
-            UpdatePreview();
-        }
-
-        private void NumericBlitDestinationX_ValueChanged(object sender, EventArgs e)
-        {
-            CharInfoEditing.BlitDestination.X = (int)NumericBlitDestinationX.Value;
-            UpdatePreview();
-        }
-
-        private void NumericBlitDestinationY_ValueChanged(object sender, EventArgs e)
-        {
-            CharInfoEditing.BlitDestination.Y = (int)NumericBlitDestinationY.Value;
             UpdatePreview();
         }
     }

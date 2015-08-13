@@ -126,7 +126,7 @@ namespace RozWorld_Editor
         /// </summary>
         private void UpdateToolbarsTabDetails()
         {
-            if (TabUI.TabCount > 0)
+            if (TabUI.TabCount > 0 && TabUI.SelectedTab != null)
             {
                 var currentTab = (Tab.EditorTab)TabUI.SelectedTab;
 
@@ -297,7 +297,7 @@ namespace RozWorld_Editor
         /// </summary>
         private void TabUI_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TabUI.TabCount > 0)
+            if (TabUI.SelectedTab != null)
             {
                 string tabTitle = TabUI.SelectedTab.Text;
 

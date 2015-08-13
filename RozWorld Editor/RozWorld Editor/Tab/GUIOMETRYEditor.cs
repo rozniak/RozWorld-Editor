@@ -378,8 +378,8 @@ namespace RozWorld_Editor.Tab
             /**
              * PictureCharPreview
              */
-            PictureCharPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            PictureCharPreview.SizeMode = PictureBoxSizeMode.CenterImage;
+            PictureCharPreview.BackgroundImageLayout = ImageLayout.Center;
+            PictureCharPreview.SizeMode = PictureBoxSizeMode.Normal;
             PictureCharPreview.Location = new System.Drawing.Point(6, 50);
             PictureCharPreview.Name = "PictureCharPreview";
             PictureCharPreview.Size = new System.Drawing.Size(136, 127);
@@ -1194,14 +1194,14 @@ namespace RozWorld_Editor.Tab
                 FontInfo fontInfo = GetFontInfo(fontSelected);
                 CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
 
+                // Dispose the old character detail image if there was one
+                if (PictureCharPreview.Image != null) PictureCharPreview.Image.Dispose(); PictureCharPreview.Image = null;
+
                 // Check that there is a blitted character present
                 if (PictureCharPreview.BackgroundImage != null)
                 {
                     using (Bitmap detailImage = new Bitmap(PictureCharPreview.Width, PictureCharPreview.Height))
                     {
-                        // Dispose the old character detail image if there was one
-                        if (PictureCharPreview.Image != null) PictureCharPreview.Image.Dispose();
-
                         // Base points for the before, after and y-offset variables in a moment
                         Rectangle blitRect = charInfo.GetBlitRectangle();
                         int beforeOriginX = (PictureCharPreview.Width / 2) - (blitRect.Width / 2);
@@ -1267,7 +1267,7 @@ namespace RozWorld_Editor.Tab
                         using (Bitmap newTexture = new Bitmap(fontInfo.Texture.Data))
                         {
                             // Dispose the old character texture if there was one
-                            if (PictureCharPreview.BackgroundImage != null) PictureCharPreview.BackgroundImage.Dispose();
+                            if (PictureCharPreview.BackgroundImage != null) PictureCharPreview.BackgroundImage.Dispose(); PictureCharPreview.BackgroundImage = null;
 
                             // Clone a cropped version of the font texture into the background image
                             PictureCharPreview.BackgroundImage = newTexture.Clone(blitRect, newTexture.PixelFormat);
@@ -1282,7 +1282,7 @@ namespace RozWorld_Editor.Tab
             // If the background wasn't updated, then it should be cleared of any old data
             if (!updatedBackground)
             {
-                if (PictureCharPreview.BackgroundImage != null) PictureCharPreview.BackgroundImage.Dispose();
+                if (PictureCharPreview.BackgroundImage != null) PictureCharPreview.BackgroundImage.Dispose(); PictureCharPreview.BackgroundImage = null;
             }
         }
 
@@ -1426,6 +1426,9 @@ namespace RozWorld_Editor.Tab
                         // Allow texture warnings to be issued
                         WarnIssuedBlitValidity = false;
 
+                        UpdateCharacterPreviewTexture();
+                        UpdateCharacterPreviewDetails();
+
                         UpdateFontTexturePreviews();
                         break;
                 }
@@ -1473,7 +1476,8 @@ namespace RozWorld_Editor.Tab
 
                 if (blitCharacterDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Update character preview texture here
+                    UpdateCharacterPreviewTexture();
+                    UpdateCharacterPreviewDetails();
                 }
             }
             else
@@ -1561,7 +1565,8 @@ namespace RozWorld_Editor.Tab
                 UpdateCharacterForms();
 
                 // Update the character blit preview and make sure the texture is refreshed
-                // TODO: this
+                UpdateCharacterPreviewTexture();
+                UpdateCharacterPreviewDetails();
 
                 // Enable remove character button
                 ButtonRemoveCharacter.Enabled = true;
