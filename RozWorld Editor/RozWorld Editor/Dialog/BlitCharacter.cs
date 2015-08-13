@@ -56,10 +56,30 @@ namespace RozWorld_Editor.Dialog
             NumericBlitDestinationX.Maximum = texture.Size.Width;
             NumericBlitDestinationY.Maximum = texture.Size.Height;
 
-            NumericBlitOriginX.Value = charInfoReference.BlitOrigin.X;
-            NumericBlitOriginY.Value = charInfoReference.BlitOrigin.Y;
-            NumericBlitDestinationX.Value = charInfoReference.BlitDestination.X;
-            NumericBlitDestinationY.Value = charInfoReference.BlitDestination.Y;
+            try
+            {
+                NumericBlitOriginX.Value = charInfoReference.BlitOrigin.X;
+                NumericBlitOriginY.Value = charInfoReference.BlitOrigin.Y;
+                NumericBlitDestinationX.Value = charInfoReference.BlitDestination.X;
+                NumericBlitDestinationY.Value = charInfoReference.BlitDestination.Y;
+            }
+            catch (ArgumentOutOfRangeException argEx)
+            {
+                // The blitting coordinates are invalid, alert the user
+                if (MessageBox.Show("The blitting coordinates appear to be out of range of this texture, this may happen if the texture selected is not the same as the original used to create these coordinates.\n\nWould you like to continue and reset the coordinates anyway?",
+                    "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    NumericBlitOriginX.Value = 0;
+                    NumericBlitOriginY.Value = 0;
+                    NumericBlitDestinationX.Value = 0;
+                    NumericBlitDestinationY.Value = 0;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.Cancel;
+                    this.Close();
+                }
+            }
 
             PicturePreview.Image = new Bitmap(texture.Size.Width, texture.Size.Height);
 

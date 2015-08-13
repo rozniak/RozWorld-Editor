@@ -18,9 +18,9 @@ namespace RozWorld_Editor.DataClasses
     {
         public Point BlitOrigin = new Point(0, 0);
         public Point BlitDestination = new Point(0, 0);
-        public byte Before = 0;
-        public byte After = 0;
-        public byte YOffset = 0;
+        public sbyte Before = 0;
+        public sbyte After = 0;
+        public sbyte YOffset = 0;
 
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace RozWorld_Editor.DataClasses
         /// <param name="before">The point this character begins.</param>
         /// <param name="after">The point this character ends.</param>
         /// <param name="yOffset">The offset of the line this character sits on.</param>
-        public void AssignDetails(byte before, byte after, byte yOffset)
+        public void AssignDetails(sbyte before, sbyte after, sbyte yOffset)
         {
             Before = before;
             After = after;

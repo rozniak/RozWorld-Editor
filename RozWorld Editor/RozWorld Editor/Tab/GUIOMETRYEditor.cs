@@ -401,10 +401,12 @@ namespace RozWorld_Editor.Tab
              */
             NumericCharBefore.Enabled = false;
             NumericCharBefore.Location = new System.Drawing.Point(148, 67);
-            NumericCharBefore.Maximum = 255;
+            NumericCharBefore.Maximum = 30;
+            NumericCharBefore.Minimum = -30;
             NumericCharBefore.Name = "NumericCharBefore";
             NumericCharBefore.Size = new System.Drawing.Size(78, 20);
             NumericCharBefore.TabIndex = 7;
+            NumericCharBefore.ValueChanged += new EventHandler(NumericChar_ValueChanged);
 
             /**
              * LabelCharAfter
@@ -421,10 +423,12 @@ namespace RozWorld_Editor.Tab
              */
             NumericCharAfter.Enabled = false;
             NumericCharAfter.Location = new System.Drawing.Point(232, 67);
-            NumericCharAfter.Maximum = 255;
+            NumericCharAfter.Maximum = 30;
+            NumericCharAfter.Minimum = -30;
             NumericCharAfter.Name = "NumericCharAfter";
             NumericCharAfter.Size = new System.Drawing.Size(78, 20);
             NumericCharAfter.TabIndex = 7;
+            NumericCharAfter.ValueChanged += new EventHandler(NumericChar_ValueChanged);
 
             /**
              * LabelCharYOffset
@@ -441,10 +445,12 @@ namespace RozWorld_Editor.Tab
              */
             NumericCharYOffset.Enabled = false;
             NumericCharYOffset.Location = new System.Drawing.Point(148, 106);
-            NumericCharYOffset.Maximum = 255;
+            NumericCharYOffset.Maximum = 30;
+            NumericCharYOffset.Minimum = -30;
             NumericCharYOffset.Name = "NumericCharYOffset";
             NumericCharYOffset.Size = new System.Drawing.Size(78, 20);
             NumericCharYOffset.TabIndex = 7;
+            NumericCharYOffset.ValueChanged += new EventHandler(NumericChar_ValueChanged);
 
 
             /**
@@ -1166,6 +1172,10 @@ namespace RozWorld_Editor.Tab
             }
             else
             {
+                // Update the character preview
+                UpdateCharacterPreviewTexture();
+                UpdateCharacterPreviewDetails();
+
                 // Disable remove character button
                 ButtonRemoveCharacter.Enabled = false;
 
@@ -1321,9 +1331,9 @@ namespace RozWorld_Editor.Tab
 
                 if (charInfo != null)
                 {
-                    charInfo.Before = (byte)NumericCharBefore.Value;
-                    charInfo.After = (byte)NumericCharAfter.Value;
-                    charInfo.YOffset = (byte)NumericCharYOffset.Value;
+                    charInfo.Before = (sbyte)NumericCharBefore.Value;
+                    charInfo.After = (sbyte)NumericCharAfter.Value;
+                    charInfo.YOffset = (sbyte)NumericCharYOffset.Value;
                 }
             }
         }
@@ -1387,6 +1397,16 @@ namespace RozWorld_Editor.Tab
                 TooltipGlobal.SetToolTip(LabelFontTexture, "");
                 PictureCharPreview.Image = null;
             }
+        }
+
+
+        /// <summary>
+        /// Character details numeric slider value changed.
+        /// </summary>
+        private void NumericChar_ValueChanged(object sender, EventArgs e)
+        {
+            // Update the character details preview
+            UpdateCharacterPreviewDetails();
         }
 
 
@@ -1474,7 +1494,8 @@ namespace RozWorld_Editor.Tab
             {
                 Dialog.BlitCharacter blitCharacterDialog = new Dialog.BlitCharacter(charSelected, charInfo, fontInfo.Texture.Data);
 
-                if (blitCharacterDialog.ShowDialog() == DialogResult.OK)
+                if (!blitCharacterDialog.IsDisposed &&
+                    blitCharacterDialog.ShowDialog() == DialogResult.OK)
                 {
                     UpdateCharacterPreviewTexture();
                     UpdateCharacterPreviewDetails();
