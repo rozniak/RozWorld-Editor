@@ -125,6 +125,9 @@ namespace RozWorld_Editor.Tab
 
         #region Font Information Classes
 
+        /**
+         * Stores the information about each of the four fonts for saving later.
+         */
         private FontInfo InfoChatFont = new FontInfo();
         private FontInfo InfoSmallFont = new FontInfo();
         private FontInfo InfoMediumFont = new FontInfo();
@@ -133,15 +136,15 @@ namespace RozWorld_Editor.Tab
         #endregion
 
         /**
+         * Stores the information about all the elements used in RozWorld.
+         */
+        private Dictionary<string, ElementInfo> Elements = new Dictionary<string, ElementInfo>();
+
+        /**
          * Keep track of the last picked font and character, so saving the lists can work
          */
         private string LastSelectedFont;
         private char LastSelectedCharacter;
-
-        /**
-         * Track whether certain warnings have been issued.
-         */
-        private bool WarnIssuedBlitValidity; // In the case of a texture change, blitting coordinates may become invalid
 
 
         public GUIOMETRYEditor(TabControl parentTabUI, int uniqueID, string file = "")
@@ -1401,7 +1404,41 @@ namespace RozWorld_Editor.Tab
 
 
         /// <summary>
-        /// Character details numeric slider value changed.
+        /// [Event] "GUI Element > Set..." button clicked.
+        /// </summary>
+        private void ButtonElementEdit_Click(object sender, EventArgs e)
+        {
+            // Get the element name, removing the 'Button' prefix
+            string elementName = ((Button)sender).Name.Substring(6);
+            string elementTarget = ((Label)this.Controls.Find("Label" + elementName, false)[0]).Text;
+
+            Dialog.EditElement editElementDialog;
+
+            if (elementName.StartsWith("Button"))
+            {
+                editElementDialog = new Dialog.EditElement("Button " + elementTarget,
+                    Elements[elementName]);
+            }
+            else if (elementName.StartsWith("Check"))
+            {
+                editElementDialog = new Dialog.EditElement("Check " + elementTarget,
+                    Elements[elementName]);
+            }
+            else // elementName.StartsWith("Text") would be the condition here
+            {
+                editElementDialog = new Dialog.EditElement("Text " + elementTarget,
+                    Elements[elementName]);
+            }
+
+            if (editElementDialog.ShowDialog() == DialogResult.OK)
+            {
+                // TODO: Update the element preview here
+            }
+        }
+
+
+        /// <summary>
+        /// [Event] Character details numeric slider value changed.
         /// </summary>
         private void NumericChar_ValueChanged(object sender, EventArgs e)
         {
@@ -1411,7 +1448,7 @@ namespace RozWorld_Editor.Tab
 
 
         /// <summary>
-        /// "Set..." button clicked.
+        /// [Event] "Set..." button clicked.
         /// </summary>
         private void SetTextureButton_Click(object sender, EventArgs e)
         {
@@ -1443,9 +1480,7 @@ namespace RozWorld_Editor.Tab
                 switch (((Button)sender).Name)
                 {
                     case "ButtonFontTexture":
-                        // Allow texture warnings to be issued
-                        WarnIssuedBlitValidity = false;
-
+                        // Update the character previews
                         UpdateCharacterPreviewTexture();
                         UpdateCharacterPreviewDetails();
 
@@ -1481,7 +1516,7 @@ namespace RozWorld_Editor.Tab
 
 
         /// <summary>
-        /// "Blitting..." button clicked.
+        /// [Event] "Blitting..." button clicked.
         /// </summary>
         void ButtonCharacterBlit_Click(object sender, EventArgs e)
         {
@@ -1535,9 +1570,6 @@ namespace RozWorld_Editor.Tab
         /// </summary>
         void ComboFont_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Allow texture warnings to be issued
-            WarnIssuedBlitValidity = false;
-
             UpdateFontTexturePreviews();
 
             // Save the current character and font info to the last font picked.
@@ -1570,7 +1602,7 @@ namespace RozWorld_Editor.Tab
 
 
         /// <summary>
-        /// Font character listbox selection changed.
+        /// [Event] Font character listbox selection changed.
         /// </summary>
         void ListCharacter_SelectedIndexChanged(object sender, EventArgs e)
         {

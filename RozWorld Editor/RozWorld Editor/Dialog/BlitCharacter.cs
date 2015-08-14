@@ -189,7 +189,7 @@ namespace RozWorld_Editor.Dialog
 
 
         /// <summary>
-        /// [Event] "Blit Destination > X" Numeric slider value changed.
+        /// [Event] "Blit Destination > X" numeric slider value changed.
         /// </summary>
         private void NumericBlitDestinationX_ValueChanged(object sender, EventArgs e)
         {
@@ -198,7 +198,7 @@ namespace RozWorld_Editor.Dialog
         }
 
         /// <summary>
-        /// [Event] "Blit Destination > Y" Numeric slider value changed.
+        /// [Event] "Blit Destination > Y" numeric slider value changed.
         /// </summary>
         private void NumericBlitDestinationY_ValueChanged(object sender, EventArgs e)
         {
@@ -214,8 +214,8 @@ namespace RozWorld_Editor.Dialog
         {
             if (LegalValueInput)
             {
-                CharInfoReference.AssignBlitting(CharInfoEditing.BlitOrigin,
-                CharInfoEditing.BlitDestination);
+                CharInfoReference.BlitOrigin = CharInfoEditing.BlitOrigin;
+                CharInfoReference.BlitDestination = CharInfoEditing.BlitDestination;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -227,7 +227,7 @@ namespace RozWorld_Editor.Dialog
 
 
         /// <summary>
-        /// [Event] "Blit Origin > Y" Numeric slider value changed.
+        /// [Event] "Blit Origin > Y" numeric slider value changed.
         /// </summary>
         private void NumericBlitOriginY_ValueChanged(object sender, EventArgs e)
         {
@@ -296,7 +296,7 @@ namespace RozWorld_Editor.Dialog
         }
 
         /// <summary>
-        /// [Event] "Blit Origin > X" Numeric slider value changed.
+        /// [Event] "Blit Origin > X" numeric slider value changed.
         /// </summary>
         private void NumericBlitOriginX_ValueChanged(object sender, EventArgs e)
         {

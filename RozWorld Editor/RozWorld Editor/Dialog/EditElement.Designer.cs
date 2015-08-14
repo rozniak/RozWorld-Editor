@@ -35,14 +35,14 @@
             this.ButtonOK = new System.Windows.Forms.Button();
             this.ButtonCancel = new System.Windows.Forms.Button();
             this.GroupDetails = new System.Windows.Forms.GroupBox();
-            this.LabelXOffset = new System.Windows.Forms.Label();
-            this.NumericXOffset = new System.Windows.Forms.NumericUpDown();
             this.NumericYOffset = new System.Windows.Forms.NumericUpDown();
             this.LabelYOffset = new System.Windows.Forms.Label();
+            this.NumericXOffset = new System.Windows.Forms.NumericUpDown();
+            this.LabelXOffset = new System.Windows.Forms.Label();
             this.PicturePreview = new System.Windows.Forms.PictureBox();
             this.GroupDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericXOffset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericYOffset)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericXOffset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicturePreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,7 @@
             this.ButtonBrowse.TabIndex = 3;
             this.ButtonBrowse.Text = "Browse...";
             this.ButtonBrowse.UseVisualStyleBackColor = true;
+            this.ButtonBrowse.Click += new System.EventHandler(this.ButtonBrowse_Click);
             // 
             // ButtonOK
             // 
@@ -89,6 +90,7 @@
             this.ButtonOK.TabIndex = 4;
             this.ButtonOK.Text = "OK";
             this.ButtonOK.UseVisualStyleBackColor = true;
+            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // ButtonCancel
             // 
@@ -98,6 +100,7 @@
             this.ButtonCancel.TabIndex = 5;
             this.ButtonCancel.Text = "Cancel";
             this.ButtonCancel.UseVisualStyleBackColor = true;
+            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // GroupDetails
             // 
@@ -112,28 +115,13 @@
             this.GroupDetails.TabStop = false;
             this.GroupDetails.Text = "Details";
             // 
-            // LabelXOffset
-            // 
-            this.LabelXOffset.AutoSize = true;
-            this.LabelXOffset.Location = new System.Drawing.Point(6, 16);
-            this.LabelXOffset.Name = "LabelXOffset";
-            this.LabelXOffset.Size = new System.Drawing.Size(45, 13);
-            this.LabelXOffset.TabIndex = 7;
-            this.LabelXOffset.Text = "X Offset";
-            // 
-            // NumericXOffset
-            // 
-            this.NumericXOffset.Location = new System.Drawing.Point(9, 32);
-            this.NumericXOffset.Name = "NumericXOffset";
-            this.NumericXOffset.Size = new System.Drawing.Size(56, 20);
-            this.NumericXOffset.TabIndex = 8;
-            // 
             // NumericYOffset
             // 
             this.NumericYOffset.Location = new System.Drawing.Point(9, 75);
             this.NumericYOffset.Name = "NumericYOffset";
             this.NumericYOffset.Size = new System.Drawing.Size(56, 20);
             this.NumericYOffset.TabIndex = 10;
+            this.NumericYOffset.ValueChanged += new System.EventHandler(this.NumericYOffset_ValueChanged);
             // 
             // LabelYOffset
             // 
@@ -143,6 +131,23 @@
             this.LabelYOffset.Size = new System.Drawing.Size(45, 13);
             this.LabelYOffset.TabIndex = 9;
             this.LabelYOffset.Text = "Y Offset";
+            // 
+            // NumericXOffset
+            // 
+            this.NumericXOffset.Location = new System.Drawing.Point(9, 32);
+            this.NumericXOffset.Name = "NumericXOffset";
+            this.NumericXOffset.Size = new System.Drawing.Size(56, 20);
+            this.NumericXOffset.TabIndex = 8;
+            this.NumericXOffset.ValueChanged += new System.EventHandler(this.NumericXOffset_ValueChanged);
+            // 
+            // LabelXOffset
+            // 
+            this.LabelXOffset.AutoSize = true;
+            this.LabelXOffset.Location = new System.Drawing.Point(6, 16);
+            this.LabelXOffset.Name = "LabelXOffset";
+            this.LabelXOffset.Size = new System.Drawing.Size(45, 13);
+            this.LabelXOffset.TabIndex = 7;
+            this.LabelXOffset.Text = "X Offset";
             // 
             // PicturePreview
             // 
@@ -176,8 +181,8 @@
             this.TopMost = true;
             this.GroupDetails.ResumeLayout(false);
             this.GroupDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericXOffset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericYOffset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericXOffset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicturePreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

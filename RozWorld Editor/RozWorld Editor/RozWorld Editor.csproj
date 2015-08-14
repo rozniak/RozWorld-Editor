@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataClasses\CharacterInfo.cs" />
+    <Compile Include="DataClasses\ElementInfo.cs" />
     <Compile Include="DataClasses\FontInfo.cs" />
     <Compile Include="DataClasses\Texture.cs" />
     <Compile Include="Dialog\AddCharacter.cs">

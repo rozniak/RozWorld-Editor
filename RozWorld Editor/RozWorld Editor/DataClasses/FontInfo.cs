@@ -15,7 +15,7 @@ namespace RozWorld_Editor.DataClasses
 {
     public class FontInfo
     {
-        public Texture Texture = new Texture(null, null);
+        public Texture Texture = new Texture();
         private Dictionary<char, CharacterInfo> Characters = new Dictionary<char, CharacterInfo>();
         public byte SpacingWidth = 0;
         public byte LineHeight = 0;

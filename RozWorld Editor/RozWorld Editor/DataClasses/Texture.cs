@@ -19,10 +19,27 @@ namespace RozWorld_Editor.DataClasses
         public Image Data;
 
 
+        public Texture()
+        {
+            Source = null;
+            Data = null;
+        }
+
+
         public Texture(string source, Image texture)
         {
             Source = source;
             Data = texture;
+        }
+
+
+        /// <summary>
+        /// Creates a new copy of this Texture.
+        /// </summary>
+        /// <returns>A new Texture that is a copy of this instance.</returns>
+        public Texture Clone()
+        {
+            return new Texture(this.Source, (Image)this.Data.Clone());
         }
 
 
