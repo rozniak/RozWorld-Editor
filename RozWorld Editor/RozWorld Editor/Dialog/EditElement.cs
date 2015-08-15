@@ -45,22 +45,19 @@ namespace RozWorld_Editor.Dialog
             DrawBodyPosition = true;
 
             // Get the type of element being edited
-            switch (elementTarget)
+            if (elementTarget.EndsWith("Body") || elementTarget.EndsWith("Check"))
             {
-                case "Body":
-                case "Check":
-                    NumericXOffset.Enabled = false;
-                    NumericYOffset.Enabled = false;
-                    DrawBodyPosition = false;
-                    break;
-
-                case "Top":
-                    NumericXOffset.Enabled = false;
-                    break;
-
-                case "Side":
-                    NumericYOffset.Enabled = false;
-                    break;
+                NumericXOffset.Enabled = false;
+                NumericYOffset.Enabled = false;
+                DrawBodyPosition = false;
+            }
+            else if (elementTarget.EndsWith("Top"))
+            {
+                NumericXOffset.Enabled = false;
+            }
+            else if (elementTarget.EndsWith("Side"))
+            {
+                NumericYOffset.Enabled = false;
             }
         }
 

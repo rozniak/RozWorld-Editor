@@ -39,7 +39,8 @@ namespace RozWorld_Editor.DataClasses
         /// <returns>A new Texture that is a copy of this instance.</returns>
         public Texture Clone()
         {
-            return new Texture(this.Source, (Image)this.Data.Clone());
+            if (this.Source != null && this.Data != null) return new Texture(this.Source, (Image)this.Data.Clone());
+            return new Texture();
         }
 
 

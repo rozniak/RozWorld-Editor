@@ -510,6 +510,7 @@ namespace RozWorld_Editor.Tab
             ButtonButtonBody.TabIndex = 2;
             ButtonButtonBody.Text = "Set...";
             ButtonButtonBody.UseVisualStyleBackColor = true;
+            ButtonButtonBody.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelButtonTop
@@ -539,6 +540,7 @@ namespace RozWorld_Editor.Tab
             ButtonButtonTop.TabIndex = 5;
             ButtonButtonTop.Text = "Set...";
             ButtonButtonTop.UseVisualStyleBackColor = true;
+            ButtonButtonTop.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelButtonSide
@@ -568,6 +570,7 @@ namespace RozWorld_Editor.Tab
             ButtonButtonSide.TabIndex = 8;
             ButtonButtonSide.Text = "Set...";
             ButtonButtonSide.UseVisualStyleBackColor = true;
+            ButtonButtonSide.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelButtonEdgeSW
@@ -597,6 +600,7 @@ namespace RozWorld_Editor.Tab
             ButtonButtonEdgeSW.TabIndex = 11;
             ButtonButtonEdgeSW.Text = "Set...";
             ButtonButtonEdgeSW.UseVisualStyleBackColor = true;
+            ButtonButtonEdgeSW.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelButtonEdgeNE
@@ -626,6 +630,7 @@ namespace RozWorld_Editor.Tab
             ButtonButtonEdgeNE.TabIndex = 14;
             ButtonButtonEdgeNE.Text = "Set...";
             ButtonButtonEdgeNE.UseVisualStyleBackColor = true;
+            ButtonButtonEdgeNE.Click += new EventHandler(ButtonElementEdit_Click);
 
 
             /**
@@ -747,6 +752,7 @@ namespace RozWorld_Editor.Tab
             ButtonTextBody.TabIndex = 2;
             ButtonTextBody.Text = "Set...";
             ButtonTextBody.UseVisualStyleBackColor = true;
+            ButtonTextBody.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelTextTop
@@ -776,6 +782,7 @@ namespace RozWorld_Editor.Tab
             ButtonTextTop.TabIndex = 5;
             ButtonTextTop.Text = "Set...";
             ButtonTextTop.UseVisualStyleBackColor = true;
+            ButtonTextTop.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelTextSide
@@ -805,6 +812,7 @@ namespace RozWorld_Editor.Tab
             ButtonTextSide.TabIndex = 8;
             ButtonTextSide.Text = "Set...";
             ButtonTextSide.UseVisualStyleBackColor = true;
+            ButtonTextSide.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelTextEdgeSW
@@ -834,6 +842,7 @@ namespace RozWorld_Editor.Tab
             ButtonTextEdgeSW.TabIndex = 11;
             ButtonTextEdgeSW.Text = "Set...";
             ButtonTextEdgeSW.UseVisualStyleBackColor = true;
+            ButtonTextEdgeSW.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelTextEdgeNE
@@ -863,6 +872,7 @@ namespace RozWorld_Editor.Tab
             ButtonTextEdgeNE.TabIndex = 14;
             ButtonTextEdgeNE.Text = "Set...";
             ButtonTextEdgeNE.UseVisualStyleBackColor = true;
+            ButtonTextEdgeNE.Click += new EventHandler(ButtonElementEdit_Click);
 
             
             /**
@@ -984,6 +994,7 @@ namespace RozWorld_Editor.Tab
             ButtonCheckBody.TabIndex = 2;
             ButtonCheckBody.Text = "Set...";
             ButtonCheckBody.UseVisualStyleBackColor = true;
+            ButtonCheckBody.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelCheckTop
@@ -1013,6 +1024,7 @@ namespace RozWorld_Editor.Tab
             ButtonCheckTop.TabIndex = 5;
             ButtonCheckTop.Text = "Set...";
             ButtonCheckTop.UseVisualStyleBackColor = true;
+            ButtonCheckTop.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelCheckSide
@@ -1042,6 +1054,7 @@ namespace RozWorld_Editor.Tab
             ButtonCheckSide.TabIndex = 8;
             ButtonCheckSide.Text = "Set...";
             ButtonCheckSide.UseVisualStyleBackColor = true;
+            ButtonCheckSide.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelCheckEdgeSW
@@ -1071,6 +1084,7 @@ namespace RozWorld_Editor.Tab
             ButtonCheckEdgeSW.TabIndex = 11;
             ButtonCheckEdgeSW.Text = "Set...";
             ButtonCheckEdgeSW.UseVisualStyleBackColor = true;
+            ButtonCheckEdgeSW.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelCheckEdgeNE
@@ -1100,6 +1114,7 @@ namespace RozWorld_Editor.Tab
             ButtonCheckEdgeNE.TabIndex = 14;
             ButtonCheckEdgeNE.Text = "Set...";
             ButtonCheckEdgeNE.UseVisualStyleBackColor = true;
+            ButtonCheckEdgeNE.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelCheckTick
@@ -1129,6 +1144,39 @@ namespace RozWorld_Editor.Tab
             ButtonCheckTick.TabIndex = 17;
             ButtonCheckTick.Text = "Set...";
             ButtonCheckTick.UseVisualStyleBackColor = true;
+            ButtonCheckTick.Click += new EventHandler(ButtonElementEdit_Click);
+
+            #endregion
+
+            #region Element Dictionary Initialisation
+
+            /**
+             * Button ElementInfos
+             */
+            Elements.Add("ButtonBody", new ElementInfo());
+            Elements.Add("ButtonTop", new ElementInfo());
+            Elements.Add("ButtonSide", new ElementInfo());
+            Elements.Add("ButtonEdgeNE", new ElementInfo());
+            Elements.Add("ButtonEdgeSW", new ElementInfo());
+
+            /**
+             * TextBox ElementInfos
+             */
+            Elements.Add("TextBody", new ElementInfo());
+            Elements.Add("TextTop", new ElementInfo());
+            Elements.Add("TextSide", new ElementInfo());
+            Elements.Add("TextEdgeNE", new ElementInfo());
+            Elements.Add("TextEdgeSW", new ElementInfo());
+
+            /**
+             * CheckBox ElementInfos
+             */
+            Elements.Add("CheckBody", new ElementInfo());
+            Elements.Add("CheckTop", new ElementInfo());
+            Elements.Add("CheckSide", new ElementInfo());
+            Elements.Add("CheckEdgeNE", new ElementInfo());
+            Elements.Add("CheckEdgeSW", new ElementInfo());
+            Elements.Add("CheckTick", new ElementInfo());
 
             #endregion
 
@@ -1410,7 +1458,10 @@ namespace RozWorld_Editor.Tab
         {
             // Get the element name, removing the 'Button' prefix
             string elementName = ((Button)sender).Name.Substring(6);
-            string elementTarget = ((Label)this.Controls.Find("Label" + elementName, false)[0]).Text;
+            string elementTarget = ((Label)this.Controls.Find("Label" + elementName, true)[0]).Text;
+
+            // Strip off the colon
+            elementTarget = elementTarget.Substring(0, elementTarget.Length - 1);
 
             Dialog.EditElement editElementDialog;
 
