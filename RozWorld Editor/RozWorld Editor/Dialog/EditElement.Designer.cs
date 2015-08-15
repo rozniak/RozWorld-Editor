@@ -151,6 +151,7 @@
             // 
             // PicturePreview
             // 
+            this.PicturePreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.PicturePreview.Location = new System.Drawing.Point(93, 116);
             this.PicturePreview.Name = "PicturePreview";
             this.PicturePreview.Size = new System.Drawing.Size(278, 107);

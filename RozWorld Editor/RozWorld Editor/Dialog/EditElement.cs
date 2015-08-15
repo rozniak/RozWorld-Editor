@@ -59,6 +59,10 @@ namespace RozWorld_Editor.Dialog
             {
                 NumericYOffset.Enabled = false;
             }
+
+            LabelSelectedFile.Text = elementInfoReference.Texture.Source != null ?
+                elementInfoReference.Texture.Source :
+                "No File Selected";
         }
 
 
@@ -67,7 +71,56 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void UpdatePreview()
         {
-            // TODO: Update preview here
+            if (ElementInfoEditing.Texture.Data != null)
+            {
+                if (PicturePreview.BackgroundImage != ElementInfoEditing.Texture.Data)
+                {
+                    // Dump the last image if there was one
+                    if (PicturePreview.BackgroundImage != null)
+                    {
+                        PicturePreview.BackgroundImage.Dispose();
+                        PicturePreview.BackgroundImage = null;
+                    }
+
+                    // Set the new image
+                    PicturePreview.BackgroundImage = ElementInfoEditing.Texture.Data;
+                }
+
+                if (DrawBodyPosition)
+                {
+                    using (Bitmap bodyPreview = new Bitmap(PicturePreview.Width, PicturePreview.Height))
+                    {
+                        // Set the location of the body preview
+                        int bodyHeight = 20;
+                        int bodyWidth = 40;
+                        int bodyX = (PicturePreview.Width / 2) - (bodyWidth / 2)
+                            - ElementInfoEditing.XOffset;
+                        int bodyY = (PicturePreview.Height / 2) - (bodyHeight / 2)
+                            - ElementInfoEditing.YOffset;
+                        Rectangle bodyRect = new Rectangle(bodyX, bodyY,
+                            bodyWidth, bodyHeight);
+
+                        Brush brushBody = new SolidBrush(Color.FromArgb(100, Color.Magenta));
+                        Graphics GFX = Graphics.FromImage(bodyPreview);
+
+                        GFX.FillRectangle(brushBody, bodyRect);
+
+                        // Dispose the old preview if there was one
+                        if (PicturePreview.Image != null)
+                        {
+                            PicturePreview.Image.Dispose();
+                            PicturePreview.Image = null;
+                        }
+
+                        // Set the new iamge
+                        PicturePreview.Image = (Bitmap)bodyPreview.Clone();
+
+                        // Dispose the other objects in this scope
+                        GFX.Dispose();
+                        brushBody.Dispose();
+                    }
+                }
+            }
         }
 
 
@@ -76,7 +129,20 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void ButtonBrowse_Click(object sender, EventArgs e)
         {
-            // TODO: Make a new open file dialog and browse for image files
+            var openDialog = new OpenFileDialog();
+
+            openDialog.Filter = "Image Files (*.bmp, *.jpg, *.png)|*.bmp;*.jpg;*.png";
+            openDialog.Title = "Select Texture...";
+
+            if (openDialog.ShowDialog() == DialogResult.OK)
+            {
+                ElementInfoEditing.Texture.Source = openDialog.FileName;
+                ElementInfoEditing.Texture.Data = Image.FromFile(openDialog.FileName);
+
+                LabelSelectedFile.Text = openDialog.FileName;
+
+                UpdatePreview();
+            }
         }
 
 

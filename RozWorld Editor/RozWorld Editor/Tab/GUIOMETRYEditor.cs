@@ -1256,12 +1256,16 @@ namespace RozWorld_Editor.Tab
                 CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
 
                 // Dispose the old character detail image if there was one
-                if (PictureCharPreview.Image != null) PictureCharPreview.Image.Dispose(); PictureCharPreview.Image = null;
+                if (PictureCharPreview.Image != null)
+                {
+                    PictureCharPreview.Image.Dispose();
+                    PictureCharPreview.Image = null;
+                }
 
                 // Check that there is a blitted character present
                 if (PictureCharPreview.BackgroundImage != null)
                 {
-                    using (Bitmap detailImage = new Bitmap(PictureCharPreview.Width, PictureCharPreview.Height))
+                    using (Bitmap detailPreview = new Bitmap(PictureCharPreview.Width, PictureCharPreview.Height))
                     {
                         // Base points for the before, after and y-offset variables in a moment
                         Rectangle blitRect = charInfo.GetBlitRectangle();
@@ -1273,7 +1277,7 @@ namespace RozWorld_Editor.Tab
                         Pen penBefore = new Pen(Color.Red);
                         Pen penAfter = new Pen(Color.Blue);
                         Pen penYOffset = new Pen(Color.Purple);
-                        Graphics GFX = Graphics.FromImage(detailImage);
+                        Graphics GFX = Graphics.FromImage(detailPreview);
 
                         GFX.DrawLine(penBefore,
                             new Point(beforeOriginX + (int)NumericCharBefore.Value, 0),
@@ -1288,7 +1292,7 @@ namespace RozWorld_Editor.Tab
                             new Point(PictureCharPreview.Width, yOffsetOriginY + (int)NumericCharYOffset.Value));
 
                         // Set the new image
-                        PictureCharPreview.Image = (Bitmap)detailImage.Clone();
+                        PictureCharPreview.Image = (Bitmap)detailPreview.Clone();
 
                         // Dispose other objects in this scope
                         GFX.Dispose();

@@ -64,7 +64,7 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void ButtonBrowse_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openDialog = new OpenFileDialog();
+            var openDialog = new OpenFileDialog();
 
             openDialog.Filter = "Image Files (*.bmp, *.jpg, *.png)|*.bmp;*.jpg;*.png";
             openDialog.Title = "Select Texture...";
