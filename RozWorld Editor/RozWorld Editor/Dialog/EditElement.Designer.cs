@@ -52,7 +52,8 @@
             this.LabelTagDialogDescription.Name = "LabelTagDialogDescription";
             this.LabelTagDialogDescription.Size = new System.Drawing.Size(359, 44);
             this.LabelTagDialogDescription.TabIndex = 0;
-            this.LabelTagDialogDescription.Text = "Edit the texture details of the \'$ELEMENT\' GUI element. $EXTRAINFO";
+            this.LabelTagDialogDescription.Text = "Edit the texture details of the \'$ELEMENT\' GUI element. The pink rectangle (if ed" +
+    "iting a non-body or tick) represents the body position relative to the element.";
             // 
             // LabelTagSelectedFile
             // 
@@ -118,6 +119,16 @@
             // NumericYOffset
             // 
             this.NumericYOffset.Location = new System.Drawing.Point(9, 75);
+            this.NumericYOffset.Maximum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            this.NumericYOffset.Minimum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            -2147483648});
             this.NumericYOffset.Name = "NumericYOffset";
             this.NumericYOffset.Size = new System.Drawing.Size(56, 20);
             this.NumericYOffset.TabIndex = 10;
@@ -135,6 +146,16 @@
             // NumericXOffset
             // 
             this.NumericXOffset.Location = new System.Drawing.Point(9, 32);
+            this.NumericXOffset.Maximum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            this.NumericXOffset.Minimum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            -2147483648});
             this.NumericXOffset.Name = "NumericXOffset";
             this.NumericXOffset.Size = new System.Drawing.Size(56, 20);
             this.NumericXOffset.TabIndex = 8;

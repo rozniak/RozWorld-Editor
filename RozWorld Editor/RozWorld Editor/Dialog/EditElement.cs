@@ -45,7 +45,7 @@ namespace RozWorld_Editor.Dialog
             DrawBodyPosition = true;
 
             // Get the type of element being edited
-            if (elementTarget.EndsWith("Body") || elementTarget.EndsWith("Check"))
+            if (elementTarget.EndsWith("Body") || elementTarget.EndsWith("Tick"))
             {
                 NumericXOffset.Enabled = false;
                 NumericYOffset.Enabled = false;
@@ -63,6 +63,9 @@ namespace RozWorld_Editor.Dialog
             LabelSelectedFile.Text = elementInfoReference.Texture.Source != null ?
                 elementInfoReference.Texture.Source :
                 "No File Selected";
+
+            // Update the preview image
+            UpdatePreview();
         }
 
 
@@ -161,7 +164,10 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            // TODO: Assign vars in the element reference with the editing one
+            ElementInfoReference.Texture = ElementInfoEditing.Texture;
+            ElementInfoReference.XOffset = ElementInfoEditing.XOffset;
+            ElementInfoReference.YOffset = ElementInfoEditing.YOffset;
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -172,7 +178,8 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void NumericXOffset_ValueChanged(object sender, EventArgs e)
         {
-            // TODO: Update element details and preview
+            ElementInfoEditing.XOffset = (sbyte)NumericXOffset.Value;
+            UpdatePreview();
         }
 
 
@@ -181,7 +188,8 @@ namespace RozWorld_Editor.Dialog
         /// </summary>
         private void NumericYOffset_ValueChanged(object sender, EventArgs e)
         {
-            // TODO: Update element details and preview
+            ElementInfoEditing.YOffset = (sbyte)NumericYOffset.Value;
+            UpdatePreview();
         }
     }
 }

@@ -498,6 +498,7 @@ namespace RozWorld_Editor.Tab
             PictureButtonBody.Location = new System.Drawing.Point(9, 32);
             PictureButtonBody.Name = "PictureButtonBody";
             PictureButtonBody.Size = new System.Drawing.Size(48, 48);
+            PictureButtonBody.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureButtonBody.TabIndex = 0;
             PictureButtonBody.TabStop = false;
 
@@ -528,6 +529,7 @@ namespace RozWorld_Editor.Tab
             PictureButtonTop.Location = new System.Drawing.Point(63, 32);
             PictureButtonTop.Name = "PictureButtonTop";
             PictureButtonTop.Size = new System.Drawing.Size(48, 48);
+            PictureButtonTop.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureButtonTop.TabIndex = 3;
             PictureButtonTop.TabStop = false;
 
@@ -558,6 +560,7 @@ namespace RozWorld_Editor.Tab
             PictureButtonSide.Location = new System.Drawing.Point(117, 32);
             PictureButtonSide.Name = "PictureButtonSide";
             PictureButtonSide.Size = new System.Drawing.Size(48, 48);
+            PictureButtonSide.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureButtonSide.TabIndex = 6;
             PictureButtonSide.TabStop = false;
 
@@ -588,6 +591,7 @@ namespace RozWorld_Editor.Tab
             PictureButtonEdgeSW.Location = new System.Drawing.Point(171, 32);
             PictureButtonEdgeSW.Name = "PictureButtonEdgeSW";
             PictureButtonEdgeSW.Size = new System.Drawing.Size(48, 48);
+            PictureButtonEdgeSW.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureButtonEdgeSW.TabIndex = 9;
             PictureButtonEdgeSW.TabStop = false;
 
@@ -618,6 +622,7 @@ namespace RozWorld_Editor.Tab
             PictureButtonEdgeNE.Location = new System.Drawing.Point(225, 32);
             PictureButtonEdgeNE.Name = "PictureButtonEdgeNE";
             PictureButtonEdgeNE.Size = new System.Drawing.Size(48, 48);
+            PictureButtonEdgeNE.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureButtonEdgeNE.TabIndex = 12;
             PictureButtonEdgeNE.TabStop = false;
 
@@ -740,6 +745,7 @@ namespace RozWorld_Editor.Tab
             PictureTextBody.Location = new System.Drawing.Point(9, 32);
             PictureTextBody.Name = "PictureTextBody";
             PictureTextBody.Size = new System.Drawing.Size(48, 48);
+            PictureTextBody.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureTextBody.TabIndex = 0;
             PictureTextBody.TabStop = false;
 
@@ -770,6 +776,7 @@ namespace RozWorld_Editor.Tab
             PictureTextTop.Location = new System.Drawing.Point(63, 32);
             PictureTextTop.Name = "PictureTextTop";
             PictureTextTop.Size = new System.Drawing.Size(48, 48);
+            PictureTextTop.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureTextTop.TabIndex = 3;
             PictureTextTop.TabStop = false;
 
@@ -800,6 +807,7 @@ namespace RozWorld_Editor.Tab
             PictureTextSide.Location = new System.Drawing.Point(117, 32);
             PictureTextSide.Name = "PictureTextSide";
             PictureTextSide.Size = new System.Drawing.Size(48, 48);
+            PictureTextSide.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureTextSide.TabIndex = 6;
             PictureTextSide.TabStop = false;
 
@@ -830,6 +838,7 @@ namespace RozWorld_Editor.Tab
             PictureTextEdgeSW.Location = new System.Drawing.Point(171, 32);
             PictureTextEdgeSW.Name = "PictureTextEdgeSW";
             PictureTextEdgeSW.Size = new System.Drawing.Size(48, 48);
+            PictureTextEdgeSW.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureTextEdgeSW.TabIndex = 9;
             PictureTextEdgeSW.TabStop = false;
 
@@ -860,6 +869,7 @@ namespace RozWorld_Editor.Tab
             PictureTextEdgeNE.Location = new System.Drawing.Point(225, 32);
             PictureTextEdgeNE.Name = "PictureTextEdgeNE";
             PictureTextEdgeNE.Size = new System.Drawing.Size(48, 48);
+            PictureTextEdgeNE.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureTextEdgeNE.TabIndex = 12;
             PictureTextEdgeNE.TabStop = false;
 
@@ -982,6 +992,7 @@ namespace RozWorld_Editor.Tab
             PictureCheckBody.Location = new System.Drawing.Point(9, 32);
             PictureCheckBody.Name = "PictureCheckBody";
             PictureCheckBody.Size = new System.Drawing.Size(48, 48);
+            PictureCheckBody.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureCheckBody.TabIndex = 0;
             PictureCheckBody.TabStop = false;
 
@@ -1012,6 +1023,7 @@ namespace RozWorld_Editor.Tab
             PictureCheckTop.Location = new System.Drawing.Point(63, 32);
             PictureCheckTop.Name = "PictureCheckTop";
             PictureCheckTop.Size = new System.Drawing.Size(48, 48);
+            PictureCheckTop.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureCheckTop.TabIndex = 3;
             PictureCheckTop.TabStop = false;
 
@@ -1042,6 +1054,7 @@ namespace RozWorld_Editor.Tab
             PictureCheckSide.Location = new System.Drawing.Point(117, 32);
             PictureCheckSide.Name = "PictureCheckSide";
             PictureCheckSide.Size = new System.Drawing.Size(48, 48);
+            PictureCheckSide.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureCheckSide.TabIndex = 6;
             PictureCheckSide.TabStop = false;
 
@@ -1072,6 +1085,7 @@ namespace RozWorld_Editor.Tab
             PictureCheckEdgeSW.Location = new System.Drawing.Point(171, 32);
             PictureCheckEdgeSW.Name = "PictureCheckEdgeSW";
             PictureCheckEdgeSW.Size = new System.Drawing.Size(48, 48);
+            PictureCheckEdgeSW.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureCheckEdgeSW.TabIndex = 9;
             PictureCheckEdgeSW.TabStop = false;
 
@@ -1102,6 +1116,7 @@ namespace RozWorld_Editor.Tab
             PictureCheckEdgeNE.Location = new System.Drawing.Point(225, 32);
             PictureCheckEdgeNE.Name = "PictureCheckEdgeNE";
             PictureCheckEdgeNE.Size = new System.Drawing.Size(48, 48);
+            PictureCheckEdgeNE.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureCheckEdgeNE.TabIndex = 12;
             PictureCheckEdgeNE.TabStop = false;
 
@@ -1132,6 +1147,7 @@ namespace RozWorld_Editor.Tab
             PictureCheckTick.Location = new System.Drawing.Point(279, 32);
             PictureCheckTick.Name = "PictureCheckTick";
             PictureCheckTick.Size = new System.Drawing.Size(48, 48);
+            PictureCheckTick.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureCheckTick.TabIndex = 15;
             PictureCheckTick.TabStop = false;
 
@@ -1487,7 +1503,18 @@ namespace RozWorld_Editor.Tab
 
             if (editElementDialog.ShowDialog() == DialogResult.OK)
             {
-                // TODO: Update the element preview here
+                // Update the element preview
+                var elementPreview = (PictureBox)this.Controls.Find("Picture" + elementName, true)[0];
+
+                // Dispose the old image if there was one
+                if (elementPreview.Image != null)
+                {
+                    elementPreview.Image.Dispose();
+                    elementPreview.Image = null;
+                }
+
+                // Set the new image
+                elementPreview.Image = Elements[elementName].Texture.Data;
             }
         }
 
