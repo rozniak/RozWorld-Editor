@@ -50,14 +50,12 @@ namespace RozWorld_Editor.Tab
         protected string[] RedoHistory = new string[EditorEnvironment.MAX_OPERATION_HISTORY];
 
 
-        /// <summary>
-        /// Gets whether this tab has undo history.
-        /// </summary>
-        /// <returns>Whether this tab has undo history or not.</returns>
-        public bool CanUndo()
-        {
-            return UndoHistory[0] != null;
-        }
+        /**
+         * Open, save and save as functions to be implemented by the tabs that use them.
+         */
+        public virtual void Open(string filename) { }
+        public virtual void Save(string filename = "") { }
+        public virtual void SaveAs() { }
 
 
         /// <summary>
@@ -67,6 +65,16 @@ namespace RozWorld_Editor.Tab
         public bool CanRedo()
         {
             return RedoHistory[0] != null;
+        }
+
+
+        /// <summary>
+        /// Gets whether this tab has undo history.
+        /// </summary>
+        /// <returns>Whether this tab has undo history or not.</returns>
+        public bool CanUndo()
+        {
+            return UndoHistory[0] != null;
         }
 
 
