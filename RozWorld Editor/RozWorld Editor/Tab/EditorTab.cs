@@ -25,6 +25,15 @@ namespace RozWorld_Editor.Tab
         }
 
         /**
+         * Whether this tab can ever be saved or not.
+         */
+        public bool CanSave
+        {
+            get;
+            protected set;
+        }
+
+        /**
          * The save status of the changes in this tab.
          */
         public bool IsUnsaved
@@ -51,11 +60,35 @@ namespace RozWorld_Editor.Tab
 
 
         /**
-         * Open, save and save as functions to be implemented by the tabs that use them.
+         * Open and save functions to be implemented by the tabs that use them.
          */
         public virtual void Open(string filename) { }
         public virtual void Save(string filename = "") { }
-        public virtual void SaveAs() { }
+
+
+        /**
+         * Undo and redo functions to be implemented by the tabs that use them.
+         */
+        public virtual void Undo() { }
+        public virtual void Redo() { }
+
+
+        /// <summary>
+        /// Base method for closing this tab.
+        /// </summary>
+        /// <returns>Whether the tab successfully closed or not.</returns>
+        public virtual bool Close()
+        {
+            if (ParentTabUI.TabCount > 1)
+            {
+                ParentTabUI.SelectedIndex--;
+            }
+
+            ParentTabUI.TabPages.RemoveByKey(this.Name);
+            this.Dispose();
+
+            return true;
+        }
 
 
         /// <summary>
@@ -75,32 +108,6 @@ namespace RozWorld_Editor.Tab
         public bool CanUndo()
         {
             return UndoHistory[0] != null;
-        }
-
-
-        /**
-         * Undo and redo functions to be implemented by the tabs that use them.
-         */
-        public virtual void Undo() { }
-        public virtual void Redo() { }
-
-
-        /// <summary>
-        /// Base method for closing this tab.
-        /// </summary>
-        /// <returns>Whether the tab successfully closed or not.</returns>
-        public virtual bool Close()
-        {
-            try
-            {
-                ParentTabUI.SelectedIndex--;
-            }
-            catch { }
-            
-            ParentTabUI.TabPages.RemoveByKey(Name);
-            Dispose();
-
-            return true;
         }
     }
 }

@@ -1200,7 +1200,7 @@ namespace RozWorld_Editor.Tab
 
             if (file == "")
             {
-                Text = "GUIOMETRY - *";
+                Text = "GUIOMETRY - *.bin";
                 IsUnsaved = true;
             }
             else
@@ -1227,15 +1227,6 @@ namespace RozWorld_Editor.Tab
         public override void Save(string filename = "")
         {
             // TODO: Implement file saving once a format has been decided on.
-        }
-
-
-        /// <summary>
-        /// Implementation of the base file save as method.
-        /// </summary>
-        public override void SaveAs()
-        {
-            // TODO: Use a save file dialog to call Save() with a filename parameter.
         }
 
 

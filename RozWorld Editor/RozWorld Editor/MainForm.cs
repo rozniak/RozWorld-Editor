@@ -130,20 +130,47 @@ namespace RozWorld_Editor
             {
                 var currentTab = (Tab.EditorTab)TabUI.SelectedTab;
 
-                /**
-                 * Check undo/redo.
-                 */
+                // Check undo / redo
                 bool canUndo = currentTab.CanUndo();
                 bool canRedo = currentTab.CanRedo();
 
                 MenuItemUndo.Enabled = canUndo;
                 MenuItemRedo.Enabled = canRedo;
 
-                if (Controls.ContainsKey("ToolbarStandard"))
+                if (this.Controls.ContainsKey("ToolbarStandard"))
                 {
-                    var standardToolbar = (Toolbar.Standard)Controls["ToolbarStandard"];
+                    var standardToolbar = (Toolbar.Standard)this.Controls["ToolbarStandard"];
                     standardToolbar.Items["ButtonUndo"].Enabled = canUndo;
                     standardToolbar.Items["ButtonRedo"].Enabled = canRedo;
+                }
+
+                // Check save / save as
+                bool canSave = currentTab.CanSave && currentTab.IsUnsaved;
+                bool canSaveAs = currentTab.CanSave;
+
+                MenuItemSave.Enabled = canSave;
+                MenuItemSaveAs.Enabled = canSaveAs;
+
+                if (this.Controls.ContainsKey("ToolbarStandard"))
+                {
+                    var standardToolbar = (Toolbar.Standard)this.Controls["ToolbarStandard"];
+                    standardToolbar.Items["ButtonSave"].Enabled = canSave;
+                }
+            }
+            else
+            {
+                // Disable all options
+                MenuItemUndo.Enabled = false;
+                MenuItemRedo.Enabled = false;
+                MenuItemSave.Enabled = false;
+                MenuItemSaveAs.Enabled = false;
+
+                if (this.Controls.ContainsKey("ToolbarStandard"))
+                {
+                    var standardToolbar = (Toolbar.Standard)this.Controls["ToolbarStandard"];
+                    standardToolbar.Items["ButtonUndo"].Enabled = false;
+                    standardToolbar.Items["ButtonRedo"].Enabled = false;
+                    standardToolbar.Items["ButtonSave"].Enabled = false;
                 }
             }
         }
@@ -330,15 +357,6 @@ namespace RozWorld_Editor
 
 
         /// <summary>
-        /// [Event] "Edit" clicked.
-        /// </summary>
-        private void MenuEdit_Click(object sender, EventArgs e)
-        {
-            UpdateToolbarsTabDetails(sender, e);
-        }
-
-
-        /// <summary>
         /// [Event] "File > Exit" clicked or ALT+F4 pressed.
         /// </summary>
         private void MenuItemExit_Click(object sender, EventArgs e)
@@ -353,6 +371,11 @@ namespace RozWorld_Editor
         private void MenuItemNewWindow_Click(object sender, EventArgs e)
         {
             EditorEnvironment.CreateWindow(EditorEnvironment.GenerateWindowName());
+        }
+
+        private void MenuItemSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

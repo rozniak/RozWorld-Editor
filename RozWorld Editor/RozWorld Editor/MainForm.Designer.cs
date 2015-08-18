@@ -129,8 +129,9 @@
             this.MenuFileSeparator4,
             this.MenuItemExit});
             this.MenuFile.Name = "MenuFile";
-            this.MenuFile.Size = new System.Drawing.Size(35, 20);
+            this.MenuFile.Size = new System.Drawing.Size(37, 20);
             this.MenuFile.Text = "File";
+            this.MenuFile.Click += new System.EventHandler(this.UpdateToolbarsTabDetails);
             // 
             // ItemNew
             // 
@@ -141,14 +142,14 @@
             this.ItemNew.Image = ((System.Drawing.Image)(resources.GetObject("ItemNew.Image")));
             this.ItemNew.Name = "ItemNew";
             this.ItemNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.ItemNew.Size = new System.Drawing.Size(193, 22);
+            this.ItemNew.Size = new System.Drawing.Size(197, 22);
             this.ItemNew.Text = "New...";
             // 
             // MenuSubItemWorld
             // 
             this.MenuSubItemWorld.Image = ((System.Drawing.Image)(resources.GetObject("MenuSubItemWorld.Image")));
             this.MenuSubItemWorld.Name = "MenuSubItemWorld";
-            this.MenuSubItemWorld.Size = new System.Drawing.Size(154, 22);
+            this.MenuSubItemWorld.Size = new System.Drawing.Size(162, 22);
             this.MenuSubItemWorld.Text = "World";
             this.MenuSubItemWorld.Click += new System.EventHandler(this.NewWorld_Click);
             // 
@@ -156,7 +157,7 @@
             // 
             this.MenuSubItemPlayer.Image = ((System.Drawing.Image)(resources.GetObject("MenuSubItemPlayer.Image")));
             this.MenuSubItemPlayer.Name = "MenuSubItemPlayer";
-            this.MenuSubItemPlayer.Size = new System.Drawing.Size(154, 22);
+            this.MenuSubItemPlayer.Size = new System.Drawing.Size(162, 22);
             this.MenuSubItemPlayer.Text = "Player";
             this.MenuSubItemPlayer.Click += new System.EventHandler(this.NewPlayer_Click);
             // 
@@ -164,7 +165,7 @@
             // 
             this.MenuSubItemGUIOMETRY.Image = global::RozWorld_Editor.Properties.Resources.NewBINIcon;
             this.MenuSubItemGUIOMETRY.Name = "MenuSubItemGUIOMETRY";
-            this.MenuSubItemGUIOMETRY.Size = new System.Drawing.Size(154, 22);
+            this.MenuSubItemGUIOMETRY.Size = new System.Drawing.Size(162, 22);
             this.MenuSubItemGUIOMETRY.Text = "GUIOMETRY.BIN";
             this.MenuSubItemGUIOMETRY.Click += new System.EventHandler(this.NewGUIOMETRY_Click);
             // 
@@ -173,21 +174,22 @@
             this.MenuItemOpen.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemOpen.Image")));
             this.MenuItemOpen.Name = "MenuItemOpen";
             this.MenuItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.MenuItemOpen.Size = new System.Drawing.Size(193, 22);
+            this.MenuItemOpen.Size = new System.Drawing.Size(197, 22);
             this.MenuItemOpen.Text = "Open...";
             // 
             // MenuFileSeparator1
             // 
             this.MenuFileSeparator1.Name = "MenuFileSeparator1";
-            this.MenuFileSeparator1.Size = new System.Drawing.Size(190, 6);
+            this.MenuFileSeparator1.Size = new System.Drawing.Size(194, 6);
             // 
             // MenuItemSave
             // 
             this.MenuItemSave.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemSave.Image")));
             this.MenuItemSave.Name = "MenuItemSave";
             this.MenuItemSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.MenuItemSave.Size = new System.Drawing.Size(193, 22);
+            this.MenuItemSave.Size = new System.Drawing.Size(197, 22);
             this.MenuItemSave.Text = "Save";
+            this.MenuItemSave.Click += new System.EventHandler(this.MenuItemSave_Click);
             // 
             // MenuItemSaveAs
             // 
@@ -195,7 +197,7 @@
             this.MenuItemSaveAs.Name = "MenuItemSaveAs";
             this.MenuItemSaveAs.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.MenuItemSaveAs.Size = new System.Drawing.Size(193, 22);
+            this.MenuItemSaveAs.Size = new System.Drawing.Size(197, 22);
             this.MenuItemSaveAs.Text = "Save As...";
             // 
             // MenuItemSaveAll
@@ -204,31 +206,31 @@
             this.MenuItemSaveAll.Name = "MenuItemSaveAll";
             this.MenuItemSaveAll.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.S)));
-            this.MenuItemSaveAll.Size = new System.Drawing.Size(193, 22);
+            this.MenuItemSaveAll.Size = new System.Drawing.Size(197, 22);
             this.MenuItemSaveAll.Text = "Save All...";
             // 
             // MenuFileSeparator2
             // 
             this.MenuFileSeparator2.Name = "MenuFileSeparator2";
-            this.MenuFileSeparator2.Size = new System.Drawing.Size(190, 6);
+            this.MenuFileSeparator2.Size = new System.Drawing.Size(194, 6);
             // 
             // MenuItemRecent
             // 
             this.MenuItemRecent.Name = "MenuItemRecent";
-            this.MenuItemRecent.Size = new System.Drawing.Size(193, 22);
+            this.MenuItemRecent.Size = new System.Drawing.Size(197, 22);
             this.MenuItemRecent.Text = "Recent...";
             // 
             // MenuFileSeparator3
             // 
             this.MenuFileSeparator3.Name = "MenuFileSeparator3";
-            this.MenuFileSeparator3.Size = new System.Drawing.Size(190, 6);
+            this.MenuFileSeparator3.Size = new System.Drawing.Size(194, 6);
             // 
             // MenuItemClose
             // 
             this.MenuItemClose.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemClose.Image")));
             this.MenuItemClose.Name = "MenuItemClose";
             this.MenuItemClose.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.MenuItemClose.Size = new System.Drawing.Size(193, 22);
+            this.MenuItemClose.Size = new System.Drawing.Size(197, 22);
             this.MenuItemClose.Text = "Close";
             // 
             // MenuItemCloseAll
@@ -237,19 +239,19 @@
             this.MenuItemCloseAll.Name = "MenuItemCloseAll";
             this.MenuItemCloseAll.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.W)));
-            this.MenuItemCloseAll.Size = new System.Drawing.Size(193, 22);
+            this.MenuItemCloseAll.Size = new System.Drawing.Size(197, 22);
             this.MenuItemCloseAll.Text = "Close All";
             // 
             // MenuFileSeparator4
             // 
             this.MenuFileSeparator4.Name = "MenuFileSeparator4";
-            this.MenuFileSeparator4.Size = new System.Drawing.Size(190, 6);
+            this.MenuFileSeparator4.Size = new System.Drawing.Size(194, 6);
             // 
             // MenuItemExit
             // 
             this.MenuItemExit.Name = "MenuItemExit";
             this.MenuItemExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.MenuItemExit.Size = new System.Drawing.Size(193, 22);
+            this.MenuItemExit.Size = new System.Drawing.Size(197, 22);
             this.MenuItemExit.Text = "Exit";
             this.MenuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
@@ -266,16 +268,16 @@
             this.MenuEditSeparator2,
             this.MenuItemSelectAll});
             this.MenuEdit.Name = "MenuEdit";
-            this.MenuEdit.Size = new System.Drawing.Size(37, 20);
+            this.MenuEdit.Size = new System.Drawing.Size(39, 20);
             this.MenuEdit.Text = "Edit";
-            this.MenuEdit.Click += new System.EventHandler(this.MenuEdit_Click);
+            this.MenuEdit.Click += new System.EventHandler(this.UpdateToolbarsTabDetails);
             // 
             // MenuItemUndo
             // 
             this.MenuItemUndo.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemUndo.Image")));
             this.MenuItemUndo.Name = "MenuItemUndo";
             this.MenuItemUndo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.MenuItemUndo.Size = new System.Drawing.Size(156, 22);
+            this.MenuItemUndo.Size = new System.Drawing.Size(164, 22);
             this.MenuItemUndo.Text = "Undo";
             // 
             // MenuItemRedo
@@ -283,20 +285,20 @@
             this.MenuItemRedo.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemRedo.Image")));
             this.MenuItemRedo.Name = "MenuItemRedo";
             this.MenuItemRedo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.MenuItemRedo.Size = new System.Drawing.Size(156, 22);
+            this.MenuItemRedo.Size = new System.Drawing.Size(164, 22);
             this.MenuItemRedo.Text = "Redo";
             // 
             // MenuEditSeparator1
             // 
             this.MenuEditSeparator1.Name = "MenuEditSeparator1";
-            this.MenuEditSeparator1.Size = new System.Drawing.Size(153, 6);
+            this.MenuEditSeparator1.Size = new System.Drawing.Size(161, 6);
             // 
             // MenuItemCut
             // 
             this.MenuItemCut.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemCut.Image")));
             this.MenuItemCut.Name = "MenuItemCut";
             this.MenuItemCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.MenuItemCut.Size = new System.Drawing.Size(156, 22);
+            this.MenuItemCut.Size = new System.Drawing.Size(164, 22);
             this.MenuItemCut.Text = "Cut";
             // 
             // MenuItemCopy
@@ -304,7 +306,7 @@
             this.MenuItemCopy.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemCopy.Image")));
             this.MenuItemCopy.Name = "MenuItemCopy";
             this.MenuItemCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.MenuItemCopy.Size = new System.Drawing.Size(156, 22);
+            this.MenuItemCopy.Size = new System.Drawing.Size(164, 22);
             this.MenuItemCopy.Text = "Copy";
             // 
             // MenuItemPaste
@@ -312,7 +314,7 @@
             this.MenuItemPaste.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemPaste.Image")));
             this.MenuItemPaste.Name = "MenuItemPaste";
             this.MenuItemPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.MenuItemPaste.Size = new System.Drawing.Size(156, 22);
+            this.MenuItemPaste.Size = new System.Drawing.Size(164, 22);
             this.MenuItemPaste.Text = "Paste";
             // 
             // MenuItemDelete
@@ -320,19 +322,19 @@
             this.MenuItemDelete.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemDelete.Image")));
             this.MenuItemDelete.Name = "MenuItemDelete";
             this.MenuItemDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.MenuItemDelete.Size = new System.Drawing.Size(156, 22);
+            this.MenuItemDelete.Size = new System.Drawing.Size(164, 22);
             this.MenuItemDelete.Text = "Delete";
             // 
             // MenuEditSeparator2
             // 
             this.MenuEditSeparator2.Name = "MenuEditSeparator2";
-            this.MenuEditSeparator2.Size = new System.Drawing.Size(153, 6);
+            this.MenuEditSeparator2.Size = new System.Drawing.Size(161, 6);
             // 
             // MenuItemSelectAll
             // 
             this.MenuItemSelectAll.Name = "MenuItemSelectAll";
             this.MenuItemSelectAll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.MenuItemSelectAll.Size = new System.Drawing.Size(156, 22);
+            this.MenuItemSelectAll.Size = new System.Drawing.Size(164, 22);
             this.MenuItemSelectAll.Text = "Select All";
             // 
             // MenuView
@@ -347,47 +349,47 @@
             this.MenuViewSeparator3,
             this.MenuSubItemHomePage});
             this.MenuView.Name = "MenuView";
-            this.MenuView.Size = new System.Drawing.Size(41, 20);
+            this.MenuView.Size = new System.Drawing.Size(44, 20);
             this.MenuView.Text = "View";
             // 
             // MenuItemNewWindow
             // 
             this.MenuItemNewWindow.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemNewWindow.Image")));
             this.MenuItemNewWindow.Name = "MenuItemNewWindow";
-            this.MenuItemNewWindow.Size = new System.Drawing.Size(200, 22);
+            this.MenuItemNewWindow.Size = new System.Drawing.Size(216, 22);
             this.MenuItemNewWindow.Text = "New Window";
             this.MenuItemNewWindow.Click += new System.EventHandler(this.MenuItemNewWindow_Click);
             // 
             // MenuViewSeparator1
             // 
             this.MenuViewSeparator1.Name = "MenuViewSeparator1";
-            this.MenuViewSeparator1.Size = new System.Drawing.Size(197, 6);
+            this.MenuViewSeparator1.Size = new System.Drawing.Size(213, 6);
             // 
             // MenuItemMoveNewWindow
             // 
             this.MenuItemMoveNewWindow.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemMoveNewWindow.Image")));
             this.MenuItemMoveNewWindow.Name = "MenuItemMoveNewWindow";
-            this.MenuItemMoveNewWindow.Size = new System.Drawing.Size(200, 22);
+            this.MenuItemMoveNewWindow.Size = new System.Drawing.Size(216, 22);
             this.MenuItemMoveNewWindow.Text = "Move Tab to New Window";
             // 
             // MenuItemCloneNewWindow
             // 
             this.MenuItemCloneNewWindow.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemCloneNewWindow.Image")));
             this.MenuItemCloneNewWindow.Name = "MenuItemCloneNewWindow";
-            this.MenuItemCloneNewWindow.Size = new System.Drawing.Size(200, 22);
+            this.MenuItemCloneNewWindow.Size = new System.Drawing.Size(216, 22);
             this.MenuItemCloneNewWindow.Text = "Clone Tab to New Window";
             // 
             // MenuViewSeparator2
             // 
             this.MenuViewSeparator2.Name = "MenuViewSeparator2";
-            this.MenuViewSeparator2.Size = new System.Drawing.Size(197, 6);
+            this.MenuViewSeparator2.Size = new System.Drawing.Size(213, 6);
             // 
             // MenuItemToolbars
             // 
             this.MenuItemToolbars.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuSubItemToolbarStandard});
             this.MenuItemToolbars.Name = "MenuItemToolbars";
-            this.MenuItemToolbars.Size = new System.Drawing.Size(200, 22);
+            this.MenuItemToolbars.Size = new System.Drawing.Size(216, 22);
             this.MenuItemToolbars.Text = "Toolbars...";
             // 
             // MenuSubItemToolbarStandard
@@ -401,13 +403,13 @@
             // MenuViewSeparator3
             // 
             this.MenuViewSeparator3.Name = "MenuViewSeparator3";
-            this.MenuViewSeparator3.Size = new System.Drawing.Size(197, 6);
+            this.MenuViewSeparator3.Size = new System.Drawing.Size(213, 6);
             // 
             // MenuSubItemHomePage
             // 
             this.MenuSubItemHomePage.Image = ((System.Drawing.Image)(resources.GetObject("MenuSubItemHomePage.Image")));
             this.MenuSubItemHomePage.Name = "MenuSubItemHomePage";
-            this.MenuSubItemHomePage.Size = new System.Drawing.Size(200, 22);
+            this.MenuSubItemHomePage.Size = new System.Drawing.Size(216, 22);
             this.MenuSubItemHomePage.Text = "Home Page";
             // 
             // MenuHelp
@@ -420,45 +422,45 @@
             this.MenuHelpSeparator2,
             this.MenuItemAbout});
             this.MenuHelp.Name = "MenuHelp";
-            this.MenuHelp.Size = new System.Drawing.Size(40, 20);
+            this.MenuHelp.Size = new System.Drawing.Size(44, 20);
             this.MenuHelp.Text = "Help";
             // 
             // MenuItemRozWorldPage
             // 
             this.MenuItemRozWorldPage.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemRozWorldPage.Image")));
             this.MenuItemRozWorldPage.Name = "MenuItemRozWorldPage";
-            this.MenuItemRozWorldPage.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemRozWorldPage.Size = new System.Drawing.Size(214, 22);
             this.MenuItemRozWorldPage.Text = "RozWorld Home Page";
             // 
             // MenuHelpSeparator1
             // 
             this.MenuHelpSeparator1.Name = "MenuHelpSeparator1";
-            this.MenuHelpSeparator1.Size = new System.Drawing.Size(199, 6);
+            this.MenuHelpSeparator1.Size = new System.Drawing.Size(211, 6);
             // 
             // MenuItemEditorDocs
             // 
             this.MenuItemEditorDocs.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemEditorDocs.Image")));
             this.MenuItemEditorDocs.Name = "MenuItemEditorDocs";
-            this.MenuItemEditorDocs.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemEditorDocs.Size = new System.Drawing.Size(214, 22);
             this.MenuItemEditorDocs.Text = "Editor Documentation";
             // 
             // MenuItemEditorRepo
             // 
             this.MenuItemEditorRepo.Image = ((System.Drawing.Image)(resources.GetObject("MenuItemEditorRepo.Image")));
             this.MenuItemEditorRepo.Name = "MenuItemEditorRepo";
-            this.MenuItemEditorRepo.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemEditorRepo.Size = new System.Drawing.Size(214, 22);
             this.MenuItemEditorRepo.Text = "Editor GitHub Repository";
             // 
             // MenuHelpSeparator2
             // 
             this.MenuHelpSeparator2.Name = "MenuHelpSeparator2";
-            this.MenuHelpSeparator2.Size = new System.Drawing.Size(199, 6);
+            this.MenuHelpSeparator2.Size = new System.Drawing.Size(211, 6);
             // 
             // MenuItemAbout
             // 
             this.MenuItemAbout.Name = "MenuItemAbout";
             this.MenuItemAbout.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.MenuItemAbout.Size = new System.Drawing.Size(202, 22);
+            this.MenuItemAbout.Size = new System.Drawing.Size(214, 22);
             this.MenuItemAbout.Text = "About RozWorld Editor";
             // 
             // TabUI
@@ -490,13 +492,13 @@
             this.ContextSeparatorWindowsDelete,
             this.deleteAndCloseToolStripMenuItem});
             this.ContextTabs.Name = "contextMenuStrip1";
-            this.ContextTabs.Size = new System.Drawing.Size(188, 248);
+            this.ContextTabs.Size = new System.Drawing.Size(202, 248);
             // 
             // ContextCloseTab
             // 
             this.ContextCloseTab.Image = ((System.Drawing.Image)(resources.GetObject("ContextCloseTab.Image")));
             this.ContextCloseTab.Name = "ContextCloseTab";
-            this.ContextCloseTab.Size = new System.Drawing.Size(187, 22);
+            this.ContextCloseTab.Size = new System.Drawing.Size(201, 22);
             this.ContextCloseTab.Text = "Close Tab";
             this.ContextCloseTab.Click += new System.EventHandler(this.ContextCloseTab_Click);
             // 
@@ -504,58 +506,58 @@
             // 
             this.ContextCloseAllExclusive.Image = ((System.Drawing.Image)(resources.GetObject("ContextCloseAllExclusive.Image")));
             this.ContextCloseAllExclusive.Name = "ContextCloseAllExclusive";
-            this.ContextCloseAllExclusive.Size = new System.Drawing.Size(187, 22);
+            this.ContextCloseAllExclusive.Size = new System.Drawing.Size(201, 22);
             this.ContextCloseAllExclusive.Text = "Close All Except This";
             // 
             // ContextCloseAllLeft
             // 
             this.ContextCloseAllLeft.Image = global::RozWorld_Editor.Properties.Resources.LeftArrowIcon;
             this.ContextCloseAllLeft.Name = "ContextCloseAllLeft";
-            this.ContextCloseAllLeft.Size = new System.Drawing.Size(187, 22);
+            this.ContextCloseAllLeft.Size = new System.Drawing.Size(201, 22);
             this.ContextCloseAllLeft.Text = "Close All on the Left";
             // 
             // ContextCloseAllRight
             // 
             this.ContextCloseAllRight.Image = global::RozWorld_Editor.Properties.Resources.RightArrowIcon;
             this.ContextCloseAllRight.Name = "ContextCloseAllRight";
-            this.ContextCloseAllRight.Size = new System.Drawing.Size(187, 22);
+            this.ContextCloseAllRight.Size = new System.Drawing.Size(201, 22);
             this.ContextCloseAllRight.Text = "Close All on the Right";
             // 
             // ContextSeparatorCloseSave
             // 
             this.ContextSeparatorCloseSave.Name = "ContextSeparatorCloseSave";
-            this.ContextSeparatorCloseSave.Size = new System.Drawing.Size(184, 6);
+            this.ContextSeparatorCloseSave.Size = new System.Drawing.Size(198, 6);
             // 
             // ContextSave
             // 
             this.ContextSave.Image = ((System.Drawing.Image)(resources.GetObject("ContextSave.Image")));
             this.ContextSave.Name = "ContextSave";
-            this.ContextSave.Size = new System.Drawing.Size(187, 22);
+            this.ContextSave.Size = new System.Drawing.Size(201, 22);
             this.ContextSave.Text = "Save";
             // 
             // ContextSaveAs
             // 
             this.ContextSaveAs.Image = ((System.Drawing.Image)(resources.GetObject("ContextSaveAs.Image")));
             this.ContextSaveAs.Name = "ContextSaveAs";
-            this.ContextSaveAs.Size = new System.Drawing.Size(187, 22);
+            this.ContextSaveAs.Size = new System.Drawing.Size(201, 22);
             this.ContextSaveAs.Text = "Save As";
             // 
             // ContextSeparatorSaveOpen
             // 
             this.ContextSeparatorSaveOpen.Name = "ContextSeparatorSaveOpen";
-            this.ContextSeparatorSaveOpen.Size = new System.Drawing.Size(184, 6);
+            this.ContextSeparatorSaveOpen.Size = new System.Drawing.Size(198, 6);
             // 
             // ContextOpenContaining
             // 
             this.ContextOpenContaining.Image = ((System.Drawing.Image)(resources.GetObject("ContextOpenContaining.Image")));
             this.ContextOpenContaining.Name = "ContextOpenContaining";
-            this.ContextOpenContaining.Size = new System.Drawing.Size(187, 22);
+            this.ContextOpenContaining.Size = new System.Drawing.Size(201, 22);
             this.ContextOpenContaining.Text = "Open Containing Folder";
             // 
             // ContextSeparatorOpenWindows
             // 
             this.ContextSeparatorOpenWindows.Name = "ContextSeparatorOpenWindows";
-            this.ContextSeparatorOpenWindows.Size = new System.Drawing.Size(184, 6);
+            this.ContextSeparatorOpenWindows.Size = new System.Drawing.Size(198, 6);
             // 
             // ContextMenuMoveTo
             // 
@@ -564,20 +566,20 @@
             this.ContextSeparatorMoveTo});
             this.ContextMenuMoveTo.Image = ((System.Drawing.Image)(resources.GetObject("ContextMenuMoveTo.Image")));
             this.ContextMenuMoveTo.Name = "ContextMenuMoveTo";
-            this.ContextMenuMoveTo.Size = new System.Drawing.Size(187, 22);
+            this.ContextMenuMoveTo.Size = new System.Drawing.Size(201, 22);
             this.ContextMenuMoveTo.Text = "Move to...";
             // 
             // ContextMoveNewWindow
             // 
             this.ContextMoveNewWindow.Image = ((System.Drawing.Image)(resources.GetObject("ContextMoveNewWindow.Image")));
             this.ContextMoveNewWindow.Name = "ContextMoveNewWindow";
-            this.ContextMoveNewWindow.Size = new System.Drawing.Size(136, 22);
+            this.ContextMoveNewWindow.Size = new System.Drawing.Size(145, 22);
             this.ContextMoveNewWindow.Text = "New Window";
             // 
             // ContextSeparatorMoveTo
             // 
             this.ContextSeparatorMoveTo.Name = "ContextSeparatorMoveTo";
-            this.ContextSeparatorMoveTo.Size = new System.Drawing.Size(133, 6);
+            this.ContextSeparatorMoveTo.Size = new System.Drawing.Size(142, 6);
             // 
             // ContextMenuCloneTo
             // 
@@ -586,31 +588,31 @@
             this.ContextSeparatorCloneTo});
             this.ContextMenuCloneTo.Image = ((System.Drawing.Image)(resources.GetObject("ContextMenuCloneTo.Image")));
             this.ContextMenuCloneTo.Name = "ContextMenuCloneTo";
-            this.ContextMenuCloneTo.Size = new System.Drawing.Size(187, 22);
+            this.ContextMenuCloneTo.Size = new System.Drawing.Size(201, 22);
             this.ContextMenuCloneTo.Text = "Clone to...";
             // 
             // ContextCloneNewWindow
             // 
             this.ContextCloneNewWindow.Image = ((System.Drawing.Image)(resources.GetObject("ContextCloneNewWindow.Image")));
             this.ContextCloneNewWindow.Name = "ContextCloneNewWindow";
-            this.ContextCloneNewWindow.Size = new System.Drawing.Size(136, 22);
+            this.ContextCloneNewWindow.Size = new System.Drawing.Size(145, 22);
             this.ContextCloneNewWindow.Text = "New Window";
             // 
             // ContextSeparatorCloneTo
             // 
             this.ContextSeparatorCloneTo.Name = "ContextSeparatorCloneTo";
-            this.ContextSeparatorCloneTo.Size = new System.Drawing.Size(133, 6);
+            this.ContextSeparatorCloneTo.Size = new System.Drawing.Size(142, 6);
             // 
             // ContextSeparatorWindowsDelete
             // 
             this.ContextSeparatorWindowsDelete.Name = "ContextSeparatorWindowsDelete";
-            this.ContextSeparatorWindowsDelete.Size = new System.Drawing.Size(184, 6);
+            this.ContextSeparatorWindowsDelete.Size = new System.Drawing.Size(198, 6);
             // 
             // deleteAndCloseToolStripMenuItem
             // 
             this.deleteAndCloseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteAndCloseToolStripMenuItem.Image")));
             this.deleteAndCloseToolStripMenuItem.Name = "deleteAndCloseToolStripMenuItem";
-            this.deleteAndCloseToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.deleteAndCloseToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.deleteAndCloseToolStripMenuItem.Text = "Delete and Close";
             // 
             // MainForm
