@@ -21,7 +21,7 @@ namespace RozWorld_Editor.Tab
         public string AssociatedFilename
         {
             get;
-            private set;
+            protected set;
         }
 
         /**

@@ -11,6 +11,7 @@
 
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace RozWorld_Editor
@@ -177,6 +178,54 @@ namespace RozWorld_Editor
 
 
         /// <summary>
+        /// [Event] "* > Open" clicked.
+        /// </summary>
+        public void OpenItem_Click(object sender, EventArgs e)
+        {
+            var openDialog = new OpenFileDialog();
+
+            openDialog.Filter = "RozWorld Files (*.bin, *.dat, *.wld, *.seg)|*.bin;*.dat;*.wld;*.seg";
+            openDialog.Title = "Open";
+
+            if (openDialog.ShowDialog() == DialogResult.OK)
+            {
+                switch (Path.GetExtension(openDialog.FileName))
+                {
+                    /**
+                     * GUIOMETRY.BIN
+                     */
+                    case ".bin":
+                        TabUI.TabPages.Add(new Tab.GUIOMETRYEditor(this.TabUI,
+                            NextGUIOMETRYTabID, openDialog.FileName));
+                        TabUI.SelectedIndex = TabUI.TabCount - 1; // Temporarily here
+                        break;
+
+                    /**
+                     * Player
+                     */
+                    case ".dat":
+                        // TODO: Open a player tab with the data in
+                        break;
+
+                    /**
+                     * World
+                     */
+                    case ".wld":
+                        // TODO: Open a world tab with the data in
+                        break;
+
+                    /**
+                     * World Segment
+                     */
+                    case ".seg":
+                        // TODO: Open a world tab with the data in
+                        break;
+                }
+            }
+        }
+
+
+        /// <summary>
         /// [Event] "* > New > World" menu item clicked.
         /// </summary>
         public void NewWorld_Click(object sender, EventArgs e)
@@ -219,14 +268,20 @@ namespace RozWorld_Editor
 
 
         /// <summary>
-        /// [Event] "* > Undo" menu item clicked.
+        /// [Event] "* > Save" clicked.
         /// </summary>
-        public void UndoItem_Click(object sender, EventArgs e)
+        public void SaveItem_Click(object sender, EventArgs e)
         {
-            if (TabUI.TabCount > 0)
-            {
-                ((Tab.EditorTab)TabUI.SelectedTab).Undo();
-            }
+            // TODO: Call save here, or save as if there's no associated file
+        }
+
+
+        /// <summary>
+        /// [Event] "* > Save All" clicked.
+        /// </summary>
+        public void SaveAllItem_Click(object sender, EventArgs e)
+        {
+            // TODO: Call a save on every tab
         }
 
 
@@ -239,6 +294,18 @@ namespace RozWorld_Editor
             string toolbar = menuItemSender.Name.Substring(11);
 
             EditorEnvironment.SetToolbarStatus(toolbar, !menuItemSender.Checked);
+        }
+
+
+        /// <summary>
+        /// [Event] "* > Undo" menu item clicked.
+        /// </summary>
+        public void UndoItem_Click(object sender, EventArgs e)
+        {
+            if (TabUI.TabCount > 0)
+            {
+                ((Tab.EditorTab)TabUI.SelectedTab).Undo();
+            }
         }
 
 
@@ -366,16 +433,20 @@ namespace RozWorld_Editor
 
 
         /// <summary>
+        /// [Event] "File > Save As" clicked.
+        /// </summary>
+        private void MenuItemSaveAs_Click(object sender, EventArgs e)
+        {
+            // TODO: Use a save dialog here then call save
+        }
+
+
+        /// <summary>
         /// [Event] "View > New Window" clicked.
         /// </summary>
         private void MenuItemNewWindow_Click(object sender, EventArgs e)
         {
             EditorEnvironment.CreateWindow(EditorEnvironment.GenerateWindowName());
-        }
-
-        private void MenuItemSave_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

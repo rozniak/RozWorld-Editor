@@ -176,6 +176,7 @@
             this.MenuItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.MenuItemOpen.Size = new System.Drawing.Size(197, 22);
             this.MenuItemOpen.Text = "Open...";
+            this.MenuItemOpen.Click += new System.EventHandler(this.OpenItem_Click);
             // 
             // MenuFileSeparator1
             // 
@@ -189,7 +190,7 @@
             this.MenuItemSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.MenuItemSave.Size = new System.Drawing.Size(197, 22);
             this.MenuItemSave.Text = "Save";
-            this.MenuItemSave.Click += new System.EventHandler(this.MenuItemSave_Click);
+            this.MenuItemSave.Click += new System.EventHandler(this.SaveItem_Click);
             // 
             // MenuItemSaveAs
             // 
@@ -199,6 +200,7 @@
             | System.Windows.Forms.Keys.S)));
             this.MenuItemSaveAs.Size = new System.Drawing.Size(197, 22);
             this.MenuItemSaveAs.Text = "Save As...";
+            this.MenuItemSaveAs.Click += new System.EventHandler(this.MenuItemSaveAs_Click);
             // 
             // MenuItemSaveAll
             // 
@@ -208,6 +210,7 @@
             | System.Windows.Forms.Keys.S)));
             this.MenuItemSaveAll.Size = new System.Drawing.Size(197, 22);
             this.MenuItemSaveAll.Text = "Save All...";
+            this.MenuItemSaveAll.Click += new System.EventHandler(this.SaveAllItem_Click);
             // 
             // MenuFileSeparator2
             // 

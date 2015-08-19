@@ -130,6 +130,7 @@ namespace RozWorld_Editor.Toolbar
             ButtonOpen.Name = "ButtonOpen";
             ButtonOpen.Size = new System.Drawing.Size(23, 22);
             ButtonOpen.Text = "Open File (CTRL+O)";
+            ButtonOpen.Click += new System.EventHandler(ParentForm.OpenItem_Click);
 
             /**
              * ButtonSave
@@ -140,6 +141,7 @@ namespace RozWorld_Editor.Toolbar
             ButtonSave.Name = "ButtonSave";
             ButtonSave.Size = new System.Drawing.Size(23, 22);
             ButtonSave.Text = "Save (CTRL+S)";
+            ButtonSave.Click += new System.EventHandler(ParentForm.SaveItem_Click);
 
             /**
              * ButtonSaveAll
