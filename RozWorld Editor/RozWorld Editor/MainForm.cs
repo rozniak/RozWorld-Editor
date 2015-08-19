@@ -63,6 +63,63 @@ namespace RozWorld_Editor
 
 
         /// <summary>
+        /// Closes all the tabs in this window.
+        /// </summary>
+        /// <returns>Whether all the tabs were successfully closed or not.</returns>
+        public bool CloseAllTabs()
+        {
+            bool stillClosing = true;
+
+            if (TabUI.TabCount > 0)
+            {
+                int i = 0;
+
+                do
+                {
+                    stillClosing = ((Tab.EditorTab)TabUI.TabPages[i]).Close();
+                } while (stillClosing && ++i < TabUI.TabCount);
+            }
+
+            return stillClosing;
+        }
+
+
+        /// <summary>
+        /// Opens a save as dialog box filtered for the current tab.
+        /// </summary>
+        /// <param name="tabTitle">The title of the current tab, used to determine filters.</param>
+        /// <returns>The desired filename/path selected by the user.</returns>
+        private string SaveAs(string tabTitle = "")
+        {
+            var saveDialog = new SaveFileDialog();
+
+            saveDialog.Title = "Save As";
+
+            // Determine save filter
+            if (tabTitle.StartsWith("GUIOMETRY"))
+            {
+                saveDialog.Filter = "GUIOMETRY (*.bin)|*.bin";
+            }
+            else if (tabTitle.StartsWith("Player"))
+            {
+                saveDialog.Filter = "Player File (*.dat)|*.dat;";
+            }
+            else if (tabTitle.StartsWith("World"))
+            {
+                saveDialog.Filter = "World Segment (*.seg)|*.seg";
+            }
+            else
+            {
+                saveDialog.Filter = "RozWorld Files (*.bin, *.dat, *.wld, *.seg)|*.bin;*.dat;*.wld;*.seg";
+            }
+
+            if (saveDialog.ShowDialog() == DialogResult.OK) return saveDialog.FileName;
+
+            return "";
+        }
+
+
+        /// <summary>
         /// Sets the status of a toolbar on or off.
         /// </summary>
         /// <param name="toolbar">The name of the toolbar.</param>
@@ -92,28 +149,6 @@ namespace RozWorld_Editor
 
             MenuStrip.SendToBack(); // Make sure the main menu strip stays at the top
             UpdateToolbarsTabDetails(); // Update the toolbar on the current tab's details
-        }
-
-
-        /// <summary>
-        /// Closes all the tabs in this window.
-        /// </summary>
-        /// <returns>Whether all the tabs were successfully closed or not.</returns>
-        public bool CloseAllTabs()
-        {
-            bool stillClosing = true;
-
-            if (TabUI.TabCount > 0)
-            {
-                int i = 0;
-
-                do
-                {
-                    stillClosing = ((Tab.EditorTab)TabUI.TabPages[i]).Close();
-                } while (stillClosing && ++i < TabUI.TabCount);
-            }
-
-            return stillClosing;
         }
 
 
@@ -272,7 +307,19 @@ namespace RozWorld_Editor
         /// </summary>
         public void SaveItem_Click(object sender, EventArgs e)
         {
-            // TODO: Call save here, or save as if there's no associated file
+            var currentTab = (Tab.EditorTab)TabUI.SelectedTab;
+
+            if (currentTab.AssociatedFilename != "")
+            {
+                currentTab.Save();
+            }
+            else
+            {
+                // Doesn't have a file name yet, let the user pick one
+                string filename = SaveAs(currentTab.Text);
+
+                currentTab.Save(filename);
+            }
         }
 
 
@@ -437,7 +484,13 @@ namespace RozWorld_Editor
         /// </summary>
         private void MenuItemSaveAs_Click(object sender, EventArgs e)
         {
-            // TODO: Use a save dialog here then call save
+            var currentTab = (Tab.EditorTab)TabUI.SelectedTab;
+            string filename = SaveAs(currentTab.Text);
+
+            if (filename != "")
+            {
+                currentTab.Save(filename);
+            }
         }
 
 

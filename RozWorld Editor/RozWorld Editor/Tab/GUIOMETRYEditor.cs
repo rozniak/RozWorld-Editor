@@ -1201,6 +1201,7 @@ namespace RozWorld_Editor.Tab
             if (file == "")
             {
                 Text = "GUIOMETRY - *.bin";
+                this.AssociatedFilename = "";
                 this.IsUnsaved = true;
             }
             else
