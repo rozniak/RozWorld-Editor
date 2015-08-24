@@ -64,9 +64,9 @@ namespace RozWorld_Editor.Tab
         private Label LabelButtonEdgeSW = new Label();
         private PictureBox PictureButtonEdgeSW = new PictureBox();
         private Button ButtonButtonEdgeSW = new Button();
-        private Label LabelButtonEdgeNE = new Label();
-        private PictureBox PictureButtonEdgeNE = new PictureBox();
-        private Button ButtonButtonEdgeNE = new Button();
+        private Label LabelButtonEdgeSE = new Label();
+        private PictureBox PictureButtonEdgeSE = new PictureBox();
+        private Button ButtonButtonEdgeSE = new Button();
         //
         private GroupBox GroupButtonText = new GroupBox();
         private CheckBox CheckButtonCentreText = new CheckBox();
@@ -88,9 +88,9 @@ namespace RozWorld_Editor.Tab
         private Label LabelTextEdgeSW = new Label();
         private PictureBox PictureTextEdgeSW = new PictureBox();
         private Button ButtonTextEdgeSW = new Button();
-        private Label LabelTextEdgeNE = new Label();
-        private PictureBox PictureTextEdgeNE = new PictureBox();
-        private Button ButtonTextEdgeNE = new Button();
+        private Label LabelTextEdgeSE = new Label();
+        private PictureBox PictureTextEdgeSE = new PictureBox();
+        private Button ButtonTextEdgeSE = new Button();
         //
         private GroupBox GroupTextText = new GroupBox();
         private CheckBox CheckTextCentreText = new CheckBox();
@@ -112,9 +112,9 @@ namespace RozWorld_Editor.Tab
         private Label LabelCheckEdgeSW = new Label();
         private PictureBox PictureCheckEdgeSW = new PictureBox();
         private Button ButtonCheckEdgeSW = new Button();
-        private Label LabelCheckEdgeNE = new Label();
-        private PictureBox PictureCheckEdgeNE = new PictureBox();
-        private Button ButtonCheckEdgeNE = new Button();
+        private Label LabelCheckEdgeSE = new Label();
+        private PictureBox PictureCheckEdgeSE = new PictureBox();
+        private Button ButtonCheckEdgeSE = new Button();
         private Label LabelCheckTick = new Label();
         private PictureBox PictureCheckTick = new PictureBox();
         private Button ButtonCheckTick = new Button();
@@ -460,9 +460,9 @@ namespace RozWorld_Editor.Tab
              * GroupButtonEditor
              */
             GroupButtonEditor.Controls.Add(GroupButtonText);
-            GroupButtonEditor.Controls.Add(ButtonButtonEdgeNE);
-            GroupButtonEditor.Controls.Add(LabelButtonEdgeNE);
-            GroupButtonEditor.Controls.Add(PictureButtonEdgeNE);
+            GroupButtonEditor.Controls.Add(ButtonButtonEdgeSE);
+            GroupButtonEditor.Controls.Add(LabelButtonEdgeSE);
+            GroupButtonEditor.Controls.Add(PictureButtonEdgeSE);
             GroupButtonEditor.Controls.Add(ButtonButtonEdgeSW);
             GroupButtonEditor.Controls.Add(LabelButtonEdgeSW);
             GroupButtonEditor.Controls.Add(PictureButtonEdgeSW);
@@ -607,35 +607,35 @@ namespace RozWorld_Editor.Tab
             ButtonButtonEdgeSW.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
-             * LabelButtonEdgeNE
+             * LabelButtonEdgeSE
              */
-            LabelButtonEdgeNE.AutoSize = true;
-            LabelButtonEdgeNE.Location = new System.Drawing.Point(222, 16);
-            LabelButtonEdgeNE.Name = "LabelButtonEdgeNE";
-            LabelButtonEdgeNE.Size = new System.Drawing.Size(53, 13);
-            LabelButtonEdgeNE.TabIndex = 13;
-            LabelButtonEdgeNE.Text = "Edge NE:";
+            LabelButtonEdgeSE.AutoSize = true;
+            LabelButtonEdgeSE.Location = new System.Drawing.Point(222, 16);
+            LabelButtonEdgeSE.Name = "LabelButtonEdgeSE";
+            LabelButtonEdgeSE.Size = new System.Drawing.Size(53, 13);
+            LabelButtonEdgeSE.TabIndex = 13;
+            LabelButtonEdgeSE.Text = "Edge SE:";
 
             /**
-             * PictureButtonEdgeNE
+             * PictureButtonEdgeSE
              */
-            PictureButtonEdgeNE.Location = new System.Drawing.Point(225, 32);
-            PictureButtonEdgeNE.Name = "PictureButtonEdgeNE";
-            PictureButtonEdgeNE.Size = new System.Drawing.Size(48, 48);
-            PictureButtonEdgeNE.SizeMode = PictureBoxSizeMode.CenterImage;
-            PictureButtonEdgeNE.TabIndex = 12;
-            PictureButtonEdgeNE.TabStop = false;
+            PictureButtonEdgeSE.Location = new System.Drawing.Point(225, 32);
+            PictureButtonEdgeSE.Name = "PictureButtonEdgeSE";
+            PictureButtonEdgeSE.Size = new System.Drawing.Size(48, 48);
+            PictureButtonEdgeSE.SizeMode = PictureBoxSizeMode.CenterImage;
+            PictureButtonEdgeSE.TabIndex = 12;
+            PictureButtonEdgeSE.TabStop = false;
 
             /**
-             * ButtonButtonEdgeNE
+             * ButtonButtonEdgeSE
              */
-            ButtonButtonEdgeNE.Location = new System.Drawing.Point(225, 86);
-            ButtonButtonEdgeNE.Name = "ButtonButtonEdgeNE";
-            ButtonButtonEdgeNE.Size = new System.Drawing.Size(48, 23);
-            ButtonButtonEdgeNE.TabIndex = 14;
-            ButtonButtonEdgeNE.Text = "Set...";
-            ButtonButtonEdgeNE.UseVisualStyleBackColor = true;
-            ButtonButtonEdgeNE.Click += new EventHandler(ButtonElementEdit_Click);
+            ButtonButtonEdgeSE.Location = new System.Drawing.Point(225, 86);
+            ButtonButtonEdgeSE.Name = "ButtonButtonEdgeSE";
+            ButtonButtonEdgeSE.Size = new System.Drawing.Size(48, 23);
+            ButtonButtonEdgeSE.TabIndex = 14;
+            ButtonButtonEdgeSE.Text = "Set...";
+            ButtonButtonEdgeSE.UseVisualStyleBackColor = true;
+            ButtonButtonEdgeSE.Click += new EventHandler(ButtonElementEdit_Click);
 
 
             /**
@@ -707,9 +707,9 @@ namespace RozWorld_Editor.Tab
              * GroupTextEditor
              */
             GroupTextEditor.Controls.Add(GroupTextText);
-            GroupTextEditor.Controls.Add(ButtonTextEdgeNE);
-            GroupTextEditor.Controls.Add(LabelTextEdgeNE);
-            GroupTextEditor.Controls.Add(PictureTextEdgeNE);
+            GroupTextEditor.Controls.Add(ButtonTextEdgeSE);
+            GroupTextEditor.Controls.Add(LabelTextEdgeSE);
+            GroupTextEditor.Controls.Add(PictureTextEdgeSE);
             GroupTextEditor.Controls.Add(ButtonTextEdgeSW);
             GroupTextEditor.Controls.Add(LabelTextEdgeSW);
             GroupTextEditor.Controls.Add(PictureTextEdgeSW);
@@ -854,35 +854,35 @@ namespace RozWorld_Editor.Tab
             ButtonTextEdgeSW.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
-             * LabelTextEdgeNE
+             * LabelTextEdgeSE
              */
-            LabelTextEdgeNE.AutoSize = true;
-            LabelTextEdgeNE.Location = new System.Drawing.Point(222, 16);
-            LabelTextEdgeNE.Name = "LabelTextEdgeNE";
-            LabelTextEdgeNE.Size = new System.Drawing.Size(53, 13);
-            LabelTextEdgeNE.TabIndex = 13;
-            LabelTextEdgeNE.Text = "Edge NE:";
+            LabelTextEdgeSE.AutoSize = true;
+            LabelTextEdgeSE.Location = new System.Drawing.Point(222, 16);
+            LabelTextEdgeSE.Name = "LabelTextEdgeSE";
+            LabelTextEdgeSE.Size = new System.Drawing.Size(53, 13);
+            LabelTextEdgeSE.TabIndex = 13;
+            LabelTextEdgeSE.Text = "Edge SE:";
 
             /**
-             * PictureTextEdgeNE
+             * PictureTextEdgeSE
              */
-            PictureTextEdgeNE.Location = new System.Drawing.Point(225, 32);
-            PictureTextEdgeNE.Name = "PictureTextEdgeNE";
-            PictureTextEdgeNE.Size = new System.Drawing.Size(48, 48);
-            PictureTextEdgeNE.SizeMode = PictureBoxSizeMode.CenterImage;
-            PictureTextEdgeNE.TabIndex = 12;
-            PictureTextEdgeNE.TabStop = false;
+            PictureTextEdgeSE.Location = new System.Drawing.Point(225, 32);
+            PictureTextEdgeSE.Name = "PictureTextEdgeSE";
+            PictureTextEdgeSE.Size = new System.Drawing.Size(48, 48);
+            PictureTextEdgeSE.SizeMode = PictureBoxSizeMode.CenterImage;
+            PictureTextEdgeSE.TabIndex = 12;
+            PictureTextEdgeSE.TabStop = false;
 
             /**
-             * ButtonTextEdgeNE
+             * ButtonTextEdgeSE
              */
-            ButtonTextEdgeNE.Location = new System.Drawing.Point(225, 86);
-            ButtonTextEdgeNE.Name = "ButtonTextEdgeNE";
-            ButtonTextEdgeNE.Size = new System.Drawing.Size(48, 23);
-            ButtonTextEdgeNE.TabIndex = 14;
-            ButtonTextEdgeNE.Text = "Set...";
-            ButtonTextEdgeNE.UseVisualStyleBackColor = true;
-            ButtonTextEdgeNE.Click += new EventHandler(ButtonElementEdit_Click);
+            ButtonTextEdgeSE.Location = new System.Drawing.Point(225, 86);
+            ButtonTextEdgeSE.Name = "ButtonTextEdgeSE";
+            ButtonTextEdgeSE.Size = new System.Drawing.Size(48, 23);
+            ButtonTextEdgeSE.TabIndex = 14;
+            ButtonTextEdgeSE.Text = "Set...";
+            ButtonTextEdgeSE.UseVisualStyleBackColor = true;
+            ButtonTextEdgeSE.Click += new EventHandler(ButtonElementEdit_Click);
 
             
             /**
@@ -954,9 +954,9 @@ namespace RozWorld_Editor.Tab
             GroupCheckEditor.Controls.Add(ButtonCheckTick);
             GroupCheckEditor.Controls.Add(LabelCheckTick);
             GroupCheckEditor.Controls.Add(PictureCheckTick);
-            GroupCheckEditor.Controls.Add(ButtonCheckEdgeNE);
-            GroupCheckEditor.Controls.Add(LabelCheckEdgeNE);
-            GroupCheckEditor.Controls.Add(PictureCheckEdgeNE);
+            GroupCheckEditor.Controls.Add(ButtonCheckEdgeSE);
+            GroupCheckEditor.Controls.Add(LabelCheckEdgeSE);
+            GroupCheckEditor.Controls.Add(PictureCheckEdgeSE);
             GroupCheckEditor.Controls.Add(ButtonCheckEdgeSW);
             GroupCheckEditor.Controls.Add(LabelCheckEdgeSW);
             GroupCheckEditor.Controls.Add(PictureCheckEdgeSW);
@@ -1101,35 +1101,35 @@ namespace RozWorld_Editor.Tab
             ButtonCheckEdgeSW.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
-             * LabelCheckEdgeNE
+             * LabelCheckEdgeSE
              */
-            LabelCheckEdgeNE.AutoSize = true;
-            LabelCheckEdgeNE.Location = new System.Drawing.Point(222, 16);
-            LabelCheckEdgeNE.Name = "LabelCheckEdgeNE";
-            LabelCheckEdgeNE.Size = new System.Drawing.Size(53, 13);
-            LabelCheckEdgeNE.TabIndex = 13;
-            LabelCheckEdgeNE.Text = "Edge NE:";
+            LabelCheckEdgeSE.AutoSize = true;
+            LabelCheckEdgeSE.Location = new System.Drawing.Point(222, 16);
+            LabelCheckEdgeSE.Name = "LabelCheckEdgeSE";
+            LabelCheckEdgeSE.Size = new System.Drawing.Size(53, 13);
+            LabelCheckEdgeSE.TabIndex = 13;
+            LabelCheckEdgeSE.Text = "Edge SE:";
 
             /**
-             * PictureCheckEdgeNE
+             * PictureCheckEdgeSE
              */
-            PictureCheckEdgeNE.Location = new System.Drawing.Point(225, 32);
-            PictureCheckEdgeNE.Name = "PictureCheckEdgeNE";
-            PictureCheckEdgeNE.Size = new System.Drawing.Size(48, 48);
-            PictureCheckEdgeNE.SizeMode = PictureBoxSizeMode.CenterImage;
-            PictureCheckEdgeNE.TabIndex = 12;
-            PictureCheckEdgeNE.TabStop = false;
+            PictureCheckEdgeSE.Location = new System.Drawing.Point(225, 32);
+            PictureCheckEdgeSE.Name = "PictureCheckEdgeSE";
+            PictureCheckEdgeSE.Size = new System.Drawing.Size(48, 48);
+            PictureCheckEdgeSE.SizeMode = PictureBoxSizeMode.CenterImage;
+            PictureCheckEdgeSE.TabIndex = 12;
+            PictureCheckEdgeSE.TabStop = false;
 
             /**
-             * ButtonCheckEdgeNE
+             * ButtonCheckEdgeSE
              */
-            ButtonCheckEdgeNE.Location = new System.Drawing.Point(225, 86);
-            ButtonCheckEdgeNE.Name = "ButtonCheckEdgeNE";
-            ButtonCheckEdgeNE.Size = new System.Drawing.Size(48, 23);
-            ButtonCheckEdgeNE.TabIndex = 14;
-            ButtonCheckEdgeNE.Text = "Set...";
-            ButtonCheckEdgeNE.UseVisualStyleBackColor = true;
-            ButtonCheckEdgeNE.Click += new EventHandler(ButtonElementEdit_Click);
+            ButtonCheckEdgeSE.Location = new System.Drawing.Point(225, 86);
+            ButtonCheckEdgeSE.Name = "ButtonCheckEdgeSE";
+            ButtonCheckEdgeSE.Size = new System.Drawing.Size(48, 23);
+            ButtonCheckEdgeSE.TabIndex = 14;
+            ButtonCheckEdgeSE.Text = "Set...";
+            ButtonCheckEdgeSE.UseVisualStyleBackColor = true;
+            ButtonCheckEdgeSE.Click += new EventHandler(ButtonElementEdit_Click);
 
             /**
              * LabelCheckTick
@@ -1172,7 +1172,7 @@ namespace RozWorld_Editor.Tab
             Elements.Add("ButtonBody", new ElementInfo());
             Elements.Add("ButtonTop", new ElementInfo());
             Elements.Add("ButtonSide", new ElementInfo());
-            Elements.Add("ButtonEdgeNE", new ElementInfo());
+            Elements.Add("ButtonEdgeSE", new ElementInfo());
             Elements.Add("ButtonEdgeSW", new ElementInfo());
 
             /**
@@ -1181,7 +1181,7 @@ namespace RozWorld_Editor.Tab
             Elements.Add("TextBody", new ElementInfo());
             Elements.Add("TextTop", new ElementInfo());
             Elements.Add("TextSide", new ElementInfo());
-            Elements.Add("TextEdgeNE", new ElementInfo());
+            Elements.Add("TextEdgeSE", new ElementInfo());
             Elements.Add("TextEdgeSW", new ElementInfo());
 
             /**
@@ -1190,7 +1190,7 @@ namespace RozWorld_Editor.Tab
             Elements.Add("CheckBody", new ElementInfo());
             Elements.Add("CheckTop", new ElementInfo());
             Elements.Add("CheckSide", new ElementInfo());
-            Elements.Add("CheckEdgeNE", new ElementInfo());
+            Elements.Add("CheckEdgeSE", new ElementInfo());
             Elements.Add("CheckEdgeSW", new ElementInfo());
             Elements.Add("CheckTick", new ElementInfo());
 
