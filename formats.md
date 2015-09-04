@@ -14,28 +14,20 @@ The second section is the data itself, stored as their individual bytes. The fir
 
 The following data after that is split into sections itself, for each of the four font files, there will be the amount of characters included in the font (most likely 2 bytes since Unicode will be supported), and then after that the character and then that character's details. Here's a representation of what it looks like:
 
-VERSION 1 byte
+| Data                    | Length  |
+| ----------------------- | ------- |
+| Version                 | 1 Byte  |
+| Characters in Chat Font | 2 Bytes |
+| Character {             | 2 Bytes |
+| Blit Origin X           | 2 Bytes |
+| Blit Origin Y           | 2 Bytes |
+| Blit Destination X      | 2 Bytes |
+| Blit Destination Y      | 2 Bytes |
+| Before Line             | 1 Byte  |
+| After Line              | 1 Byte  |
+| Y-Offset                | 1 Byte  |
 
-
-CHARACTERS IN CHAT FONT 2 bytes
-
-CHARACTER 2 bytes
-
-BLIT ORIGIN X 1 byte
-
-BLIT ORIGIN Y 1 byte
-
-BLIT DESTINATION X 1 byte
-
-BLIT DESTINATION Y 1 byte
-
-BEFORE LINE 1 byte
-
-AFTER LINE 1 byte
-
-Y OFFSET 1 byte
-
- *repeat this block for the amount of characters specified in the font*
+// In progress
  
  
 CHARACTERS IN SMALL FONT 2 bytes
