@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="EditorEnvironment.cs" />
     <Compile Include="EditorSettings.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="IO\Files.cs" />
     <Compile Include="MainForm.cs">

@@ -139,6 +139,7 @@ namespace RozWorld_Editor.Tab
             ButtonOpenWorld.TabIndex = 6;
             ButtonOpenWorld.Text = "World...";
             ButtonOpenWorld.UseVisualStyleBackColor = true;
+            ButtonOpenWorld.Click += new System.EventHandler(ButtonOpenWorld_Click);
 
             /**
              * ButtonOpenPlayer
@@ -150,6 +151,7 @@ namespace RozWorld_Editor.Tab
             ButtonOpenPlayer.TabIndex = 7;
             ButtonOpenPlayer.Text = "Player...";
             ButtonOpenPlayer.UseVisualStyleBackColor = true;
+            ButtonOpenPlayer.Click += new System.EventHandler(ButtonOpenPlayer_Click);
 
             /**
              * ButtonOpenGUIOMETRY
@@ -161,8 +163,36 @@ namespace RozWorld_Editor.Tab
             ButtonOpenGUIOMETRY.TabIndex = 8;
             ButtonOpenGUIOMETRY.Text = "GUIOMETRY.BIN...";
             ButtonOpenGUIOMETRY.UseVisualStyleBackColor = true;
+            ButtonOpenGUIOMETRY.Click += new System.EventHandler(ButtonOpenGUIOMETRY_Click);
 
             #endregion
+        }
+
+
+        /// <summary>
+        /// [Event] "Open > GUIOMETRY.BIN..." button clicked.
+        /// </summary>
+        void ButtonOpenGUIOMETRY_Click(object sender, System.EventArgs e)
+        {
+            ParentForm.OpenFile(Filter.BIN);
+        }
+
+
+        /// <summary>
+        /// [Event] "Open > Player..." button clicked.
+        /// </summary>
+        void ButtonOpenPlayer_Click(object sender, System.EventArgs e)
+        {
+            ParentForm.OpenFile(Filter.DAT);
+        }
+
+
+        /// <summary>
+        /// [Event] "Open > World..." button clicked.
+        /// </summary>
+        void ButtonOpenWorld_Click(object sender, System.EventArgs e)
+        {
+            ParentForm.OpenFile(Filter.WLD_SEG);
         }
     }
 }

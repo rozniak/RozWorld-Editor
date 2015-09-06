@@ -85,6 +85,82 @@ namespace RozWorld_Editor
 
 
         /// <summary>
+        /// Opens an open dialog box with a supplied filter.
+        /// </summary>
+        /// <param name="filter">The desired filter.</param>
+        public void OpenFile(Filter filter)
+        {
+            var openDialog = new OpenFileDialog();
+
+            openDialog.Title = "Open";
+
+            switch (filter)
+            {
+                case Filter.BIN: // GUIOMETRY.BIN file
+                    openDialog.Filter = "GUIOMETRY (*.bin)|*.bin";
+                    break;
+
+                case Filter.DAT: // Player file
+                    openDialog.Filter = "Player File (*.dat)|*.dat;";
+                    break;
+
+                case Filter.SEG: // World segment
+                    openDialog.Filter = "World Segment (*.seg)|*.seg";
+                    break;
+
+                case Filter.WLD: // World file
+                    openDialog.Filter = "World File (*.wld)|*.wld";
+                    break;
+
+                case Filter.WLD_SEG:
+                    openDialog.Filter = "World Files (*.seg, *.wld)|*.seg;*.wld";
+                    break;
+
+                default:
+                case Filter.Any: // *.* files
+                    openDialog.Filter = "RozWorld Files (*.bin, *.dat, *.wld, *.seg)|*.bin;*.dat;*.wld;*.seg";
+                    break;
+            }
+
+            if (openDialog.ShowDialog() == DialogResult.OK)
+            {
+                switch (Path.GetExtension(openDialog.FileName).ToLower())
+                {
+                    /**
+                     * GUIOMETRY.BIN
+                     */
+                    case ".bin":
+                        TabUI.TabPages.Add(new Tab.GUIOMETRYEditor(this.TabUI,
+                            NextGUIOMETRYTabID, openDialog.FileName));
+                        TabUI.SelectedIndex = TabUI.TabCount - 1; // Temporarily here
+                        break;
+
+                    /**
+                     * Player
+                     */
+                    case ".dat":
+                        // TODO: Open a player tab with the data in
+                        break;
+
+                    /**
+                     * World
+                     */
+                    case ".wld":
+                        // TODO: Open a world tab with the data in
+                        break;
+
+                    /**
+                     * World Segment
+                     */
+                    case ".seg":
+                        // TODO: Open a world tab with the data in
+                        break;
+                }
+            }
+        }
+
+
+        /// <summary>
         /// Opens a save as dialog box filtered for the current tab.
         /// </summary>
         /// <param name="tabTitle">The title of the current tab, used to determine filters.</param>
@@ -217,46 +293,7 @@ namespace RozWorld_Editor
         /// </summary>
         public void OpenItem_Click(object sender, EventArgs e)
         {
-            var openDialog = new OpenFileDialog();
-
-            openDialog.Filter = "RozWorld Files (*.bin, *.dat, *.wld, *.seg)|*.bin;*.dat;*.wld;*.seg";
-            openDialog.Title = "Open";
-
-            if (openDialog.ShowDialog() == DialogResult.OK)
-            {
-                switch (Path.GetExtension(openDialog.FileName))
-                {
-                    /**
-                     * GUIOMETRY.BIN
-                     */
-                    case ".bin":
-                        TabUI.TabPages.Add(new Tab.GUIOMETRYEditor(this.TabUI,
-                            NextGUIOMETRYTabID, openDialog.FileName));
-                        TabUI.SelectedIndex = TabUI.TabCount - 1; // Temporarily here
-                        break;
-
-                    /**
-                     * Player
-                     */
-                    case ".dat":
-                        // TODO: Open a player tab with the data in
-                        break;
-
-                    /**
-                     * World
-                     */
-                    case ".wld":
-                        // TODO: Open a world tab with the data in
-                        break;
-
-                    /**
-                     * World Segment
-                     */
-                    case ".seg":
-                        // TODO: Open a world tab with the data in
-                        break;
-                }
-            }
+            OpenFile(Filter.Any);
         }
 
 
