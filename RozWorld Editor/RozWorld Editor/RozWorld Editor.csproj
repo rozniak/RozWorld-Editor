@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="DataClasses\CharacterInfo.cs" />
     <Compile Include="DataClasses\ElementInfo.cs" />
+    <Compile Include="DataClasses\FileFormat\GUIOMETRY.cs" />
     <Compile Include="DataClasses\FontInfo.cs" />
     <Compile Include="DataClasses\Texture.cs" />
     <Compile Include="Dialog\AddCharacter.cs">
@@ -82,6 +83,7 @@
     <Compile Include="Enums.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="IO\Files.cs" />
+    <Compile Include="IO\GameGUIOMETRY.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
