@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
+using RozWorld_Editor.DataClasses;
 using RozWorld_Editor.DataClasses.FileFormat;
 
 namespace RozWorld_Editor.IO
@@ -94,6 +95,19 @@ namespace RozWorld_Editor.IO
             } while (!nextSection);
 
             return null;
+        }
+
+
+        /// <summary>
+        /// Saves a GUIOMETRY.BIN data class to the disk.
+        /// </summary>
+        /// <param name="data">The GUIOMETRY data class.</param>
+        /// <param name="filename">The filename to save as.</param>
+        /// <returns>Whether the save was successful or not.</returns>
+        public static bool Save(GUIOMETRY data, string filename)
+        {
+            // TODO: Incorporate format.md spec for saving here
+            return false;
         }
 
 
