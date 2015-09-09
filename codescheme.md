@@ -3,3 +3,23 @@ This document will outline the naming and formatting scheme used for the source-
 
 ---
 In-progress/review
+
+## Whitespace
+
+## Code Organisation
+
+## Block Comments
+
+## Line Comments
+
+## Class Names
+
+## Function Names
+
+## Global Variables
+
+## Backing Variables
+
+## Constants
+
+## Parameters / Local Variables

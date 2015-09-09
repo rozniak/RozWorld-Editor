@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld_Editor.DataClasses.GUIOMETRY -- 
+ * RozWorld_Editor.DataClasses.GUIOMETRY -- GUIOMETRY Data Class
  * 
  * This source-code is part of the RozWorld Editor project by rozza of Oddmatics:
  * <<http://www.oddmatics.co.uk>>
