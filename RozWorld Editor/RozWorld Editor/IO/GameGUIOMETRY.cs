@@ -106,7 +106,9 @@ namespace RozWorld_Editor.IO
         /// <returns>Whether the save was successful or not.</returns>
         public static bool Save(GUIOMETRY data, string filename)
         {
-            // TODO: Incorporate format.md spec for saving here
+            // Collect data class metadata
+            var textureMetadata = new Dictionary<int, string>();
+
             return false;
         }
 
@@ -154,6 +156,46 @@ namespace RozWorld_Editor.IO
                     
                 default:
                     return null;
+            }
+        }
+
+
+        /// <summary>
+        /// Gets the ID of a texture from the specified internal name.
+        /// </summary>
+        /// <param name="name">The internal name of the texture.</param>
+        /// <returns>The ID of the texture specified if it matches, 0 otherwise.</returns>
+        public static byte GetTextureNameToID(string name)
+        {
+            switch (name)
+            {
+                case "ChatFont": return 1;
+                case "SmallFont": return 2;
+                case "MediumFont": return 3;
+                case "HugeFont": return 4;
+
+                case "ButtonBody": return 5;
+                case "ButtonTop": return 6;
+                case "ButtonSide": return 7;
+                case "ButtonEdgeSW": return 8;
+                case "ButtonEdgeSE": return 9;
+
+                case "TextBody": return 10;
+                case "TextTop": return 11;
+                case "TextSide": return 12;
+                case "TextEdgeSW": return 13;
+                case "TextEdgeSE": return 14;
+
+                case "CheckBody": return 15;
+                case "CheckTop": return 16;
+                case "CheckSide": return 17;
+                case "CheckEdgeSW": return 18;
+                case "CheckEdgeSE": return 19;
+                case "CheckTick": return 20;
+
+                case "End":
+                default:
+                    return 0;
             }
         }
     }
