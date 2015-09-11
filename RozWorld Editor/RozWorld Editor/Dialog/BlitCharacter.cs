@@ -55,7 +55,6 @@ namespace RozWorld_Editor.Dialog
             NumericBlitOriginY.Maximum = texture.Size.Height;
             NumericBlitDestinationX.Maximum = texture.Size.Width;
             NumericBlitDestinationY.Maximum = texture.Size.Height;
-            //rozza sucks
 
             try
             {
