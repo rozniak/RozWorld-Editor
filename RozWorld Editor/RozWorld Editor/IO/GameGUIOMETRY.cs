@@ -109,6 +109,26 @@ namespace RozWorld_Editor.IO
             // Collect data class metadata
             var textureMetadata = new Dictionary<int, string>();
 
+            // For each of these, only add the metadata if the source of the texture is not blank or null
+
+            // Add font metadata
+            if (!string.IsNullOrEmpty(data.ChatFontInfo.Texture.Source))
+                textureMetadata.Add(GetTextureNameToID("ChatFont"), data.ChatFontInfo.Texture.Source);
+            if (!string.IsNullOrEmpty(data.SmallFontInfo.Texture.Source))
+                textureMetadata.Add(GetTextureNameToID("SmallFont"), data.SmallFontInfo.Texture.Source);
+            if (!string.IsNullOrEmpty(data.MediumFontInfo.Texture.Source))
+                textureMetadata.Add(GetTextureNameToID("MediumFont"), data.MediumFontInfo.Texture.Source);
+            if (!string.IsNullOrEmpty(data.HugeFontInfo.Texture.Source))
+                textureMetadata.Add(GetTextureNameToID("HugeFont"), data.HugeFontInfo.Texture.Source);
+
+            // Add element metadata
+            foreach (var element in data.Elements)
+            {
+                // In here element.Key is the internal name of the element, and element.Value is the ElementInfo object
+                if (!string.IsNullOrEmpty(element.Value.Texture.Source))
+                    textureMetadata.Add(GetTextureNameToID(element.Key), element.Value.Texture.Source);
+            }
+
             return false;
         }
 
