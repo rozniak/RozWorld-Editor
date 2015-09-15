@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld_Editor.DataClasses.CharacterInfo -- Character Information
+ * RozWorld_Editor.DataClasses.ElementInfo -- Element Information
  * 
  * This source-code is part of the RozWorld Editor project by rozza of Oddmatics:
  * <<http://www.oddmatics.co.uk>>

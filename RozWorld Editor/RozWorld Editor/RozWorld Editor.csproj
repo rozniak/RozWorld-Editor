@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converts.cs" />
     <Compile Include="DataClasses\CharacterInfo.cs" />
     <Compile Include="DataClasses\ElementInfo.cs" />
     <Compile Include="DataClasses\FileFormat\GUIOMETRY.cs" />

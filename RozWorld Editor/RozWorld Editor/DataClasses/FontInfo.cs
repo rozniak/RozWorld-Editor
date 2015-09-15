@@ -10,6 +10,7 @@
  */
 
 using System.Collections.Generic;
+using System.Text;
 
 namespace RozWorld_Editor.DataClasses
 {
@@ -42,10 +43,33 @@ namespace RozWorld_Editor.DataClasses
         /// Gets all data of this font info into bytes in the GUIOMETRY.BIN format.
         /// </summary>
         /// <returns></returns>
-        public byte[] GetBytes()
+        public IList<byte> GetBytes()
         {
-            // TODO: Code this
-            return null;
+            var asBytes = new List<byte>(); // Construct the byte array object
+
+            // Add the amount of characters present in this font
+            asBytes.AddRange(Converts.ShortToBytes((short)Characters.Count));
+
+            // Add character data
+            foreach(var character in Characters)
+            {
+                asBytes.AddRange(UnicodeEncoding.Unicode.GetBytes(new char[] { character.Key })); // Add character code
+
+                // Add character data
+                asBytes.AddRange(Converts.ShortToBytes((short)character.Value.BlitOrigin.X)); // Blit origin x
+                asBytes.AddRange(Converts.ShortToBytes((short)character.Value.BlitOrigin.Y)); // Blit origin y
+                asBytes.AddRange(Converts.ShortToBytes((short)character.Value.BlitDestination.X)); // Blit destination x
+                asBytes.AddRange(Converts.ShortToBytes((short)character.Value.BlitDestination.Y)); // Blit destination y
+                asBytes.Add((byte)character.Value.Before); // Before line
+                asBytes.Add((byte)character.Value.After); // After line
+                asBytes.Add((byte)character.Value.YOffset); // Y-offset
+            }
+
+            // Add general font data
+            asBytes.Add(SpacingWidth);
+            asBytes.Add(LineHeight);
+
+            return asBytes.AsReadOnly();
         }
 
 

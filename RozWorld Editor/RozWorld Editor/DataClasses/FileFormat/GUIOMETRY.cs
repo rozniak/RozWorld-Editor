@@ -15,6 +15,8 @@ namespace RozWorld_Editor.DataClasses.FileFormat
 {
     public class GUIOMETRY
     {
+        public const byte VERSION = 1;
+
         public FontInfo ChatFontInfo;
         public FontInfo SmallFontInfo;
         public FontInfo MediumFontInfo;

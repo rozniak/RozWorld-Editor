@@ -135,6 +135,21 @@ namespace RozWorld_Editor.Tab
 
         #endregion
 
+        #region Element Information Text Data
+
+        /**
+         * Stores information about the text handling within certain elements.
+         */
+        private bool ElementCentredButton = false;
+        private sbyte ElementTopButton = 0;
+        private sbyte ElementLeftButton = 0;
+
+        private bool ElementCentredText = false;
+        private sbyte ElementTopText = 0;
+        private sbyte ElementLeftText = 0;
+
+        #endregion
+
         /**
          * Stores the information about all the elements used in RozWorld.
          */

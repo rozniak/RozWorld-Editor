@@ -107,7 +107,7 @@ namespace RozWorld_Editor.IO
         public static bool Save(GUIOMETRY data, string filename)
         {
             // Collect data class metadata
-            var textureMetadata = new Dictionary<int, string>();
+            var textureMetadata = new Dictionary<byte, string>();
 
             // For each of these, only add the metadata if the source of the texture is not blank or null
 
@@ -129,6 +129,29 @@ namespace RozWorld_Editor.IO
                     textureMetadata.Add(GetTextureNameToID(element.Key), element.Value.Texture.Source);
             }
 
+
+            // Construct the save data file
+            var saveData = new List<byte>();
+
+            saveData.Add(GUIOMETRY.VERSION); // Add format version byte
+
+            // Add metadata
+            foreach (var metadata in textureMetadata)
+            {
+                saveData.Add(metadata.Key); // Texture ID
+                saveData.AddRange(UnicodeEncoding.Unicode.GetBytes(metadata.Value)); // Texture path
+            }
+
+            saveData.Add(0); // End metadata byte
+
+            // Add font data
+            saveData.AddRange(data.ChatFontInfo.GetBytes());
+            saveData.AddRange(data.SmallFontInfo.GetBytes());
+            saveData.AddRange(data.MediumFontInfo.GetBytes());
+            saveData.AddRange(data.HugeFontInfo.GetBytes());
+
+            // Add
+
             return false;
         }
 
@@ -138,7 +161,7 @@ namespace RozWorld_Editor.IO
         /// </summary>
         /// <param name="id">The ID of the texture.</param>
         /// <returns>The internal name of the texture specified if it matches, null otherwise.</returns>
-        public static string GetTextureIDToName(int id)
+        public static string GetTextureIDToName(byte id)
         {
             switch (id)
             {

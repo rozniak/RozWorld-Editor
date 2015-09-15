@@ -1,5 +1,5 @@
 ﻿/**
- * RozWorld_Editor.Error -- RozWorld Editor Error System
+ * RozWorld_Editor.Enums -- RozWorld Editor Enumerations File
  * 
  * This source-code is part of the RozWorld Editor project by rozza of Oddmatics:
  * <<http://www.oddmatics.co.uk>>
