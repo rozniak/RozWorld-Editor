@@ -24,6 +24,14 @@ namespace RozWorld_Editor.DataClasses.FileFormat
 
         public Dictionary<string, ElementInfo> Elements;
 
+        public bool CentredTextButton;
+        public sbyte OffsetTopButton;
+        public sbyte OffsetLeftButton;
+
+        public bool CentredTextText;
+        public sbyte OffsetTopText;
+        public sbyte OffsetLeftText;
+
 
         public GUIOMETRY()
         {
@@ -35,13 +43,20 @@ namespace RozWorld_Editor.DataClasses.FileFormat
         }
 
 
-        public GUIOMETRY(FontInfo chatFont, FontInfo smallFont, FontInfo mediumFont, FontInfo hugeFont, Dictionary<string, ElementInfo> elements)
+        public GUIOMETRY(FontInfo chatFont, FontInfo smallFont, FontInfo mediumFont, FontInfo hugeFont, Dictionary<string, ElementInfo> elements,
+            bool centredTextButton, sbyte offsetTopButton, sbyte offsetLeftButton, bool centredTextText, sbyte offsetTopText, sbyte offsetLeftText)
         {
             ChatFontInfo = chatFont;
             SmallFontInfo = smallFont;
             MediumFontInfo = mediumFont;
             HugeFontInfo = hugeFont;
             Elements = elements;
+            CentredTextButton = centredTextButton;
+            OffsetTopButton = offsetTopButton;
+            OffsetLeftButton = offsetLeftButton;
+            CentredTextText = centredTextText;
+            OffsetTopText = offsetTopText;
+            OffsetLeftText = offsetLeftText;
         }
     }
 }
