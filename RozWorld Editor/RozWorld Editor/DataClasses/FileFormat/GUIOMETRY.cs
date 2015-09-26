@@ -10,6 +10,7 @@
  */
 
 using System.Collections.Generic;
+using System;
 
 namespace RozWorld_Editor.DataClasses.FileFormat
 {
@@ -57,6 +58,57 @@ namespace RozWorld_Editor.DataClasses.FileFormat
             CentredTextText = centredTextText;
             OffsetTopText = offsetTopText;
             OffsetLeftText = offsetLeftText;
+        }
+
+
+        /// <summary>
+        /// Gets the data belonging to an element by its name.
+        /// </summary>
+        /// <param name="name">The element's name prefix from the collection.</param>
+        /// <returns></returns>
+        public IList<byte> GetElementInfo(string name)
+        {
+            string[] elementsToSearch = new string[] { };
+            var data = new List<byte>();
+
+            if (name == "Button" || name == "Text")
+            {
+                elementsToSearch = new string[] { "Top", "Side", "EdgeSE", "EdgeSW" };
+            }
+            else // name == "Check"
+            {
+                elementsToSearch = new string[] { "Top", "Side", "EdgeSE", "EdgeSW", "Tick" };
+            }
+
+            foreach (string elementPrefix in elementsToSearch)
+            {
+                if (elementPrefix == "Side" || elementPrefix == "EdgeSE" || elementPrefix == "EdgeSW" || elementPrefix == "Tick")
+                {
+                    if(Elements.ContainsKey(name + elementPrefix))
+                        data.Add((byte)Elements[name + elementPrefix].XOffset);
+                }
+
+                if (elementPrefix == "Top" || elementPrefix == "EdgeSE" || elementPrefix == "EdgeSW" || elementPrefix == "Tick")
+                {
+                    if (Elements.ContainsKey(name + elementPrefix))
+                        data.Add((byte)Elements[name + elementPrefix].YOffset);
+                }
+            }
+
+            if (name == "Button")
+            {
+                data.Add(Convert.ToByte(CentredTextButton));
+                data.Add((byte)OffsetTopButton);
+                data.Add((byte)OffsetLeftButton);
+            }
+            else if (name == "Text")
+            {
+                data.Add(Convert.ToByte(CentredTextText));
+                data.Add((byte)OffsetTopText);
+                data.Add((byte)OffsetLeftText);
+            }
+
+            return data.AsReadOnly();
         }
     }
 }
