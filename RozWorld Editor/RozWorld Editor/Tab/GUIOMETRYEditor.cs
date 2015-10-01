@@ -1235,14 +1235,25 @@ namespace RozWorld_Editor.Tab
         public override void Save(string filename = "")
         {
             // If no filename is specified, check if this is just a normal save operation (set it to the associated filename)
-            filename = filename == "" && AssociatedFilename != "" ?
-                AssociatedFilename :
+            filename = filename == "" && this.AssociatedFilename != "" ?
+                this.AssociatedFilename :
                 filename;
 
-            // TODO: Implement file saving once a format has been decided on.
-            if (filename != "") GameGUIOMETRY.Save(new GUIOMETRY(InfoChatFont, InfoSmallFont, InfoMediumFont, InfoHugeFont, Elements, 
+            // If the filename isn't empty, save the file, otherwise, display an error
+            if (filename != "")
+            {
+                // Attempt to save and check if it was successful
+                if (GameGUIOMETRY.Save(new GUIOMETRY(InfoChatFont, InfoSmallFont, InfoMediumFont, InfoHugeFont, Elements,
                 CheckButtonCentreText.Checked, (sbyte)NumericButtonTextYOffset.Value, (sbyte)NumericButtonTextXOffset.Value,
-                CheckTextCentreText.Checked, (sbyte)NumericTextTextYOffset.Value, (sbyte)NumericTextTextXOffset.Value), filename);
+                CheckTextCentreText.Checked, (sbyte)NumericTextTextYOffset.Value, (sbyte)NumericTextTextXOffset.Value), filename))
+                {
+                    this.AssociatedFilename = Path.GetFileName(filename); // Set the path to show in the title bar and future saves
+                }
+
+                this.IsUnsaved = false;
+            }
+            else
+                Error.Show(Error.MISSING_FILENAME);
         }
 
 

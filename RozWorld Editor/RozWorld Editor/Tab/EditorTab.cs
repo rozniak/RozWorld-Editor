@@ -18,7 +18,7 @@ namespace RozWorld_Editor.Tab
         /**
          * The name/path of the file that this tab is working on.
          */
-        public string AssociatedFilename
+        public virtual string AssociatedFilename
         {
             get;
             protected set;
@@ -27,7 +27,7 @@ namespace RozWorld_Editor.Tab
         /**
          * Whether this tab can ever be saved or not.
          */
-        public bool CanSave
+        public virtual bool CanSave
         {
             get;
             protected set;
@@ -109,5 +109,11 @@ namespace RozWorld_Editor.Tab
         {
             return UndoHistory[0] != null;
         }
+
+
+        /// <summary>
+        /// Updates the title bar of this tab.
+        /// </summary>
+        public virtual void UpdateTabTitle() { }
     }
 }

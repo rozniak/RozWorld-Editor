@@ -150,12 +150,12 @@ namespace RozWorld_Editor.IO
             saveData.AddRange(data.MediumFontInfo.GetBytes());
             saveData.AddRange(data.HugeFontInfo.GetBytes());
 
-            // TODO: Add element data and save
+            // Add element data and save
             saveData.AddRange(data.GetElementInfo("Button"));
             saveData.AddRange(data.GetElementInfo("Text"));
             saveData.AddRange(data.GetElementInfo("Check"));
 
-            return false;
+            return Files.PutBinaryFile(filename, saveData.ToArray());
         }
 
 
