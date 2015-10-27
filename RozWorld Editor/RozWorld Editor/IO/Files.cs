@@ -52,7 +52,7 @@ namespace RozWorld_Editor.IO
         /// </summary>
         /// <param name="fileName">The filename of the file to get.</param>
         /// <returns>The file contents if it exists.</returns>
-        public static byte[] GetBinaryFile(string fileName)
+        public static IList<byte> GetBinaryFile(string fileName)
         {
             if (File.Exists(fileName))
             {

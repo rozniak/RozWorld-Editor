@@ -23,6 +23,8 @@ namespace RozWorld_Editor.DataClasses.FileFormat
         public FontInfo MediumFontInfo;
         public FontInfo HugeFontInfo;
 
+        public Dictionary<string, FontInfo> Fonts;
+
         public Dictionary<string, ElementInfo> Elements;
 
         public bool CentredTextButton;
@@ -41,6 +43,8 @@ namespace RozWorld_Editor.DataClasses.FileFormat
             MediumFontInfo = new FontInfo();
             HugeFontInfo = new FontInfo();
             Elements = new Dictionary<string, ElementInfo>();
+
+            BuildKeys();
         }
 
 
@@ -58,6 +62,35 @@ namespace RozWorld_Editor.DataClasses.FileFormat
             CentredTextText = centredTextText;
             OffsetTopText = offsetTopText;
             OffsetLeftText = offsetLeftText;
+        }
+
+
+        /// <summary>
+        /// Initialises or rebuilds all font and element keys in their respective Dictionary collections.
+        /// </summary>
+        private void BuildKeys()
+        {
+            // Button ElementInfos
+            Elements.Add("ButtonBody", new ElementInfo());
+            Elements.Add("ButtonTop", new ElementInfo());
+            Elements.Add("ButtonSide", new ElementInfo());
+            Elements.Add("ButtonEdgeSE", new ElementInfo());
+            Elements.Add("ButtonEdgeSW", new ElementInfo());
+
+            // TextBox ElementInfos
+            Elements.Add("TextBody", new ElementInfo());
+            Elements.Add("TextTop", new ElementInfo());
+            Elements.Add("TextSide", new ElementInfo());
+            Elements.Add("TextEdgeSE", new ElementInfo());
+            Elements.Add("TextEdgeSW", new ElementInfo());
+
+            // CheckBox ElementInfos
+            Elements.Add("CheckBody", new ElementInfo());
+            Elements.Add("CheckTop", new ElementInfo());
+            Elements.Add("CheckSide", new ElementInfo());
+            Elements.Add("CheckEdgeSE", new ElementInfo());
+            Elements.Add("CheckEdgeSW", new ElementInfo());
+            Elements.Add("CheckTick", new ElementInfo());
         }
 
 

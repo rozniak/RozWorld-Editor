@@ -83,6 +83,7 @@
     <Compile Include="EditorSettings.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Error.cs" />
+    <Compile Include="IO\ByteParse.cs" />
     <Compile Include="IO\Files.cs" />
     <Compile Include="IO\GameGUIOMETRY.cs" />
     <Compile Include="MainForm.cs">

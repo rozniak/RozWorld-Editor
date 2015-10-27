@@ -38,61 +38,31 @@ namespace RozWorld_Editor.IO
 
             var guiometry = new GUIOMETRY(); // The result we're working on
 
-            byte[] fileAsBytes = Files.GetBinaryFile(filename);
-            int currentByte = 0; // Index of the byte in the array we're reading
+            IList<byte> guiometryFile = Files.GetBinaryFile(filename);
+            int currentIndex = 0; // Index of the byte in the array we're reading
             bool nextSection = false; // Set this to true to move onto the next section
 
-            // Read metadata
-            do
-            {
-                string textureID = GetTextureIDToName(fileAsBytes[currentByte++]); // Get the texture ID we're handling
+            // Get the version before doing anything
+            byte version = ByteParse.NextByte(guiometryFile, ref currentIndex);
 
-                if (textureID == "End") // If the texture ID is 0, then that's the end of metadata, escape this loop
+            // Read file metadata (for the textures)
+            while (!nextSection && currentIndex <= guiometryFile.Count - 1)
+            {
+                byte textureID = ByteParse.NextByte(guiometryFile, ref currentIndex);
+
+                if (textureID == 0) // End of metadata
                 {
                     nextSection = true;
                 }
-                else if (textureID != null) // If the texture has been given a name, continue, otherwise, bin it (probably will cause errors though)
+                else
                 {
-                    bool endOfString = false; // Set this to true when we encounter a null character
-                    var filepathBytes = new List<byte>();
-
-                    // Read the filepath string
-                    do
-                    {
-                        // Check if the next two bytes are NULL
-                        if (fileAsBytes[currentByte] == 0 && fileAsBytes[currentByte + 1] == 0)
-                        {
-                            endOfString = true;
-                        }
-
-                        // Add the next two bytes
-                        filepathBytes.Add(fileAsBytes[currentByte++]);
-                        filepathBytes.Add(fileAsBytes[currentByte++]);
-                    } while (!endOfString);
-
-                    // Convert bytes to the string
-                    string resultingFilePath = UnicodeEncoding.Unicode.GetChars(filepathBytes.ToArray()).ToString();
-
-                    if (File.Exists(resultingFilePath))
-                    {
-                        // This section should refer to dictionaries... CLEAN UP REQUIRED!
-                        switch (textureID)
-                        {
-                            case "ChatFont":
-                                break;
-
-                            case "SmallFont":
-                                break;
-                                
-                            case "MediumFont":
-                                break;
-
-                            case "HugeFont":
-                                break;
-                        }
-                    }
+                    string textureName = GetTextureIDToName(textureID);
+                    string textureSource = ByteParse.NextString(guiometryFile, ref currentIndex);
                 }
-            } while (!nextSection);
+            }
+
+            // Read font data
+            // In progress
 
             return null;
         }
