@@ -82,14 +82,11 @@ namespace RozWorld_Editor.IO
             // For each of these, only add the metadata if the source of the texture is not blank or null
 
             // Add font metadata
-            if (!string.IsNullOrEmpty(data.ChatFontInfo.Texture.Source))
-                textureMetadata.Add(GetTextureNameToID("ChatFont"), data.ChatFontInfo.Texture.Source);
-            if (!string.IsNullOrEmpty(data.SmallFontInfo.Texture.Source))
-                textureMetadata.Add(GetTextureNameToID("SmallFont"), data.SmallFontInfo.Texture.Source);
-            if (!string.IsNullOrEmpty(data.MediumFontInfo.Texture.Source))
-                textureMetadata.Add(GetTextureNameToID("MediumFont"), data.MediumFontInfo.Texture.Source);
-            if (!string.IsNullOrEmpty(data.HugeFontInfo.Texture.Source))
-                textureMetadata.Add(GetTextureNameToID("HugeFont"), data.HugeFontInfo.Texture.Source);
+            foreach (var font in data.Fonts)
+            {
+                if (!string.IsNullOrEmpty(font.Value.Texture.Source))
+                    textureMetadata.Add(GetTextureNameToID(font.Key), font.Value.Texture.Source);
+            }
 
             // Add element metadata
             foreach (var element in data.Elements)
@@ -115,10 +112,10 @@ namespace RozWorld_Editor.IO
             saveData.Add(0); // End metadata byte
 
             // Add font data
-            saveData.AddRange(data.ChatFontInfo.GetBytes());
-            saveData.AddRange(data.SmallFontInfo.GetBytes());
-            saveData.AddRange(data.MediumFontInfo.GetBytes());
-            saveData.AddRange(data.HugeFontInfo.GetBytes());
+            saveData.AddRange(data.Fonts["ChatFont"].GetBytes());
+            saveData.AddRange(data.Fonts["SmallFont"].GetBytes());
+            saveData.AddRange(data.Fonts["MediumFont"].GetBytes());
+            saveData.AddRange(data.Fonts["HugeFont"].GetBytes());
 
             // Add element data and save
             saveData.AddRange(data.GetElementInfo("Button"));

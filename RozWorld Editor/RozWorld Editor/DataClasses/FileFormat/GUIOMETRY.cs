@@ -18,11 +18,6 @@ namespace RozWorld_Editor.DataClasses.FileFormat
     {
         public const byte VERSION = 1;
 
-        public FontInfo ChatFontInfo;
-        public FontInfo SmallFontInfo;
-        public FontInfo MediumFontInfo;
-        public FontInfo HugeFontInfo;
-
         public Dictionary<string, FontInfo> Fonts;
 
         public Dictionary<string, ElementInfo> Elements;
@@ -38,23 +33,17 @@ namespace RozWorld_Editor.DataClasses.FileFormat
 
         public GUIOMETRY()
         {
-            ChatFontInfo = new FontInfo();
-            SmallFontInfo = new FontInfo();
-            MediumFontInfo = new FontInfo();
-            HugeFontInfo = new FontInfo();
+            Fonts = new Dictionary<string, FontInfo>();
             Elements = new Dictionary<string, ElementInfo>();
 
             BuildKeys();
         }
 
 
-        public GUIOMETRY(FontInfo chatFont, FontInfo smallFont, FontInfo mediumFont, FontInfo hugeFont, Dictionary<string, ElementInfo> elements,
+        public GUIOMETRY(Dictionary<string, FontInfo> fonts, Dictionary<string, ElementInfo> elements,
             bool centredTextButton, sbyte offsetTopButton, sbyte offsetLeftButton, bool centredTextText, sbyte offsetTopText, sbyte offsetLeftText)
         {
-            ChatFontInfo = chatFont;
-            SmallFontInfo = smallFont;
-            MediumFontInfo = mediumFont;
-            HugeFontInfo = hugeFont;
+            Fonts = fonts;
             Elements = elements;
             CentredTextButton = centredTextButton;
             OffsetTopButton = offsetTopButton;
@@ -70,6 +59,14 @@ namespace RozWorld_Editor.DataClasses.FileFormat
         /// </summary>
         private void BuildKeys()
         {
+            // Add font keys
+            Fonts.Add("ChatFont", new FontInfo());
+            Fonts.Add("SmallFont", new FontInfo());
+            Fonts.Add("MediumFont", new FontInfo());
+            Fonts.Add("HugeFont", new FontInfo());
+
+            // Add element keys
+
             // Button ElementInfos
             Elements.Add("ButtonBody", new ElementInfo());
             Elements.Add("ButtonTop", new ElementInfo());

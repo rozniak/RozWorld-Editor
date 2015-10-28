@@ -125,17 +125,10 @@ namespace RozWorld_Editor.Tab
 
         #endregion
 
-        #region Font Information Classes
-
         /**
          * Stores the information about each of the four fonts for saving later.
          */
-        private FontInfo InfoChatFont = new FontInfo();
-        private FontInfo InfoSmallFont = new FontInfo();
-        private FontInfo InfoMediumFont = new FontInfo();
-        private FontInfo InfoHugeFont = new FontInfo();
-
-        #endregion
+        private Dictionary<string, FontInfo> Fonts = new Dictionary<string, FontInfo>();
 
         /**
          * Stores the information about all the elements used in RozWorld.
@@ -1243,7 +1236,7 @@ namespace RozWorld_Editor.Tab
             if (filename != "")
             {
                 // Attempt to save and check if it was successful
-                if (GameGUIOMETRY.Save(new GUIOMETRY(InfoChatFont, InfoSmallFont, InfoMediumFont, InfoHugeFont, Elements,
+                if (GameGUIOMETRY.Save(new GUIOMETRY(Fonts, Elements,
                 CheckButtonCentreText.Checked, (sbyte)NumericButtonTextYOffset.Value, (sbyte)NumericButtonTextXOffset.Value,
                 CheckTextCentreText.Checked, (sbyte)NumericTextTextYOffset.Value, (sbyte)NumericTextTextXOffset.Value), filename))
                 {
@@ -1262,17 +1255,17 @@ namespace RozWorld_Editor.Tab
         /// </summary>
         /// <param name="key">The font's name to get the info of.</param>
         /// <returns>The character's info if it is present, null otherwise.</returns>
-        private FontInfo GetFontInfo(string key)
-        {
-            switch (key)
-            {
-                default:
-                case "Chat Font": return InfoChatFont;
-                case "Small Font": return InfoSmallFont;
-                case "Medium Font": return InfoMediumFont;
-                case "Huge Font": return InfoHugeFont;
-            }
-        }
+        //private FontInfo GetFontInfo(string key)
+        //{
+        //    switch (key)
+        //    {
+        //        default:
+        //        case "Chat Font": return InfoChatFont;
+        //        case "Small Font": return InfoSmallFont;
+        //        case "Medium Font": return InfoMediumFont;
+        //        case "Huge Font": return InfoHugeFont;
+        //    }
+        //}
 
 
         /// <summary>
@@ -1315,7 +1308,7 @@ namespace RozWorld_Editor.Tab
             {
                 char charSelected = (char)ListCharacter.SelectedItem;
                 string fontSelected = (string)ComboFont.SelectedItem;
-                FontInfo fontInfo = GetFontInfo(fontSelected);
+                FontInfo fontInfo = Fonts[fontSelected.Replace(" ", "")];
                 CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
 
                 // Dispose the old character detail image if there was one
@@ -1380,7 +1373,7 @@ namespace RozWorld_Editor.Tab
             {
                 char charSelected = (char)ListCharacter.SelectedItem;
                 string fontSelected = (string)ComboFont.SelectedItem;
-                FontInfo fontInfo = GetFontInfo(fontSelected);
+                FontInfo fontInfo = Fonts[fontSelected.Replace(" ", "")];
                 CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
 
                 // Check that a texture is present in this font
@@ -1439,13 +1432,13 @@ namespace RozWorld_Editor.Tab
                 }
             }
 
-            string fontString = lastFont ?
+            string fontSelected = lastFont ?
                 LastSelectedFont :
                 (string)ComboFont.SelectedItem;
 
             if (charHasValue)
             {
-                CharacterInfo charInfo = GetFontInfo(fontString).GetCharacter(charToUpdate);
+                CharacterInfo charInfo = Fonts[fontSelected.Replace(" ", "")].GetCharacter(charToUpdate);
 
                 if (charInfo != null)
                 {
@@ -1464,7 +1457,7 @@ namespace RozWorld_Editor.Tab
         {
             string fontSelected = (string)ComboFont.SelectedItem;
             char charSelected = (char)ListCharacter.SelectedItem;
-            CharacterInfo charInfo = GetFontInfo(fontSelected).GetCharacter(charSelected);
+            CharacterInfo charInfo = Fonts[fontSelected.Replace(" ", "")].GetCharacter(charSelected);
 
             ButtonCharacterBlit.Enabled = true;
             NumericCharBefore.Enabled = true;
@@ -1485,7 +1478,7 @@ namespace RozWorld_Editor.Tab
             string fontSelected = lastFont ?
                 LastSelectedFont :
                 (string)ComboFont.SelectedItem;
-            FontInfo fontInfo = GetFontInfo(fontSelected);
+            FontInfo fontInfo = Fonts[fontSelected.Replace(" ", "")];
 
             fontInfo.LineHeight = (byte)NumericLineHeight.Value;
             fontInfo.SpacingWidth = (byte)NumericSpaceWidth.Value;
@@ -1497,7 +1490,7 @@ namespace RozWorld_Editor.Tab
         /// </summary>
         private void UpdateFontTexturePreviews()
         {
-            Texture selectedFontTexture = GetFontInfo((string)ComboFont.SelectedItem).Texture;
+            Texture selectedFontTexture = Fonts[((string)ComboFont.SelectedItem).Replace(" ", "")].Texture;
 
             if (selectedFontTexture.Source != null && selectedFontTexture.Data != null)
             {
@@ -1590,7 +1583,7 @@ namespace RozWorld_Editor.Tab
                  */
                 case "ButtonFontTexture":
                     string fontSelected = (string)ComboFont.SelectedItem;
-                    setTextureDialog = new Dialog.SetTexture(fontSelected, GetFontInfo(fontSelected).Texture);
+                    setTextureDialog = new Dialog.SetTexture(fontSelected, Fonts[fontSelected.Replace(" ", "")].Texture);
 
                     break;
 
@@ -1629,7 +1622,7 @@ namespace RozWorld_Editor.Tab
             UpdateCharacterDetails(false, false);
 
             string fontSelected = (string)ComboFont.SelectedItem;
-            FontInfo fontInfo = GetFontInfo(fontSelected);
+            FontInfo fontInfo = Fonts[fontSelected.Replace(" ", "")];
 
             Dialog.AddCharacter addCharacterDialog = new Dialog.AddCharacter(fontInfo.GetListCharacters());
 
@@ -1651,7 +1644,7 @@ namespace RozWorld_Editor.Tab
         {
             string fontSelected = (string)ComboFont.SelectedItem;
             char charSelected = (char)ListCharacter.SelectedItem;
-            FontInfo fontInfo = GetFontInfo(fontSelected);
+            FontInfo fontInfo = Fonts[fontSelected.Replace(" ", "")];
             CharacterInfo charInfo = fontInfo.GetCharacter(charSelected);
 
             if (fontInfo.Texture.Data != null)
@@ -1682,7 +1675,7 @@ namespace RozWorld_Editor.Tab
             {
                 char charSelected = (char)ListCharacter.SelectedItem;
                 string fontSelected = (string)ComboFont.SelectedItem;
-                FontInfo fontInfo = GetFontInfo(fontSelected);
+                FontInfo fontInfo = Fonts[fontSelected.Replace(" ", "")];
 
                 // Remove character from the font information and from the listbox
                 fontInfo.RemoveCharacter(charSelected);
@@ -1709,7 +1702,7 @@ namespace RozWorld_Editor.Tab
             ListCharacter.Items.Clear();
 
             string fontSelected = (string)ComboFont.SelectedItem;
-            FontInfo fontInfo = GetFontInfo(fontSelected);
+            FontInfo fontInfo = Fonts[fontSelected.Replace(" ", "")];
 
             foreach (char character in fontInfo.GetListCharacters())
             {
