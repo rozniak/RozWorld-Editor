@@ -1217,7 +1217,9 @@ namespace RozWorld_Editor.Tab
         /// <param name="filename">The name/path of the file to open.</param>
         public override void Open(string filename)
         {
-            // TODO: Implement file opening once a format has been decided on.
+            GUIOMETRY guiometryFile = GameGUIOMETRY.Read(filename);
+
+
         }
 
 

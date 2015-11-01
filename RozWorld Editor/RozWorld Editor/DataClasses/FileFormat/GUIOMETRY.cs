@@ -22,13 +22,13 @@ namespace RozWorld_Editor.DataClasses.FileFormat
 
         public Dictionary<string, ElementInfo> Elements;
 
-        public bool CentredTextButton;
-        public sbyte OffsetTopButton;
-        public sbyte OffsetLeftButton;
+        public bool ButtonCentredText;
+        public sbyte ButtonOffsetTop;
+        public sbyte ButtonOffsetLeft;
 
-        public bool CentredTextText;
-        public sbyte OffsetTopText;
-        public sbyte OffsetLeftText;
+        public bool TextCentredText;
+        public sbyte TextOffsetTop;
+        public sbyte TextOffsetLeft;
 
 
         public GUIOMETRY()
@@ -41,16 +41,16 @@ namespace RozWorld_Editor.DataClasses.FileFormat
 
 
         public GUIOMETRY(Dictionary<string, FontInfo> fonts, Dictionary<string, ElementInfo> elements,
-            bool centredTextButton, sbyte offsetTopButton, sbyte offsetLeftButton, bool centredTextText, sbyte offsetTopText, sbyte offsetLeftText)
+            bool buttonCentredText, sbyte buttonOffsetTop, sbyte buttonOffsetLeft, bool textCentredText, sbyte textOffsetTop, sbyte textOffsetLeft)
         {
             Fonts = fonts;
             Elements = elements;
-            CentredTextButton = centredTextButton;
-            OffsetTopButton = offsetTopButton;
-            OffsetLeftButton = offsetLeftButton;
-            CentredTextText = centredTextText;
-            OffsetTopText = offsetTopText;
-            OffsetLeftText = offsetLeftText;
+            ButtonCentredText = buttonCentredText;
+            ButtonOffsetTop = buttonOffsetTop;
+            ButtonOffsetLeft = buttonOffsetLeft;
+            TextCentredText = textCentredText;
+            TextOffsetTop = textOffsetTop;
+            TextOffsetLeft = textOffsetLeft;
         }
 
 
@@ -127,15 +127,15 @@ namespace RozWorld_Editor.DataClasses.FileFormat
 
             if (name == "Button")
             {
-                data.Add(Convert.ToByte(CentredTextButton));
-                data.Add((byte)OffsetTopButton);
-                data.Add((byte)OffsetLeftButton);
+                data.Add(Convert.ToByte(ButtonCentredText));
+                data.Add((byte)ButtonOffsetTop);
+                data.Add((byte)ButtonOffsetLeft);
             }
             else if (name == "Text")
             {
-                data.Add(Convert.ToByte(CentredTextText));
-                data.Add((byte)OffsetTopText);
-                data.Add((byte)OffsetLeftText);
+                data.Add(Convert.ToByte(TextCentredText));
+                data.Add((byte)TextOffsetTop);
+                data.Add((byte)TextOffsetLeft);
             }
 
             return data.AsReadOnly();

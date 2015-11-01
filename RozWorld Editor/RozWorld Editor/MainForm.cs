@@ -132,7 +132,6 @@ namespace RozWorld_Editor
                     case ".bin":
                         TabUI.TabPages.Add(new Tab.GUIOMETRYEditor(this.TabUI,
                             NextGUIOMETRYTabID, openDialog.FileName));
-                        TabUI.SelectedIndex = TabUI.TabCount - 1; // Temporarily here
                         break;
 
                     /**
@@ -156,6 +155,8 @@ namespace RozWorld_Editor
                         // TODO: Open a world tab with the data in
                         break;
                 }
+
+                TabUI.SelectedIndex = TabUI.TabCount - 1;
             }
         }
 

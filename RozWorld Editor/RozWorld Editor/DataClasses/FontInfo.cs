@@ -38,6 +38,23 @@ namespace RozWorld_Editor.DataClasses
             return false;
         }
 
+        /// <summary>
+        /// Adds a new character into this font's character list.
+        /// </summary>
+        /// <param name="newChar">The character to add.</param>
+        /// <param name="charInfo">The character information of the character to add.</param>
+        /// <returns>Whether the character was added, otherwise it is already present.</returns>
+        public bool AddNewCharacter(char newChar, CharacterInfo charInfo)
+        {
+            if (!Characters.ContainsKey(newChar))
+            {
+                Characters.Add(newChar, charInfo);
+                return true;
+            }
+
+            return false;
+        }
+
 
         /// <summary>
         /// Gets all data of this font info into bytes in the GUIOMETRY.BIN format.

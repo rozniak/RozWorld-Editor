@@ -16,6 +16,7 @@ using System.Text;
 
 using RozWorld_Editor.DataClasses;
 using RozWorld_Editor.DataClasses.FileFormat;
+using System.Drawing;
 
 namespace RozWorld_Editor.IO
 {
@@ -61,10 +62,122 @@ namespace RozWorld_Editor.IO
                 }
             }
 
-            // Read font data
-            // In progress
+
+            if (version == 1)
+            {
+                #region Version 1
+
+
+                // This should be the fonts to look for (eg. ChatFont, SmallFont etc.) in the order they are
+                // supposed to be according to the format
+                string[] fonts = new string[] { "ChatFont", "SmallFont", "MediumFont", "HugeFont" };
+
+                // Keep track of the current character being read (out of the number in the font)
+                short currentChar = 1; // Make sure to reset this to 1 after reading a font or you will be shot
+
+                // However many characters are in the font being read
+                short charsInFont;
+
+
+                // This should be the elements to look for (eg. Button, Text etc.) in the order they are
+                // supposed to be according to the format
+                string[] elements = new string[] { "Button", "Text", "Check" };
+
+                // This should be the 'parts' of the elements to look for (eg. Body, Top, Side etc.) in the
+                // order they are supposed to be according to the format
+                string[] elementParts;
+
+
+                #region Font Data
+
+                foreach (string font in fonts)
+                {
+                    charsInFont = ByteParse.NextShort(guiometryFile, ref currentIndex);
+
+                    do
+                    {
+                        char character = ByteParse.NextChar(guiometryFile, ref currentIndex);
+
+                        guiometry.Fonts[font].AddNewCharacter(character,
+                            NextCharacter(guiometryFile, ref currentIndex));
+                    } while (currentChar++ <= charsInFont);
+
+                    guiometry.Fonts[font].SpacingWidth = ByteParse.NextByte(guiometryFile, ref currentIndex);
+                    guiometry.Fonts[font].LineHeight = ByteParse.NextByte(guiometryFile, ref currentIndex);
+
+                    currentChar = 1;
+                }
+
+                #endregion
+
+
+                #region Element Data
+
+                foreach (string element in elements)
+                {
+                    // Set up the parts to look for...
+                    if (element == "Button" || element == "Text")
+                        elementParts = new string[] { "Top", "Side", "EdgeSE", "EdgeSW" };
+                    else // element == "CheckBox"
+                        elementParts = new string[] { "Top", "Side", "EdgeSE", "EdgeSW", "Tick" };
+
+                    foreach (string part in elementParts)
+                    {
+                        if (part == "Side" || part == "EdgeSE" || part == "EdgeSW" || part == "Tick")
+                            guiometry.Elements[element + part].XOffset = ByteParse.NextSByte(guiometryFile, ref currentIndex);
+
+                        if (part == "Top" || part == "EdgeSE" || part == "EdgeSW" || part == "Tick")
+                            guiometry.Elements[element + part].YOffset = ByteParse.NextSByte(guiometryFile, ref currentIndex);
+                    }
+
+                    // Read the element details too
+                    if (element == "Button")
+                    {
+                        guiometry.ButtonCentredText = ByteParse.NextBool(guiometryFile, ref currentIndex);
+                        guiometry.ButtonOffsetTop = ByteParse.NextSByte(guiometryFile, ref currentIndex);
+                        guiometry.ButtonOffsetLeft = ByteParse.NextSByte(guiometryFile, ref currentIndex);
+                    }
+                    else if (element == "Text")
+                    {
+                        guiometry.TextCentredText = ByteParse.NextBool(guiometryFile, ref currentIndex);
+                        guiometry.TextOffsetTop = ByteParse.NextSByte(guiometryFile, ref currentIndex);
+                        guiometry.TextOffsetLeft = ByteParse.NextSByte(guiometryFile, ref currentIndex);
+                    }
+                }
+
+                #endregion
+
+
+                #endregion
+            }
 
             return null;
+        }
+
+
+        /// <summary>
+        /// (For internal use) Attempts to read the next character from a GUIOMETRY file into a CharacterInfo object.
+        /// </summary>
+        /// <param name="data">The GUIOMETRY data to read from.</param>
+        /// <param name="currentIndex">The current index pointer.</param>
+        /// <returns>A new CharacterInfo object containing as much of the character info that could be read.</returns>
+        private static CharacterInfo NextCharacter(IList<byte> data, ref int currentIndex)
+        {
+            CharacterInfo charInfo = new CharacterInfo(); // Build the character up
+
+            short blitOriginX = ByteParse.NextShort(data, ref currentIndex);
+            short blitOriginY = ByteParse.NextShort(data, ref currentIndex);
+            charInfo.BlitOrigin = new Point(blitOriginX, blitOriginY);
+
+            short blitDestinationX = ByteParse.NextShort(data, ref currentIndex);
+            short blitDestinationY = ByteParse.NextShort(data, ref currentIndex);
+            charInfo.BlitDestination = new Point(blitDestinationX, blitDestinationY);
+
+            charInfo.Before = ByteParse.NextSByte(data, ref currentIndex);
+            charInfo.After = ByteParse.NextSByte(data, ref currentIndex);
+            charInfo.YOffset = ByteParse.NextSByte(data, ref currentIndex);
+
+            return charInfo;
         }
 
 
