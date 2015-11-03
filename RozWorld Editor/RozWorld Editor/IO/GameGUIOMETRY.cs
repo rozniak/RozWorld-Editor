@@ -73,7 +73,7 @@ namespace RozWorld_Editor.IO
                 string[] fonts = new string[] { "ChatFont", "SmallFont", "MediumFont", "HugeFont" };
 
                 // Keep track of the current character being read (out of the number in the font)
-                short currentChar = 1; // Make sure to reset this to 1 after reading a font or you will be shot
+                short currentChar = 0; // Make sure to reset this to 0 after reading a font or you will be shot
 
                 // However many characters are in the font being read
                 short charsInFont;
@@ -94,18 +94,18 @@ namespace RozWorld_Editor.IO
                 {
                     charsInFont = ByteParse.NextShort(guiometryFile, ref currentIndex);
 
-                    do
+                    while (currentChar++ < charsInFont)
                     {
                         char character = ByteParse.NextChar(guiometryFile, ref currentIndex);
 
                         guiometry.Fonts[font].AddNewCharacter(character,
                             NextCharacter(guiometryFile, ref currentIndex));
-                    } while (currentChar++ <= charsInFont);
+                    }
 
                     guiometry.Fonts[font].SpacingWidth = ByteParse.NextByte(guiometryFile, ref currentIndex);
                     guiometry.Fonts[font].LineHeight = ByteParse.NextByte(guiometryFile, ref currentIndex);
 
-                    currentChar = 1;
+                    currentChar = 0;
                 }
 
                 #endregion
