@@ -11,12 +11,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Text;
 
 using RozWorld_Editor.DataClasses;
 using RozWorld_Editor.DataClasses.FileFormat;
-using System.Drawing;
+
 
 namespace RozWorld_Editor.IO
 {

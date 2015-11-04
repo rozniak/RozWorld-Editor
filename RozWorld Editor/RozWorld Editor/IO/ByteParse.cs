@@ -145,7 +145,7 @@ namespace RozWorld_Editor.IO
 
             if (currentIndex <= data.Count - 2)
             {
-                conversion = (short)((data[currentIndex] << 8) + data[currentIndex + 2]);
+                conversion = (short)((data[currentIndex] << 8) + data[currentIndex + 1]);
                 currentIndex += 2;
             }
 
