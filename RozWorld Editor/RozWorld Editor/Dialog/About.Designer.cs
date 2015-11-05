@@ -111,8 +111,8 @@
             this.LabelAlphaWarning.Name = "LabelAlphaWarning";
             this.LabelAlphaWarning.Size = new System.Drawing.Size(382, 26);
             this.LabelAlphaWarning.TabIndex = 4;
-            this.LabelAlphaWarning.Text = "This is a development build of the RozWorld Editor, some features\r\nmay remain uim" +
-    "plemented or broken.";
+            this.LabelAlphaWarning.Text = "This is a development build of the RozWorld Editor, some features\r\nmay remain uni" +
+    "mplemented or broken.";
             // 
             // ButtonOK
             // 
