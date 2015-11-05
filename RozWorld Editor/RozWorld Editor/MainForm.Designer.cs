@@ -434,6 +434,7 @@
             this.MenuItemRozWorldPage.Name = "MenuItemRozWorldPage";
             this.MenuItemRozWorldPage.Size = new System.Drawing.Size(214, 22);
             this.MenuItemRozWorldPage.Text = "RozWorld Home Page";
+            this.MenuItemRozWorldPage.Click += new System.EventHandler(this.MenuItemRozWorldPage_Click);
             // 
             // MenuHelpSeparator1
             // 
@@ -446,6 +447,7 @@
             this.MenuItemEditorDocs.Name = "MenuItemEditorDocs";
             this.MenuItemEditorDocs.Size = new System.Drawing.Size(214, 22);
             this.MenuItemEditorDocs.Text = "Editor Documentation";
+            this.MenuItemEditorDocs.Click += new System.EventHandler(this.MenuItemEditorDocs_Click);
             // 
             // MenuItemEditorRepo
             // 
@@ -453,6 +455,7 @@
             this.MenuItemEditorRepo.Name = "MenuItemEditorRepo";
             this.MenuItemEditorRepo.Size = new System.Drawing.Size(214, 22);
             this.MenuItemEditorRepo.Text = "Editor GitHub Repository";
+            this.MenuItemEditorRepo.Click += new System.EventHandler(this.MenuItemEditorRepo_Click);
             // 
             // MenuHelpSeparator2
             // 
@@ -465,6 +468,7 @@
             this.MenuItemAbout.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.MenuItemAbout.Size = new System.Drawing.Size(214, 22);
             this.MenuItemAbout.Text = "About RozWorld Editor";
+            this.MenuItemAbout.Click += new System.EventHandler(this.MenuItemAbout_Click);
             // 
             // TabUI
             // 

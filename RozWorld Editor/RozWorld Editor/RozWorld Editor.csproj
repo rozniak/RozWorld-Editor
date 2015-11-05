@@ -55,6 +55,12 @@
     <Compile Include="DataClasses\FileFormat\GUIOMETRY.cs" />
     <Compile Include="DataClasses\FontInfo.cs" />
     <Compile Include="DataClasses\Texture.cs" />
+    <Compile Include="Dialog\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog\AddCharacter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <Compile Include="Toolbar\Standard.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Dialog\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\AddCharacter.resx">
       <DependentUpon>AddCharacter.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -157,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="editoricon.ico" />
+    <None Include="Resources\EditorIconLogo.png" />
     <None Include="Resources\SearchBigIcon.png" />
     <None Include="Resources\ThingUnknown.png" />
     <None Include="Resources\UpArrowIcon.png" />

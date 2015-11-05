@@ -10,9 +10,11 @@
  */
 
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+
 
 namespace RozWorld_Editor
 {
@@ -509,6 +511,16 @@ namespace RozWorld_Editor
 
 
         /// <summary>
+        /// [Event] "About > About RozWorld Editor" clicked or F1 pressed.
+        /// </summary>
+        private void MenuItemAbout_Click(object sender, EventArgs e)
+        {
+            Dialog.About aboutDialog = new Dialog.About();
+            aboutDialog.ShowDialog();
+        }
+
+
+        /// <summary>
         /// [Event] "File > Exit" clicked or ALT+F4 pressed.
         /// </summary>
         private void MenuItemExit_Click(object sender, EventArgs e)
@@ -538,6 +550,34 @@ namespace RozWorld_Editor
         private void MenuItemNewWindow_Click(object sender, EventArgs e)
         {
             EditorEnvironment.CreateWindow(EditorEnvironment.GenerateWindowName());
+        }
+
+
+        /// <summary>
+        /// [Event] "Help > Editor Documentation" clicked.
+        /// </summary>
+        private void MenuItemEditorDocs_Click(object sender, EventArgs e)
+        {
+            // Change this when there is documentation for it
+            Process.Start("https://github.com/rozniak/RozWorld-Editor");
+        }
+
+
+        /// <summary>
+        /// [Event] "Help > Editor GitHub Repository" clicked.
+        /// </summary>
+        private void MenuItemEditorRepo_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/rozniak/RozWorld-Editor");
+        }
+
+
+        /// <summary>
+        /// [Event] "Help > RozWorld Home Page" clicked.
+        /// </summary>
+        private void MenuItemRozWorldPage_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://roz.world");
         }
     }
 }
