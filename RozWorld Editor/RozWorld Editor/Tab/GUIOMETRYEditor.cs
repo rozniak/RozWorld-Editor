@@ -1219,7 +1219,23 @@ namespace RozWorld_Editor.Tab
         {
             GUIOMETRY guiometryFile = GameGUIOMETRY.Read(filename);
 
+            // Handle fonts
+            foreach (var font in guiometryFile.Fonts)
+            {
+                // Handle characters in font
+                foreach (var character in font.Value.GetListCharacters())
+                {
+                    // TODO: Handle characters here
+                }
+                
+                // TODO: Handle font specific stuff here
+            }
 
+            // Handle elements
+            foreach (var element in guiometryFile.Elements)
+            {
+                // TODO: Handle elements here
+            }
         }
 
 

@@ -152,7 +152,7 @@ namespace RozWorld_Editor.IO
                 #endregion
             }
 
-            return null;
+            return guiometry;
         }
 
 
