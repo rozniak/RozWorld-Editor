@@ -1159,6 +1159,15 @@ namespace RozWorld_Editor.Tab
 
             #endregion
 
+            #region Font Dictionary Initialisation
+
+            Fonts.Add("ChatFont", new FontInfo());
+            Fonts.Add("SmallFont", new FontInfo());
+            Fonts.Add("MediumFont", new FontInfo());
+            Fonts.Add("HugeFont", new FontInfo());
+
+            #endregion
+
             #region Element Dictionary Initialisation
 
             /**
@@ -1225,16 +1234,34 @@ namespace RozWorld_Editor.Tab
                 // Handle characters in font
                 foreach (var character in font.Value.GetListCharacters())
                 {
-                    // TODO: Handle characters here
+                    Fonts[font.Key].AddNewCharacter(character, font.Value.GetCharacter(character));
+                    ListCharacter.Items.Add(character);
                 }
-                
-                // TODO: Handle font specific stuff here
+
+                if (ListCharacter.Items.Count > 0) ListCharacter.SelectedIndex = 0;
+
+                Fonts[font.Key].LineHeight = font.Value.LineHeight;
+                Fonts[font.Key].SpacingWidth = font.Value.SpacingWidth;
+                Fonts[font.Key].Texture = font.Value.Texture;
+
+                // Update the character previews
+                UpdateCharacterPreviewTexture();
+                UpdateCharacterPreviewDetails();
+
+                UpdateFontTexturePreviews();
             }
 
+            ComboFont.SelectedIndex = 0; // Select the first font
+
             // Handle elements
-            foreach (var element in guiometryFile.Elements)
+            Elements = guiometryFile.Elements;
+
+            // Update element preview images
+            foreach (var element in Elements.Keys)
             {
-                // TODO: Handle elements here
+                var elementPreview = (PictureBox)this.Controls.Find("Picture" + element, true)[0];
+
+                elementPreview.Image = Elements[element].Texture.Data;
             }
         }
 
@@ -1266,24 +1293,6 @@ namespace RozWorld_Editor.Tab
             else
                 Error.Show(Error.MISSING_FILENAME);
         }
-
-
-        /// <summary>
-        /// Gets the font information of the specified font name key.
-        /// </summary>
-        /// <param name="key">The font's name to get the info of.</param>
-        /// <returns>The character's info if it is present, null otherwise.</returns>
-        //private FontInfo GetFontInfo(string key)
-        //{
-        //    switch (key)
-        //    {
-        //        default:
-        //        case "Chat Font": return InfoChatFont;
-        //        case "Small Font": return InfoSmallFont;
-        //        case "Medium Font": return InfoMediumFont;
-        //        case "Huge Font": return InfoHugeFont;
-        //    }
-        //}
 
 
         /// <summary>

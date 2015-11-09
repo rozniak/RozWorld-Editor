@@ -60,6 +60,25 @@ namespace RozWorld_Editor.IO
                 {
                     string textureName = GetTextureIDToName(textureID);
                     string textureSource = ByteParse.NextString(guiometryFile, ref currentIndex);
+
+
+                    // Attempt to assign textures to relevant objects in their dictionaries.
+
+                    if (File.Exists(textureSource))
+                    {
+                        if (textureName.EndsWith("Font")) // Assign inside of the Fonts Dictionary
+                        {
+                            guiometry.Fonts[textureName].Texture.Source = textureSource;
+                            guiometry.Fonts[textureName].Texture.Data = Image.FromFile(textureSource);
+                        }
+                        else if (textureName.StartsWith("Button") ||
+                            textureName.StartsWith("Text") ||
+                            textureName.StartsWith("Check")) // Assign inside of the Elements Dictionary
+                        {
+                            guiometry.Elements[textureName].Texture.Source = textureSource;
+                            guiometry.Elements[textureName].Texture.Data = Image.FromFile(textureSource);
+                        }
+                    }
                 }
             }
 
