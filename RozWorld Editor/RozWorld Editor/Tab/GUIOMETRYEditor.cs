@@ -312,6 +312,7 @@ namespace RozWorld_Editor.Tab
             NumericSpaceWidth.Name = "NumericSpaceWidth";
             NumericSpaceWidth.Size = new System.Drawing.Size(78, 20);
             NumericSpaceWidth.TabIndex = 14;
+            NumericSpaceWidth.ValueChanged += new EventHandler(NumericFont_ValueChanged);
 
             /**
              * LabelLineHeight
@@ -330,6 +331,7 @@ namespace RozWorld_Editor.Tab
             NumericLineHeight.Name = "NumericLineHeight";
             NumericLineHeight.Size = new System.Drawing.Size(78, 20);
             NumericLineHeight.TabIndex = 16;
+            NumericLineHeight.ValueChanged +=new EventHandler(NumericFont_ValueChanged);
 
 
             /**
@@ -1243,15 +1245,20 @@ namespace RozWorld_Editor.Tab
                 Fonts[font.Key].LineHeight = font.Value.LineHeight;
                 Fonts[font.Key].SpacingWidth = font.Value.SpacingWidth;
                 Fonts[font.Key].Texture = font.Value.Texture;
-
-                // Update the character previews
-                UpdateCharacterPreviewTexture();
-                UpdateCharacterPreviewDetails();
-
-                UpdateFontTexturePreviews();
             }
 
-            ComboFont.SelectedIndex = 0; // Select the first font
+            // Update the character previews
+            UpdateCharacterPreviewTexture();
+            UpdateCharacterPreviewDetails();
+
+            UpdateFontTexturePreviews();
+
+            // Update the font details boxes
+            byte spacingWidth = Fonts["ChatFont"].SpacingWidth; // Store this value first, before it gets overwritten by the ValueChanged event
+            // Also ^ is a hackjob... but it should work, I suck
+
+            NumericLineHeight.Value = Fonts["ChatFont"].LineHeight;
+            NumericSpaceWidth.Value = spacingWidth;
 
             // Handle elements
             Elements = guiometryFile.Elements;
@@ -1593,6 +1600,13 @@ namespace RozWorld_Editor.Tab
         {
             // Update the character details preview
             UpdateCharacterPreviewDetails();
+        }
+
+
+        private void NumericFont_ValueChanged(object sender, EventArgs e)
+        {
+            // Update the font details
+            UpdateFontDetails(false);
         }
 
 
