@@ -1533,8 +1533,6 @@ namespace RozWorld_Editor.Tab
                     "Texture:" + selectedFontTexture.Source;
 
                 TooltipGlobal.SetToolTip(LabelFontTexture, selectedFontTexture.Source);
-
-                // Update character preview here
             }
             else
             {
