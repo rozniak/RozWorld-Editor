@@ -1753,9 +1753,10 @@ namespace RozWorld_Editor.Tab
             // Try to select the first character...
             TrySelectFirstCharacter();
 
-            // Update the font specific fields
-            NumericSpaceWidth.Value = fontInfo.SpacingWidth;
+            // Update the font specific fields (THIS IS HACKY!! Spacing width gets overwritten by the numeric change value event, fix it asap)
+            var spacingWidth = fontInfo.SpacingWidth;
             NumericLineHeight.Value = fontInfo.LineHeight;
+            NumericSpaceWidth.Value = spacingWidth;
 
             // Set the last selected font to what was just picked.
             LastSelectedFont = fontSelected;
