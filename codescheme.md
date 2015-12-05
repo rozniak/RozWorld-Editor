@@ -15,12 +15,12 @@ This document outlines how code in RozWorld and other future repositories should
     <td><code>camelCase</code></td>
     <td>
 <code>
-public void RepeatString(int amount, string text)<br>
-{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;string <b>repeatedString</b> = string.Empty;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i <= amount; i++)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>repeatedString</b> += text;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;return <b>repeatedString</b>;<br>
+public void RepeatString(int amount, string text)<br />
+{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;string <b>repeatedString</b> = string.Empty;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i <= amount; i++)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>repeatedString</b> += text;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return <b>repeatedString</b>;<br />
 }
         </code>
     </td>
@@ -32,12 +32,12 @@ public void RepeatString(int amount, string text)<br>
     <td><code>camelCase</code></td>
     <td>
 <code>
-public void RepeatString(int <b>amount</b>, string <b>text</b>)<br>
-{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;string repeatedString = string.Empty;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i <= <b>amount</b>; i++)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repeatedString += <b>text</b>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;return repeatedString;<br>
+public void RepeatString(int <b>amount</b>, string <b>text</b>)<br />
+{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;string repeatedString = string.Empty;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i <= <b>amount</b>; i++)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repeatedString += <b>text</b>;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return repeatedString;<br />
 }
 </code>
     </td>
@@ -49,20 +49,20 @@ public void RepeatString(int <b>amount</b>, string <b>text</b>)<br>
     <td><code>PascalCase</code></td>
     <td>
 <code>
-public abstract class <b>MyInheritableClass</b><br>
-{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;private string <b>SortOfGlobalString</b>;<br>
-<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;protected abstract bool <b>MyRequiredFunction</b>();<br>
-}<br>
-<br>
-<br>
-public enum <b>MyEnum</b><br>
-{<br>
-<b>One</b>,<br>
-<b>Two</b>,<br>
-<b>Three</b><br>
+public abstract class <b>MyInheritableClass</b><br />
+{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;private string <b>SortOfGlobalString</b>;<br />
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;protected abstract bool <b>MyRequiredFunction</b>();<br />
+}<br />
+<br />
+<br />
+public enum <b>MyEnum</b><br />
+{<br />
+<b>One</b>,<br />
+<b>Two</b>,<br />
+<b>Three</b><br />
 }
 </code>
     </td>
@@ -86,11 +86,11 @@ public const string <b>COLOUR_RED</b> = "&4";
     <td><code>_UnderscoreBeforePascal</code></td>
     <td>
 <code>
-private string <b>_BackingVar</b>;<br>
-public string BackingVar<br>
-{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;get { return this.<b>_BackingVar</b>; }<br>
-&nbsp;&nbsp;&nbsp;&nbsp;set { this.<b>_BackingVar</b> = value; }<br>
+private string <b>_BackingVar</b>;<br />
+public string BackingVar<br />
+{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;get { return this.<b>_BackingVar</b>; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;set { this.<b>_BackingVar</b> = value; }<br />
 }
 </code>
     </td>
